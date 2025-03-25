@@ -15,6 +15,7 @@
     "build": "parcel ./src/index.html"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.2",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
     "eslint": "^9.23.0",
@@ -26,5 +27,8 @@
     "prettier": "^3.5.3",
     "sass": "^1.86.0",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.2"
   }
 }
