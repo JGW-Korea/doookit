@@ -1,14 +1,14 @@
 {
   "name": "simple_utility_tools",
   "version": "1.0.0",
-  "description": "A collection of simple utility tools built with TypeScript and SCSS",
-  "author": "Your Name <your.email@example.com>",
+  "description": "해당 프로젝트는 \"계산기\", \"단위 변화기\", \"BMI 계산기\", \"색상 변화기\", \"타이머 & 스톱워치\" 기능을 모아둔 도구 모음 정적 웹 페이지 프로젝트입니다.",
+  "author": "JGW <jgw6372@naver.com>",
   "license": "MIT",
   "homepage": "https://your-vercel-url.vercel.app",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourname/simple-utility-tools.git"
+    "url": "https://github.com/console-log-study/simple_utility_tools"
   },
   "scripts": {
     "dev": "parcel ./src/index.html",
