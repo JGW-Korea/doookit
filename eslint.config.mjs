@@ -6,7 +6,7 @@ import cssModulesPlugin from "eslint-plugin-css-modules";
 
 export default [
   {
-    ignores: ["**/node_modules/**", "**/dist/**"],
+    ignores: ["**/node_modules/**", "**/dist/**", "**/*.scss"],
   },
   {
     files: ["**/*.ts"],
