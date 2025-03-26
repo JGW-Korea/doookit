@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types"],
+    "isolatedModules": false,
+    "strict": true,
+    "noImplicitAny": true, // 암시적 any 타입 검사 활성화
+    "noImplicitThis": true, // 암시적 this 타입 검사 활성화
+    "strictNullChecks": true, // 엄격한 Nullish 타입 검사 활성화
+    "strictFunctionTypes": true, // 엄격한 함수의 매개변수 타입 검사 활성화
+    "strictPropertyInitialization": true, // 엄격한 클래스의 속성 초기화 검사 활성화
+    "strictBindCallApply": true, // 엄격한 Bind, Call, Apply 메소드의 인수 검사 활성화
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": [ // 컴파일할 파일 경로 목록
+    "src/**/*.ts"
+  ],
+  "exclude": [ // 컴파일에서 제외할 파일 경로 목록
+    "node_modules"
+  ]
+}
