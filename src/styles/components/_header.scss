@@ -1,10 +1,14 @@
 @use "../utils/variable" as *;
 
 header {
+  position: sticky;
+  top: 0;
+
   padding: 16px 64px;
   display: flex;
   justify-content: space-between;
 
+  // Logo 영역
   & > a > h1 {
     display: flex;
     gap: 8px;
@@ -24,6 +28,26 @@ header {
 
     & > span {
       margin-top: 4px;
+    }
+  }
+
+  & > nav {
+    margin: auto 0;
+
+    & > ul {
+      display: flex;
+      gap: 32px;
+
+      font-size: 16px;
+      font-weight: 500;
+
+      & > li > a {
+        transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          color: #10b981;
+        }
+      }
     }
   }
 }
