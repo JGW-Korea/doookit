@@ -5,6 +5,10 @@
 @use "./components/header.scss";
 
 // 전역 스타일 속성
+html {
+  font-size: 16px;
+}
+
 a {
   color: $font-color-dark-gray;
   text-decoration: none;
