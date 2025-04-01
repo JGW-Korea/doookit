@@ -1,0 +1,29 @@
+@use "../utils/variable" as *;
+
+header {
+  padding: 16px 64px;
+  display: flex;
+  justify-content: space-between;
+
+  & > a > h1 {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    background: linear-gradient(to right, $font-color-main-left, $font-color-main-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    & > img.favicon {
+      width: 32px;
+    }
+
+    & > span {
+      margin-top: 4px;
+    }
+  }
+}
