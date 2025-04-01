@@ -1,5 +1,4 @@
 import { Component, ComponentDataType } from "../../utils/Component";
-// import favicon from "../../asstes/images/favicon.png";
 
 export default class Logo extends Component<ComponentDataType, ComponentDataType> {
   constructor() {
