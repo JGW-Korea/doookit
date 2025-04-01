@@ -1,1 +1,16 @@
 @use "reset-css/sass/_reset.scss";
+@use "./utils/_variable" as *;
+
+// 공통 컴포넌트 스타일 import
+@use "./components/header.scss";
+
+// 전역 스타일 속성
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: $font-color-dark-gray;
+  text-decoration: none;
+}
