@@ -10,8 +10,6 @@ a.tool-buttons {
   & > button {
     cursor: inherit;
 
-    width: 6rem;
-    height: 6rem;
     margin: 0 auto;
     border-radius: 0.75rem;
     border: none;
@@ -32,5 +30,33 @@ a.tool-buttons {
     box-shadow:
       0 11.7px 16.7px -3.3px rgba(0, 0, 0, 0.1),
       0 4.7px 6.7px -4.35px rgba(0, 0, 0, 0.05);
+  }
+}
+
+// 데스크탑 비율 헤더 영역
+@media (min-width: 1024px) {
+  a.tool-buttons {
+    & > button {
+      width: 6rem;
+      height: 6rem;
+
+      & > img {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+// 모바일 비율 헤더 영역
+@media (max-width: 768px) or ((min-width: 768px) and (max-width: 1023px)) {
+  a.tool-buttons {
+    & > button {
+      width: 5rem;
+      height: 5rem;
+
+      & > img {
+        width: 2.25rem;
+      }
+    }
   }
 }
