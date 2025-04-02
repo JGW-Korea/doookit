@@ -1,5 +1,19 @@
 @use "../../utils/variable" as *;
 
 main > section.tools {
-  background-color: $color-gray;
+  & > article {
+    & > div[role="complementary"] {
+      margin-bottom: 2rem;
+    }
+
+    & > div {
+      & > header {
+        margin-bottom: 48px;
+
+        & > h2 {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
 }

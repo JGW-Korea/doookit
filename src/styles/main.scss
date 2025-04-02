@@ -15,3 +15,21 @@ a {
   color: $font-color-dark-gray;
   text-decoration: none;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+  color: $font-color-charocal;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  color: $font-color-dark-gray;
+}
