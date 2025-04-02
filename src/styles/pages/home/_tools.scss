@@ -16,8 +16,9 @@ main > section.tools {
       }
 
       & > ul {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 2rem;
 
         & > li:nth-child(1) > a.tool-buttons > button {
           background: linear-gradient(135deg, #f472b6, #f43f5e);
@@ -36,6 +37,20 @@ main > section.tools {
         }
         & > li:nth-child(6) > a.tool-buttons > button {
           background: linear-gradient(135deg, #fde68a, #eab308);
+        }
+      }
+    }
+  }
+}
+
+// 모바일 비율 헤더 영역
+@media (max-width: 768px) or ((min-width: 768px) and (max-width: 1023px)) {
+  main > section.tools {
+    & > article {
+      & > div {
+        & > ul {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.5rem;
         }
       }
     }

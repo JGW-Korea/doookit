@@ -6,6 +6,8 @@ main > section.intro {
   padding-bottom: 8rem;
 
   & > article {
+    max-width: 56rem;
+
     & > h1 {
       font-size: 3.75rem;
       color: $font-color-charocal;
