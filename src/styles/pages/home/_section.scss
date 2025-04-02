@@ -1,3 +1,5 @@
+@use "../../utils/variable" as *;
+
 main > section {
   position: relative;
   overflow: hidden;
@@ -10,6 +12,10 @@ main > section {
     max-width: 56rem;
     margin: 0 auto;
     padding: 0 1.5rem;
+  }
+
+  &:nth-child(even) {
+    background-color: $color-gray;
   }
 }
 
