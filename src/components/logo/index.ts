@@ -20,6 +20,9 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
     imgEl.classList.add("favicon");
     imgEl.alt = "favicon";
 
+    imgEl.style.width = "2rem";
+    imgEl.style.height = "2rem";
+
     const spanEl = document.createElement("span");
     spanEl.textContent = "DoooKit";
 
