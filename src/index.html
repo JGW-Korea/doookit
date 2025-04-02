@@ -45,7 +45,7 @@
       </section>
 
       <!-- Tools -->
-      <section id="tools" class="tools">
+      <section id="tools" aria-labelledby="tools-heading">
         <article>
           <!-- 구글 애드센스 -->
           <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
@@ -57,50 +57,80 @@
 
             <ul class="tool-list">
               <li>
-                <a href="javascript:void(0)" class="tool-buttons">
-                  <button>
-                    <img src="/public/asstes/icons/calculator.svg" alt="" />
-                  </button>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Calculator Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/asstes/icons/calculator.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
                   <span>Calculator</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons">
-                  <button>
-                    <img src="/public/asstes/icons/unit_converter.svg" alt="" />
-                  </button>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Unit Converter Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/asstes/icons/unit_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
                   <span>Unit Converter</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons">
-                  <button>
-                    <img src="/public/asstes/icons/bmi_converter.svg" alt="" />
-                  </button>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="BMI Calculator Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/asstes/icons/bmi_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
                   <span>BMI Calculator</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons">
-                  <button>
-                    <img src="/public/asstes/icons/timer_and_stopwatch.svg" alt="" />
-                  </button>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Timer & Stopwatch Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/asstes/icons/timer_and_stopwatch.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
                   <span>Timer & Stopwatch</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons">
-                  <button>
-                    <img src="/public/asstes/icons/color_converter.svg" alt="" />
-                  </button>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Color Converter Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/asstes/icons/color_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
                   <span>Color Converter</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons">
-                  <button>
-                    <img src="/public/asstes/icons/px_converter.svg" alt="" />
-                  </button>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="PX Converter Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/asstes/icons/px_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
                   <span>PX Converter</span>
                 </a>
               </li>
@@ -109,8 +139,58 @@
         </article>
       </section>
 
-      <section id="about">
-        <article></article>
+      <section id="about" aria-labelledby="about-heading">
+        <article>
+          <header>
+            <h2>What is DoooKit?</h2>
+          </header>
+
+          <ul class="features-grid">
+            <li>
+              <article class="feature-card" aria-labelledby="feature-minimal">
+                <header>
+                  <div aria-hidden="true">✨</div>
+                  <h3>Minimal Design</h3>
+                </header>
+                <p>
+                  Clean interfaces that focus on what matters, reducing cognitive load and making tools a joy to use.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article class="feature-card" aria-labelledby="feature-digital-friendly">
+                <header>
+                  <div aria-hidden="true">💻</div>
+                  <h3>Digital-Friendly Tools</h3>
+                </header>
+                <p>
+                  Purpose-built utilities for modern digital work, from color conversion to pixel-perfect measurements.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article class="feature-card" aria-labelledby="feature-brand-consistency">
+                <header>
+                  <div aria-hidden="true">🎨</div>
+                  <h3>Brand Consistency</h3>
+                </header>
+                <p>A cohesive experience across all tools, with thoughtful interactions and visual harmony.</p>
+              </article>
+            </li>
+
+            <li>
+              <article class="feature-card" aria-labelledby="feature-fully-responsive">
+                <header>
+                  <div aria-hidden="true">📱</div>
+                  <h3>Fully Responsive</h3>
+                </header>
+                <p>Works beautifully on all your devices, from desktop workstations to mobile phones.</p>
+              </article>
+            </li>
+          </ul>
+        </article>
       </section>
 
       <section>
