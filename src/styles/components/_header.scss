@@ -1,6 +1,6 @@
 @use "../utils/variable" as *;
 
-header {
+body > header {
   position: sticky;
   z-index: 9999;
   top: 0;

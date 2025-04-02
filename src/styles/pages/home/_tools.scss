@@ -1,5 +1,58 @@
 @use "../../utils/variable" as *;
 
 main > section.tools {
-  background-color: $color-gray;
+  & > article {
+    & > div[role="complementary"] {
+      margin-bottom: 2rem;
+    }
+
+    & > div {
+      & > header {
+        margin-bottom: 48px;
+
+        & > h2 {
+          margin-bottom: 12px;
+        }
+      }
+
+      & > ul {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 2rem;
+
+        & > li:nth-child(1) > a.tool-buttons > button {
+          background: linear-gradient(135deg, #f472b6, #f43f5e);
+        }
+        & > li:nth-child(2) > a.tool-buttons > button {
+          background: linear-gradient(135deg, #c084fc, #6366f1);
+        }
+        & > li:nth-child(3) > a.tool-buttons > button {
+          background: linear-gradient(135deg, #60a5fa, #06b6d4);
+        }
+        & > li:nth-child(4) > a.tool-buttons > button {
+          background: linear-gradient(135deg, #f59e0b, #f97316);
+        }
+        & > li:nth-child(5) > a.tool-buttons > button {
+          background: linear-gradient(135deg, #14b8a6, #10b981);
+        }
+        & > li:nth-child(6) > a.tool-buttons > button {
+          background: linear-gradient(135deg, #fde68a, #eab308);
+        }
+      }
+    }
+  }
+}
+
+// 모바일 비율 헤더 영역
+@media (max-width: 768px) or ((min-width: 768px) and (max-width: 1023px)) {
+  main > section.tools {
+    & > article {
+      & > div {
+        & > ul {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
 }
