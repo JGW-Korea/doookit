@@ -1,26 +1,19 @@
+@use "./section";
 @use "../../utils/variable" as *;
 
-section.intro {
-  position: relative;
-
+main > section.intro {
   background: linear-gradient(to top, rgba(167, 243, 208, 0.4), rgba(110, 231, 183, 0.4));
+  padding-bottom: 8rem;
 
-  padding-top: 5rem;
-  padding-bottom: 11rem;
-
-  overflow: hidden;
-
-  & > div:nth-child(1) {
-    text-align: center;
+  & > article {
     max-width: 56rem;
-    margin: 0 auto;
-    padding: 0 24px;
 
     & > h1 {
       font-size: 3.75rem;
       color: $font-color-charocal;
       font-weight: 700;
       margin-bottom: 1.5rem;
+      line-height: 3.75rem;
     }
 
     & > p {
@@ -49,13 +42,13 @@ section.intro {
       &:hover {
         transform: scale(1.05);
         box-shadow:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          0 11.7px 16.7px -3.3px rgba(0, 0, 0, 0.1),
+          0 4.7px 6.7px -4.35px rgba(0, 0, 0, 0.05);
       }
     }
   }
 
-  & > div:nth-child(2) {
+  & > div.background-wave {
     position: absolute;
     width: 100%;
     z-index: -1;
@@ -65,7 +58,7 @@ section.intro {
 // 데스크탑 비율 헤더 영역
 @media (min-width: 1024px) {
   section.intro {
-    & > div:nth-child(2) {
+    & > div.background-wave {
       bottom: -4.5rem;
     }
   }
@@ -74,7 +67,10 @@ section.intro {
 // 태블릿 비율 헤더 영역
 @media (min-width: 768px) and (max-width: 1023px) {
   section.intro {
-    & > div:nth-child(1) {
+    padding-top: 4rem;
+    padding-bottom: 7rem;
+
+    & > article {
       & > h1 {
         font-size: 3rem;
       }
@@ -83,7 +79,7 @@ section.intro {
       }
     }
 
-    & > div:nth-child(2) {
+    & > div.background-wave {
       bottom: -2.5rem;
     }
   }
@@ -92,7 +88,10 @@ section.intro {
 // 모바일 비율 헤더 영역
 @media (max-width: 768px) {
   section.intro {
-    & > div:nth-child(1) {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+
+    & > article {
       & > h1 {
         font-size: 2.25rem;
       }
@@ -101,7 +100,7 @@ section.intro {
       }
     }
 
-    & > div:nth-child(2) {
+    & > div.background-wave {
       bottom: -1.5rem;
     }
   }
