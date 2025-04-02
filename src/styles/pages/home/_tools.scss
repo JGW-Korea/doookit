@@ -1,0 +1,5 @@
+@use "../../utils/variable" as *;
+
+main > section.tools {
+  background-color: $color-gray;
+}

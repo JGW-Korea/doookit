@@ -1,21 +1,13 @@
+@use "./section";
 @use "../../utils/variable" as *;
 
-section.intro {
-  position: relative;
-
+main > section.intro {
   background: linear-gradient(to top, rgba(167, 243, 208, 0.4), rgba(110, 231, 183, 0.4));
 
   padding-top: 5rem;
-  padding-bottom: 11rem;
-
-  overflow: hidden;
+  padding-bottom: 8rem;
 
   & > div:nth-child(1) {
-    text-align: center;
-    max-width: 56rem;
-    margin: 0 auto;
-    padding: 0 24px;
-
     & > h1 {
       font-size: 3.75rem;
       color: $font-color-charocal;
@@ -49,8 +41,8 @@ section.intro {
       &:hover {
         transform: scale(1.05);
         box-shadow:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          0 11.7px 16.7px -3.3px rgba(0, 0, 0, 0.1),
+          0 4.7px 6.7px -4.35px rgba(0, 0, 0, 0.05);
       }
     }
   }
@@ -74,6 +66,9 @@ section.intro {
 // 태블릿 비율 헤더 영역
 @media (min-width: 768px) and (max-width: 1023px) {
   section.intro {
+    padding-top: 4rem;
+    padding-bottom: 7rem;
+
     & > div:nth-child(1) {
       & > h1 {
         font-size: 3rem;
@@ -92,6 +87,9 @@ section.intro {
 // 모바일 비율 헤더 영역
 @media (max-width: 768px) {
   section.intro {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+
     & > div:nth-child(1) {
       & > h1 {
         font-size: 2.25rem;
