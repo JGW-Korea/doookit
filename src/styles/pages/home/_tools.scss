@@ -1,6 +1,6 @@
 @use "../../utils/variable" as *;
 
-main > section.tools {
+main > section#tools {
   & > article {
     & > div[role="complementary"] {
       margin-bottom: 2rem;
@@ -45,7 +45,7 @@ main > section.tools {
 
 // 모바일 비율 헤더 영역
 @media (max-width: 768px) or ((min-width: 768px) and (max-width: 1023px)) {
-  main > section.tools {
+  main > section#tools {
     & > article {
       & > div {
         & > ul {

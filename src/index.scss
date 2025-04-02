@@ -1,3 +1,5 @@
-@use "./styles/pages/home/_intro.scss";
-@use "./styles/pages/home/_tools";
+@use "./styles/pages/home/intro";
+@use "./styles/pages/home/tools";
+@use "./styles/pages/home/about";
 @use "./styles/components/tool-button";
+@use "./styles/components/feature";
