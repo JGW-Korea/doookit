@@ -17,6 +17,11 @@ main > section {
   &:nth-child(even) {
     background-color: $color-gray;
   }
+
+  &:last-child {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 }
 
 // 모바일 비율 헤더 영역
