@@ -3,11 +3,9 @@
 
 main > section.intro {
   background: linear-gradient(to top, rgba(167, 243, 208, 0.4), rgba(110, 231, 183, 0.4));
-
-  padding-top: 5rem;
   padding-bottom: 8rem;
 
-  & > div:nth-child(1) {
+  & > article {
     & > h1 {
       font-size: 3.75rem;
       color: $font-color-charocal;
@@ -47,7 +45,7 @@ main > section.intro {
     }
   }
 
-  & > div:nth-child(2) {
+  & > div.background-wave {
     position: absolute;
     width: 100%;
     z-index: -1;
@@ -57,7 +55,7 @@ main > section.intro {
 // 데스크탑 비율 헤더 영역
 @media (min-width: 1024px) {
   section.intro {
-    & > div:nth-child(2) {
+    & > div.background-wave {
       bottom: -4.5rem;
     }
   }
@@ -69,7 +67,7 @@ main > section.intro {
     padding-top: 4rem;
     padding-bottom: 7rem;
 
-    & > div:nth-child(1) {
+    & > article {
       & > h1 {
         font-size: 3rem;
       }
@@ -78,7 +76,7 @@ main > section.intro {
       }
     }
 
-    & > div:nth-child(2) {
+    & > div.background-wave {
       bottom: -2.5rem;
     }
   }
@@ -90,7 +88,7 @@ main > section.intro {
     padding-top: 3rem;
     padding-bottom: 5rem;
 
-    & > div:nth-child(1) {
+    & > article {
       & > h1 {
         font-size: 2.25rem;
       }
@@ -99,7 +97,7 @@ main > section.intro {
       }
     }
 
-    & > div:nth-child(2) {
+    & > div.background-wave {
       bottom: -1.5rem;
     }
   }
