@@ -14,14 +14,14 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
     const h1El = document.createElement("h1");
 
     const imgEl = document.createElement("img");
-    const imgUrl = new URL("/public/asstes/images/favicon.png", import.meta.url);
+    const imgUrl = new URL("/public/assets/images/favicon.png", import.meta.url);
 
     imgEl.src = imgUrl.href;
     imgEl.classList.add("favicon");
     imgEl.alt = "favicon";
 
-    imgEl.style.width = "2rem";
-    imgEl.style.height = "2rem";
+    imgEl.width = 32;
+    imgEl.height = 32;
 
     const spanEl = document.createElement("span");
     spanEl.textContent = "DoooKit";
