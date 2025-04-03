@@ -30,6 +30,8 @@ function redirectTo404() {
 if (isProduction) {
   const browserLang = getBrowserLang();
 
+  console.log("Hello");
+
   // 1. 루트 또는 index.html 접근 시 → /ko, /fr 등으로 이동
   if (location.pathname === "/" || location.pathname === "/index.html") {
     if (browserLang !== "en") {
