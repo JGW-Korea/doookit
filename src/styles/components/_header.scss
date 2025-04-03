@@ -30,8 +30,8 @@ body > header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    & > img.favicon {
-      width: 2rem;
+    & > picture {
+      height: 2rem;
     }
 
     & > span {
@@ -83,7 +83,7 @@ body > header {
     padding-right: 1.5rem;
 
     & > nav {
-      visibility: hidden;
+      visibility: hidden; // display: none으로 설정하면 리페인팅이 발생
     }
   }
 }

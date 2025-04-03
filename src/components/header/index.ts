@@ -9,7 +9,7 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
   }
 
   render(): void {
-    this.el.appendChild(new Logo().el);
+    this.el.appendChild(new Logo({ props: { tag: "header" } }).el);
 
     const navEl = document.createElement("nav");
     navEl.setAttribute("aria-label", "메인 메뉴");

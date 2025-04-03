@@ -3,24 +3,20 @@
 
 main > section.intro {
   background: linear-gradient(to top, rgba(167, 243, 208, 0.4), rgba(110, 231, 183, 0.4));
-  padding-bottom: 8rem;
 
   & > article {
     max-width: 56rem;
 
     & > h1 {
-      font-size: 3.75rem;
       color: $font-color-charocal;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      line-height: 3.75rem;
     }
 
     & > p {
-      font-size: 1.5rem;
       color: $font-color-dark-gray;
       margin-bottom: 2.5rem;
-      line-height: 2rem;
+
       font-weight: 500;
     }
 
@@ -58,6 +54,19 @@ main > section.intro {
 // 데스크탑 비율 헤더 영역
 @media (min-width: 1024px) {
   section.intro {
+    padding-bottom: 8rem;
+
+    & > article {
+      & > h1 {
+        font-size: 3.75rem;
+        line-height: 3.75rem;
+      }
+      & > p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+
     & > div.background-wave {
       bottom: -4.5rem;
     }
@@ -73,9 +82,11 @@ main > section.intro {
     & > article {
       & > h1 {
         font-size: 3rem;
+        line-height: 3rem;
       }
       & > p {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
       }
     }
 
@@ -94,9 +105,11 @@ main > section.intro {
     & > article {
       & > h1 {
         font-size: 2.25rem;
+        line-height: 2.25rem;
       }
       & > p {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
       }
     }
 
