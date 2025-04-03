@@ -13,7 +13,6 @@
     { "source": "/ko/", "destination": "/i18n/ko/index.html" },
 
     { "source": "/ja", "destination": "/i18n/ja/index.html" },
-    { "source": "/ja/", "destination": "/i18n/ja/index.html" },
 
     { "source": "/fr", "destination": "/i18n/fr/index.html" },
     { "source": "/fr/", "destination": "/i18n/fr/index.html" },
