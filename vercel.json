@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "socurce": "/", "destination": "/index.html" },
+    { "socurce": "/ko", "destination": "/i18n/ko/index.html" },
+    { "socurce": "/ja", "destination": "/i18n/ja/index.html" },
+    { "socurce": "/fr", "destination": "/i18n/fr/index.html" },
+    { "socurce": "/it", "destination": "/i18n/it/index.html" },
+    { "socurce": "/es", "destination": "/i18n/es/index.html" },
+    { "socurce": "/de", "destination": "/i18n/de/index.html" },
+    { "socurce": "/zh", "destination": "/i18n/zh/index.html" },
+    { "socurce": "/hi", "destination": "/i18n/hi/index.html" },
+    { "socurce": "/calc", "destination": "/pages/calculator/index.html" }
+  ]
+}
