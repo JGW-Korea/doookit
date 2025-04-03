@@ -3,6 +3,12 @@
     { "source": "/ads.txt", "destination": "/ads.txt" },
 
     { "source": "/", "destination": "/index.html" },
+    { "source": "/tools/calc/:path*", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/converter/:path*", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/bmi/:path*", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/timer/:path*", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/color-picker/:path*", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/px-converter/:path*", "destination": "/pages/calculator/index.html" },
 
     { "source": "/ko", "destination": "/i18n/ko/index.html" },
     { "source": "/ko/", "destination": "/i18n/ko/index.html" },
@@ -26,8 +32,6 @@
     { "source": "/zh/", "destination": "/i18n/zh/index.html" },
 
     { "source": "/hi", "destination": "/i18n/hi/index.html" },
-    { "source": "/hi/", "destination": "/i18n/hi/index.html" },
-
-    { "source": "/calc", "destination": "/pages/calculator/index.html" }
+    { "source": "/hi/", "destination": "/i18n/hi/index.html" }
   ]
 }
