@@ -15,7 +15,7 @@ main > section {
   }
 
   &:nth-child(even) {
-    background-color: $color-gray;
+    background-color: $color-gray-light;
   }
 
   &:last-child {
