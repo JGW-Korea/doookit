@@ -1,14 +1,31 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
+
     { "source": "/ko", "destination": "/i18n/ko/index.html" },
+    { "source": "/ko/", "destination": "/i18n/ko/index.html" },
+
     { "source": "/ja", "destination": "/i18n/ja/index.html" },
+    { "source": "/ja/", "destination": "/i18n/ja/index.html" },
+
     { "source": "/fr", "destination": "/i18n/fr/index.html" },
+    { "source": "/fr/", "destination": "/i18n/fr/index.html" },
+
     { "source": "/it", "destination": "/i18n/it/index.html" },
+    { "source": "/it/", "destination": "/i18n/it/index.html" },
+
     { "source": "/es", "destination": "/i18n/es/index.html" },
+    { "source": "/es/", "destination": "/i18n/es/index.html" },
+
     { "source": "/de", "destination": "/i18n/de/index.html" },
+    { "source": "/de/", "destination": "/i18n/de/index.html" },
+
     { "source": "/zh", "destination": "/i18n/zh/index.html" },
+    { "source": "/zh/", "destination": "/i18n/zh/index.html" },
+
     { "source": "/hi", "destination": "/i18n/hi/index.html" },
+    { "source": "/hi/", "destination": "/i18n/hi/index.html" },
+
     { "source": "/calc", "destination": "/pages/calculator/index.html" }
   ]
 }
