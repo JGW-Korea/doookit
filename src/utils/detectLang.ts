@@ -27,7 +27,7 @@ function redirectTo404() {
 }
 
 // ✅ 메인 실행
-if (!isProduction) {
+if (isProduction) {
   const browserLang = getBrowserLang();
 
   // 1. 루트 또는 index.html 접근 시 → /ko, /fr 등으로 이동
