@@ -3,14 +3,14 @@
     { "source": "/ads.txt", "destination": "/ads.txt" },
 
     { "source": "/", "destination": "/index.html" },
-    { "source": "/tools/calc/:path*", "destination": "/pages/calculator/index.html" },
-    { "source": "/tools/converter/:path*", "destination": "/pages/color-converter/index.html" },
-    { "source": "/tools/bmi/:path*", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/calc/", "destination": "/pages/calculator/index.html" },
+    { "source": "/tools/converter/", "destination": "/pages/color-converter/index.html" },
+    { "source": "/tools/bmi/", "destination": "/pages/calculator/index.html" },
     { "source": "/tools/timer/:path*", "destination": "/pages/calculator/index.html" },
     { "source": "/tools/color-picker/:path*", "destination": "/pages/calculator/index.html" },
     { "source": "/tools/px-converter/:path*", "destination": "/pages/calculator/index.html" },
 
-    { "source": "/ko", "destination": "/i18n/ko/index.html" },
+    { "source": "/ko/", "destination": "/i18n/ko/index.html" },
 
     { "source": "/ja", "destination": "/i18n/ja/index.html" },
     { "source": "/ja/", "destination": "/i18n/ja/index.html" },
