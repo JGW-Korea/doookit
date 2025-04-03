@@ -3,7 +3,6 @@
 
 main > section.intro {
   background: linear-gradient(to top, rgba(167, 243, 208, 0.4), rgba(110, 231, 183, 0.4));
-  padding-bottom: 8rem;
 
   & > article {
     max-width: 56rem;
@@ -55,6 +54,8 @@ main > section.intro {
 // 데스크탑 비율 헤더 영역
 @media (min-width: 1024px) {
   section.intro {
+    padding-bottom: 8rem;
+
     & > article {
       & > h1 {
         font-size: 3.75rem;
@@ -84,8 +85,8 @@ main > section.intro {
         line-height: 3rem;
       }
       & > p {
-        font-size: 1.25rem;
-        line-height: 1.25rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
       }
     }
 
@@ -107,8 +108,8 @@ main > section.intro {
         line-height: 2.25rem;
       }
       & > p {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
       }
     }
 
