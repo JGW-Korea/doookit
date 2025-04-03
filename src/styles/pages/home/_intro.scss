@@ -9,18 +9,15 @@ main > section.intro {
     max-width: 56rem;
 
     & > h1 {
-      font-size: 3.75rem;
       color: $font-color-charocal;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      line-height: 3.75rem;
     }
 
     & > p {
-      font-size: 1.5rem;
       color: $font-color-dark-gray;
       margin-bottom: 2.5rem;
-      line-height: 2rem;
+
       font-weight: 500;
     }
 
@@ -58,6 +55,17 @@ main > section.intro {
 // 데스크탑 비율 헤더 영역
 @media (min-width: 1024px) {
   section.intro {
+    & > article {
+      & > h1 {
+        font-size: 3.75rem;
+        line-height: 3.75rem;
+      }
+      & > p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+
     & > div.background-wave {
       bottom: -4.5rem;
     }
@@ -73,9 +81,11 @@ main > section.intro {
     & > article {
       & > h1 {
         font-size: 3rem;
+        line-height: 3rem;
       }
       & > p {
         font-size: 1.25rem;
+        line-height: 1.25rem;
       }
     }
 
@@ -94,9 +104,11 @@ main > section.intro {
     & > article {
       & > h1 {
         font-size: 2.25rem;
+        line-height: 2.25rem;
       }
       & > p {
         font-size: 1.5rem;
+        line-height: 1.5rem;
       }
     }
 

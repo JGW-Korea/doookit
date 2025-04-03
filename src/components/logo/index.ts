@@ -1,10 +1,10 @@
 import { Component, ComponentDataType } from "../../utils/Component";
 
 export default class Logo extends Component<ComponentDataType, ComponentDataType> {
-  constructor() {
+  constructor(payload: { props: ComponentDataType }) {
     super({
       tagName: "a",
-      // props: { ...payload.props },
+      props: payload.props,
     });
   }
 
@@ -29,8 +29,8 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
       } else {
         // 새로 만든 img 요소가 HTMLSourceElement가 아닌 HTMLImageElement 인터페이스일 경우
         imgEl.src = url.href; // 이미지 주소 삽입
-        imgEl.width = 32;
-        imgEl.height = 32;
+        imgEl.width = this.props.tag === "header" ? 32 : 24;
+        imgEl.height = this.props.tag === "header" ? 32 : 24;
         imgEl.alt = "favicon";
       }
 
