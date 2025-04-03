@@ -1,0 +1,10 @@
+@use "../utils/variable" as *;
+
+div[role="complementary"] {
+  text-align: center;
+  color: $font-color-gray-light;
+  border: 3px dotted $border-gray;
+  border-radius: 0.5rem;
+  background-color: $color-white;
+  padding: 1rem;
+}

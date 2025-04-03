@@ -3,11 +3,240 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Utility Tools</title>
+    <title>DoooKit</title>
+
+    <meta name="author" content="JGW-Vito" />
+    <meta
+      name="description"
+      content="DoooKit offers beautifully designed tools like calculators, converters, and timers to make your daily tasks simpler and more efficient."
+    />
+
+    <meta
+      name="keywords"
+      content="DoooKit, calculator, unit converter, PX converter, color tool, productivity web tools, minimalist design"
+    />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DoooKit" />
+    <meta
+      property="og:description"
+      content="A curated collection of minimalist, user-friendly tools like calculators, unit converters, and color pickers – all in one place."
+    />
+
+    <meta property="og:image" content="/public/assets/images/og/og-image-en.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.doookit.com" />
+    <meta property="og:site_name" content="DoooKit" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DoooKit" />
+    <meta
+      name="twitter:description"
+      content="Explore practical tools like calculators, PX to REM converters, and timers in a clean, minimalist design with DoooKit."
+    />
+
+    <meta name="twitter:image" content="/public/assets/images/og/og-image-en.jpg" />
+    <meta name="twitter:url" content="https://www.doookit.com" />
+    <meta name="twitter:site" content="@jgw_vito" />
 
     <link rel="stylesheet" href="/src/styles/main.scss" />
+    <link rel="stylesheet" href="./index.scss" />
+
+    <link rel="icon" href="/public/assets/images/favicon.png" />
 
     <script type="module" src="./index.ts"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+
+    <!-- Main -->
+    <main>
+      <!-- Intro Section -->
+      <section class="intro">
+        <article>
+          <h1>A minimal toolkit filled with useful everyday tools.</h1>
+          <p>DoooKit helps you do more — from calculations to conversions — in a simple, calming interface</p>
+          <a href="#tools">
+            <button>Explore Tools</button>
+          </a>
+        </article>
+
+        <div class="background-wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path
+              d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              fill="url(#hero-gradient)"
+              class="transform translate-y-1/4"
+            ></path>
+            <defs>
+              <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6EE7B7"></stop>
+                <stop offset="50%" stop-color="#34D399"></stop>
+                <stop offset="100%" stop-color="#10B981"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Tools Section -->
+      <section id="tools" aria-labelledby="tools-heading">
+        <article>
+          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
+          <div>
+            <header>
+              <h2>Our Tools</h2>
+              <p>Simple, focused tools designed to make your everyday tasks easier and more enjoyable.</p>
+            </header>
+
+            <ul class="tool-list">
+              <li>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Calculator Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/assets/icons/calculator.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
+                  <span>Calculator</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Unit Converter Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/assets/icons/unit_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
+                  <span>Unit Converter</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="BMI Calculator Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/assets/icons/bmi_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
+                  <span>BMI Calculator</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Timer & Stopwatch Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/assets/icons/timer_and_stopwatch.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
+                  <span>Timer & Stopwatch</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="Color Converter Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/assets/icons/color_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
+                  <span>Color Converter</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="tool-buttons" aria-label="PX Converter Tool">
+                  <div class="icon-box">
+                    <img
+                      src="/public/assets/icons/px_converter.svg"
+                      alt=""
+                      aria-hidden="true"
+                      style="width: 3rem; height: 3rem"
+                    />
+                  </div>
+                  <span>PX Converter</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" aria-labelledby="about-heading">
+        <article>
+          <header>
+            <h2>What is DoooKit?</h2>
+          </header>
+
+          <ul class="features-grid">
+            <li>
+              <article class="feature-card" aria-labelledby="feature-minimal">
+                <header>
+                  <div aria-hidden="true">✨</div>
+                  <h3 id="feature-minimal">Minimal Design</h3>
+                </header>
+                <p>
+                  Clean interfaces that focus on what matters, reducing cognitive load and making tools a joy to use.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article class="feature-card" aria-labelledby="feature-digital-friendly">
+                <header>
+                  <div aria-hidden="true">💻</div>
+                  <h3 id="feature-digital-friendly">Digital-Friendly Tools</h3>
+                </header>
+                <p>
+                  Purpose-built utilities for modern digital work, from color conversion to pixel-perfect measurements.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article class="feature-card" aria-labelledby="feature-brand-consistency">
+                <header>
+                  <div aria-hidden="true">🎨</div>
+                  <h3 id="feature-brand-consistency">Brand Consistency</h3>
+                </header>
+                <p>A cohesive experience across all tools, with thoughtful interactions and visual harmony.</p>
+              </article>
+            </li>
+
+            <li>
+              <article class="feature-card" aria-labelledby="feature-fully-responsive">
+                <header>
+                  <div aria-hidden="true">📱</div>
+                  <h3 id="feature-fully-responsive">Fully Responsive</h3>
+                </header>
+                <p>Works beautifully on all your devices, from desktop workstations to mobile phones.</p>
+              </article>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <article>
+          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

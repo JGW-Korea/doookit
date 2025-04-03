@@ -1,0 +1,25 @@
+section#about {
+  & > article {
+    & > header {
+      padding-bottom: 2.5rem;
+    }
+
+    & > ul.features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem;
+    }
+  }
+}
+
+// 모바일 비율 헤더 영역
+@media (max-width: 768px) {
+  section#about {
+    & > article {
+      & > ul.features-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use "../utils/variable" as *;
+
+a.tool-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  & > div.icon-box {
+    margin: 0 auto;
+    border-radius: 0.75rem;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: 0.3s, cubic-bezier(0.4, 0, 0.2, 1);
+
+    & + span {
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.5rem;
+    }
+  }
+
+  &:hover > div.icon-box {
+    transform: scale(1.05);
+    box-shadow:
+      0 11.7px 16.7px -3.3px rgba(0, 0, 0, 0.1),
+      0 4.7px 6.7px -4.35px rgba(0, 0, 0, 0.05);
+  }
+}
+
+// 데스크탑 비율 헤더 영역
+@media (min-width: 1024px) {
+  a.tool-buttons {
+    & > div.icon-box {
+      width: 6rem;
+      height: 6rem;
+
+      & > img {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+// 데스크탑 & 모바일 비율 헤더 영역
+@media (max-width: 768px) or ((min-width: 768px) and (max-width: 1023px)) {
+  a.tool-buttons {
+    & > div.icon-box {
+      width: 5rem;
+      height: 5rem;
+
+      & > img {
+        width: 2.25rem !important;
+      }
+    }
+  }
+}
