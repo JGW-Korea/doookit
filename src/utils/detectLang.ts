@@ -8,14 +8,13 @@ function getBrowserLang(): string {
   return supportedLangs.includes(langCode) ? langCode : "en";
 }
 
-// 언어 자동 리디렉션: /calc → /ko/tools/calc
-function redirectToLocalizedTool(tool: string) {
-  const lang = getBrowserLang();
-  const redirectUrl = lang === "en" ? `/tools/${tool}` : `/${lang}/tools/${tool}`;
-  location.replace(redirectUrl);
+// 언어 기반 도구 경로 리디렉션
+function redirectToLocalizedTool(tool: string, lang: string) {
+  const url = lang === "en" ? `/tools/${tool}` : `/${lang}/tools/${tool}`;
+  location.replace(url);
 }
 
-// /{lang}/{tool} → /{lang}/tools/{tool}
+// 도구명 포함한 언어 경로 리디렉션
 function redirectToLangTools(lang: string, tool: string) {
   location.replace(`/${lang}/tools/${tool}`);
 }
@@ -28,61 +27,56 @@ function redirectTo404() {
 
 // ✅ 메인 실행
 if (isProduction) {
-  const browserLang = getBrowserLang();
-
   console.log("Hello");
 
-  // 1. 루트 또는 index.html 접근 시 → /ko, /fr 등으로 이동
-  if (location.pathname === "/" || location.pathname === "/index.html") {
-    if (browserLang !== "en") {
-      location.replace(`/${browserLang}`);
-    }
-  } else {
-    const segments = location.pathname.split("/").filter(Boolean);
-    const [first, second, third, ...rest] = segments;
+  const lang = getBrowserLang();
+  const path = location.pathname;
+  const segments = path.split("/").filter(Boolean);
+  const [first, second, third, ...rest] = segments;
 
-    // 2. /calc → /ko/tools/calc
+  // ✅ 무조건 브라우저 언어 기준으로 덮어씌우기
+  // 1. 브라우저 언어와 맞지 않으면 리디렉션
+  if (lang !== "en" && (!first || first !== lang)) {
+    // 도구 경로가 있는 경우
     if (toolPaths.includes(first)) {
-      redirectToLocalizedTool(first);
+      redirectToLocalizedTool(first, lang);
     }
 
-    // 3. /tools/calc → /ko/tools/calc
-    else if (first === "tools" && toolPaths.includes(second)) {
-      redirectToLocalizedTool(second);
+    // /tools/calc → /{lang}/tools/calc
+    if (first === "tools" && toolPaths.includes(second)) {
+      redirectToLocalizedTool(second, lang);
     }
 
-    // 4. /{lang}/tools/{tool} → 정상 경로 or /404
-    else if (supportedLangs.includes(first) && second === "tools" && toolPaths.includes(third)) {
-      if (rest.length > 0) {
-        redirectTo404(); // ex: /ko/tools/calc/asd → 404
-      }
-      // else: 정상 경로 → 유지
+    // /en, /fr, /it 등 언어 루트만 있을 경우
+    if (supportedLangs.includes(first) && !second) {
+      location.replace(`/${lang}`);
     }
 
-    // 5. /{lang}/{tool} → /{lang}/tools/{tool}
-    else if (supportedLangs.includes(first) && toolPaths.includes(second)) {
-      redirectToLangTools(first, second);
+    // /{lang}/{tool} → /{lang}/tools/{tool}
+    if (supportedLangs.includes(first) && toolPaths.includes(second)) {
+      redirectToLangTools(lang, second);
     }
 
-    // ✅ 6. /{lang} 만 있는 경우 → 지역화 홈 → 유지
-    else if (supportedLangs.includes(first) && !second) {
-      // ex: /ko → /i18n/ko/index.html (정상 경로니까 유지)
-    }
+    // 나머지도 전부 강제 리디렉션
+    location.replace(`/${lang}`);
+  }
 
-    // 7. /{lang}/tools → 도구 없음 → 404
-    else if (supportedLangs.includes(first) && second === "tools" && !toolPaths.includes(third)) {
+  // ✅ 이제 브라우저 언어와 일치하는 상태에서 → 경로 검사
+  // ex: /ko/tools/calc/asd → 404
+  if (supportedLangs.includes(first) && second === "tools" && toolPaths.includes(third)) {
+    if (rest.length > 0) {
       redirectTo404();
     }
+  }
 
-    // 8. /{lang}/{invalid} → 404
-    else if (supportedLangs.includes(first) && second && !toolPaths.includes(second)) {
-      redirectTo404();
-    }
+  // /{lang}/tools → 도구 없음 → 404
+  if (supportedLangs.includes(first) && second === "tools" && !toolPaths.includes(third)) {
+    redirectTo404();
+  }
 
-    // 9. 그 외 모두 404
-    else {
-      redirectTo404();
-    }
+  // /{lang}/{invalid} → 404
+  if (supportedLangs.includes(first) && second && !toolPaths.includes(second)) {
+    redirectTo404();
   }
 }
 
