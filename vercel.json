@@ -1,35 +1,32 @@
 {
+  "redirects": [
+    { "source": "/calc", "destination": "/tools/calc", "permanent": true },
+    { "source": "/converter", "destination": "/tools/converter", "permanent": true },
+    { "source": "/bmi", "destination": "/tools/bmi", "permanent": true },
+    { "source": "/timer", "destination": "/tools/timer", "permanent": true },
+    { "source": "/color-picker", "destination": "/tools/color-picker", "permanent": true },
+    { "source": "/px-converter", "destination": "/tools/px-converter", "permanent": true }
+  ],
+
   "rewrites": [
-    { "source": "/ads.txt", "destination": "/ads.txt" },
-
     { "source": "/", "destination": "/index.html" },
+
+    { "source": "/tools/calc", "destination": "/pages/calculator/index.html" },
     { "source": "/tools/calc/", "destination": "/pages/calculator/index.html" },
-    { "source": "/tools/converter/", "destination": "/pages/color-converter/index.html" },
-    { "source": "/tools/bmi/", "destination": "/pages/calculator/index.html" },
-    { "source": "/tools/timer/:path*", "destination": "/pages/calculator/index.html" },
-    { "source": "/tools/color-picker/:path*", "destination": "/pages/calculator/index.html" },
-    { "source": "/tools/px-converter/:path*", "destination": "/pages/calculator/index.html" },
 
-    { "source": "/ko/", "destination": "/i18n/ko/index.html" },
+    { "source": "/tools/converter", "destination": "/pages/unit-converter/index.html" },
+    { "source": "/tools/converter/", "destination": "/pages/unit-converter/index.html" },
 
-    { "source": "/ja", "destination": "/i18n/ja/index.html" },
+    { "source": "/tools/bmi", "destination": "/pages/bmi-calculator/index.html" },
+    { "source": "/tools/bmi/", "destination": "/pages/bmi-calculator/index.html" },
 
-    { "source": "/fr", "destination": "/i18n/fr/index.html" },
-    { "source": "/fr/", "destination": "/i18n/fr/index.html" },
+    { "source": "/tools/timer", "destination": "/pages/timer-stopwatch/index.html" },
+    { "source": "/tools/timer/", "destination": "/pages/timer-stopwatch/index.html" },
 
-    { "source": "/it", "destination": "/i18n/it/index.html" },
-    { "source": "/it/", "destination": "/i18n/it/index.html" },
+    { "source": "/tools/color-picker", "destination": "/pages/color-converter/index.html" },
+    { "source": "/tools/color-picker/", "destination": "/pages/color-converter/index.html" },
 
-    { "source": "/es", "destination": "/i18n/es/index.html" },
-    { "source": "/es/", "destination": "/i18n/es/index.html" },
-
-    { "source": "/de", "destination": "/i18n/de/index.html" },
-    { "source": "/de/", "destination": "/i18n/de/index.html" },
-
-    { "source": "/zh", "destination": "/i18n/zh/index.html" },
-    { "source": "/zh/", "destination": "/i18n/zh/index.html" },
-
-    { "source": "/hi", "destination": "/i18n/hi/index.html" },
-    { "source": "/hi/", "destination": "/i18n/hi/index.html" }
+    { "source": "/tools/px-converter", "destination": "/pages/px-converter/index.html" },
+    { "source": "/tools/px-converter/", "destination": "/pages/px-converter/index.html" }
   ]
 }
