@@ -28,6 +28,10 @@ footer {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
 
+          & > picture {
+            height: 1.5rem;
+          }
+
           & > span {
             margin-top: 0.25rem;
           }
