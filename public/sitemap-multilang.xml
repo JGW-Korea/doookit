@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- main -->
+  <url>
+    <loc>https://www.doookit.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/" />
+  </url>
+
+  <!-- calc -->
+  <url>
+    <loc>https://www.doookit.com/tools/calc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh/tools/calc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/tools/calc" />
+  </url>
+
+  <!-- converter -->
+  <url>
+    <loc>https://www.doookit.com/tools/converter</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh/tools/converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/tools/converter" />
+  </url>
+
+  <!-- bmi -->
+  <url>
+    <loc>https://www.doookit.com/tools/bmi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh/tools/bmi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/tools/bmi" />
+  </url>
+
+  <!-- timer -->
+  <url>
+    <loc>https://www.doookit.com/tools/timer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh/tools/timer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/tools/timer" />
+  </url>
+
+  <!-- color-picker -->
+  <url>
+    <loc>https://www.doookit.com/tools/color-picker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh/tools/color-picker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/tools/color-picker" />
+  </url>
+
+  <!-- px-converter -->
+  <url>
+    <loc>https://www.doookit.com/tools/px-converter</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.doookit.com/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.doookit.com/de/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.doookit.com/es/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.doookit.com/fr/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.doookit.com/hi/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.doookit.com/it/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.doookit.com/ja/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.doookit.com/ko/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.doookit.com/zh/tools/px-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.doookit.com/tools/px-converter" />
+  </url>
+
+</urlset>
