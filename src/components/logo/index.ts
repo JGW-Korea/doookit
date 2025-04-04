@@ -9,8 +9,8 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
   }
 
   render(): void {
-    this.el.setAttribute("href", "/");
-    this.el.setAttribute("aria-label", "DoooKit 메인 페이지로 이동");
+    this.el.href = "/";
+    this.el.ariaLabel = this.props.ariaLabel;
 
     const h1El = document.createElement("h1");
     const pictureEl = document.createElement("picture");

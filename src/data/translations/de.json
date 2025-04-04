@@ -1,7 +1,11 @@
 {
   "header": {
-    "main": {
-      "nav": ["Tools", "About"]
+    "a": {
+      "ariaLabel": "Zur DoooKit-Startseite gehen"
+    },
+    "nav": {
+      "items": ["Werkzeuge", "Über"],
+      "ariaLabel": "Hauptnavigation"
     }
   }
 }

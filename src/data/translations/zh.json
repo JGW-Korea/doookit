@@ -1,7 +1,11 @@
 {
   "header": {
-    "main": {
-      "nav": ["Tools", "About"]
+    "a": {
+      "ariaLabel": "前往 DoooKit 主页"
+    },
+    "nav": {
+      "items": ["工具", "关于"],
+      "ariaLabel": "主导航"
     }
   }
 }

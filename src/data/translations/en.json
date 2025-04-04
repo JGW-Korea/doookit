@@ -1,7 +1,11 @@
 {
   "header": {
-    "main": {
-      "nav": ["Tools", "About"]
+    "a": {
+      "ariaLabel": "Go to DoooKit main page"
+    },
+    "nav": {
+      "items": ["Tools", "About"],
+      "ariaLabel": "Main navigation"
     }
   }
 }

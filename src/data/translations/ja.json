@@ -1,7 +1,11 @@
 {
   "header": {
-    "main": {
-      "nav": ["Tools", "About"]
+    "a": {
+      "ariaLabel": "DoooKit のメインページへ移動"
+    },
+    "nav": {
+      "items": ["ツール", "紹介"],
+      "ariaLabel": "メインナビゲーション"
     }
   }
 }
