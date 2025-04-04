@@ -70,9 +70,7 @@
           <p>
             DoooKit vous aide à en faire plus — des calculs aux conversions — dans une interface simple et apaisante.
           </p>
-          <a href="#tools">
-            <button>Découvrir les outils</button>
-          </a>
+          <a href="#tools">Découvrir les outils</a>
         </article>
 
         <div class="background-wave" aria-hidden="true">
@@ -96,88 +94,96 @@
       <!-- Tools Section -->
       <section id="tools" aria-labelledby="tools-heading">
         <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
+          <aside role="complementary" aria-label="Publicité">
+            Google AdSense
+            <!-- <ins
+              class="adsbygoogle"
+              style="display: block; text-align: center; margin: 2rem auto"
+              data-ad-client="ca-pub-4824980499128518"
+              data-ad-slot="TODO_REPLACE_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> -->
+          </aside>
+
           <div>
             <header>
-              <h2>Nos outils</h2>
+              <h2 id="tools-heading">Nos outils</h2>
               <p>Des outils simples et ciblés conçus pour faciliter et enrichir vos tâches quotidiennes.</p>
             </header>
 
             <ul class="tool-list">
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Calculator Tool">
+                <a href="/calc" class="tool-buttons" aria-label="Outil : Calculatrice">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/calculator.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/calculator.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>Calculatrice</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Unit Converter Tool">
+                <a href="/converter" class="tool-buttons" aria-label="Outil : Convertisseur d'unités">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/unit_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>Convertisseur d'unités</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="BMI Calculator Tool">
+                <a href="/bmi" class="tool-buttons" aria-label="Outil : Calculateur d'IMC">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/bmi_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>Calculateur d'IMC</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Timer & Stopwatch Tool">
+                <a href="/timer" class="tool-buttons" aria-label="Outil : Minuteur et chronomètre">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/timer_and_stopwatch.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>Minuteur & Chronomètre</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Color Converter Tool">
+                <a href="/color-picker" class="tool-buttons" aria-label="Outil : Convertisseur de couleurs">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/color_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>Convertisseur de couleurs</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="PX Converter Tool">
+                <a href="/px-converter" class="tool-buttons" aria-label="Outil : Convertisseur PX">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/px_converter.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/px_converter.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>Convertisseur PX</span>
                 </a>
@@ -191,7 +197,7 @@
       <section id="about" aria-labelledby="about-heading">
         <article>
           <header>
-            <h2>Qu’est-ce que DoooKit ?</h2>
+            <h2 id="about-heading">Qu’est-ce que DoooKit ?</h2>
           </header>
 
           <ul class="features-grid">
@@ -246,12 +252,23 @@
           </ul>
         </article>
       </section>
-
-      <section>
-        <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
-        </article>
-      </section>
     </main>
+
+    <article aria-label="Publicité sponsorisée" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="Publicité">
+        Google AdSense
+        <!-- <ins
+              class="adsbygoogle"
+              style="display: block; text-align: center; margin: 2rem auto; height: 90px"
+              data-ad-client="ca-pub-4824980499128518"
+              data-ad-slot="TODO_REPLACE_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> -->
+      </aside>
+    </article>
   </body>
 </html>

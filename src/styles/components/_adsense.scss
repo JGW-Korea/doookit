@@ -1,6 +1,6 @@
 @use "../utils/variable" as *;
 
-article[aria-label="Sponsored Advertisement"] {
+article.adsense-container {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 

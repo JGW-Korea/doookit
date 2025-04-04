@@ -67,9 +67,7 @@
         <article>
           <h1>एक न्यूनतम टूलकिट जिसमें रोज़मर्रा के उपयोगी टूल्स भरे हुए हैं।</h1>
           <p>DoooKit आपकी मदद करता है अधिक करने में — गणनाओं से लेकर कनवर्ज़न तक — एक सरल और शांत इंटरफ़ेस में।</p>
-          <a href="#tools">
-            <button>टूल्स एक्सप्लोर करें</button>
-          </a>
+          <a href="#tools">टूल्स एक्सप्लोर करें</a>
         </article>
 
         <div class="background-wave" aria-hidden="true">
@@ -93,88 +91,96 @@
       <!-- Tools Section -->
       <section id="tools" aria-labelledby="tools-heading">
         <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
+          <aside role="complementary" aria-label="विज्ञापन">
+            Google AdSense
+            <!-- <ins
+              class="adsbygoogle"
+              style="display: block; text-align: center; margin: 2rem auto"
+              data-ad-client="ca-pub-4824980499128518"
+              data-ad-slot="TODO_REPLACE_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> -->
+          </aside>
+
           <div>
             <header>
-              <h2>हमारे टूल्स</h2>
+              <h2 id="tools-heading">हमारे टूल्स</h2>
               <p>सरल और केंद्रित टूल्स जो आपके रोजमर्रा के कार्यों को आसान और सुखद बनाते हैं।</p>
             </header>
 
             <ul class="tool-list">
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Calculator Tool">
+                <a href="/calc" class="tool-buttons" aria-label="कैलकुलेटर टूल">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/calculator.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/calculator.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>कैलकुलेटर</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Unit Converter Tool">
+                <a href="/converter" class="tool-buttons" aria-label="यूनिट कनवर्टर टूल">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/unit_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>कैलकुलेटर</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="BMI Calculator Tool">
+                <a href="/bmi" class="tool-buttons" aria-label="बीएमआई कैलकुलेटर टूल">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/bmi_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>BMI कैलकुलेटर</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Timer & Stopwatch Tool">
+                <a href="/timer" class="tool-buttons" aria-label="टाइमर और स्टॉपवॉच टूल">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/timer_and_stopwatch.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>टाइमर और स्टॉपवॉच</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Color Converter Tool">
+                <a href="/color-picker" class="tool-buttons" aria-label="रंग कनवर्टर टूल">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/color_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>रंग कनवर्टर</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="PX Converter Tool">
+                <a href="/px-converter" class="tool-buttons" aria-label="पीएक्स कनवर्टर टूल">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/px_converter.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/px_converter.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>PX कनवर्टर</span>
                 </a>
@@ -188,7 +194,7 @@
       <section id="about" aria-labelledby="about-heading">
         <article>
           <header>
-            <h2>DoooKit क्या है?</h2>
+            <h2 id="about-heading">DoooKit क्या है?</h2>
           </header>
 
           <ul class="features-grid">
@@ -237,12 +243,23 @@
           </ul>
         </article>
       </section>
-
-      <section>
-        <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
-        </article>
-      </section>
     </main>
+
+    <article aria-label="प्रायोजित विज्ञापन" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="विज्ञापन">
+        Google AdSense
+        <!-- <ins
+              class="adsbygoogle"
+              style="display: block; text-align: center; margin: 2rem auto; height: 90px"
+              data-ad-client="ca-pub-4824980499128518"
+              data-ad-slot="TODO_REPLACE_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> -->
+      </aside>
+    </article>
   </body>
 </html>
