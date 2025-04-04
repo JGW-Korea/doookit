@@ -1,0 +1,9 @@
+export { default as EnglishTranslation } from "./translations/en.json";
+export { default as Deutschlandranslation } from "./translations/de.json";
+export { default as EspanaTranslation } from "./translations/es.json";
+export { default as FranceTranslation } from "./translations/fr.json";
+export { default as HindiTranslation } from "./translations/hi.json";
+export { default as ItalianTranslation } from "./translations/it.json";
+export { default as JapanTranslation } from "./translations/ja.json";
+export { default as KoreaTranslation } from "./translations/ko.json";
+export { default as ChineseTranslation } from "./translations/zh.json";
