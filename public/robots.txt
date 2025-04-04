@@ -1,0 +1,13 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.doookit.com/sitemap-en.xml
+Sitemap: https://www.doookit.com/sitemap-de.xml
+Sitemap: https://www.doookit.com/sitemap-es.xml
+Sitemap: https://www.doookit.com/sitemap-fr.xml
+Sitemap: https://www.doookit.com/sitemap-hi.xml
+Sitemap: https://www.doookit.com/sitemap-it.xml
+Sitemap: https://www.doookit.com/sitemap-ja.xml
+Sitemap: https://www.doookit.com/sitemap-ko.xml
+Sitemap: https://www.doookit.com/sitemap-zh.xml
+Sitemap: https://www.doookit.com/sitemap-multilang.xml

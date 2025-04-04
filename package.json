@@ -11,8 +11,8 @@
     "url": "https://github.com/console-log-study/simple_utility_tools"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html ./src/404.html ./src/i18n/ko/index.html ./src/i18n/ja/index.html ./src/i18n/zh/index.html ./src/i18n/fr/index.html ./src/i18n/it/index.html ./src/i18n/es/index.html ./src/i18n/de/index.html ./src/i18n/hi/index.html",
-    "build": "parcel build ./src/index.html ./src/404.html ./src/i18n/ko/index.html ./src/i18n/ja/index.html ./src/i18n/zh/index.html ./src/i18n/fr/index.html ./src/i18n/it/index.html ./src/i18n/es/index.html ./src/i18n/de/index.html ./src/i18n/hi/index.html --dist-dir dist --public-url ./ --no-cache --log-level verbose && cp public/ads.txt dist/",
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url ./ --no-cache --log-level verbose && cp public/ads.txt public/robots.txt public/sitemap-*.xml dist/",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit"
   },

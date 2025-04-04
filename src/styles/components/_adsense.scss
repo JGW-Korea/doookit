@@ -1,11 +1,22 @@
 @use "../utils/variable" as *;
 
-div[role="complementary"] {
-  text-align: center;
-  color: $font-color-gray-light;
-  border: 3px dotted $border-gray;
-  border-radius: 0.5rem;
-  background-color: $color-white;
-  padding: 1rem;
-  max-height: 3.5rem;
+article[aria-label="Sponsored Advertisement"] {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  &.bg-gray-light {
+    background-color: $color-gray-light;
+  }
+
+  @at-root aside[role="complementary"] {
+    max-width: 64rem;
+    text-align: center;
+    color: $font-color-gray-light;
+    border: 3px dotted $border-gray;
+    border-radius: 0.5rem;
+    background-color: $color-white;
+    padding: 1rem;
+    max-height: 3.5rem;
+    margin: 0 auto;
+  }
 }

@@ -10,6 +10,7 @@ main > section.intro {
     & > h1 {
       color: $font-color-charocal;
       font-weight: 700;
+
       margin-bottom: 1.5rem;
     }
 
@@ -20,8 +21,10 @@ main > section.intro {
       font-weight: 500;
     }
 
-    & > a > button {
-      padding: 0.75rem 1.5rem;
+    & > a {
+      display: inline-block;
+
+      padding: 0.85rem 1.5rem 0.75rem;
       border-radius: 9999px;
       border: 0;
       background: linear-gradient(to right, #34d399, #059669);
