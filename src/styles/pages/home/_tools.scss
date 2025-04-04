@@ -47,11 +47,9 @@ main > section#tools {
 @media (max-width: 768px) or ((min-width: 768px) and (max-width: 1023px)) {
   main > section#tools {
     & > article {
-      & > div {
-        & > ul {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 1.5rem;
-        }
+      & > div > nav > ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
       }
     }
   }

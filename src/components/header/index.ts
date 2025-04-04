@@ -45,6 +45,7 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
       imgEl.src = arrowLeft;
       aEl.classList.add("arrow");
       aEl.appendChild(imgEl);
+      aEl.ariaLabel = currentLanguage["header"].nav.ariaLabel;
       this.el.classList.add("non-main");
       this.el.append(aEl, logo);
     }

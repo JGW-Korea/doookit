@@ -1,8 +1,8 @@
 @use "../utils/variable" as *;
 
 article.adsense-container {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  // padding: 2.5rem;
 
   &.bg-gray-light {
     background-color: $color-gray-light;
