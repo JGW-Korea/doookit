@@ -1,5 +1,4 @@
 import { en, de, es, fr, hi, it, ja, ko, zh } from "../../data";
-
 import { Component, ComponentDataType } from "../../utils/Component";
 import Logo from "../logo";
 import Nav from "../nav";
@@ -32,10 +31,22 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
       });
 
       this.el.append(logo, navEl.el);
+    }
 
-      // currentLanguage["header"].main.nav.forEach((list) => {
-      //   console.log(list);
-      // });
+    // 헤더의 위치가 메인 페이지가 아닐 경우
+    else {
+      // const icon = new URL(arrowLeft, import.meta.url);
+      // console.log(arrowLeft);
+      const arrowLeft = new URL("../../assets/icons/arrow-left.svg", import.meta.url).href;
+
+      const aEl = document.createElement("a");
+      aEl.href = "/";
+      const imgEl = document.createElement("img");
+      imgEl.src = arrowLeft;
+      aEl.classList.add("arrow");
+      aEl.appendChild(imgEl);
+      this.el.classList.add("non-main");
+      this.el.append(aEl, logo);
     }
 
     // this.el.appendChild(new Logo({ props: { tag: "header" } }).el);

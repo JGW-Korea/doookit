@@ -11,6 +11,7 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
   render(): void {
     this.el.href = "/";
     this.el.ariaLabel = this.props.ariaLabel;
+    this.el.classList.add("logo");
 
     const h1El = document.createElement("h1");
     const pictureEl = document.createElement("picture");
