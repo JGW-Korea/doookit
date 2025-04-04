@@ -21,12 +21,12 @@
       content="一套精心策划的极简、用户友好型工具集合，包括计算器、单位转换器和颜色选择器，一站式解决。"
     />
 
-    <meta property="og:image" content="/public/assets/images/og/og-image-en.jpg" />
+    <meta property="og:image" content="/public/assets/images/og/og-image-zh.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://www.doookit.com/zh" />
     <meta property="og:site_name" content="DoooKit" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="zh_CN" />
 
     <!-- Twitter Card Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +36,7 @@
       content="通过 DoooKit 探索实用工具，如计算器、PX 转 REM 转换器和计时器，享受简洁优雅的设计体验。"
     />
 
-    <meta name="twitter:image" content="/public/assets/images/og/og-image-en.jpg" />
+    <meta name="twitter:image" content="/public/assets/images/og/og-image-zh.jpg" />
     <meta name="twitter:url" content="https://www.doookit.com/zh" />
     <meta name="twitter:site" content="@jgw_vito" />
 
@@ -64,9 +64,7 @@
         <article>
           <h1>一个汇集日常实用工具的极简工具包。</h1>
           <p>DoooKit 帮助你完成更多任务——从计算到转换，一切都在一个简洁、舒适的界面中完成。</p>
-          <a href="#tools">
-            <button>探索工具</button>
-          </a>
+          <a href="#tools">探索工具</a>
         </article>
 
         <div class="background-wave" aria-hidden="true">
@@ -90,7 +88,21 @@
       <!-- Tools Section -->
       <section id="tools" aria-labelledby="tools-heading">
         <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
+          <aside role="complementary" aria-label="广告">
+            Google AdSense
+            <!-- <ins
+                class="adsbygoogle"
+                style="display: block; text-align: center; margin: 2rem auto"
+                data-ad-client="ca-pub-4824980499128518"
+                data-ad-slot="TODO_REPLACE_SLOT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script> -->
+          </aside>
+
           <div>
             <header>
               <h2>我们的工具</h2>
@@ -99,79 +111,73 @@
 
             <ul class="tool-list">
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Calculator Tool">
+                <a href="/calc" class="tool-buttons" aria-label="工具：计算器">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/calculator.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/calculator.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>计算器</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Unit Converter Tool">
+                <a href="/converter" class="tool-buttons" aria-label="工具：单位转换器">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/unit_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>单位转换器</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="BMI Calculator Tool">
+                <a href="/bmi" class="tool-buttons" aria-label="工具：BMI 计算器">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/bmi_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>BMI 计算器</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Timer & Stopwatch Tool">
+                <a href="/timer" class="tool-buttons" aria-label="工具：计时器与秒表">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/timer_and_stopwatch.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>计时器与秒表</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Color Converter Tool">
+                <a href="/color-picker" class="tool-buttons" aria-label="工具：颜色转换器">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/color_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>颜色转换器</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="PX Converter Tool">
+                <a href="/px-converter" class="tool-buttons" aria-label="工具：PX 转换器">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/px_converter.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/px_converter.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>PX 转换器</span>
                 </a>
@@ -185,7 +191,7 @@
       <section id="about" aria-labelledby="about-heading">
         <article>
           <header>
-            <h2>DoooKit 是什么？</h2>
+            <h2 id="about-heading">DoooKit 是什么？</h2>
           </header>
 
           <ul class="features-grid">
@@ -232,11 +238,22 @@
         </article>
       </section>
 
-      <section>
-        <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
-        </article>
-      </section>
+      <article aria-label="赞助广告" class="adsense-container bg-gray-light">
+        <aside role="complementary" aria-label="广告">
+          Google AdSense
+          <!-- <ins
+                class="adsbygoogle"
+                style="display: block; text-align: center; margin: 2rem auto; height: 90px"
+                data-ad-client="ca-pub-4824980499128518"
+                data-ad-slot="TODO_REPLACE_SLOT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script> -->
+        </aside>
+      </article>
     </main>
   </body>
 </html>

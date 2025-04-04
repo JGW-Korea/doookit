@@ -21,12 +21,12 @@
       content="계산기, 단위 변환기, 색상 선택기 등 미니멀하고 사용하기 쉬운 도구들을 한곳에 모은 큐레이션 도구 모음입니다."
     />
 
-    <meta property="og:image" content="/public/assets/images/og/og-image-en.jpg" />
+    <meta property="og:image" content="/public/assets/images/og/og-image-ko.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://www.doookit.com/ko" />
     <meta property="og:site_name" content="DoooKit" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="ko_KR" />
 
     <!-- Twitter Card Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +36,7 @@
       content="DoooKit에서 PX to REM 변환기, 타이머 등 실용적인 도구들을 미니멀하고 깔끔한 디자인으로 만나보세요."
     />
 
-    <meta name="twitter:image" content="/public/assets/images/og/og-image-en.jpg" />
+    <meta name="twitter:image" content="/public/assets/images/og/og-image-ko.jpg" />
     <meta name="twitter:url" content="https://www.doookit.com/ko" />
     <meta name="twitter:site" content="@jgw_vito" />
 
@@ -64,9 +64,7 @@
         <article>
           <h1>일상에 꼭 필요한 도구들이 담긴 미니멀한 툴킷</h1>
           <p>DoooKit은 계산부터 변환까지, 단순하고 편안한 인터페이스로 당신의 작업을 더 많이, 더 쉽게 만들어줍니다.</p>
-          <a href="#tools">
-            <button>도구 살펴보기</button>
-          </a>
+          <a href="#tools">도구 살펴보기</a>
         </article>
 
         <div class="background-wave" aria-hidden="true">
@@ -90,88 +88,96 @@
       <!-- Tools Section -->
       <section id="tools" aria-labelledby="tools-heading">
         <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
+          <aside role="complementary" aria-label="광고">
+            Google AdSense
+            <!-- <ins
+                class="adsbygoogle"
+                style="display: block; text-align: center; margin: 2rem auto"
+                data-ad-client="ca-pub-4824980499128518"
+                data-ad-slot="TODO_REPLACE_SLOT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script> -->
+          </aside>
+
           <div>
             <header>
-              <h2>도구 모음</h2>
+              <h2 id="tools-heading">도구 모음</h2>
               <p>일상적인 작업을 더 쉽고 즐겁게 만들어주는 간단하고 집중된 도구들입니다.</p>
             </header>
 
             <ul class="tool-list">
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Calculator Tool">
+                <a href="/calc" class="tool-buttons" aria-label="도구: 계산기">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/calculator.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/calculator.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>계산기</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Unit Converter Tool">
+                <a href="/converter" class="tool-buttons" aria-label="도구: 단위 변환기">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/unit_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>단위 변환기</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="BMI Calculator Tool">
+                <a href="/bmi" class="tool-buttons" aria-label="도구: BMI 계산기">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/bmi_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>BMI 계산기</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Timer & Stopwatch Tool">
+                <a href="/timer" class="tool-buttons" aria-label="도구: 타이머 & 스톱워치">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/timer_and_stopwatch.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>타이머 & 스톱워치</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="Color Converter Tool">
+                <a href="/color-picker" class="tool-buttons" aria-label="도구: 색상 변환기">
                   <div class="icon-box">
                     <img
                       src="/public/assets/icons/color_converter.svg"
                       alt=""
                       aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
+                      width="48"
+                      height="48"
                     />
                   </div>
                   <span>색상 변환기</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0)" class="tool-buttons" aria-label="PX Converter Tool">
+                <a href="/px-converter" class="tool-buttons" aria-label="도구: PX 변환기">
                   <div class="icon-box">
-                    <img
-                      src="/public/assets/icons/px_converter.svg"
-                      alt=""
-                      aria-hidden="true"
-                      style="width: 3rem; height: 3rem"
-                    />
+                    <img src="/public/assets/icons/px_converter.svg" alt="" aria-hidden="true" width="48" height="48" />
                   </div>
                   <span>PX 변환기</span>
                 </a>
@@ -185,7 +191,7 @@
       <section id="about" aria-labelledby="about-heading">
         <article>
           <header>
-            <h2>DoooKit이란?</h2>
+            <h2 id="about-heading">DoooKit이란?</h2>
           </header>
 
           <ul class="features-grid">
@@ -234,12 +240,23 @@
           </ul>
         </article>
       </section>
-
-      <section>
-        <article>
-          <div role="complementary" aria-label="Advertisement">Google AdSense Advertisement</div>
-        </article>
-      </section>
     </main>
+
+    <article aria-label="스폰서 광고" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="광고">
+        Google AdSense
+        <!-- <ins
+              class="adsbygoogle"
+              style="display: block; text-align: center; margin: 2rem auto; height: 90px"
+              data-ad-client="ca-pub-4824980499128518"
+              data-ad-slot="TODO_REPLACE_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> -->
+      </aside>
+    </article>
   </body>
 </html>

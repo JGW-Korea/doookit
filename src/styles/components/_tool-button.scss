@@ -40,10 +40,6 @@ a.tool-buttons {
     & > div.icon-box {
       width: 6rem;
       height: 6rem;
-
-      & > img {
-        width: 3rem;
-      }
     }
   }
 }
@@ -56,7 +52,7 @@ a.tool-buttons {
       height: 5rem;
 
       & > img {
-        width: 2.25rem !important;
+        width: 2.25rem;
       }
     }
   }
