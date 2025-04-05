@@ -34,12 +34,5 @@ export default class Nav extends Component<ComponentDataType, NavProps> {
 
     this.el.ariaLabel = this.props.ariaLabel;
     this.el.appendChild(ulEl);
-
-    // this.props.forEach((prop) => {
-    //   console.log(prop);
-
-    //   // aEl.textContent = prop;
-    //   // console.log(aEl);
-    // });
   }
 }
