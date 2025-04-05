@@ -1,0 +1,11 @@
+{
+  "header": {
+    "a": {
+      "ariaLabel": "Ir a la página principal de DoooKit"
+    },
+    "nav": {
+      "items": ["Herramientas", "Acerca de"],
+      "ariaLabel": "Navegación principal"
+    }
+  }
+}

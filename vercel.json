@@ -75,6 +75,13 @@
   "rewrites": [
     { "source": "/404", "destination": "/404.html" },
     { "source": "/", "destination": "/index.html" },
+    { "source": "/calc", "destination": "/pages/calculator/index.html" },
+    { "source": "/converter", "destination": "/pages/unit-converter/index.html" },
+    { "source": "/bmi", "destination": "/pages/bmi-calculator/index.html" },
+    { "source": "/timer", "destination": "/pages/timer-stopwatch/index.html" },
+    { "source": "/color-picker", "destination": "/pages/color-converter/index.html" },
+    { "source": "/px-converter", "destination": "/pages/px-converter/index.html" },
+
     { "source": "/tools/calc", "destination": "/pages/calculator/index.html" },
     { "source": "/tools/converter", "destination": "/pages/unit-converter/index.html" },
     { "source": "/tools/bmi", "destination": "/pages/bmi-calculator/index.html" },

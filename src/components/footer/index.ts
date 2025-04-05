@@ -1,4 +1,7 @@
+import { langType, TranslationsTypes } from "../../types/translation";
 import { Component, ComponentDataType } from "../../utils/Component";
+import { isLangType } from "../../utils/typeCheck";
+import { en, de, es, fr, hi, it, ja, ko, zh } from "../../data";
 import Logo from "../logo";
 
 export default class Footer extends Component<ComponentDataType, ComponentDataType> {
@@ -14,7 +17,17 @@ export default class Footer extends Component<ComponentDataType, ComponentDataTy
     const copyrightEl = document.createElement("p");
     copyrightEl.textContent = "\u00A9 2025 DoooKit. All righs reserved.";
 
-    divEl.append(new Logo({ props: { tag: "footer" } }).el, copyrightEl);
+    // 지원하는 언어 중 하나를 가져온다.
+    const browserLang: string = navigator.language.split("-")[0];
+    const lang: langType = isLangType(browserLang) ? browserLang : "en";
+
+    const translations = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies TranslationsTypes;
+    const currentLanguage = translations[lang];
+
+    divEl.append(
+      new Logo({ props: { tag: "footer", ariaLabel: currentLanguage["header"].a.ariaLabel } }).el,
+      copyrightEl,
+    );
     containerEl.appendChild(divEl);
 
     const navEl = document.createElement("nav");

@@ -1,0 +1,11 @@
+{
+  "header": {
+    "a": {
+      "ariaLabel": "DoooKit 메인 페이지로 이동"
+    },
+    "nav": {
+      "items": ["도구 모음", "소개"],
+      "ariaLabel": "주요 탐색"
+    }
+  }
+}
