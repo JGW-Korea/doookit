@@ -1,7 +1,13 @@
 import { Component, ComponentDataType } from "../../utils/Component";
 
-export default class Logo extends Component<ComponentDataType, ComponentDataType> {
-  constructor(payload: { props: ComponentDataType }) {
+interface LogoProps {
+  [key: string]: unknown;
+  ariaLabel: string;
+  tag: string;
+}
+
+export default class Logo extends Component<ComponentDataType, LogoProps> {
+  constructor(payload: { props: LogoProps }) {
     super({
       tagName: "a",
       props: payload.props,
@@ -9,7 +15,8 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
   }
 
   render(): void {
-    this.el.href = "/";
+    if (this.el instanceof HTMLAnchorElement) this.el.href = "/";
+
     this.el.ariaLabel = this.props.ariaLabel;
     this.el.classList.add("logo");
 

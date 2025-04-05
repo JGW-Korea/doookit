@@ -2,6 +2,8 @@ import { en, de, es, fr, hi, it, ja, ko, zh } from "../../data";
 import { Component, ComponentDataType } from "../../utils/Component";
 import Logo from "../logo";
 import Nav from "../nav";
+import { langType, TranslationsTypes } from "../../types/translation";
+import { isLangType } from "../../utils/typeCheck";
 
 export default class Header extends Component<ComponentDataType, ComponentDataType> {
   constructor() {
@@ -12,10 +14,13 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
 
   render(): void {
     const type: boolean = location.pathname === "/"; // Main | Outer
-    const lang: string = navigator.language.split("-")[0] || "en"; // 브라우저 언어를 가져온다.
 
-    const country = { en, de, es, fr, hi, it, ja, ko, zh };
-    const currentLanguage = country[lang];
+    // 지원하는 언어 중 하나를 가져온다.
+    const browserLang: string = navigator.language.split("-")[0];
+    const lang: langType = isLangType(browserLang) ? browserLang : "en";
+
+    const translations = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies TranslationsTypes;
+    const currentLanguage = translations[lang];
 
     const logo = new Logo({ props: { tag: "header", ariaLabel: currentLanguage["header"].a.ariaLabel } }).el; // 타입에 상관없이 사용될 로고는 생성
 
@@ -35,8 +40,6 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
 
     // 헤더의 위치가 메인 페이지가 아닐 경우
     else {
-      // const icon = new URL(arrowLeft, import.meta.url);
-      // console.log(arrowLeft);
       const arrowLeft = new URL("../../assets/icons/arrow-left.svg", import.meta.url).href;
 
       const aEl = document.createElement("a");

@@ -1,7 +1,14 @@
 import { Component, ComponentDataType } from "../../utils/Component";
 
-export default class Nav extends Component<ComponentDataType, ComponentDataType> {
-  constructor(payload: { props: ComponentDataType }) {
+interface NavProps {
+  [key: string]: unknown;
+  type: "header" | "footer";
+  items: string[];
+  ariaLabel: string;
+}
+
+export default class Nav extends Component<ComponentDataType, NavProps> {
+  constructor(payload: { props: NavProps }) {
     super({
       tagName: "nav",
       props: payload.props,
