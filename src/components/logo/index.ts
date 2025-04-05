@@ -1,7 +1,13 @@
 import { Component, ComponentDataType } from "../../utils/Component";
 
-export default class Logo extends Component<ComponentDataType, ComponentDataType> {
-  constructor(payload: { props: ComponentDataType }) {
+interface LogoProps {
+  [key: string]: unknown;
+  ariaLabel: string;
+  tag: string;
+}
+
+export default class Logo extends Component<ComponentDataType, LogoProps> {
+  constructor(payload: { props: LogoProps }) {
     super({
       tagName: "a",
       props: payload.props,
@@ -9,8 +15,10 @@ export default class Logo extends Component<ComponentDataType, ComponentDataType
   }
 
   render(): void {
-    this.el.setAttribute("href", "/");
-    this.el.setAttribute("aria-label", "DoooKit 메인 페이지로 이동");
+    if (this.el instanceof HTMLAnchorElement) this.el.href = "/";
+
+    this.el.ariaLabel = this.props.ariaLabel;
+    this.el.classList.add("logo");
 
     const h1El = document.createElement("h1");
     const pictureEl = document.createElement("picture");

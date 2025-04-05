@@ -1,5 +1,8 @@
+// 섹션(Section) 단위 스타일
 @use "./styles/pages/home/intro";
 @use "./styles/pages/home/tools";
 @use "./styles/pages/home/about";
+
+// 유닛(Unit) 단위 스타일
 @use "./styles/components/tool-button";
 @use "./styles/components/feature";
