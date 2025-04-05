@@ -1,0 +1,124 @@
+@use "../../../styles/utils/variable" as *;
+@use "../../../styles/components/screenReader";
+
+.calculator-keypads {
+  padding: 1rem;
+
+  & > fieldset {
+    display: flex;
+    margin-bottom: 0.75rem;
+
+    & > div[role="radiogroup"] {
+      position: relative;
+
+      cursor: pointer;
+      display: flex;
+      background-color: #e5edff;
+      width: calc(11.5rem - 4px);
+      margin-right: 0.25rem;
+      line-height: calc(42px - (12px * 2));
+      border-radius: 9999px;
+      overflow: hidden;
+
+      & > label {
+        display: block;
+        text-align: center;
+
+        flex-grow: 1;
+
+        & + span {
+          position: absolute;
+          margin-top: 1px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: #638ed4;
+        }
+
+        &.keys {
+          border-radius: 0;
+          margin: 0;
+          background-color: inherit;
+
+          &:active {
+            box-shadow: none;
+          }
+        }
+
+        & > input[type="radio"] {
+          display: none;
+        }
+
+        & > input[type="radio"]:checked + .label-text {
+          font-weight: 700;
+          color: #0b57d0;
+        }
+      }
+
+      transition: 0.1s;
+
+      &:hover {
+        background-color: #d3e3fd;
+      }
+
+      &:active {
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      }
+    }
+
+    & .keys {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      margin-right: 0.25rem;
+
+      width: 5.5rem;
+      font-size: 0.75rem;
+
+      background-color: #e5edff;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      color: #001d35;
+
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #d3e3fd;
+      }
+
+      &.number {
+        background-color: #f3f5f6;
+        &:hover {
+          background-color: #dee1e3;
+        }
+      }
+
+      &:active {
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      }
+
+      &.equals {
+        background-color: #0b57d0;
+        color: #fff;
+
+        &:hover {
+          background-color: #4285f4;
+        }
+
+        &:active {
+          box-shadow:
+            0 1px 2px 0 rgba(66, 133, 244, 0.45),
+            0 3px 6px 2px rgba(66, 133, 244, 0.3);
+        }
+      }
+    }
+
+    & > legend {
+      @extend .sr-only;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

@@ -6,6 +6,9 @@
     "nav": {
       "items": ["ツール", "紹介"],
       "ariaLabel": "メインナビゲーション"
+    },
+    "arrow": {
+      "ariaLabel": "戻る（もどる）"
     }
   }
 }

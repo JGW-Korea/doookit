@@ -6,6 +6,9 @@
     "nav": {
       "items": ["도구 모음", "소개"],
       "ariaLabel": "주요 탐색"
+    },
+    "arrow": {
+      "ariaLabel": "뒤로 가기"
     }
   }
 }
