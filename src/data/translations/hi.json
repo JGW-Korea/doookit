@@ -6,6 +6,9 @@
     "nav": {
       "items": ["उपकरण", "परिचय"],
       "ariaLabel": "मुख्य नेविगेशन"
+    },
+    "arrow": {
+      "ariaLabel": "पीछे जाएँ (Peeche jāẽ)"
     }
   }
 }

@@ -28,8 +28,7 @@ export default class Logo extends Component<ComponentDataType, LogoProps> {
     const imgPngMimiUrl = new URL("/public/assets/images/favicon.png", import.meta.url);
 
     [imgAvifMimiUrl, imgWebpMimiUrl, imgPngMimiUrl].forEach((url, idx, arr) => {
-      const imgEl: HTMLSourceElement | HTMLImageElement =
-        idx !== arr.length - 1 ? document.createElement("source") : document.createElement("img");
+      const imgEl: HTMLSourceElement | HTMLImageElement = idx !== arr.length - 1 ? document.createElement("source") : document.createElement("img");
 
       if (imgEl instanceof HTMLSourceElement) {
         imgEl.srcset = url.href;

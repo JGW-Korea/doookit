@@ -46,6 +46,7 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
       aEl.href = "/";
       const imgEl = document.createElement("img");
       imgEl.src = arrowLeft;
+      imgEl.alt = currentLanguage["header"].arrow.ariaLabel;
       aEl.classList.add("arrow");
       aEl.appendChild(imgEl);
       aEl.ariaLabel = currentLanguage["header"].nav.ariaLabel;

@@ -24,10 +24,7 @@ export default class Footer extends Component<ComponentDataType, ComponentDataTy
     const translations = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies TranslationsTypes;
     const currentLanguage = translations[lang];
 
-    divEl.append(
-      new Logo({ props: { tag: "footer", ariaLabel: currentLanguage["header"].a.ariaLabel } }).el,
-      copyrightEl,
-    );
+    divEl.append(new Logo({ props: { tag: "footer", ariaLabel: currentLanguage["header"].a.ariaLabel } }).el, copyrightEl);
     containerEl.appendChild(divEl);
 
     const navEl = document.createElement("nav");

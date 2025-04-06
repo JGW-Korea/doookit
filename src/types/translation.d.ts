@@ -10,6 +10,9 @@ export interface TranslationsTypes {
         items: string[];
         ariaLabel: string;
       };
+      arrow: {
+        ariaLabel: string;
+      };
     };
   };
 }

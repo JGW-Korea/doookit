@@ -1,0 +1,17 @@
+@use "../../../styles/utils/variable" as *;
+
+// 하위 내용 스타일 선언
+@use "./calculator-display";
+@use "./calculator-keypads";
+
+.calculator-container {
+  background-color: $color-gray-light;
+
+  border: 1px solid $border-gray-light;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 15px -3px rgba($color: $color-black, $alpha: 0.1),
+    0 4px 6px -4px rgba($color: $color-black, $alpha: 0.1);
+}
