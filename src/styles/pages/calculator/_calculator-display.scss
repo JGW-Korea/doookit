@@ -1,0 +1,48 @@
+@use "../../../styles/utils/variable" as *;
+
+// 계산기 결과 영역 스타일 정의
+.calculator-display {
+  background-color: $color-white;
+  position: relative;
+
+  padding: 1rem 1rem 0.5rem;
+  border-bottom: 1px solid $border-gray-light;
+
+  & > button {
+    position: absolute;
+
+    top: 0.5rem;
+    left: 0.5rem;
+
+    border: none;
+    background-color: inherit;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $font-color-gray-light;
+
+    & > div#fake-input {
+      width: calc(100% - 0.5rem);
+      text-align: end;
+
+      border: none;
+      background-color: inherit;
+      font-size: 2rem;
+      padding: 0;
+
+      color: $color-black;
+      overflow: hidden;
+
+      & > span {
+        vertical-align: sub;
+      }
+    }
+  }
+}

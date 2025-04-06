@@ -6,6 +6,9 @@
     "nav": {
       "items": ["Strumenti", "Informazioni"],
       "ariaLabel": "Navigazione principale"
+    },
+    "arrow": {
+      "ariaLabel": "Indietro"
     }
   }
 }

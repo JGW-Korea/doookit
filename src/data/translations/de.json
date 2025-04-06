@@ -6,6 +6,9 @@
     "nav": {
       "items": ["Werkzeuge", "Über"],
       "ariaLabel": "Hauptnavigation"
+    },
+    "arrow": {
+      "ariaLabel": "Zurück"
     }
   }
 }
