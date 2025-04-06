@@ -6,6 +6,9 @@
     "nav": {
       "items": ["Herramientas", "Acerca de"],
       "ariaLabel": "Navegación principal"
+    },
+    "arrow": {
+      "ariaLabel": "Atrás"
     }
   }
 }

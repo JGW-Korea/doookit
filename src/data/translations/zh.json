@@ -6,6 +6,9 @@
     "nav": {
       "items": ["工具", "关于"],
       "ariaLabel": "主导航"
+    },
+    "arrow": {
+      "ariaLabel": "返回（fǎnhuí）"
     }
   }
 }
