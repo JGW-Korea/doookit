@@ -104,7 +104,7 @@
 }
 
 .calculator-container.mobile {
-  max-width: 24.907rem;
+  max-width: 20.875rem;
   box-sizing: border-box;
 
   & > .calculator-keypads {
@@ -132,8 +132,16 @@
     }
 
     & fieldset {
-      & > button.keys:last-child {
-        margin-right: 0;
+      & > div[role="radiogroup"] {
+        width: calc(4.485rem * 2 + 4px);
+      }
+
+      & > button {
+        width: 4.485rem;
+
+        &.keys:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
