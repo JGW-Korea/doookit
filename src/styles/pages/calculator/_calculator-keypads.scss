@@ -4,26 +4,22 @@
 .calculator-keypads {
   padding: 1rem;
 
-  & > fieldset {
+  & fieldset {
     display: flex;
     margin-bottom: 0.75rem;
 
     & > div[role="radiogroup"] {
       position: relative;
 
-      cursor: pointer;
       display: flex;
-      background-color: #e5edff;
       width: calc(11.5rem - 4px);
       margin-right: 0.25rem;
       line-height: calc(42px - (12px * 2));
-      border-radius: 9999px;
       overflow: hidden;
 
       & > label {
-        display: block;
+        cursor: inherit;
         text-align: center;
-
         flex-grow: 1;
 
         & + span {
@@ -35,16 +31,6 @@
           color: #638ed4;
         }
 
-        &.keys {
-          border-radius: 0;
-          margin: 0;
-          background-color: inherit;
-
-          &:active {
-            box-shadow: none;
-          }
-        }
-
         & > input[type="radio"] {
           display: none;
         }
@@ -54,43 +40,37 @@
           color: #0b57d0;
         }
       }
-
-      transition: 0.1s;
-
-      &:hover {
-        background-color: #d3e3fd;
-      }
-
-      &:active {
-        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-      }
     }
 
-    & .keys {
+    & > .keys {
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       margin-right: 0.25rem;
 
-      width: 5.5rem;
-      font-size: 0.75rem;
-
-      background-color: #e5edff;
       border: none;
       border-radius: 9999px;
+
+      font-size: 0.75rem;
+      background-color: #e5edff;
+
       cursor: pointer;
       color: #001d35;
 
-      transition: 0.2s;
-
-      &:hover {
-        background-color: #d3e3fd;
+      &.button {
+        width: 5.5rem;
       }
+
+      transition: 0.2s;
 
       &.number {
         background-color: #f3f5f6;
         &:hover {
           background-color: #dee1e3;
         }
+      }
+
+      &:hover {
+        background-color: #d3e3fd;
       }
 
       &:active {
@@ -122,3 +102,43 @@
     }
   }
 }
+
+.calculator-container.mobile {
+  max-width: 24.907rem;
+  box-sizing: border-box;
+
+  & > .calculator-keypads {
+    & > .swiper > .swiper-btn {
+      margin-top: 1.5rem;
+
+      border: 1px solid #e5edff;
+      display: flex;
+      border-radius: 9999px;
+      overflow: hidden;
+
+      & > button {
+        background-color: inherit;
+        flex-grow: 1;
+        border: none;
+        cursor: pointer;
+
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+
+        &.active {
+          background-color: #d4e1ff;
+        }
+      }
+    }
+
+    & fieldset {
+      & > button.keys:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+
+// }
