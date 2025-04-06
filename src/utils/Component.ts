@@ -3,17 +3,22 @@
  */
 export abstract class Component<State extends ComponentDataType, Props extends ComponentDataType> {
   public el: HTMLElement;
+  public autoRender: boolean;
   public state: State;
   public props: Props;
   private isRenderScheduled = false; // 렌더링 예약 여부 플래그
 
-  constructor(public payload: { tagName: string; state?: State; props?: Props }) {
-    const { tagName, state = {} as State, props = {} as Props } = payload;
+  constructor(public payload: { tagName: string; autoRender?: boolean; state?: State; props?: Props }) {
+    const { tagName, autoRender = true, state = {} as State, props = {} as Props } = payload;
 
     this.el = document.createElement(tagName || "div"); // 기본 요소(Element) 초기화
+    this.autoRender = autoRender;
     this.state = this.makeReactive(state); // state 값 초기화
     this.props = props; // props 값 초기화
-    this.render();
+
+    if (autoRender) {
+      this.render();
+    }
   }
 
   // 상태 객체를 Proxy로 감싸서 각 변경 시 자동으로 렌더링을 예약

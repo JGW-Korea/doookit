@@ -10,5 +10,43 @@
     "arrow": {
       "ariaLabel": "Indietro"
     }
+  },
+  "calculator": {
+    "ariaLabel": "Calcolatrice scientifica",
+    "calculator-display": {
+      "container": "Visualizzazione del risultato del calcolo",
+      "back": "Visualizza risultati precedenti",
+      "fakeInput": "Campo di inserimento del calcolo"
+    },
+    "calculator-keypads": {
+      "ariaLabel": "Tastierino della calcolatrice",
+      "desktop": [
+        {
+          "legend": "Tasti funzione della calcolatrice",
+          "radiogroup": {
+            "ariaLabel": "Selezione unità angolare",
+            "modeRad": "Modalità radianti",
+            "modeDeg": "Modalità gradi"
+          },
+          "button": ["Fattoriale", "Parentesi aperta", "Parentesi chiusa", "Percentuale", "Cancella tutto", "Cancella voce"]
+        },
+        {
+          "legend": "Funzioni trigonometriche e numeri da 7 a 9",
+          "button": ["Inverso logaritmo naturale", "Seno", "Logaritmo naturale", "Numero 7", "Numero 8", "Numero 9", "Divisione"]
+        },
+        {
+          "legend": "Logaritmi e numeri da 4 a 6",
+          "button": ["Pi greco", "Coseno", "Logaritmo decimale", "Numero 4", "Numero 5", "Numero 6", "Moltiplicazione"]
+        },
+        {
+          "legend": "Radice quadrata e numeri da 1 a 3",
+          "button": ["Numero di Eulero", "Tangente", "Radice quadrata", "Numero 1", "Numero 2", "Numero 3", "Sottrazione"]
+        },
+        {
+          "legend": "Altre operazioni e numero 0",
+          "button": ["Risultato precedente", "Notazione esponenziale", "Esponenziazione", "Punto decimale", "Numero 0", "Uguale", "Addizione"]
+        }
+      ]
+    }
   }
 }

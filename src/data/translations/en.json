@@ -10,5 +10,43 @@
     "arrow": {
       "ariaLabel": "Back"
     }
+  },
+  "calculator": {
+    "ariaLabel": "Scientific Calculator",
+    "calculator-display": {
+      "container": "Calculation Result Display",
+      "back": "View Previous Results",
+      "fakeInput": "Calculation Input Field"
+    },
+    "calculator-keypads": {
+      "ariaLabel": "Calculator Keypad",
+      "desktop": [
+        {
+          "legend": "Calculator Function Keys",
+          "radiogroup": {
+            "ariaLabel": "Angle Unit Selection",
+            "modeRad": "Radian Mode",
+            "modeDeg": "Degree Mode"
+          },
+          "button": ["Factorial", "Left Parenthesis", "Right Parenthesis", "Percent", "All Clear", "Clear Entry"]
+        },
+        {
+          "legend": "Trigonometric Functions and Numbers 7 to 9",
+          "button": ["Inverse Natural Log", "Sine", "Natural Log", "Number 7", "Number 8", "Number 9", "Divide"]
+        },
+        {
+          "legend": "Logarithms and Numbers 4 to 6",
+          "button": ["Pi", "Cosine", "Log Base 10", "Number 4", "Number 5", "Number 6", "Multiply"]
+        },
+        {
+          "legend": "Square Roots and Numbers 1 to 3",
+          "button": ["Euler’s Number", "Tangent", "Square Root", "Number 1", "Number 2", "Number 3", "Subtract"]
+        },
+        {
+          "legend": "Other Operations and Number 0",
+          "button": ["Previous Result", "Exponential Notation", "Exponentiation", "Decimal Point", "Number 0", "Equals", "Add"]
+        }
+      ]
+    }
   }
 }

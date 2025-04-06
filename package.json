@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.14.2",
+    "@types/lodash.debounce": "^4.0.9",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
     "eslint": "^9.23.0",
@@ -38,6 +39,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "reset-css": "^5.0.2",
     "swiper": "^11.2.6"
   }

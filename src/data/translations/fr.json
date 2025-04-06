@@ -10,5 +10,43 @@
     "arrow": {
       "ariaLabel": "Retour"
     }
+  },
+  "calculator": {
+    "ariaLabel": "Calculatrice scientifique",
+    "calculator-display": {
+      "container": "Affichage du résultat du calcul",
+      "back": "Voir les résultats précédents",
+      "fakeInput": "Champ de saisie du calcul"
+    },
+    "calculator-keypads": {
+      "ariaLabel": "Clavier de la calculatrice",
+      "desktop": [
+        {
+          "legend": "Touches de fonction de la calculatrice",
+          "radiogroup": {
+            "ariaLabel": "Sélection de l'unité d'angle",
+            "modeRad": "Mode radians",
+            "modeDeg": "Mode degrés"
+          },
+          "button": ["Factorielle", "Parenthèse ouvrante", "Parenthèse fermante", "Pourcentage", "Tout effacer", "Effacer l'entrée"]
+        },
+        {
+          "legend": "Fonctions trigonométriques et chiffres de 7 à 9",
+          "button": ["Logarithme naturel inverse", "Sinus", "Logarithme naturel", "Chiffre 7", "Chiffre 8", "Chiffre 9", "Division"]
+        },
+        {
+          "legend": "Logarithmes et chiffres de 4 à 6",
+          "button": ["Pi", "Cosinus", "Logarithme décimal", "Chiffre 4", "Chiffre 5", "Chiffre 6", "Multiplication"]
+        },
+        {
+          "legend": "Racines carrées et chiffres de 1 à 3",
+          "button": ["Nombre d’Euler", "Tangente", "Racine carrée", "Chiffre 1", "Chiffre 2", "Chiffre 3", "Soustraction"]
+        },
+        {
+          "legend": "Autres opérations et chiffre 0",
+          "button": ["Résultat précédent", "Notation exponentielle", "Exponentiation", "Point décimal", "Chiffre 0", "Égal", "Addition"]
+        }
+      ]
+    }
   }
 }
