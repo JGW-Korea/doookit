@@ -1,5 +1,6 @@
 @use "reset-css/sass/_reset.scss";
 @use "./utils/_variable" as *;
+@use "./utils/fonts";
 
 // 공통 컴포넌트 스타일 import
 @use "./components/header";
@@ -10,6 +11,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  font-family: "Noto Sans", "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", "Helvetica Neue", sans-serif;
 }
 
 body {

@@ -12,9 +12,14 @@
   },
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url ./ --no-cache --log-level verbose && cp public/ads.txt public/robots.txt public/sitemap-*.xml dist/",
+    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url ./ --no-cache --log-level verbose",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit"
+  },
+  "staticFiles": {
+    "staticPath": "public",
+    "staticOutPath": "./",
+    "watcher": true
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.14.2",
@@ -26,6 +31,7 @@
     "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-prettier": "^5.2.4",
     "parcel": "^2.14.2",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.5.3",
     "sass": "^1.86.0",
     "svgo": "^3.3.2",
