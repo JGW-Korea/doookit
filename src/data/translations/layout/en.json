@@ -1,0 +1,25 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "Main navigation area",
+          "items": [
+            { "text": "Tool Collection", "ariaLabel": "Go to the Tool Collection section" },
+            { "text": "About", "ariaLabel": "Go to the About section" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "Go back to the previous page"
+        }
+      }
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "Go to DoooKit home page"
+    }
+  }
+}

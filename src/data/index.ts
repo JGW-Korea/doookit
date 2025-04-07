@@ -1,9 +1,1 @@
-export { default as en } from "./translations/en.json";
-export { default as de } from "./translations/de.json";
-export { default as es } from "./translations/es.json";
-export { default as fr } from "./translations/fr.json";
-export { default as hi } from "./translations/hi.json";
-export { default as it } from "./translations/it.json";
-export { default as ja } from "./translations/ja.json";
-export { default as ko } from "./translations/ko.json";
-export { default as zh } from "./translations/zh.json";
+export { CalculatorDatas } from "./translations/calculator/index";

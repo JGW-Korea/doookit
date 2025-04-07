@@ -1,0 +1,215 @@
+{
+  "display": {
+    "regionLabel": "计算结果区域",
+    "prevResultButtonLabel": "查看上一个结果",
+    "inputLabel": "计算器输入框",
+    "inputRoleDescription": "计算器输入区（可通过键盘输入）"
+  },
+  "keypads": {
+    "ariaLabel": "计算器键盘",
+    "desktop": {
+      "groups": [
+        {
+          "legend": "计算器功能键",
+          "angleMode": {
+            "ariaLabel": "角度单位选择",
+            "options": [
+              { "value": "Rad", "text": "Rad", "ariaLabel": "弧度模式", "shortcut": "r" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "角度模式", "shortcut": "r" }
+            ]
+          },
+          "buttons": [
+            { "text": "x!", "ariaLabel": "阶乘", "shortcut": "!", "value": "x!" },
+            { "text": "(", "ariaLabel": "左括号", "shortcut": "(", "value": "(" },
+            { "text": ")", "ariaLabel": "右括号", "shortcut": ")", "value": ")" },
+            { "text": "%", "ariaLabel": "百分号", "shortcut": "%", "value": "%" },
+            {
+              "id": "clear-toggle",
+              "states": {
+                "AC": {
+                  "text": "AC",
+                  "ariaLabel": "全部清除",
+                  "shortcut": "Escape",
+                  "value": "AC"
+                },
+                "CE": {
+                  "text": "CE",
+                  "ariaLabel": "清除输入",
+                  "shortcut": "Backspace",
+                  "value": "CE"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "legend": "三角函数和数字 7 到 9",
+          "buttons": [
+            { "text": "Inv", "ariaLabel": "反函数", "shortcut": "i", "value": "Inv" },
+            { "text": "sin", "ariaLabel": "正弦", "shortcut": "s", "value": "sin" },
+            { "text": "ln", "ariaLabel": "自然对数", "shortcut": "l", "value": "ln" },
+            { "text": "7", "ariaLabel": "数字 7", "shortcut": "7", "value": "7" },
+            { "text": "8", "ariaLabel": "数字 8", "shortcut": "8", "value": "8" },
+            { "text": "9", "ariaLabel": "数字 9", "shortcut": "9", "value": "9" },
+            { "text": "÷", "ariaLabel": "除法", "shortcut": "/", "value": "÷" }
+          ]
+        },
+        {
+          "legend": "对数函数和数字 4 到 6",
+          "buttons": [
+            { "text": "π", "ariaLabel": "圆周率π", "shortcut": "p", "value": "π" },
+            { "text": "cos", "ariaLabel": "余弦", "shortcut": "c", "value": "cos" },
+            { "text": "log", "ariaLabel": "常用对数", "shortcut": "g", "value": "log" },
+            { "text": "4", "ariaLabel": "数字 4", "shortcut": "4", "value": "4" },
+            { "text": "5", "ariaLabel": "数字 5", "shortcut": "5", "value": "5" },
+            { "text": "6", "ariaLabel": "数字 6", "shortcut": "6", "value": "6" },
+            { "text": "x", "ariaLabel": "乘法", "shortcut": "*", "value": "*" }
+          ]
+        },
+        {
+          "legend": "平方根和数字 1 到 3",
+          "buttons": [
+            { "text": "e", "ariaLabel": "自然常数 e", "shortcut": "e", "value": "e" },
+            { "text": "tan", "ariaLabel": "正切", "shortcut": "t", "value": "tan" },
+            { "text": "√", "ariaLabel": "平方根", "shortcut": "v", "value": "√" },
+            { "text": "1", "ariaLabel": "数字 1", "shortcut": "1", "value": "1" },
+            { "text": "2", "ariaLabel": "数字 2", "shortcut": "2", "value": "2" },
+            { "text": "3", "ariaLabel": "数字 3", "shortcut": "3", "value": "3" },
+            { "text": "-", "ariaLabel": "减法", "shortcut": "-", "value": "-" }
+          ]
+        },
+        {
+          "legend": "其他运算和数字 0",
+          "buttons": [
+            { "text": "Ans", "ariaLabel": "上一个结果", "shortcut": "a", "value": "Ans" },
+            { "text": "EXP", "ariaLabel": "科学记数法", "shortcut": "E", "value": "EXP" },
+            { "text": "x<sup>y</sup>", "ariaLabel": "乘方", "shortcut": "^", "value": "x^{y}" },
+            { "text": ".", "ariaLabel": "小数点", "shortcut": ".", "value": "." },
+            { "text": "0", "ariaLabel": "数字 0", "shortcut": "0", "value": "0" },
+            { "text": "=", "ariaLabel": "等于", "shortcut": "=, Enter", "value": "=" },
+            { "text": "+", "ariaLabel": "加法", "shortcut": "+", "value": "+" }
+          ]
+        }
+      ]
+    },
+    "mobile": {
+      "basic": {
+        "label": "基础键盘",
+        "groups": [
+          {
+            "legend": "基础功能键",
+            "buttons": [
+              { "text": "(", "ariaLabel": "左括号", "shortcut": "(", "value": "(" },
+              { "text": ")", "ariaLabel": "右括号", "shortcut": ")", "value": ")" },
+              { "text": "%", "ariaLabel": "百分号", "shortcut": "%", "value": "%" },
+              {
+                "id": "clear-toggle",
+                "states": {
+                  "AC": {
+                    "text": "AC",
+                    "ariaLabel": "全部清除",
+                    "shortcut": "Escape",
+                    "value": "AC"
+                  },
+                  "CE": {
+                    "text": "CE",
+                    "ariaLabel": "清除输入",
+                    "shortcut": "Backspace",
+                    "value": "CE"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "legend": "数字 7 到 9 和除法",
+            "buttons": [
+              { "text": "7", "ariaLabel": "数字 7", "shortcut": "7", "value": "7" },
+              { "text": "8", "ariaLabel": "数字 8", "shortcut": "8", "value": "8" },
+              { "text": "9", "ariaLabel": "数字 9", "shortcut": "9", "value": "9" },
+              { "text": "÷", "ariaLabel": "除法", "shortcut": "/", "value": "÷" }
+            ]
+          },
+          {
+            "legend": "数字 4 到 6 和乘法",
+            "buttons": [
+              { "text": "4", "ariaLabel": "数字 4", "shortcut": "4", "value": "4" },
+              { "text": "5", "ariaLabel": "数字 5", "shortcut": "5", "value": "5" },
+              { "text": "6", "ariaLabel": "数字 6", "shortcut": "6", "value": "6" },
+              { "text": "x", "ariaLabel": "乘法", "shortcut": "*", "value": "*" }
+            ]
+          },
+          {
+            "legend": "数字 1 到 3 和减法",
+            "buttons": [
+              { "text": "1", "ariaLabel": "数字 1", "shortcut": "1", "value": "1" },
+              { "text": "2", "ariaLabel": "数字 2", "shortcut": "2", "value": "2" },
+              { "text": "3", "ariaLabel": "数字 3", "shortcut": "3", "value": "3" },
+              { "text": "-", "ariaLabel": "减法", "shortcut": "-", "value": "-" }
+            ]
+          },
+          {
+            "legend": "小数点、0、等于、加法",
+            "buttons": [
+              { "text": ".", "ariaLabel": "小数点", "shortcut": ".", "value": "." },
+              { "text": "0", "ariaLabel": "数字 0", "shortcut": "0", "value": "0" },
+              { "text": "=", "ariaLabel": "等于", "shortcut": "=, Enter", "value": "=" },
+              { "text": "+", "ariaLabel": "加法", "shortcut": "+", "value": "+" }
+            ]
+          }
+        ]
+      },
+      "engineering": {
+        "label": "科学键盘",
+        "groups": [
+          {
+            "legend": "角度单位和函数键",
+            "angleMode": {
+              "ariaLabel": "角度单位选择",
+              "options": [
+                { "text": "Rad", "ariaLabel": "弧度模式", "shortcut": "r", "value": "Rad" },
+                { "text": "Deg", "ariaLabel": "角度模式", "shortcut": "r", "value": "Deg" }
+              ]
+            },
+            "buttons": [
+              { "text": "x!", "ariaLabel": "阶乘", "shortcut": "!", "value": "x!" },
+              { "text": "Inv", "ariaLabel": "反函数", "shortcut": "i", "value": "Inv" }
+            ]
+          },
+          {
+            "legend": "三角函数和自然对数",
+            "buttons": [
+              { "text": "sin", "ariaLabel": "正弦", "shortcut": "s", "value": "sin" },
+              { "text": "ln", "ariaLabel": "自然对数", "shortcut": "l", "value": "ln" },
+              { "text": "π", "ariaLabel": "圆周率π", "shortcut": "p", "value": "π" },
+              { "text": "cos", "ariaLabel": "余弦", "shortcut": "c", "value": "cos" }
+            ]
+          },
+          {
+            "legend": "常用对数和其他数学符号",
+            "buttons": [
+              { "text": "log", "ariaLabel": "常用对数", "shortcut": "g", "value": "log" },
+              { "text": "e", "ariaLabel": "自然常数 e", "shortcut": "e", "value": "e" },
+              { "text": "tan", "ariaLabel": "正切", "shortcut": "t", "value": "tan" },
+              { "text": "√", "ariaLabel": "平方根", "shortcut": "v", "value": "√" }
+            ]
+          },
+          {
+            "legend": "其他运算和等于",
+            "buttons": [
+              { "text": "Ans", "ariaLabel": "上一个结果", "shortcut": "a", "value": "Ans" },
+              { "text": "EXP", "ariaLabel": "科学记数法", "shortcut": "E", "value": "EXP" },
+              { "text": "x<sup>y</sup>", "ariaLabel": "乘方", "shortcut": "^", "value": "x^{y}" },
+              { "text": "=", "ariaLabel": "等于", "shortcut": "=, Enter", "value": "=" }
+            ]
+          }
+        ]
+      },
+      "tabs": {
+        "basic": "123",
+        "engineering": "Fx",
+        "ariaLabel": "切换键盘"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "मुख्य नेविगेशन क्षेत्र",
+          "items": [
+            { "text": "उपकरण संग्रह", "ariaLabel": "उपकरण संग्रह अनुभाग पर जाएँ" },
+            { "text": "परिचय", "ariaLabel": "परिचय अनुभाग पर जाएँ" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "पिछले पृष्ठ पर लौटें"
+        }
+      }
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "DoooKit होम पेज पर जाएँ"
+    }
+  }
+}

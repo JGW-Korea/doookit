@@ -1,0 +1,25 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "Zone de navigation principale",
+          "items": [
+            { "text": "Collection d’outils", "ariaLabel": "Aller à la section Collection d’outils" },
+            { "text": "À propos", "ariaLabel": "Aller à la section À propos" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "Revenir à la page précédente"
+        }
+      }
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "Aller à la page d’accueil de DoooKit"
+    }
+  }
+}

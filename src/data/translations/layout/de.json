@@ -1,0 +1,25 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "Hauptnavigationsbereich",
+          "items": [
+            { "text": "Werkzeugsammlung", "ariaLabel": "Zum Abschnitt Werkzeugsammlung wechseln" },
+            { "text": "Über uns", "ariaLabel": "Zum Abschnitt Über uns wechseln" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "Zur vorherigen Seite zurückkehren"
+        }
+      }
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "Zur DoooKit-Startseite wechseln"
+    }
+  }
+}

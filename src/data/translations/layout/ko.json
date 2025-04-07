@@ -1,0 +1,25 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "주요 탐색 영역",
+          "items": [
+            { "text": "도구 모음", "ariaLabel": "도구 모음 섹션으로 이동" },
+            { "text": "소개", "ariaLabel": "소개 섹션으로 이동" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "이전 페이지로 이동"
+        }
+      }
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "DoooKit 메인 페이지로 이동"
+    }
+  }
+}
