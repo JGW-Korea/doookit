@@ -17,6 +17,16 @@
       }
     }
   },
+  "footer": {
+    "nav": {
+      "ariaLabel": "하단 정보 탐색 영역",
+      "items": [
+        { "text": "개인정보 처리방침", "ariaLabel": "개인정보 처리방침 페이지로 이동" },
+        { "text": "이용약관", "ariaLabel": "이용약관 페이지로 이동" },
+        { "text": "GitHub", "ariaLabel": "GitHub 저장소로 이동" }
+      ]
+    }
+  },
   "logo": {
     "link": {
       "ariaLabel": "DoooKit 메인 페이지로 이동"

@@ -17,6 +17,16 @@
       }
     }
   },
+  "footer": {
+    "nav": {
+      "ariaLabel": "फुटर नेविगेशन क्षेत्र",
+      "items": [
+        { "text": "गोपनीयता नीति", "ariaLabel": "गोपनीयता नीति पृष्ठ पर जाएँ" },
+        { "text": "उपयोग की शर्तें", "ariaLabel": "उपयोग की शर्तें पृष्ठ पर जाएँ" },
+        { "text": "GitHub", "ariaLabel": "GitHub रिपॉज़िटरी पर जाएँ" }
+      ]
+    }
+  },
   "logo": {
     "link": {
       "ariaLabel": "DoooKit होम पेज पर जाएँ"

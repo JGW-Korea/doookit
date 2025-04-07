@@ -22,6 +22,12 @@ export interface LayoutI18nData {
       };
     };
   };
+  footer: {
+    nav: {
+      ariaLabel: string;
+      items: NavItem[];
+    };
+  };
   logo: {
     link: {
       ariaLabel: string;

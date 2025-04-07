@@ -17,6 +17,16 @@
       }
     }
   },
+  "footer": {
+    "nav": {
+      "ariaLabel": "フッターナビゲーションエリア",
+      "items": [
+        { "text": "プライバシーポリシー", "ariaLabel": "プライバシーポリシーページへ移動" },
+        { "text": "利用規約", "ariaLabel": "利用規約ページへ移動" },
+        { "text": "GitHub", "ariaLabel": "GitHubリポジトリへ移動" }
+      ]
+    }
+  },
   "logo": {
     "link": {
       "ariaLabel": "DoooKitのメインページへ移動"

@@ -17,6 +17,16 @@
       }
     }
   },
+  "footer": {
+    "nav": {
+      "ariaLabel": "Zone de navigation du pied de page",
+      "items": [
+        { "text": "Politique de confidentialité", "ariaLabel": "Aller à la page de la politique de confidentialité" },
+        { "text": "Conditions d’utilisation", "ariaLabel": "Aller à la page des conditions d’utilisation" },
+        { "text": "GitHub", "ariaLabel": "Aller au dépôt GitHub" }
+      ]
+    }
+  },
   "logo": {
     "link": {
       "ariaLabel": "Aller à la page d’accueil de DoooKit"

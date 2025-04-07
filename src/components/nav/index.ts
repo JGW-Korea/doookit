@@ -35,6 +35,23 @@ export default class Nav extends Component<ComponentDataType, NavProps> {
       });
     }
 
+    // 푸터(Footer) 네비게이터 링크 표시
+    else {
+      this.props.items.forEach((item, idx) => {
+        const liEl = document.createElement("li");
+        const aEl = document.createElement("a");
+
+        if (idx === 0) aEl.href = "#tools";
+        if (idx === 1) aEl.href = "#about";
+        if (idx === 2) aEl.href = "https://github.com/JGW-Korea/doookit";
+        aEl.textContent = item.text;
+
+        liEl.ariaLabel = item.ariaLabel;
+        liEl.appendChild(aEl);
+        ulEl.appendChild(liEl);
+      });
+    }
+
     this.el.ariaLabel = this.props.ariaLabel;
     this.el.appendChild(ulEl);
   }

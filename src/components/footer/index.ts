@@ -1,8 +1,8 @@
-// import { langType, TranslationsTypes } from "../../types/translation";
+import { LayoutDatas } from "../../data";
 import { Component, ComponentDataType } from "../../utils/Component";
-// import { isLangType } from "../../utils/typeCheck";
-// import { en, de, es, fr, hi, it, ja, ko, zh } from "../../data";
-// import Logo from "../logo";
+import { docType } from "../../utils/docType";
+import Logo from "../logo";
+import Nav from "../nav";
 
 export default class Footer extends Component<ComponentDataType, ComponentDataType> {
   constructor() {
@@ -12,32 +12,25 @@ export default class Footer extends Component<ComponentDataType, ComponentDataTy
   }
 
   render() {
-    // const containerEl = document.createElement("div");
-    // const divEl = document.createElement("div");
-    // const copyrightEl = document.createElement("p");
-    // copyrightEl.textContent = "\u00A9 2025 DoooKit. All righs reserved.";
-    // // 지원하는 언어 중 하나를 가져온다.
-    // const browserLang: string = navigator.language.split("-")[0];
-    // const lang: langType = isLangType(browserLang) ? browserLang : "en";
-    // const translations = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies TranslationsTypes;
-    // const currentLanguage = translations[lang];
-    // divEl.append(new Logo({ props: { tag: "footer", ariaLabel: currentLanguage["header"].a.ariaLabel } }).el, copyrightEl);
-    // containerEl.appendChild(divEl);
-    // const navEl = document.createElement("nav");
-    // navEl.setAttribute("aria-label", "Footer Navigation");
-    // const ulEl = document.createElement("ul");
-    // ["Privacy", "Terms", "Github"].forEach((title, idx) => {
-    //   const liEl = document.createElement("li");
-    //   const anchorEl = document.createElement("a");
-    //   anchorEl.textContent = title;
-    //   if (idx === 0) anchorEl.href = "#tools";
-    //   if (idx === 1) anchorEl.href = "#about";
-    //   if (idx === 2) anchorEl.href = "https://github.com/JGW-Korea/doookit";
-    //   liEl.appendChild(anchorEl);
-    //   ulEl.appendChild(liEl);
-    // });
-    // navEl.appendChild(ulEl);
-    // containerEl.appendChild(navEl);
-    // this.el.appendChild(containerEl);
+    const footerContainerEl = document.createElement("div");
+    footerContainerEl.classList.add("container");
+
+    // 로고 및 저작권 영역을 담을 <div> 생성
+    const divEl = document.createElement("div");
+
+    const copyrightEl = document.createElement("p"); // 저작권 문구
+    copyrightEl.textContent = "\u00A9 2025 DoooKit. All righs reserved.";
+
+    const layoutData = LayoutDatas[docType()];
+    divEl.append(new Logo({ props: { type: "footer", ariaLabel: layoutData.logo.link.ariaLabel } }).el, copyrightEl);
+
+    // 푸터 컨테이너에 (로고 및 저작권) + (네비게이션) 추가
+    footerContainerEl.append(
+      divEl,
+      new Nav({ props: { type: "footer", ariaLabel: layoutData.footer.nav.ariaLabel, items: layoutData.footer.nav.items } }).el,
+    );
+
+    // 최종 반영
+    this.el.appendChild(footerContainerEl);
   }
 }

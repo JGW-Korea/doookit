@@ -17,6 +17,16 @@
       }
     }
   },
+  "footer": {
+    "nav": {
+      "ariaLabel": "Fußzeilennavigationsbereich",
+      "items": [
+        { "text": "Datenschutz", "ariaLabel": "Zur Datenschutzrichtlinie wechseln" },
+        { "text": "Nutzungsbedingungen", "ariaLabel": "Zu den Nutzungsbedingungen wechseln" },
+        { "text": "GitHub", "ariaLabel": "Zum GitHub-Repository wechseln" }
+      ]
+    }
+  },
   "logo": {
     "link": {
       "ariaLabel": "Zur DoooKit-Startseite wechseln"
