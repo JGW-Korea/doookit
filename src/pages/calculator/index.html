@@ -65,19 +65,13 @@
           <fieldset aria-labelledby="legend-functions">
             <legend id="legend-functions" class="sr-only">계산기 기능 키</legend>
 
-            <div role="radiogroup" class="keys" aria-labelledby="legend-angle">
-              <span id="legend-angle" class="sr-only">각도 단위 선택</span>
-              <label>
-                <input type="radio" id="mode-rad" name="angle-mode" aria-labelledby="rad-desc" aria-keyshortcuts="r" value="Rad" checked />
-                <span class="label-text">Rad</span>
-                <span id="rad-desc" class="sr-only">라디안 모드</span>
-              </label>
+            <div role="group" class="keys" aria-label="각도 단위 선택">
+              <button type="button" class="button" id="mode-rad" aria-labelledby="rad-desc" aria-keyshortcuts="r" aria-pressed="true">Rad</button>
               <span aria-hidden="true">|</span>
-              <label>
-                <input type="radio" id="mode-deg" name="angle-mode" aria-labelledby="deg-desc" aria-keyshortcuts="r" value="Deg" />
-                <span class="label-text">Deg</span>
-                <span id="deg-desc" class="sr-only">도 단위 모드</span>
-              </label>
+              <button type="button" class="button" id="mode-deg" aria-labelledby="deg-desc" aria-keyshortcuts="r" aria-pressed="false">Deg</button>
+
+              <span id="rad-desc" class="sr-only">라디안 모드</span>
+              <span id="deg-desc" class="sr-only">도 단위 모드</span>
             </div>
 
             <button type="button" class="keys button" aria-label="팩토리얼" aria-keyshortcuts="!" data-value="x!">x!</button>

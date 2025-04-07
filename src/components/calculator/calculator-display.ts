@@ -55,6 +55,6 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
     fakeInputEl.textContent = "0";
 
     displayContainerEl.append(outputEl, fakeInputEl);
-    this.el.appendChild(displayContainerEl);
+    this.el.append(backBtnEl, displayContainerEl);
   }
 }
