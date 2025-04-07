@@ -1,0 +1,35 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "主导航区域",
+          "items": [
+            { "text": "工具集合", "ariaLabel": "跳转到工具集合部分" },
+            { "text": "关于", "ariaLabel": "跳转到关于部分" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "返回上一页"
+        }
+      }
+    }
+  },
+  "footer": {
+    "nav": {
+      "ariaLabel": "页脚导航区域",
+      "items": [
+        { "text": "隐私政策", "ariaLabel": "跳转到隐私政策页面" },
+        { "text": "使用条款", "ariaLabel": "跳转到使用条款页面" },
+        { "text": "GitHub", "ariaLabel": "跳转到 GitHub 仓库" }
+      ]
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "跳转到 DoooKit 首页"
+    }
+  }
+}

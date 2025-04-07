@@ -13,13 +13,14 @@ footer {
     margin: 0 auto;
 
     & > div {
-      & > a > h1 {
+      & > a > span {
         display: flex;
         align-items: center;
         gap: 0.5rem;
 
         font-size: 1.25rem;
         line-height: 1.75rem;
+        font-weight: 700;
 
         background: linear-gradient(to right, #34d399, #059669);
         background-clip: text;
@@ -28,10 +29,6 @@ footer {
 
         & > picture {
           height: 1.5rem;
-        }
-
-        & > span {
-          margin-top: 0.25rem;
         }
       }
 
@@ -46,8 +43,9 @@ footer {
     & > nav > ul {
       display: flex;
       gap: 1.5rem;
-      margin-top: 0.5rem;
       font-weight: 500;
+
+      font-size: 0.75rem;
 
       & > li {
         color: #4b5563;

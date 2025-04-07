@@ -1,12 +1,14 @@
 import Swiper from "swiper";
 import { Mousewheel } from "swiper/modules";
 
-import "swiper/swiper-bundle.min.css";
-
 import { Header, Footer } from "../../components";
+
+import "swiper/swiper-bundle.min.css";
 
 document.body.insertAdjacentElement("afterbegin", new Header().el);
 document.body.insertAdjacentElement("beforeend", new Footer().el);
+
+// new Calculator();
 
 Swiper.use([Mousewheel]);
 

@@ -1,0 +1,215 @@
+{
+  "display": {
+    "regionLabel": "계산 결과 영역",
+    "prevResultButtonLabel": "이전 결과 보기",
+    "inputLabel": "계산 입력창",
+    "inputRoleDescription": "계산기 입력창 (키보드로 입력 가능)"
+  },
+  "keypads": {
+    "ariaLabel": "계산기 키패드",
+    "desktop": {
+      "groups": [
+        {
+          "legend": "계산기 기능 키",
+          "angleMode": {
+            "ariaLabel": "각도 단위 선택",
+            "options": [
+              { "value": "Rad", "text": "Rad", "ariaLabel": "라디안 모드", "shortcut": "r" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "도 단위 모드", "shortcut": "r" }
+            ]
+          },
+          "buttons": [
+            { "text": "x!", "ariaLabel": "팩토리얼", "shortcut": "!", "value": "x!" },
+            { "text": "(", "ariaLabel": "여는 괄호", "shortcut": "(", "value": "(" },
+            { "text": ")", "ariaLabel": "닫는 괄호", "shortcut": ")", "value": ")" },
+            { "text": "%", "ariaLabel": "퍼센트", "shortcut": "%", "value": "%" },
+            {
+              "id": "clear-toggle",
+              "states": {
+                "AC": {
+                  "text": "AC",
+                  "ariaLabel": "전체 초기화",
+                  "shortcut": "Escape",
+                  "value": "AC"
+                },
+                "CE": {
+                  "text": "CE",
+                  "ariaLabel": "입력 지우기",
+                  "shortcut": "Backspace",
+                  "value": "CE"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "legend": "삼각함수 및 숫자 키 7에서 9",
+          "buttons": [
+            { "text": "Inv", "ariaLabel": "자연로그 역함수", "shortcut": "i", "value": "Inv" },
+            { "text": "sin", "ariaLabel": "사인", "shortcut": "s", "value": "sin" },
+            { "text": "ln", "ariaLabel": "자연로그", "shortcut": "l", "value": "ln" },
+            { "text": "7", "ariaLabel": "숫자 7", "shortcut": "7", "value": "7" },
+            { "text": "8", "ariaLabel": "숫자 8", "shortcut": "8", "value": "8" },
+            { "text": "9", "ariaLabel": "숫자 9", "shortcut": "9", "value": "9" },
+            { "text": "÷", "ariaLabel": "나누기", "shortcut": "/", "value": "÷" }
+          ]
+        },
+        {
+          "legend": "로그, 숫자 키 4에서 6",
+          "buttons": [
+            { "text": "π", "ariaLabel": "파이", "shortcut": "p", "value": "π" },
+            { "text": "cos", "ariaLabel": "코사인", "shortcut": "c", "value": "cos" },
+            { "text": "log", "ariaLabel": "상용로그", "shortcut": "g", "value": "log" },
+            { "text": "4", "ariaLabel": "숫자 4", "shortcut": "4", "value": "4" },
+            { "text": "5", "ariaLabel": "숫자 5", "shortcut": "5", "value": "5" },
+            { "text": "6", "ariaLabel": "숫자 6", "shortcut": "6", "value": "6" },
+            { "text": "x", "ariaLabel": "곱하기", "shortcut": "*", "value": "*" }
+          ]
+        },
+        {
+          "legend": "제곱근, 숫자 키 1에서 3",
+          "buttons": [
+            { "text": "e", "ariaLabel": "자연상수 e", "shortcut": "e", "value": "e" },
+            { "text": "tan", "ariaLabel": "탄젠트", "shortcut": "t", "value": "tan" },
+            { "text": "√", "ariaLabel": "루트", "shortcut": "v", "value": "√" },
+            { "text": "1", "ariaLabel": "숫자 1", "shortcut": "1", "value": "1" },
+            { "text": "2", "ariaLabel": "숫자 2", "shortcut": "2", "value": "2" },
+            { "text": "3", "ariaLabel": "숫자 3", "shortcut": "3", "value": "3" },
+            { "text": "-", "ariaLabel": "빼기", "shortcut": "-", "value": "-" }
+          ]
+        },
+        {
+          "legend": "기타 연산 키 및 숫자 0",
+          "buttons": [
+            { "text": "Ans", "ariaLabel": "이전 계산 결과", "shortcut": "a", "value": "Ans" },
+            { "text": "EXP", "ariaLabel": "지수 표기법", "shortcut": "E", "value": "EXP" },
+            { "text": "x<sup>y</sup>", "ariaLabel": "거듭제곱", "shortcut": "^", "value": "x^{y}" },
+            { "text": ".", "ariaLabel": "소수점", "shortcut": ".", "value": "." },
+            { "text": "0", "ariaLabel": "숫자 0", "shortcut": "0", "value": "0" },
+            { "text": "=", "ariaLabel": "등호", "shortcut": "=, Enter", "value": "=" },
+            { "text": "+", "ariaLabel": "더하기", "shortcut": "+", "value": "+" }
+          ]
+        }
+      ]
+    },
+    "mobile": {
+      "basic": {
+        "label": "기본 키패드",
+        "groups": [
+          {
+            "legend": "기본 기능 키",
+            "buttons": [
+              { "text": "(", "ariaLabel": "여는 괄호", "shortcut": "(", "value": "(" },
+              { "text": ")", "ariaLabel": "닫는 괄호", "shortcut": ")", "value": ")" },
+              { "text": "%", "ariaLabel": "퍼센트", "shortcut": "%", "value": "%" },
+              {
+                "id": "clear-toggle",
+                "states": {
+                  "AC": {
+                    "text": "AC",
+                    "ariaLabel": "전체 초기화",
+                    "shortcut": "Escape",
+                    "value": "AC"
+                  },
+                  "CE": {
+                    "text": "CE",
+                    "ariaLabel": "입력 지우기",
+                    "shortcut": "Backspace",
+                    "value": "CE"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "legend": "숫자 7에서 9 및 나누기",
+            "buttons": [
+              { "text": "7", "ariaLabel": "숫자 7", "shortcut": "7", "value": "7" },
+              { "text": "8", "ariaLabel": "숫자 8", "shortcut": "8", "value": "8" },
+              { "text": "9", "ariaLabel": "숫자 9", "shortcut": "9", "value": "9" },
+              { "text": "÷", "ariaLabel": "나누기", "shortcut": "/", "value": "÷" }
+            ]
+          },
+          {
+            "legend": "숫자 4에서 6 및 곱하기",
+            "buttons": [
+              { "text": "4", "ariaLabel": "숫자 4", "shortcut": "4", "value": "4" },
+              { "text": "5", "ariaLabel": "숫자 5", "shortcut": "5", "value": "5" },
+              { "text": "6", "ariaLabel": "숫자 6", "shortcut": "6", "value": "6" },
+              { "text": "x", "ariaLabel": "곱하기", "shortcut": "*", "value": "*" }
+            ]
+          },
+          {
+            "legend": "숫자 1에서 3 및 빼기",
+            "buttons": [
+              { "text": "1", "ariaLabel": "숫자 1", "shortcut": "1", "value": "1" },
+              { "text": "2", "ariaLabel": "숫자 2", "shortcut": "2", "value": "2" },
+              { "text": "3", "ariaLabel": "숫자 3", "shortcut": "3", "value": "3" },
+              { "text": "-", "ariaLabel": "빼기", "shortcut": "-", "value": "-" }
+            ]
+          },
+          {
+            "legend": "소수점, 0, 등호, 더하기",
+            "buttons": [
+              { "text": ".", "ariaLabel": "소수점", "shortcut": ".", "value": "." },
+              { "text": "0", "ariaLabel": "숫자 0", "shortcut": "0", "value": "0" },
+              { "text": "=", "ariaLabel": "등호", "shortcut": "=, Enter", "value": "=" },
+              { "text": "+", "ariaLabel": "더하기", "shortcut": "+", "value": "+" }
+            ]
+          }
+        ]
+      },
+      "engineering": {
+        "label": "공학용 키패드",
+        "groups": [
+          {
+            "legend": "각도 단위 선택 및 함수 키",
+            "angleMode": {
+              "ariaLabel": "각도 단위 선택",
+              "options": [
+                { "text": "Rad", "ariaLabel": "라디안 모드", "shortcut": "r", "value": "Rad" },
+                { "text": "Deg", "ariaLabel": "도 단위 모드", "shortcut": "r", "value": "Deg" }
+              ]
+            },
+            "buttons": [
+              { "text": "x!", "ariaLabel": "팩토리얼", "shortcut": "!", "value": "x!" },
+              { "text": "Inv", "ariaLabel": "자연로그 역함수", "shortcut": "i", "value": "Inv" }
+            ]
+          },
+          {
+            "legend": "삼각 함수 및 자연로그",
+            "buttons": [
+              { "text": "sin", "ariaLabel": "사인", "shortcut": "s", "value": "sin" },
+              { "text": "ln", "ariaLabel": "자연로그", "shortcut": "l", "value": "ln" },
+              { "text": "π", "ariaLabel": "파이", "shortcut": "p", "value": "π" },
+              { "text": "cos", "ariaLabel": "코사인", "shortcut": "c", "value": "cos" }
+            ]
+          },
+          {
+            "legend": "상용로그 및 기타 수학 기호",
+            "buttons": [
+              { "text": "log", "ariaLabel": "상용로그", "shortcut": "g", "value": "log" },
+              { "text": "e", "ariaLabel": "자연상수 e", "shortcut": "e", "value": "e" },
+              { "text": "tan", "ariaLabel": "탄젠트", "shortcut": "t", "value": "tan" },
+              { "text": "√", "ariaLabel": "루트", "shortcut": "v", "value": "√" }
+            ]
+          },
+          {
+            "legend": "기타 연산 및 등호",
+            "buttons": [
+              { "text": "Ans", "ariaLabel": "이전 계산 결과", "shortcut": "a", "value": "Ans" },
+              { "text": "EXP", "ariaLabel": "지수 표기법", "shortcut": "E", "value": "EXP" },
+              { "text": "x<sup>y</sup>", "ariaLabel": "거듭제곱", "shortcut": "^", "value": "x^{y}" },
+              { "text": "=", "ariaLabel": "등호", "shortcut": "=, Enter", "value": "=" }
+            ]
+          }
+        ]
+      },
+      "tabs": {
+        "basic": "123",
+        "engineering": "Fx",
+        "ariaLabel": "키패드 전환"
+      }
+    }
+  }
+}

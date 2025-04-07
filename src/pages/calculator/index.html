@@ -12,6 +12,7 @@
     <!-- twitter card -->
 
     <!-- style -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles/main.scss" />
 
     <!-- script -->
@@ -38,31 +39,41 @@
       <!-- Viewport > 768px -->
       <section class="calculator-container desktop" aria-label="공학용 계산기">
         <!-- Calculation Result -->
-        <div class="calculator-display" role="region" aria-label="계산 결과 출력">
+        <div class="calculator-display" role="region" aria-label="계산 결과 영역">
           <button type="button" aria-label="이전 결과 보기">
             <img src="/public/assets/icons/rewind-time.svg" alt="" aria-hidden="true" />
           </button>
 
           <div>
-            <output id="expression-output" aria-live="polite">Ans = 1234</output>
-            <div id="fake-input" role="textbox" aria-label="계산 입력창" aria-describedby="expression-output" tabindex="0" data-value="0">
-              <span>0</span>
+            <output id="expression-output" role="status" aria-live="polite" aria-atomic="true">Ans = 1234</output>
+            <div
+              id="fake-input"
+              role="textbox"
+              aria-label="계산 입력창"
+              aria-role-description="계산기 입력창 (키보드로 입력 가능)"
+              aria-describedby="expression-output"
+              tabindex="0"
+              data-value="0"
+            >
+              0
             </div>
           </div>
         </div>
 
         <!-- Calculator Keypads -->
-        <section class="calculator-keypads" role="group" aria-label="공학용 계산기 키패드">
-          <fieldset>
-            <legend class="sr-only">계산기 기능 키</legend>
-            <div role="radiogroup" class="keys" aria-label="각도 단위 선택">
-              <label class="">
+        <section class="calculator-keypads" role="group" aria-label="계산기 키패드">
+          <fieldset aria-labelledby="legend-functions">
+            <legend id="legend-functions" class="sr-only">계산기 기능 키</legend>
+
+            <div role="radiogroup" class="keys" aria-labelledby="legend-angle">
+              <span id="legend-angle" class="sr-only">각도 단위 선택</span>
+              <label>
                 <input type="radio" id="mode-rad" name="angle-mode" aria-labelledby="rad-desc" aria-keyshortcuts="r" value="Rad" checked />
                 <span class="label-text">Rad</span>
                 <span id="rad-desc" class="sr-only">라디안 모드</span>
               </label>
-              <span>|</span>
-              <label class="">
+              <span aria-hidden="true">|</span>
+              <label>
                 <input type="radio" id="mode-deg" name="angle-mode" aria-labelledby="deg-desc" aria-keyshortcuts="r" value="Deg" />
                 <span class="label-text">Deg</span>
                 <span id="deg-desc" class="sr-only">도 단위 모드</span>
@@ -70,26 +81,25 @@
             </div>
 
             <button type="button" class="keys button" aria-label="팩토리얼" aria-keyshortcuts="!" data-value="x!">x!</button>
-            <button type="button" class="keys button" aria-label="여는 괄호" aria-keyshortcuts="(">(</button>
+            <button type="button" class="keys button" aria-label="여는 괄호" aria-keyshortcuts="(" data-value="(">(</button>
             <button type="button" class="keys button" aria-label="닫는 괄호" aria-keyshortcuts=")" data-value=")">)</button>
             <button type="button" class="keys button" aria-label="퍼센트" aria-keyshortcuts="%" data-value="%">%</button>
             <button type="button" class="keys button" aria-label="전체 초기화" aria-keyshortcuts="Escape" data-value="AC">AC</button>
-            <!-- <button type="button" class="keys" aria-label="입력 지우기" aria-keyshortcuts="Backspace" data-value="CE">CE</button> -->
           </fieldset>
 
-          <fieldset>
-            <legend class="sr-only">삼각함수 및 숫자 키 7에서 9</legend>
+          <fieldset aria-labelledby="legend-trig-789">
+            <legend id="legend-trig-789" class="sr-only">삼각함수 및 숫자 키 7에서 9</legend>
             <button type="button" class="keys button" aria-label="자연로그 역함수" aria-keyshortcuts="i" data-value="Inv">Inv</button>
             <button type="button" class="keys button" aria-label="사인" aria-keyshortcuts="s" data-value="sin">sin</button>
             <button type="button" class="keys button" aria-label="자연로그" aria-keyshortcuts="l" data-value="ln">ln</button>
             <button type="button" class="keys button number" aria-label="숫자 7" aria-keyshortcuts="7" data-value="7">7</button>
             <button type="button" class="keys button number" aria-label="숫자 8" aria-keyshortcuts="8" data-value="8">8</button>
             <button type="button" class="keys button number" aria-label="숫자 9" aria-keyshortcuts="9" data-value="9">9</button>
-            <button type="button" class="keys button" aria-label="더하기" aria-keyshortcuts="/" data-value="÷">÷</button>
+            <button type="button" class="keys button" aria-label="나누기" aria-keyshortcuts="/" data-value="÷">÷</button>
           </fieldset>
 
-          <fieldset>
-            <legend class="sr-only">로그, 숫자 키 4에서 6</legend>
+          <fieldset aria-labelledby="legend-log-456">
+            <legend id="legend-log-456" class="sr-only">로그, 숫자 키 4에서 6</legend>
             <button type="button" class="keys button" aria-label="파이" aria-keyshortcuts="p" data-value="π">π</button>
             <button type="button" class="keys button" aria-label="코사인" aria-keyshortcuts="c" data-value="cos">cos</button>
             <button type="button" class="keys button" aria-label="상용로그" aria-keyshortcuts="g" data-value="log">log</button>
@@ -99,8 +109,8 @@
             <button type="button" class="keys button" aria-label="곱하기" aria-keyshortcuts="*" data-value="*">x</button>
           </fieldset>
 
-          <fieldset>
-            <legend class="sr-only">제곱근, 숫자 키 1에서 3</legend>
+          <fieldset aria-labelledby="legend-root-123">
+            <legend id="legend-root-123" class="sr-only">제곱근, 숫자 키 1에서 3</legend>
             <button type="button" class="keys button" aria-label="자연상수 e" aria-keyshortcuts="e" data-value="e">e</button>
             <button type="button" class="keys button" aria-label="탄젠트" aria-keyshortcuts="t" data-value="tan">tan</button>
             <button type="button" class="keys button" aria-label="루트" aria-keyshortcuts="v" data-value="√">√</button>
@@ -110,13 +120,13 @@
             <button type="button" class="keys button" aria-label="빼기" aria-keyshortcuts="-" data-value="-">-</button>
           </fieldset>
 
-          <fieldset>
-            <legend class="sr-only">기타 연산 키 및 숫자 0</legend>
+          <fieldset aria-labelledby="legend-misc-0">
+            <legend id="legend-misc-0" class="sr-only">기타 연산 키 및 숫자 0</legend>
             <button type="button" class="keys button" aria-label="이전 계산 결과" aria-keyshortcuts="a" data-value="Ans">Ans</button>
             <button type="button" class="keys button" aria-label="지수 표기법" aria-keyshortcuts="E" data-value="EXP">EXP</button>
             <button type="button" class="keys button" aria-label="거듭제곱" aria-keyshortcuts="^" data-value="x^{y}">x<sup>y</sup></button>
-            <button type="button" class="keys button number" aria-label="숫자 0" aria-keyshortcuts="0" data-value="0">0</button>
             <button type="button" class="keys button number" aria-label="소수점" aria-keyshortcuts="." data-value=".">.</button>
+            <button type="button" class="keys button number" aria-label="숫자 0" aria-keyshortcuts="0" data-value="0">0</button>
             <button type="button" class="keys button equals" aria-label="등호" aria-keyshortcuts="=, Enter" data-value="=">=</button>
             <button type="button" class="keys button" aria-label="더하기" aria-keyshortcuts="+" data-value="+">+</button>
           </fieldset>
@@ -124,69 +134,88 @@
       </section>
 
       <!-- Viewport <= 768px -->
-      <section class="calculator-container mobile" aria-label="공학용 계산기">
+      <section class="calculator-container mobile" aria-label="계산기 키패드">
         <!-- Calculation Result -->
-        <div class="calculator-display" role="region" aria-label="계산 결과 출력">
+        <div class="calculator-display" role="region" aria-label="계산 결과 영역">
           <button type="button" aria-label="이전 결과 보기">
             <img src="/public/assets/icons/rewind-time.svg" alt="" aria-hidden="true" />
           </button>
 
           <div>
-            <output id="expression-output" aria-live="polite">Ans = 1234</output>
-            <div id="fake-input" role="textbox" aria-label="계산 입력창" aria-describedby="expression-output" tabindex="0" data-value="0">
-              <span>0</span>
+            <output id="expression-output" role="status" aria-live="polite" aria-atomic="true">Ans = 1234</output>
+            <div
+              id="fake-input"
+              role="textbox"
+              aria-label="계산 입력창"
+              aria-role-description="계산기 입력창 (키보드로 입력 가능)"
+              aria-describedby="expression-output"
+              tabindex="0"
+              data-value="0"
+            >
+              0
             </div>
           </div>
         </div>
 
         <!-- Calculator Keypads -->
-        <section class="calculator-keypads" role="group" aria-label="공학용 계산기 키패드">
-          <div class="swiper" style="width: 100%">
+        <section class="calculator-keypads" role="group" aria-label="계산기 키패드">
+          <div class="swiper">
             <div class="swiper-wrapper">
+              <!-- 기본 키패드 슬라이드 -->
               <div class="swiper-slide">
-                <fieldset>
+                <fieldset aria-labelledby="group-basic-functions">
+                  <legend id="group-basic-functions" class="sr-only">기본 기능 키</legend>
                   <button type="button" class="keys button" aria-label="여는 괄호" aria-keyshortcuts="(" data-value="(">(</button>
                   <button type="button" class="keys button" aria-label="닫는 괄호" aria-keyshortcuts=")" data-value=")">)</button>
                   <button type="button" class="keys button" aria-label="퍼센트" aria-keyshortcuts="%" data-value="%">%</button>
                   <button type="button" class="keys button" aria-label="전체 초기화" aria-keyshortcuts="Escape" data-value="AC">AC</button>
                 </fieldset>
-                <fieldset>
+
+                <fieldset aria-labelledby="group-numbers-789-divide">
+                  <legend id="group-numbers-789-divide" class="sr-only">숫자 7에서 9 및 나누기</legend>
                   <button type="button" class="keys button number" aria-label="숫자 7" aria-keyshortcuts="7" data-value="7">7</button>
                   <button type="button" class="keys button number" aria-label="숫자 8" aria-keyshortcuts="8" data-value="8">8</button>
                   <button type="button" class="keys button number" aria-label="숫자 9" aria-keyshortcuts="9" data-value="9">9</button>
-                  <button type="button" class="keys button" aria-label="더하기" aria-keyshortcuts="/" data-value="÷">÷</button>
+                  <button type="button" class="keys button" aria-label="나누기" aria-keyshortcuts="/" data-value="÷">÷</button>
                 </fieldset>
-                <fieldset>
+
+                <fieldset aria-labelledby="group-numbers-456-multiply">
+                  <legend id="group-numbers-456-multiply" class="sr-only">숫자 4에서 6 및 곱하기</legend>
                   <button type="button" class="keys button number" aria-label="숫자 4" aria-keyshortcuts="4" data-value="4">4</button>
                   <button type="button" class="keys button number" aria-label="숫자 5" aria-keyshortcuts="5" data-value="5">5</button>
                   <button type="button" class="keys button number" aria-label="숫자 6" aria-keyshortcuts="6" data-value="6">6</button>
                   <button type="button" class="keys button" aria-label="곱하기" aria-keyshortcuts="*" data-value="*">x</button>
                 </fieldset>
-                <fieldset>
+
+                <fieldset aria-labelledby="group-numbers-123-minus">
+                  <legend id="group-numbers-123-minus" class="sr-only">숫자 1에서 3 및 빼기</legend>
                   <button type="button" class="keys button number" aria-label="숫자 1" aria-keyshortcuts="1" data-value="1">1</button>
                   <button type="button" class="keys button number" aria-label="숫자 2" aria-keyshortcuts="2" data-value="2">2</button>
                   <button type="button" class="keys button number" aria-label="숫자 3" aria-keyshortcuts="3" data-value="3">3</button>
                   <button type="button" class="keys button" aria-label="빼기" aria-keyshortcuts="-" data-value="-">-</button>
                 </fieldset>
-                <fieldset>
-                  <button type="button" class="keys button number" aria-label="숫자 0" aria-keyshortcuts="0" data-value="0">0</button>
+
+                <fieldset aria-labelledby="group-zero-decimal-equals-plus">
+                  <legend id="group-zero-decimal-equals-plus" class="sr-only">소수점, 0, 등호, 더하기</legend>
                   <button type="button" class="keys button number" aria-label="소수점" aria-keyshortcuts="." data-value=".">.</button>
+                  <button type="button" class="keys button number" aria-label="숫자 0" aria-keyshortcuts="0" data-value="0">0</button>
                   <button type="button" class="keys button equals" aria-label="등호" aria-keyshortcuts="=, Enter" data-value="=">=</button>
                   <button type="button" class="keys button" aria-label="더하기" aria-keyshortcuts="+" data-value="+">+</button>
                 </fieldset>
               </div>
 
+              <!-- 공학용 키패드 슬라이드 -->
               <div class="swiper-slide">
-                <fieldset>
-                  <legend class="sr-only">계산기 기능 키</legend>
+                <fieldset aria-labelledby="group-angle-mode">
+                  <legend id="group-angle-mode" class="sr-only">각도 단위 선택 및 함수 키</legend>
                   <div role="radiogroup" class="keys" aria-label="각도 단위 선택">
-                    <label class="">
+                    <label>
                       <input type="radio" id="mode-rad" name="angle-mode" aria-labelledby="rad-desc" aria-keyshortcuts="r" value="Rad" checked />
                       <span class="label-text">Rad</span>
                       <span id="rad-desc" class="sr-only">라디안 모드</span>
                     </label>
-                    <span>|</span>
-                    <label class="">
+                    <span aria-hidden="true">|</span>
+                    <label>
                       <input type="radio" id="mode-deg" name="angle-mode" aria-labelledby="deg-desc" aria-keyshortcuts="r" value="Deg" />
                       <span class="label-text">Deg</span>
                       <span id="deg-desc" class="sr-only">도 단위 모드</span>
@@ -196,22 +225,25 @@
                   <button type="button" class="keys button" aria-label="팩토리얼" aria-keyshortcuts="!" data-value="x!">x!</button>
                   <button type="button" class="keys button" aria-label="자연로그 역함수" aria-keyshortcuts="i" data-value="Inv">Inv</button>
                 </fieldset>
-                <fieldset>
-                  <legend class="sr-only">삼각함수 및 숫자 키 7에서 9</legend>
+
+                <fieldset aria-labelledby="group-trig-log-1">
+                  <legend id="group-trig-log-1" class="sr-only">삼각 함수 및 자연로그</legend>
                   <button type="button" class="keys button" aria-label="사인" aria-keyshortcuts="s" data-value="sin">sin</button>
                   <button type="button" class="keys button" aria-label="자연로그" aria-keyshortcuts="l" data-value="ln">ln</button>
                   <button type="button" class="keys button" aria-label="파이" aria-keyshortcuts="p" data-value="π">π</button>
                   <button type="button" class="keys button" aria-label="코사인" aria-keyshortcuts="c" data-value="cos">cos</button>
                 </fieldset>
-                <fieldset>
-                  <legend class="sr-only">로그, 숫자 키 4에서 6</legend>
+
+                <fieldset aria-labelledby="group-trig-log-2">
+                  <legend id="group-trig-log-2" class="sr-only">상용로그 및 기타 수학 기호</legend>
                   <button type="button" class="keys button" aria-label="상용로그" aria-keyshortcuts="g" data-value="log">log</button>
                   <button type="button" class="keys button" aria-label="자연상수 e" aria-keyshortcuts="e" data-value="e">e</button>
                   <button type="button" class="keys button" aria-label="탄젠트" aria-keyshortcuts="t" data-value="tan">tan</button>
                   <button type="button" class="keys button" aria-label="루트" aria-keyshortcuts="v" data-value="√">√</button>
                 </fieldset>
-                <fieldset>
-                  <legend class="sr-only">기타 연산 키 및 숫자 0</legend>
+
+                <fieldset aria-labelledby="group-etc-operations">
+                  <legend id="group-etc-operations" class="sr-only">기타 연산 및 등호</legend>
                   <button type="button" class="keys button" aria-label="이전 계산 결과" aria-keyshortcuts="a" data-value="Ans">Ans</button>
                   <button type="button" class="keys button" aria-label="지수 표기법" aria-keyshortcuts="E" data-value="EXP">EXP</button>
                   <button type="button" class="keys button" aria-label="거듭제곱" aria-keyshortcuts="^" data-value="x^{y}">x<sup>y</sup></button>
@@ -220,9 +252,9 @@
               </div>
             </div>
 
-            <div class="swiper-btn">
-              <button class="active" data-value="basic">123</button>
-              <button data-value="engineering">Fx</button>
+            <div class="swiper-btn" role="tablist" aria-label="키패드 전환">
+              <button role="tab" aria-selected="true" class="active" data-value="basic">123</button>
+              <button role="tab" aria-selected="false" data-value="engineering">Fx</button>
             </div>
           </div>
         </section>

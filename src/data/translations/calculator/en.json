@@ -1,0 +1,215 @@
+{
+  "display": {
+    "regionLabel": "Calculation result area",
+    "prevResultButtonLabel": "View previous result",
+    "inputLabel": "Calculator input field",
+    "inputRoleDescription": "Calculator input (keyboard accessible)"
+  },
+  "keypads": {
+    "ariaLabel": "Calculator keypad",
+    "desktop": {
+      "groups": [
+        {
+          "legend": "Calculator function keys",
+          "angleMode": {
+            "ariaLabel": "Angle unit selection",
+            "options": [
+              { "value": "Rad", "text": "Rad", "ariaLabel": "Radian mode", "shortcut": "r" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "Degree mode", "shortcut": "r" }
+            ]
+          },
+          "buttons": [
+            { "text": "x!", "ariaLabel": "Factorial", "shortcut": "!", "value": "x!" },
+            { "text": "(", "ariaLabel": "Open parenthesis", "shortcut": "(", "value": "(" },
+            { "text": ")", "ariaLabel": "Close parenthesis", "shortcut": ")", "value": ")" },
+            { "text": "%", "ariaLabel": "Percent", "shortcut": "%", "value": "%" },
+            {
+              "id": "clear-toggle",
+              "states": {
+                "AC": {
+                  "text": "AC",
+                  "ariaLabel": "All Clear",
+                  "shortcut": "Escape",
+                  "value": "AC"
+                },
+                "CE": {
+                  "text": "CE",
+                  "ariaLabel": "Clear Entry",
+                  "shortcut": "Backspace",
+                  "value": "CE"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "legend": "Trigonometry and numbers 7 to 9",
+          "buttons": [
+            { "text": "Inv", "ariaLabel": "Inverse function", "shortcut": "i", "value": "Inv" },
+            { "text": "sin", "ariaLabel": "Sine", "shortcut": "s", "value": "sin" },
+            { "text": "ln", "ariaLabel": "Natural logarithm", "shortcut": "l", "value": "ln" },
+            { "text": "7", "ariaLabel": "Number 7", "shortcut": "7", "value": "7" },
+            { "text": "8", "ariaLabel": "Number 8", "shortcut": "8", "value": "8" },
+            { "text": "9", "ariaLabel": "Number 9", "shortcut": "9", "value": "9" },
+            { "text": "÷", "ariaLabel": "Divide", "shortcut": "/", "value": "÷" }
+          ]
+        },
+        {
+          "legend": "Logarithms and numbers 4 to 6",
+          "buttons": [
+            { "text": "π", "ariaLabel": "Pi", "shortcut": "p", "value": "π" },
+            { "text": "cos", "ariaLabel": "Cosine", "shortcut": "c", "value": "cos" },
+            { "text": "log", "ariaLabel": "Base-10 logarithm", "shortcut": "g", "value": "log" },
+            { "text": "4", "ariaLabel": "Number 4", "shortcut": "4", "value": "4" },
+            { "text": "5", "ariaLabel": "Number 5", "shortcut": "5", "value": "5" },
+            { "text": "6", "ariaLabel": "Number 6", "shortcut": "6", "value": "6" },
+            { "text": "x", "ariaLabel": "Multiply", "shortcut": "*", "value": "*" }
+          ]
+        },
+        {
+          "legend": "Roots and numbers 1 to 3",
+          "buttons": [
+            { "text": "e", "ariaLabel": "Euler’s number", "shortcut": "e", "value": "e" },
+            { "text": "tan", "ariaLabel": "Tangent", "shortcut": "t", "value": "tan" },
+            { "text": "√", "ariaLabel": "Square root", "shortcut": "v", "value": "√" },
+            { "text": "1", "ariaLabel": "Number 1", "shortcut": "1", "value": "1" },
+            { "text": "2", "ariaLabel": "Number 2", "shortcut": "2", "value": "2" },
+            { "text": "3", "ariaLabel": "Number 3", "shortcut": "3", "value": "3" },
+            { "text": "-", "ariaLabel": "Subtract", "shortcut": "-", "value": "-" }
+          ]
+        },
+        {
+          "legend": "Other operations and number 0",
+          "buttons": [
+            { "text": "Ans", "ariaLabel": "Previous result", "shortcut": "a", "value": "Ans" },
+            { "text": "EXP", "ariaLabel": "Exponential notation", "shortcut": "E", "value": "EXP" },
+            { "text": "x<sup>y</sup>", "ariaLabel": "Exponentiation", "shortcut": "^", "value": "x^{y}" },
+            { "text": ".", "ariaLabel": "Decimal point", "shortcut": ".", "value": "." },
+            { "text": "0", "ariaLabel": "Number 0", "shortcut": "0", "value": "0" },
+            { "text": "=", "ariaLabel": "Equals", "shortcut": "=, Enter", "value": "=" },
+            { "text": "+", "ariaLabel": "Add", "shortcut": "+", "value": "+" }
+          ]
+        }
+      ]
+    },
+    "mobile": {
+      "basic": {
+        "label": "Basic keypad",
+        "groups": [
+          {
+            "legend": "Basic functions",
+            "buttons": [
+              { "text": "(", "ariaLabel": "Open parenthesis", "shortcut": "(", "value": "(" },
+              { "text": ")", "ariaLabel": "Close parenthesis", "shortcut": ")", "value": ")" },
+              { "text": "%", "ariaLabel": "Percent", "shortcut": "%", "value": "%" },
+              {
+                "id": "clear-toggle",
+                "states": {
+                  "AC": {
+                    "text": "AC",
+                    "ariaLabel": "All Clear",
+                    "shortcut": "Escape",
+                    "value": "AC"
+                  },
+                  "CE": {
+                    "text": "CE",
+                    "ariaLabel": "Clear Entry",
+                    "shortcut": "Backspace",
+                    "value": "CE"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "legend": "Numbers 7 to 9 and divide",
+            "buttons": [
+              { "text": "7", "ariaLabel": "Number 7", "shortcut": "7", "value": "7" },
+              { "text": "8", "ariaLabel": "Number 8", "shortcut": "8", "value": "8" },
+              { "text": "9", "ariaLabel": "Number 9", "shortcut": "9", "value": "9" },
+              { "text": "÷", "ariaLabel": "Divide", "shortcut": "/", "value": "÷" }
+            ]
+          },
+          {
+            "legend": "Numbers 4 to 6 and multiply",
+            "buttons": [
+              { "text": "4", "ariaLabel": "Number 4", "shortcut": "4", "value": "4" },
+              { "text": "5", "ariaLabel": "Number 5", "shortcut": "5", "value": "5" },
+              { "text": "6", "ariaLabel": "Number 6", "shortcut": "6", "value": "6" },
+              { "text": "x", "ariaLabel": "Multiply", "shortcut": "*", "value": "*" }
+            ]
+          },
+          {
+            "legend": "Numbers 1 to 3 and subtract",
+            "buttons": [
+              { "text": "1", "ariaLabel": "Number 1", "shortcut": "1", "value": "1" },
+              { "text": "2", "ariaLabel": "Number 2", "shortcut": "2", "value": "2" },
+              { "text": "3", "ariaLabel": "Number 3", "shortcut": "3", "value": "3" },
+              { "text": "-", "ariaLabel": "Subtract", "shortcut": "-", "value": "-" }
+            ]
+          },
+          {
+            "legend": "Decimal, 0, equals, add",
+            "buttons": [
+              { "text": ".", "ariaLabel": "Decimal point", "shortcut": ".", "value": "." },
+              { "text": "0", "ariaLabel": "Number 0", "shortcut": "0", "value": "0" },
+              { "text": "=", "ariaLabel": "Equals", "shortcut": "=, Enter", "value": "=" },
+              { "text": "+", "ariaLabel": "Add", "shortcut": "+", "value": "+" }
+            ]
+          }
+        ]
+      },
+      "engineering": {
+        "label": "Scientific keypad",
+        "groups": [
+          {
+            "legend": "Angle unit and functions",
+            "angleMode": {
+              "ariaLabel": "Angle unit selection",
+              "options": [
+                { "text": "Rad", "ariaLabel": "Radian mode", "shortcut": "r", "value": "Rad" },
+                { "text": "Deg", "ariaLabel": "Degree mode", "shortcut": "r", "value": "Deg" }
+              ]
+            },
+            "buttons": [
+              { "text": "x!", "ariaLabel": "Factorial", "shortcut": "!", "value": "x!" },
+              { "text": "Inv", "ariaLabel": "Inverse function", "shortcut": "i", "value": "Inv" }
+            ]
+          },
+          {
+            "legend": "Trigonometry and natural log",
+            "buttons": [
+              { "text": "sin", "ariaLabel": "Sine", "shortcut": "s", "value": "sin" },
+              { "text": "ln", "ariaLabel": "Natural logarithm", "shortcut": "l", "value": "ln" },
+              { "text": "π", "ariaLabel": "Pi", "shortcut": "p", "value": "π" },
+              { "text": "cos", "ariaLabel": "Cosine", "shortcut": "c", "value": "cos" }
+            ]
+          },
+          {
+            "legend": "Logarithms and math symbols",
+            "buttons": [
+              { "text": "log", "ariaLabel": "Base-10 logarithm", "shortcut": "g", "value": "log" },
+              { "text": "e", "ariaLabel": "Euler’s number", "shortcut": "e", "value": "e" },
+              { "text": "tan", "ariaLabel": "Tangent", "shortcut": "t", "value": "tan" },
+              { "text": "√", "ariaLabel": "Square root", "shortcut": "v", "value": "√" }
+            ]
+          },
+          {
+            "legend": "Other operations and equals",
+            "buttons": [
+              { "text": "Ans", "ariaLabel": "Previous result", "shortcut": "a", "value": "Ans" },
+              { "text": "EXP", "ariaLabel": "Exponential notation", "shortcut": "E", "value": "EXP" },
+              { "text": "x<sup>y</sup>", "ariaLabel": "Exponentiation", "shortcut": "^", "value": "x^{y}" },
+              { "text": "=", "ariaLabel": "Equals", "shortcut": "=, Enter", "value": "=" }
+            ]
+          }
+        ]
+      },
+      "tabs": {
+        "basic": "123",
+        "engineering": "Fx",
+        "ariaLabel": "Switch keypad"
+      }
+    }
+  }
+}
