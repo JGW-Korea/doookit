@@ -3,6 +3,7 @@ import debounce from "lodash.debounce";
 import { Component, ComponentDataType } from "../../utils/Component";
 import { CalculatorDatas } from "../../data";
 import { docType } from "../../utils/docType";
+import CalculatorDisplay from "./calculator-display";
 // import { LangType, CalculatorTranslations } from "../../types/calculatorI18nData";
 // import { isLangType } from "../../utils/typeCheck";
 // import { isLangType } from "../../utils/typeCheck";
@@ -43,8 +44,18 @@ export default class Calculator extends Component<ComponentDataType, ComponentDa
   }
 
   render() {
-    const calculatorTranslationData = CalculatorDatas[docType()];
+    const calculatorTranslationData = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
+
+    // 계산기 전체 영역 기본값 세팅
+    this.el.classList.add("calculator-container");
+    this.el.ariaLabel = calculatorTranslationData.ariaLabel;
+
     console.log(calculatorTranslationData);
+
+    this.el.appendChild(new CalculatorDisplay({ props: calculatorTranslationData.display }).el);
+    console.log(this.el);
+
+    // 계산 결과 영역 컴포넌트 생성
 
     // const browserLang: string = navigator.language.split("-")[0];
     // const lang: LangType = isLangType(browserLang) ? browserLang : "en";

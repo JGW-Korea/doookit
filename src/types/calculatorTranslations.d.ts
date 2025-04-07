@@ -8,10 +8,14 @@ export interface CalculatorTranslations {
 // 계산기 전체 타입 정의
 export interface CalculatorI18nData {
   ariaLabel: string;
-  display: {
-    regionLabel: string;
-    prevResultButtonLabel: string;
-    inputLabel: string;
-    inputRoleDescription: string;
-  };
+  display: CalculatorDisplayType;
+}
+
+// 계산 결과 영역 타입 정의
+export interface CalculatorDisplayType {
+  [key: string]: unknown;
+  regionLabel: string;
+  prevResultButtonLabel: string;
+  inputLabel: string;
+  inputRoleDescription: string;
 }
