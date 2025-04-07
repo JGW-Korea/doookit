@@ -11,12 +11,13 @@
     "desktop": {
       "groups": [
         {
+          "id": "legend-functions",
           "legend": "Tasti funzione della calcolatrice",
           "angleMode": {
             "ariaLabel": "Selezione unità angolare",
             "options": [
-              { "value": "Rad", "text": "Rad", "ariaLabel": "Modalità radianti", "shortcut": "r" },
-              { "value": "Deg", "text": "Deg", "ariaLabel": "Modalità gradi", "shortcut": "r" }
+              { "value": "Rad", "text": "Rad", "ariaLabel": "Modalità radianti", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "Modalità gradi", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
             ]
           },
           "buttons": [
@@ -44,6 +45,7 @@
           ]
         },
         {
+          "id": "legend-trig-789",
           "legend": "Trigonometria e numeri da 7 a 9",
           "buttons": [
             { "text": "Inv", "ariaLabel": "Funzione inversa", "shortcut": "i", "value": "Inv" },
@@ -56,6 +58,7 @@
           ]
         },
         {
+          "id": "legend-log-456",
           "legend": "Logaritmi e numeri da 4 a 6",
           "buttons": [
             { "text": "π", "ariaLabel": "Pi greco", "shortcut": "p", "value": "π" },
@@ -68,6 +71,7 @@
           ]
         },
         {
+          "id": "legend-root-123",
           "legend": "Radice quadrata e numeri da 1 a 3",
           "buttons": [
             { "text": "e", "ariaLabel": "Costante di Eulero", "shortcut": "e", "value": "e" },
@@ -80,11 +84,12 @@
           ]
         },
         {
+          "id": "legend-misc-0",
           "legend": "Altre operazioni e numero 0",
           "buttons": [
             { "text": "Ans", "ariaLabel": "Risultato precedente", "shortcut": "a", "value": "Ans" },
             { "text": "EXP", "ariaLabel": "Notazione esponenziale", "shortcut": "E", "value": "EXP" },
-            { "text": "x<sup>y</sup>", "ariaLabel": "Esponente", "shortcut": "^", "value": "x^{y}" },
+            { "text": "xy", "ariaLabel": "Esponente", "shortcut": "^", "value": "x^{y}" },
             { "text": ".", "ariaLabel": "Punto decimale", "shortcut": ".", "value": "." },
             { "text": "0", "ariaLabel": "Numero 0", "shortcut": "0", "value": "0" },
             { "text": "=", "ariaLabel": "Uguale", "shortcut": "=, Enter", "value": "=" },
@@ -98,6 +103,7 @@
         "label": "Tastierino base",
         "groups": [
           {
+            "id": "group-basic-functions",
             "legend": "Tasti funzione base",
             "buttons": [
               { "text": "(", "ariaLabel": "Parentesi aperta", "shortcut": "(", "value": "(" },
@@ -123,6 +129,7 @@
             ]
           },
           {
+            "id": "group-numbers-789-divide",
             "legend": "Numeri da 7 a 9 e divisione",
             "buttons": [
               { "text": "7", "ariaLabel": "Numero 7", "shortcut": "7", "value": "7" },
@@ -132,6 +139,7 @@
             ]
           },
           {
+            "id": "group-numbers-456-multiply",
             "legend": "Numeri da 4 a 6 e moltiplicazione",
             "buttons": [
               { "text": "4", "ariaLabel": "Numero 4", "shortcut": "4", "value": "4" },
@@ -141,6 +149,7 @@
             ]
           },
           {
+            "id": "group-numbers-123-minus",
             "legend": "Numeri da 1 a 3 e sottrazione",
             "buttons": [
               { "text": "1", "ariaLabel": "Numero 1", "shortcut": "1", "value": "1" },
@@ -150,6 +159,7 @@
             ]
           },
           {
+            "id": "group-zero-decimal-equals-plus",
             "legend": "Punto decimale, 0, uguale, addizione",
             "buttons": [
               { "text": ".", "ariaLabel": "Punto decimale", "shortcut": ".", "value": "." },
@@ -164,6 +174,7 @@
         "label": "Tastierino scientifico",
         "groups": [
           {
+            "id": "group-angle-mode",
             "legend": "Selezione unità angolare e funzioni",
             "angleMode": {
               "ariaLabel": "Selezione unità angolare",
@@ -178,6 +189,7 @@
             ]
           },
           {
+            "id": "group-trig-log-1",
             "legend": "Trigonometria e logaritmo naturale",
             "buttons": [
               { "text": "sin", "ariaLabel": "Seno", "shortcut": "s", "value": "sin" },
@@ -187,6 +199,7 @@
             ]
           },
           {
+            "id": "group-trig-log-2",
             "legend": "Logaritmi e simboli matematici",
             "buttons": [
               { "text": "log", "ariaLabel": "Logaritmo in base 10", "shortcut": "g", "value": "log" },
@@ -196,11 +209,12 @@
             ]
           },
           {
+            "id": "group-etc-operations",
             "legend": "Altre operazioni e uguale",
             "buttons": [
               { "text": "Ans", "ariaLabel": "Risultato precedente", "shortcut": "a", "value": "Ans" },
               { "text": "EXP", "ariaLabel": "Notazione esponenziale", "shortcut": "E", "value": "EXP" },
-              { "text": "x<sup>y</sup>", "ariaLabel": "Esponente", "shortcut": "^", "value": "x^{y}" },
+              { "text": "xy", "ariaLabel": "Esponente", "shortcut": "^", "value": "x^{y}" },
               { "text": "=", "ariaLabel": "Uguale", "shortcut": "=, Enter", "value": "=" }
             ]
           }

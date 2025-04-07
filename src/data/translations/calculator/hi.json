@@ -11,12 +11,13 @@
     "desktop": {
       "groups": [
         {
+          "id": "legend-functions",
           "legend": "कैलकुलेटर फ़ंक्शन कुंजियाँ",
           "angleMode": {
             "ariaLabel": "कोण इकाई चयन",
             "options": [
-              { "value": "Rad", "text": "Rad", "ariaLabel": "रेडियन मोड", "shortcut": "r" },
-              { "value": "Deg", "text": "Deg", "ariaLabel": "डिग्री मोड", "shortcut": "r" }
+              { "value": "Rad", "text": "Rad", "ariaLabel": "रेडियन मोड", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "डिग्री मोड", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
             ]
           },
           "buttons": [
@@ -44,6 +45,7 @@
           ]
         },
         {
+          "id": "legend-trig-789",
           "legend": "त्रिकोणमिति और संख्याएँ 7 से 9",
           "buttons": [
             { "text": "Inv", "ariaLabel": "इन्वर्स फ़ंक्शन", "shortcut": "i", "value": "Inv" },
@@ -56,6 +58,7 @@
           ]
         },
         {
+          "id": "legend-log-456",
           "legend": "लघुगणक और संख्याएँ 4 से 6",
           "buttons": [
             { "text": "π", "ariaLabel": "पाई", "shortcut": "p", "value": "π" },
@@ -68,6 +71,7 @@
           ]
         },
         {
+          "id": "legend-root-123",
           "legend": "वर्गमूल और संख्याएँ 1 से 3",
           "buttons": [
             { "text": "e", "ariaLabel": "यूइलर स्थिरांक", "shortcut": "e", "value": "e" },
@@ -80,11 +84,12 @@
           ]
         },
         {
+          "id": "legend-misc-0",
           "legend": "अन्य संक्रियाएँ और संख्या 0",
           "buttons": [
             { "text": "Ans", "ariaLabel": "पिछला परिणाम", "shortcut": "a", "value": "Ans" },
             { "text": "EXP", "ariaLabel": "घातांक स्वरूप", "shortcut": "E", "value": "EXP" },
-            { "text": "x<sup>y</sup>", "ariaLabel": "घातांक", "shortcut": "^", "value": "x^{y}" },
+            { "text": "xy", "ariaLabel": "घातांक", "shortcut": "^", "value": "x^{y}" },
             { "text": ".", "ariaLabel": "दशमलव बिंदु", "shortcut": ".", "value": "." },
             { "text": "0", "ariaLabel": "संख्या 0", "shortcut": "0", "value": "0" },
             { "text": "=", "ariaLabel": "बराबर", "shortcut": "=, Enter", "value": "=" },
@@ -98,6 +103,7 @@
         "label": "मूल कीपैड",
         "groups": [
           {
+            "id": "group-basic-functions",
             "legend": "मूल कार्य कुंजियाँ",
             "buttons": [
               { "text": "(", "ariaLabel": "खुला कोष्ठक", "shortcut": "(", "value": "(" },
@@ -123,6 +129,7 @@
             ]
           },
           {
+            "id": "group-numbers-789-divide",
             "legend": "संख्याएँ 7 से 9 और भाग",
             "buttons": [
               { "text": "7", "ariaLabel": "संख्या 7", "shortcut": "7", "value": "7" },
@@ -132,6 +139,7 @@
             ]
           },
           {
+            "id": "group-numbers-456-multiply",
             "legend": "संख्याएँ 4 से 6 और गुणा",
             "buttons": [
               { "text": "4", "ariaLabel": "संख्या 4", "shortcut": "4", "value": "4" },
@@ -141,6 +149,7 @@
             ]
           },
           {
+            "id": "group-numbers-123-minus",
             "legend": "संख्याएँ 1 से 3 और घटाव",
             "buttons": [
               { "text": "1", "ariaLabel": "संख्या 1", "shortcut": "1", "value": "1" },
@@ -150,6 +159,7 @@
             ]
           },
           {
+            "id": "group-zero-decimal-equals-plus",
             "legend": "दशमलव, 0, बराबर, जोड़",
             "buttons": [
               { "text": ".", "ariaLabel": "दशमलव बिंदु", "shortcut": ".", "value": "." },
@@ -164,12 +174,13 @@
         "label": "वैज्ञानिक कीपैड",
         "groups": [
           {
+            "id": "group-angle-mode",
             "legend": "कोण इकाई और फ़ंक्शन",
             "angleMode": {
               "ariaLabel": "कोण इकाई चयन",
               "options": [
-                { "text": "Rad", "ariaLabel": "रेडियन मोड", "shortcut": "r", "value": "Rad" },
-                { "text": "Deg", "ariaLabel": "डिग्री मोड", "shortcut": "r", "value": "Deg" }
+                { "text": "Rad", "ariaLabel": "रेडियन मोड", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "text": "Deg", "ariaLabel": "डिग्री मोड", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [
@@ -178,6 +189,7 @@
             ]
           },
           {
+            "id": "group-trig-log-1",
             "legend": "त्रिकोणमिति और प्राकृतिक लघुगणक",
             "buttons": [
               { "text": "sin", "ariaLabel": "साइन", "shortcut": "s", "value": "sin" },
@@ -187,6 +199,7 @@
             ]
           },
           {
+            "id": "group-trig-log-2",
             "legend": "लघुगणक और गणितीय प्रतीक",
             "buttons": [
               { "text": "log", "ariaLabel": "साधारण लघुगणक", "shortcut": "g", "value": "log" },
@@ -196,11 +209,12 @@
             ]
           },
           {
+            "id": "group-etc-operations",
             "legend": "अन्य संक्रियाएँ और बराबर",
             "buttons": [
               { "text": "Ans", "ariaLabel": "पिछला परिणाम", "shortcut": "a", "value": "Ans" },
               { "text": "EXP", "ariaLabel": "घातांक स्वरूप", "shortcut": "E", "value": "EXP" },
-              { "text": "x<sup>y</sup>", "ariaLabel": "घातांक", "shortcut": "^", "value": "x^{y}" },
+              { "text": "xy", "ariaLabel": "घातांक", "shortcut": "^", "value": "x^{y}" },
               { "text": "=", "ariaLabel": "बराबर", "shortcut": "=, Enter", "value": "=" }
             ]
           }

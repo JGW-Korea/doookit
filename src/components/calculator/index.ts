@@ -4,6 +4,7 @@ import { Component, ComponentDataType } from "../../utils/Component";
 import { CalculatorDatas } from "../../data";
 import { docType } from "../../utils/docType";
 import CalculatorDisplay from "./calculator-display";
+import CalculatorKeypads from "./calculator-keypads";
 // import { LangType, CalculatorTranslations } from "../../types/calculatorI18nData";
 // import { isLangType } from "../../utils/typeCheck";
 // import { isLangType } from "../../utils/typeCheck";
@@ -46,14 +47,20 @@ export default class Calculator extends Component<ComponentDataType, ComponentDa
   render() {
     const calculatorTranslationData = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
 
+    const { ariaLabel: MainAriaLabel, display, keypads } = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
+
     // 계산기 전체 영역 기본값 세팅
     this.el.classList.add("calculator-container");
-    this.el.ariaLabel = calculatorTranslationData.ariaLabel;
+    this.el.ariaLabel = MainAriaLabel;
 
     console.log(calculatorTranslationData);
 
-    this.el.appendChild(new CalculatorDisplay({ props: calculatorTranslationData.display }).el);
-    console.log(this.el);
+    const calcDisplay: HTMLElement = new CalculatorDisplay({ props: display }).el;
+    const calcKeypads: HTMLElement | string = !this.isMobileView
+      ? new CalculatorKeypads({ props: { ariaLabel: keypads.ariaLabel, groups: keypads.desktop.groups } }).el
+      : "asd";
+
+    this.el.append(calcDisplay, calcKeypads);
 
     // 계산 결과 영역 컴포넌트 생성
 

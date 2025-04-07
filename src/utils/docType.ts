@@ -1,9 +1,5 @@
 import { LangType } from "../types/translation";
-import { SUPPORT_LANG } from "./constant";
-
-function isLangType(lang: string): lang is LangType {
-  return SUPPORT_LANG.includes(lang as LangType);
-}
+import { isLangType } from "./typeCheck";
 
 export function docType(): LangType {
   const lang: string = navigator.language.split("-")[0]; // 문서의 언어를 가져옴

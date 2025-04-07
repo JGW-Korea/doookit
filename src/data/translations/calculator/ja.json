@@ -11,12 +11,13 @@
     "desktop": {
       "groups": [
         {
+          "id": "legend-functions",
           "legend": "電卓機能キー",
           "angleMode": {
             "ariaLabel": "角度単位の選択",
             "options": [
-              { "value": "Rad", "text": "Rad", "ariaLabel": "ラジアンモード", "shortcut": "r" },
-              { "value": "Deg", "text": "Deg", "ariaLabel": "度モード", "shortcut": "r" }
+              { "value": "Rad", "text": "Rad", "ariaLabel": "ラジアンモード", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "度モード", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
             ]
           },
           "buttons": [
@@ -44,6 +45,7 @@
           ]
         },
         {
+          "id": "legend-trig-789",
           "legend": "三角関数と7〜9の数字キー",
           "buttons": [
             { "text": "Inv", "ariaLabel": "逆関数", "shortcut": "i", "value": "Inv" },
@@ -56,6 +58,7 @@
           ]
         },
         {
+          "id": "legend-log-456",
           "legend": "対数関数と4〜6の数字キー",
           "buttons": [
             { "text": "π", "ariaLabel": "円周率π", "shortcut": "p", "value": "π" },
@@ -68,6 +71,7 @@
           ]
         },
         {
+          "id": "legend-root-123",
           "legend": "平方根と1〜3の数字キー",
           "buttons": [
             { "text": "e", "ariaLabel": "自然数e", "shortcut": "e", "value": "e" },
@@ -80,11 +84,12 @@
           ]
         },
         {
+          "id": "legend-misc-0",
           "legend": "その他の演算と数字0",
           "buttons": [
             { "text": "Ans", "ariaLabel": "前回の結果", "shortcut": "a", "value": "Ans" },
             { "text": "EXP", "ariaLabel": "指数表記", "shortcut": "E", "value": "EXP" },
-            { "text": "x<sup>y</sup>", "ariaLabel": "べき乗", "shortcut": "^", "value": "x^{y}" },
+            { "text": "xy", "ariaLabel": "べき乗", "shortcut": "^", "value": "x^{y}" },
             { "text": ".", "ariaLabel": "小数点", "shortcut": ".", "value": "." },
             { "text": "0", "ariaLabel": "数字0", "shortcut": "0", "value": "0" },
             { "text": "=", "ariaLabel": "イコール", "shortcut": "=, Enter", "value": "=" },
@@ -98,6 +103,7 @@
         "label": "基本キーパッド",
         "groups": [
           {
+            "id": "group-basic-functions",
             "legend": "基本機能キー",
             "buttons": [
               { "text": "(", "ariaLabel": "開き括弧", "shortcut": "(", "value": "(" },
@@ -123,6 +129,7 @@
             ]
           },
           {
+            "id": "group-numbers-789-divide",
             "legend": "7〜9と割り算",
             "buttons": [
               { "text": "7", "ariaLabel": "数字7", "shortcut": "7", "value": "7" },
@@ -132,6 +139,7 @@
             ]
           },
           {
+            "id": "group-numbers-456-multiply",
             "legend": "4〜6と掛け算",
             "buttons": [
               { "text": "4", "ariaLabel": "数字4", "shortcut": "4", "value": "4" },
@@ -141,6 +149,7 @@
             ]
           },
           {
+            "id": "group-numbers-123-minus",
             "legend": "1〜3と引き算",
             "buttons": [
               { "text": "1", "ariaLabel": "数字1", "shortcut": "1", "value": "1" },
@@ -150,6 +159,7 @@
             ]
           },
           {
+            "id": "group-zero-decimal-equals-plus",
             "legend": "小数点、0、イコール、足し算",
             "buttons": [
               { "text": ".", "ariaLabel": "小数点", "shortcut": ".", "value": "." },
@@ -164,12 +174,13 @@
         "label": "関数キーパッド",
         "groups": [
           {
+            "id": "group-angle-mode",
             "legend": "角度単位と関数キー",
             "angleMode": {
               "ariaLabel": "角度単位の選択",
               "options": [
-                { "text": "Rad", "ariaLabel": "ラジアンモード", "shortcut": "r", "value": "Rad" },
-                { "text": "Deg", "ariaLabel": "度モード", "shortcut": "r", "value": "Deg" }
+                { "text": "Rad", "ariaLabel": "ラジアンモード", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "text": "Deg", "ariaLabel": "度モード", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [
@@ -178,6 +189,7 @@
             ]
           },
           {
+            "id": "group-trig-log-1",
             "legend": "三角関数と自然対数",
             "buttons": [
               { "text": "sin", "ariaLabel": "サイン", "shortcut": "s", "value": "sin" },
@@ -187,6 +199,7 @@
             ]
           },
           {
+            "id": "group-trig-log-2",
             "legend": "常用対数と数学記号",
             "buttons": [
               { "text": "log", "ariaLabel": "常用対数", "shortcut": "g", "value": "log" },
@@ -196,11 +209,12 @@
             ]
           },
           {
+            "id": "group-etc-operations",
             "legend": "その他の演算とイコール",
             "buttons": [
               { "text": "Ans", "ariaLabel": "前回の結果", "shortcut": "a", "value": "Ans" },
               { "text": "EXP", "ariaLabel": "指数表記", "shortcut": "E", "value": "EXP" },
-              { "text": "x<sup>y</sup>", "ariaLabel": "べき乗", "shortcut": "^", "value": "x^{y}" },
+              { "text": "xy", "ariaLabel": "べき乗", "shortcut": "^", "value": "x^{y}" },
               { "text": "=", "ariaLabel": "イコール", "shortcut": "=, Enter", "value": "=" }
             ]
           }

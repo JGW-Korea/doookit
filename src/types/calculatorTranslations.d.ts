@@ -9,6 +9,27 @@ export interface CalculatorTranslations {
 export interface CalculatorI18nData {
   ariaLabel: string;
   display: CalculatorDisplayType;
+  keypads: {
+    ariaLabel: string;
+    desktop: {
+      groups: CalculatorKeypadGroup[];
+    };
+    mobile: {
+      basic: {
+        label: string;
+        groups: CalculatorKeypadGroup[];
+      };
+      engineering: {
+        label: string;
+        groups: CalculatorKeypadGroup[];
+      };
+      tabs: {
+        basic: string;
+        engineering: string;
+        ariaLabel: string;
+      };
+    };
+  };
 }
 
 // 계산 결과 영역 타입 정의
@@ -18,4 +39,37 @@ export interface CalculatorDisplayType {
   prevResultButtonLabel: string;
   inputLabel: string;
   inputRoleDescription: string;
+}
+
+// 계산기 키패드 타입 정의
+export interface CalculatorKeypadGroup {
+  id: string;
+  legend: string;
+  angleMode?: {
+    ariaLabel: string;
+    options: {
+      id: string;
+      ariaLabelledby: string;
+      value: string;
+      text: string;
+      ariaLabel: string;
+      shortcut: string;
+    }[];
+  };
+  buttons: (KeypadButton | ClearToggleButton)[];
+}
+
+export interface KeypadButton {
+  text: string;
+  ariaLabel: string;
+  shortcut: string;
+  value: string;
+}
+
+export interface ClearToggleButton {
+  id: string;
+  states: {
+    AC: KeypadButton;
+    CE: KeypadButton;
+  };
 }

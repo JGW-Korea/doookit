@@ -11,12 +11,13 @@
     "desktop": {
       "groups": [
         {
+          "id": "legend-functions",
           "legend": "Touches de fonction de la calculatrice",
           "angleMode": {
             "ariaLabel": "Sélection de l'unité d'angle",
             "options": [
-              { "value": "Rad", "text": "Rad", "ariaLabel": "Mode radians", "shortcut": "r" },
-              { "value": "Deg", "text": "Deg", "ariaLabel": "Mode degrés", "shortcut": "r" }
+              { "value": "Rad", "text": "Rad", "ariaLabel": "Mode radians", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "Mode degrés", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
             ]
           },
           "buttons": [
@@ -44,6 +45,7 @@
           ]
         },
         {
+          "id": "legend-trig-789",
           "legend": "Trigonométrie et chiffres 7 à 9",
           "buttons": [
             { "text": "Inv", "ariaLabel": "Fonction inverse", "shortcut": "i", "value": "Inv" },
@@ -56,6 +58,7 @@
           ]
         },
         {
+          "id": "legend-log-456",
           "legend": "Logarithmes et chiffres 4 à 6",
           "buttons": [
             { "text": "π", "ariaLabel": "Pi", "shortcut": "p", "value": "π" },
@@ -68,6 +71,7 @@
           ]
         },
         {
+          "id": "legend-root-123",
           "legend": "Racines et chiffres 1 à 3",
           "buttons": [
             { "text": "e", "ariaLabel": "Constante d'Euler", "shortcut": "e", "value": "e" },
@@ -80,11 +84,12 @@
           ]
         },
         {
+          "id": "legend-misc-0",
           "legend": "Autres opérations et chiffre 0",
           "buttons": [
             { "text": "Ans", "ariaLabel": "Résultat précédent", "shortcut": "a", "value": "Ans" },
             { "text": "EXP", "ariaLabel": "Notation exponentielle", "shortcut": "E", "value": "EXP" },
-            { "text": "x<sup>y</sup>", "ariaLabel": "Exposant", "shortcut": "^", "value": "x^{y}" },
+            { "text": "xy", "ariaLabel": "Exposant", "shortcut": "^", "value": "x^{y}" },
             { "text": ".", "ariaLabel": "Point décimal", "shortcut": ".", "value": "." },
             { "text": "0", "ariaLabel": "Chiffre 0", "shortcut": "0", "value": "0" },
             { "text": "=", "ariaLabel": "Égal", "shortcut": "=, Enter", "value": "=" },
@@ -98,6 +103,7 @@
         "label": "Clavier basique",
         "groups": [
           {
+            "id": "group-basic-functions",
             "legend": "Fonctions de base",
             "buttons": [
               { "text": "(", "ariaLabel": "Parenthèse ouvrante", "shortcut": "(", "value": "(" },
@@ -123,6 +129,7 @@
             ]
           },
           {
+            "id": "group-numbers-789-divide",
             "legend": "Chiffres 7 à 9 et division",
             "buttons": [
               { "text": "7", "ariaLabel": "Chiffre 7", "shortcut": "7", "value": "7" },
@@ -132,6 +139,7 @@
             ]
           },
           {
+            "id": "group-numbers-456-multiply",
             "legend": "Chiffres 4 à 6 et multiplication",
             "buttons": [
               { "text": "4", "ariaLabel": "Chiffre 4", "shortcut": "4", "value": "4" },
@@ -141,6 +149,7 @@
             ]
           },
           {
+            "id": "group-numbers-123-minus",
             "legend": "Chiffres 1 à 3 et soustraction",
             "buttons": [
               { "text": "1", "ariaLabel": "Chiffre 1", "shortcut": "1", "value": "1" },
@@ -150,6 +159,7 @@
             ]
           },
           {
+            "id": "group-zero-decimal-equals-plus",
             "legend": "Point décimal, 0, égal, addition",
             "buttons": [
               { "text": ".", "ariaLabel": "Point décimal", "shortcut": ".", "value": "." },
@@ -164,12 +174,13 @@
         "label": "Clavier scientifique",
         "groups": [
           {
+            "id": "group-angle-mode",
             "legend": "Unité d'angle et fonctions",
             "angleMode": {
               "ariaLabel": "Sélection de l'unité d'angle",
               "options": [
-                { "text": "Rad", "ariaLabel": "Mode radians", "shortcut": "r", "value": "Rad" },
-                { "text": "Deg", "ariaLabel": "Mode degrés", "shortcut": "r", "value": "Deg" }
+                { "text": "Rad", "ariaLabel": "Mode radians", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "text": "Deg", "ariaLabel": "Mode degrés", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [
@@ -178,6 +189,7 @@
             ]
           },
           {
+            "id": "group-trig-log-1",
             "legend": "Trigonométrie et log naturel",
             "buttons": [
               { "text": "sin", "ariaLabel": "Sinus", "shortcut": "s", "value": "sin" },
@@ -187,6 +199,7 @@
             ]
           },
           {
+            "id": "group-trig-log-2",
             "legend": "Logarithmes et symboles mathématiques",
             "buttons": [
               { "text": "log", "ariaLabel": "Logarithme base 10", "shortcut": "g", "value": "log" },
@@ -196,11 +209,12 @@
             ]
           },
           {
+            "id": "group-etc-operations",
             "legend": "Autres opérations et égal",
             "buttons": [
               { "text": "Ans", "ariaLabel": "Résultat précédent", "shortcut": "a", "value": "Ans" },
               { "text": "EXP", "ariaLabel": "Notation exponentielle", "shortcut": "E", "value": "EXP" },
-              { "text": "x<sup>y</sup>", "ariaLabel": "Exposant", "shortcut": "^", "value": "x^{y}" },
+              { "text": "xy", "ariaLabel": "Exposant", "shortcut": "^", "value": "x^{y}" },
               { "text": "=", "ariaLabel": "Égal", "shortcut": "=, Enter", "value": "=" }
             ]
           }
