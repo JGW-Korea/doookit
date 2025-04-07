@@ -28,6 +28,9 @@ export default class Logo extends Component<ComponentDataType, LogoProps> {
     const imgWebpMimiUrl = new URL("/public/assets/images/favicon.webp", import.meta.url);
     const imgPngMimiUrl = new URL("/public/assets/images/favicon.png", import.meta.url);
 
+    // 각 이미지 포맷에 따라 적절한 HTML 요소(<source> 또는 <img>)를 생성하고 <picture> 요소에 추가
+    // - 마지막 요소(PNG)는 fallback용 <img>로 삽입
+    // - AVIF와 WebP는 <source>로 삽입하며, MIME 타입을 명시
     [imgAvifMimiUrl, imgWebpMimiUrl, imgPngMimiUrl].forEach((url, idx, arr) => {
       const imgEl: HTMLSourceElement | HTMLImageElement = idx !== arr.length - 1 ? document.createElement("source") : document.createElement("img");
 
