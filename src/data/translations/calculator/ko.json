@@ -1,4 +1,5 @@
 {
+  "ariaLabel": "계산기 인터페이스",
   "display": {
     "regionLabel": "계산 결과 영역",
     "prevResultButtonLabel": "이전 결과 보기",

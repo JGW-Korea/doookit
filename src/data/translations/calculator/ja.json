@@ -1,4 +1,5 @@
 {
+  "ariaLabel": "電卓インターフェース",
   "display": {
     "regionLabel": "計算結果エリア",
     "prevResultButtonLabel": "前の結果を表示",

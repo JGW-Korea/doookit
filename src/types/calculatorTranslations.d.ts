@@ -7,6 +7,7 @@ export interface CalculatorTranslations {
 
 // 계산기 전체 타입 정의
 export interface CalculatorI18nData {
+  ariaLabel: string;
   display: {
     regionLabel: string;
     prevResultButtonLabel: string;

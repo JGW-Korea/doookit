@@ -1,4 +1,5 @@
 {
+  "ariaLabel": "Interfaz de calculadora",
   "display": {
     "regionLabel": "Área de resultados del cálculo",
     "prevResultButtonLabel": "Ver resultado anterior",

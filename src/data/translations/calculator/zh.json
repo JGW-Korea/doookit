@@ -1,4 +1,5 @@
 {
+  "ariaLabel": "计算器界面",
   "display": {
     "regionLabel": "计算结果区域",
     "prevResultButtonLabel": "查看上一个结果",

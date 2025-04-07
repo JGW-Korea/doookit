@@ -1,6 +1,8 @@
 import debounce from "lodash.debounce";
 
 import { Component, ComponentDataType } from "../../utils/Component";
+import { CalculatorDatas } from "../../data";
+import { docType } from "../../utils/docType";
 // import { LangType, CalculatorTranslations } from "../../types/calculatorI18nData";
 // import { isLangType } from "../../utils/typeCheck";
 // import { isLangType } from "../../utils/typeCheck";
@@ -41,7 +43,9 @@ export default class Calculator extends Component<ComponentDataType, ComponentDa
   }
 
   render() {
-    // 지원하는 언어 중 하나를 가져온다.
+    const calculatorTranslationData = CalculatorDatas[docType()];
+    console.log(calculatorTranslationData);
+
     // const browserLang: string = navigator.language.split("-")[0];
     // const lang: LangType = isLangType(browserLang) ? browserLang : "en";
     // const translation = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies CalculatorTranslations;

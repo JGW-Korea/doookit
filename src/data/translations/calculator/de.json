@@ -1,4 +1,5 @@
 {
+  "ariaLabel": "Taschenrechner-Oberfläche",
   "display": {
     "regionLabel": "Bereich für Rechenergebnisse",
     "prevResultButtonLabel": "Vorheriges Ergebnis anzeigen",
