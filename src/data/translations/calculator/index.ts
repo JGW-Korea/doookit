@@ -1,4 +1,4 @@
-import { CalculatorTranslations } from "../../../types/calculatorI18nData";
+import { CalculatorTranslations } from "../../../types/calculatorTranslations";
 import de from "./de.json";
 import en from "./en.json";
 import es from "./es.json";
@@ -9,4 +9,5 @@ import ja from "./ja.json";
 import ko from "./ko.json";
 import zh from "./zh.json";
 
-export const CalculatorDatas: CalculatorTranslations = { de, en, es, fr, hi, it, ja, ko, zh };
+// 전체 계산기 JSON 데이터 모듈로 반환
+export const CalculatorDatas = { de, en, es, fr, hi, it, ja, ko, zh } satisfies CalculatorTranslations;

@@ -30,7 +30,7 @@ body > header {
   }
 
   // Logo 영역
-  & > a > h1 {
+  & > a > span {
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -47,10 +47,6 @@ body > header {
 
     & > picture {
       height: 2rem;
-    }
-
-    & > span {
-      margin-top: 0.25rem;
     }
   }
 
