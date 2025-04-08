@@ -8,18 +8,15 @@ interface CalculatorKeypadsProps {
   ariaLabel: string;
   groups: CalculatorKeypadGroup[];
   mobile?: CalculatorMobileKeypads;
+  modeState: string;
+  setModeState: (mode: string) => void;
 }
 
 export default class CalculatorKeypads extends Component<ComponentDataType, CalculatorKeypadsProps> {
   constructor(payload: { props: CalculatorKeypadsProps }) {
     super({
       tagName: "section",
-      props: {
-        type: payload.props.type,
-        ariaLabel: payload.props.ariaLabel,
-        groups: payload.props.groups,
-        mobile: payload.props.mobile,
-      },
+      props: payload.props,
     });
   }
 
@@ -35,7 +32,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
     // Viewport > 768px (데스크탑, 노트북, 태블릿)
     if (!this.props.mobile) {
       this.props.groups.forEach((group) => {
-        const fieldsetEl = new Fieldset({ props: { group: group } });
+        const fieldsetEl = new Fieldset({ props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState } });
         this.el.appendChild(fieldsetEl.el);
       });
     }
@@ -57,7 +54,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
           swiperSlide.ariaLabel = mobileKeypads[key].label;
 
           mobileKeypads[key].groups.forEach((group) => {
-            const fieldsetEl = new Fieldset({ props: { group: group } });
+            const fieldsetEl = new Fieldset({ props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState } });
             swiperSlide.appendChild(fieldsetEl.el);
           });
 

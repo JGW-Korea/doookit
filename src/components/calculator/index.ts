@@ -5,19 +5,26 @@ import { CalculatorDatas } from "../../data";
 import { docType } from "../../utils/docType";
 import CalculatorDisplay from "./calculator-display";
 import CalculatorKeypads from "./calculator-keypads";
-// import { LangType, CalculatorTranslations } from "../../types/calculatorI18nData";
-// import { isLangType } from "../../utils/typeCheck";
-// import { isLangType } from "../../utils/typeCheck";
-// import CalculatorDisplay from "./calculator-display";
 
-export default class Calculator extends Component<ComponentDataType, ComponentDataType> {
+interface CalculatorStateVariable {
+  [key: string]: unknown;
+  result: string;
+  expression: string; // 표현식 상태 변수
+  mode: string;
+}
+
+export default class Calculator extends Component<CalculatorStateVariable, ComponentDataType> {
   private isMobileView = false; // 모바일 화면 확인 용도
   private debouncedResize: () => void;
 
   constructor() {
     super({
       tagName: "section",
-      autoRender: false,
+      state: {
+        result: "init",
+        expression: "0",
+        mode: "mode-rad",
+      },
     });
 
     this.checkViewport();
@@ -45,8 +52,6 @@ export default class Calculator extends Component<ComponentDataType, ComponentDa
   }
 
   render() {
-    const calculatorTranslationData = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
-
     const { ariaLabel: mainAriaLabel, display, keypads } = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
 
     // 계산기 전체 영역 기본값 세팅
@@ -54,15 +59,17 @@ export default class Calculator extends Component<ComponentDataType, ComponentDa
     if (this.isMobileView || this.el.classList.contains("mobile")) this.el.classList.toggle("mobile");
     this.el.ariaLabel = mainAriaLabel;
 
-    console.log(calculatorTranslationData);
-
-    const calcDisplay: HTMLElement = new CalculatorDisplay({ props: display }).el;
+    const calcDisplay: HTMLElement = new CalculatorDisplay({
+      props: { display, resultState: this.state.result, expressionState: this.state.expression },
+    }).el;
     const calcKeypads: HTMLElement = new CalculatorKeypads({
       props: {
         type: this.isMobileView,
         ariaLabel: keypads.ariaLabel,
         groups: keypads.desktop.groups,
         mobile: this.isMobileView ? keypads.mobile : undefined,
+        modeState: this.state.mode,
+        setModeState: (newModeState: string) => this.setState({ mode: newModeState }),
       },
     }).el;
 

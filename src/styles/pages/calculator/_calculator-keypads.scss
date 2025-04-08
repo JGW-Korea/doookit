@@ -29,7 +29,6 @@
         cursor: inherit;
         text-align: center;
         flex-grow: 1;
-        margin-top: 0.065rem;
         border: none;
         background-color: inherit;
 
@@ -43,8 +42,6 @@
     }
 
     & > .keys {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
       margin-right: 0.25rem;
 
       user-select: none;
@@ -59,6 +56,8 @@
       color: #001d35;
 
       &.button {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
         width: 5.5rem;
         color: #001d35;
       }
