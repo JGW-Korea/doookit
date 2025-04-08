@@ -180,8 +180,8 @@
             "angleMode": {
               "ariaLabel": "각도 단위 선택",
               "options": [
-                { "text": "Rad", "ariaLabel": "라디안 모드", "shortcut": "r", "value": "Rad" },
-                { "text": "Deg", "ariaLabel": "도 단위 모드", "shortcut": "r", "value": "Deg" }
+                { "value": "Rad", "text": "Rad", "ariaLabel": "라디안 모드", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "도 단위 모드", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [

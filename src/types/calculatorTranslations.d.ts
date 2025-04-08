@@ -14,21 +14,7 @@ export interface CalculatorI18nData {
     desktop: {
       groups: CalculatorKeypadGroup[];
     };
-    mobile: {
-      basic: {
-        label: string;
-        groups: CalculatorKeypadGroup[];
-      };
-      engineering: {
-        label: string;
-        groups: CalculatorKeypadGroup[];
-      };
-      tabs: {
-        basic: string;
-        engineering: string;
-        ariaLabel: string;
-      };
-    };
+    mobile: CalculatorMobileKeypads;
   };
 }
 
@@ -39,6 +25,23 @@ export interface CalculatorDisplayType {
   prevResultButtonLabel: string;
   inputLabel: string;
   inputRoleDescription: string;
+}
+
+// 모바일 계산기 키패드 타입 정의
+export interface CalculatorMobileKeypads {
+  basic: {
+    label: string;
+    groups: CalculatorKeypadGroup[];
+  };
+  engineering: {
+    label: string;
+    groups: CalculatorKeypadGroup[];
+  };
+  tabs: {
+    basic: string;
+    engineering: string;
+    ariaLabel: string;
+  };
 }
 
 // 계산기 키패드 타입 정의

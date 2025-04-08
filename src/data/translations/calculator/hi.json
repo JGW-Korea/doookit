@@ -179,8 +179,8 @@
             "angleMode": {
               "ariaLabel": "कोण इकाई चयन",
               "options": [
-                { "text": "Rad", "ariaLabel": "रेडियन मोड", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
-                { "text": "Deg", "ariaLabel": "डिग्री मोड", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
+                { "value": "Rad", "text": "Rad", "ariaLabel": "रेडियन मोड", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "डिग्री मोड", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [

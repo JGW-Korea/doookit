@@ -179,8 +179,8 @@
             "angleMode": {
               "ariaLabel": "角度単位の選択",
               "options": [
-                { "text": "Rad", "ariaLabel": "ラジアンモード", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
-                { "text": "Deg", "ariaLabel": "度モード", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
+                { "value": "Rad", "text": "Rad", "ariaLabel": "ラジアンモード", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "度モード", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [

@@ -179,8 +179,8 @@
             "angleMode": {
               "ariaLabel": "Winkeleinheit auswählen",
               "options": [
-                { "text": "Rad", "ariaLabel": "Bogenmaß-Modus", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
-                { "text": "Deg", "ariaLabel": "Grad-Modus", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
+                { "value": "Rad", "text": "Rad", "ariaLabel": "Bogenmaß-Modus", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "Grad-Modus", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [

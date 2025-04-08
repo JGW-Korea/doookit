@@ -179,8 +179,8 @@
             "angleMode": {
               "ariaLabel": "Sélection de l'unité d'angle",
               "options": [
-                { "text": "Rad", "ariaLabel": "Mode radians", "shortcut": "r", "value": "Rad", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
-                { "text": "Deg", "ariaLabel": "Mode degrés", "shortcut": "r", "value": "Deg", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
+                { "value": "Rad", "text": "Rad", "ariaLabel": "Mode radians", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "Mode degrés", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [

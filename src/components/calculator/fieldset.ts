@@ -23,7 +23,6 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
     legendEl.classList.add("sr-only");
 
     this.el.appendChild(legendEl);
-    console.log(this.props.group);
 
     if (this.props.group.angleMode) {
       const groupDivEl = document.createElement("div");
@@ -97,7 +96,5 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
       this.el.appendChild(buttonEl);
     });
-
-    console.log(this.el);
   }
 }
