@@ -8,7 +8,7 @@
     display: flex;
     margin-bottom: 0.75rem;
 
-    & > div[role="radiogroup"] {
+    & > div[role="group"] {
       position: relative;
 
       display: flex;
@@ -17,25 +17,23 @@
       line-height: calc(42px - (12px * 2));
       overflow: hidden;
 
-      & > label {
+      & > button {
         cursor: inherit;
         text-align: center;
         flex-grow: 1;
+        margin-top: 0.065rem;
+        border: none;
+        background-color: inherit;
 
         & + span {
           position: absolute;
-          margin-top: 1px;
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
           color: #638ed4;
         }
 
-        & > input[type="radio"] {
-          display: none;
-        }
-
-        & > input[type="radio"]:checked + .label-text {
+        &[aria-pressed="true"] {
           font-weight: 700;
           color: #0b57d0;
         }
@@ -46,6 +44,8 @@
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       margin-right: 0.25rem;
+
+      user-select: none;
 
       border: none;
       border-radius: 9999px;
@@ -132,7 +132,7 @@
     }
 
     & fieldset {
-      & > div[role="radiogroup"] {
+      & > div[role="group"] {
         width: calc(4.485rem * 2 + 4px);
       }
 

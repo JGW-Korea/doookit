@@ -1,0 +1,230 @@
+{
+  "ariaLabel": "Interfaz de calculadora",
+  "display": {
+    "regionLabel": "Área de resultados del cálculo",
+    "prevResultButtonLabel": "Ver resultado anterior",
+    "inputLabel": "Campo de entrada de la calculadora",
+    "inputRoleDescription": "Entrada de la calculadora (accesible por teclado)"
+  },
+  "keypads": {
+    "ariaLabel": "Teclado de la calculadora",
+    "desktop": {
+      "groups": [
+        {
+          "id": "legend-functions",
+          "legend": "Teclas de función de la calculadora",
+          "angleMode": {
+            "ariaLabel": "Selección de unidad angular",
+            "options": [
+              { "value": "Rad", "text": "Rad", "ariaLabel": "Modo radianes", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "Modo grados", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
+            ]
+          },
+          "buttons": [
+            { "text": "x!", "ariaLabel": "Factorial", "shortcut": "!", "value": "x!" },
+            { "text": "(", "ariaLabel": "Paréntesis de apertura", "shortcut": "(", "value": "(" },
+            { "text": ")", "ariaLabel": "Paréntesis de cierre", "shortcut": ")", "value": ")" },
+            { "text": "%", "ariaLabel": "Porcentaje", "shortcut": "%", "value": "%" },
+            {
+              "id": "clear-toggle",
+              "states": {
+                "AC": {
+                  "text": "AC",
+                  "ariaLabel": "Borrar todo",
+                  "shortcut": "Escape",
+                  "value": "AC"
+                },
+                "CE": {
+                  "text": "CE",
+                  "ariaLabel": "Borrar entrada",
+                  "shortcut": "Backspace",
+                  "value": "CE"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "legend-trig-789",
+          "legend": "Trigonometría y números del 7 al 9",
+          "buttons": [
+            { "text": "Inv", "ariaLabel": "Función inversa", "shortcut": "i", "value": "Inv" },
+            { "text": "sin", "ariaLabel": "Seno", "shortcut": "s", "value": "sin" },
+            { "text": "ln", "ariaLabel": "Logaritmo natural", "shortcut": "l", "value": "ln" },
+            { "text": "7", "ariaLabel": "Número 7", "shortcut": "7", "value": "7" },
+            { "text": "8", "ariaLabel": "Número 8", "shortcut": "8", "value": "8" },
+            { "text": "9", "ariaLabel": "Número 9", "shortcut": "9", "value": "9" },
+            { "text": "÷", "ariaLabel": "División", "shortcut": "/", "value": "÷" }
+          ]
+        },
+        {
+          "id": "legend-log-456",
+          "legend": "Logaritmos y números del 4 al 6",
+          "buttons": [
+            { "text": "π", "ariaLabel": "Pi", "shortcut": "p", "value": "π" },
+            { "text": "cos", "ariaLabel": "Coseno", "shortcut": "c", "value": "cos" },
+            { "text": "log", "ariaLabel": "Logaritmo base 10", "shortcut": "g", "value": "log" },
+            { "text": "4", "ariaLabel": "Número 4", "shortcut": "4", "value": "4" },
+            { "text": "5", "ariaLabel": "Número 5", "shortcut": "5", "value": "5" },
+            { "text": "6", "ariaLabel": "Número 6", "shortcut": "6", "value": "6" },
+            { "text": "x", "ariaLabel": "Multiplicación", "shortcut": "*", "value": "*" }
+          ]
+        },
+        {
+          "id": "legend-root-123",
+          "legend": "Raíz cuadrada y números del 1 al 3",
+          "buttons": [
+            { "text": "e", "ariaLabel": "Número de Euler", "shortcut": "e", "value": "e" },
+            { "text": "tan", "ariaLabel": "Tangente", "shortcut": "t", "value": "tan" },
+            { "text": "√", "ariaLabel": "Raíz cuadrada", "shortcut": "v", "value": "√" },
+            { "text": "1", "ariaLabel": "Número 1", "shortcut": "1", "value": "1" },
+            { "text": "2", "ariaLabel": "Número 2", "shortcut": "2", "value": "2" },
+            { "text": "3", "ariaLabel": "Número 3", "shortcut": "3", "value": "3" },
+            { "text": "-", "ariaLabel": "Resta", "shortcut": "-", "value": "-" }
+          ]
+        },
+        {
+          "id": "legend-misc-0",
+          "legend": "Otras operaciones y número 0",
+          "buttons": [
+            { "text": "Ans", "ariaLabel": "Resultado anterior", "shortcut": "a", "value": "Ans" },
+            { "text": "EXP", "ariaLabel": "Notación exponencial", "shortcut": "E", "value": "EXP" },
+            { "text": "xy", "ariaLabel": "Exponenciación", "shortcut": "^", "value": "x^{y}" },
+            { "text": ".", "ariaLabel": "Punto decimal", "shortcut": ".", "value": "." },
+            { "text": "0", "ariaLabel": "Número 0", "shortcut": "0", "value": "0" },
+            { "text": "=", "ariaLabel": "Igual", "shortcut": "=, Enter", "value": "=" },
+            { "text": "+", "ariaLabel": "Suma", "shortcut": "+", "value": "+" }
+          ]
+        }
+      ]
+    },
+    "mobile": {
+      "basic": {
+        "label": "Teclado básico",
+        "groups": [
+          {
+            "id": "group-basic-functions",
+            "legend": "Funciones básicas",
+            "buttons": [
+              { "text": "(", "ariaLabel": "Paréntesis de apertura", "shortcut": "(", "value": "(" },
+              { "text": ")", "ariaLabel": "Paréntesis de cierre", "shortcut": ")", "value": ")" },
+              { "text": "%", "ariaLabel": "Porcentaje", "shortcut": "%", "value": "%" },
+              {
+                "id": "clear-toggle",
+                "states": {
+                  "AC": {
+                    "text": "AC",
+                    "ariaLabel": "Borrar todo",
+                    "shortcut": "Escape",
+                    "value": "AC"
+                  },
+                  "CE": {
+                    "text": "CE",
+                    "ariaLabel": "Borrar entrada",
+                    "shortcut": "Backspace",
+                    "value": "CE"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "group-numbers-789-divide",
+            "legend": "Números del 7 al 9 y división",
+            "buttons": [
+              { "text": "7", "ariaLabel": "Número 7", "shortcut": "7", "value": "7" },
+              { "text": "8", "ariaLabel": "Número 8", "shortcut": "8", "value": "8" },
+              { "text": "9", "ariaLabel": "Número 9", "shortcut": "9", "value": "9" },
+              { "text": "÷", "ariaLabel": "División", "shortcut": "/", "value": "÷" }
+            ]
+          },
+          {
+            "id": "group-numbers-456-multiply",
+            "legend": "Números del 4 al 6 y multiplicación",
+            "buttons": [
+              { "text": "4", "ariaLabel": "Número 4", "shortcut": "4", "value": "4" },
+              { "text": "5", "ariaLabel": "Número 5", "shortcut": "5", "value": "5" },
+              { "text": "6", "ariaLabel": "Número 6", "shortcut": "6", "value": "6" },
+              { "text": "x", "ariaLabel": "Multiplicación", "shortcut": "*", "value": "*" }
+            ]
+          },
+          {
+            "id": "group-numbers-123-minus",
+            "legend": "Números del 1 al 3 y resta",
+            "buttons": [
+              { "text": "1", "ariaLabel": "Número 1", "shortcut": "1", "value": "1" },
+              { "text": "2", "ariaLabel": "Número 2", "shortcut": "2", "value": "2" },
+              { "text": "3", "ariaLabel": "Número 3", "shortcut": "3", "value": "3" },
+              { "text": "-", "ariaLabel": "Resta", "shortcut": "-", "value": "-" }
+            ]
+          },
+          {
+            "id": "group-zero-decimal-equals-plus",
+            "legend": "Decimal, 0, igual, suma",
+            "buttons": [
+              { "text": ".", "ariaLabel": "Punto decimal", "shortcut": ".", "value": "." },
+              { "text": "0", "ariaLabel": "Número 0", "shortcut": "0", "value": "0" },
+              { "text": "=", "ariaLabel": "Igual", "shortcut": "=, Enter", "value": "=" },
+              { "text": "+", "ariaLabel": "Suma", "shortcut": "+", "value": "+" }
+            ]
+          }
+        ]
+      },
+      "engineering": {
+        "label": "Teclado científico",
+        "groups": [
+          {
+            "id": "group-angle-mode",
+            "legend": "Unidad angular y funciones",
+            "angleMode": {
+              "ariaLabel": "Selección de unidad angular",
+              "options": [
+                { "value": "Rad", "text": "Rad", "ariaLabel": "Modo radianes", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "Modo grados", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
+              ]
+            },
+            "buttons": [
+              { "text": "x!", "ariaLabel": "Factorial", "shortcut": "!", "value": "x!" },
+              { "text": "Inv", "ariaLabel": "Función inversa", "shortcut": "i", "value": "Inv" }
+            ]
+          },
+          {
+            "id": "group-trig-log-1",
+            "legend": "Trigonometría y logaritmo natural",
+            "buttons": [
+              { "text": "sin", "ariaLabel": "Seno", "shortcut": "s", "value": "sin" },
+              { "text": "ln", "ariaLabel": "Logaritmo natural", "shortcut": "l", "value": "ln" },
+              { "text": "π", "ariaLabel": "Pi", "shortcut": "p", "value": "π" },
+              { "text": "cos", "ariaLabel": "Coseno", "shortcut": "c", "value": "cos" }
+            ]
+          },
+          {
+            "id": "group-trig-log-2",
+            "legend": "Logaritmos y símbolos matemáticos",
+            "buttons": [
+              { "text": "log", "ariaLabel": "Logaritmo base 10", "shortcut": "g", "value": "log" },
+              { "text": "e", "ariaLabel": "Número de Euler", "shortcut": "e", "value": "e" },
+              { "text": "tan", "ariaLabel": "Tangente", "shortcut": "t", "value": "tan" },
+              { "text": "√", "ariaLabel": "Raíz cuadrada", "shortcut": "v", "value": "√" }
+            ]
+          },
+          {
+            "id": "group-etc-operations",
+            "legend": "Otras operaciones e igual",
+            "buttons": [
+              { "text": "Ans", "ariaLabel": "Resultado anterior", "shortcut": "a", "value": "Ans" },
+              { "text": "EXP", "ariaLabel": "Notación exponencial", "shortcut": "E", "value": "EXP" },
+              { "text": "xy", "ariaLabel": "Exponenciación", "shortcut": "^", "value": "x^{y}" },
+              { "text": "=", "ariaLabel": "Igual", "shortcut": "=, Enter", "value": "=" }
+            ]
+          }
+        ]
+      },
+      "tabs": {
+        "basic": "123",
+        "engineering": "Fx",
+        "ariaLabel": "Cambiar teclado"
+      }
+    }
+  }
+}
