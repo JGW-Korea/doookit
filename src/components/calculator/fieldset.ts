@@ -7,6 +7,9 @@ interface FieldsetPropsType {
   group: CalculatorKeypadGroup;
   modeState: string;
   setModeState: (mode: string) => void;
+  invState: boolean;
+  setInvState: (inv: boolean) => void;
+  expressionState: string;
 }
 
 export default class Fieldset extends Component<ComponentDataType, FieldsetPropsType> {
@@ -87,27 +90,33 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
         if (/([0-9\.])/g.test(button.text)) buttonEl.classList.add("number");
         if (button.text === "=") buttonEl.classList.add("equals");
+
+        if (button.text === "Inv") {
+          buttonEl.addEventListener("click", () => {
+            console.log(this.props.invState);
+            console.log(!this.props.invState);
+            console.log(this.props.setInvState);
+            this.props.setInvState(!this.props.invState);
+          });
+        }
       }
 
       // 2. 상태 전환 버튼(states, clear-toggle)
       else {
-        // AC, CE 버튼
-        if (button.id === "clear-toggle") {
-          console.log("Hello");
-        }
-        // 이외 Inv을 통해 값이 변화되는 버튼
-      }
+        const isClearToggleBtn = button.id === "clear-toggle"; // AC <-> CE 전환 버튼 체크
 
-      // AC, CE
-      // else {
-      //   const value = "123";
-      //   const state = value ? "AC" : "CE";
-      //   buttonEl.id = button.id;
-      //   buttonEl.ariaLabel = button.states[state].ariaLabel;
-      //   buttonEl.ariaKeyShortcuts = button.states[state].shortcut;
-      //   buttonEl.textContent = button.states[state].text;
-      //   buttonEl.dataset.value = button.states[state].value;
-      // }
+        // 버튼 상태 관련 정보 가져오기
+        const currentState = isClearToggleBtn
+          ? button.states[this.props.expressionState !== "init" ? "inv" : "default"]
+          : button.states[this.props.invState ? "inv" : "default"];
+
+        // 상태 전환 버튼 속성 구성
+        buttonEl.id = button.id;
+        buttonEl.textContent = currentState.text;
+        buttonEl.ariaLabel = currentState.ariaLabel;
+        buttonEl.ariaKeyShortcuts = currentState.shortcut;
+        buttonEl.dataset.value = currentState.value;
+      }
 
       this.el.appendChild(buttonEl);
     });

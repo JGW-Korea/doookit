@@ -13,11 +13,11 @@ interface CalculatorStateVariable {
   mode: string;
   slide: string;
   _animateSwiper: boolean;
+  inv: boolean;
 }
 
 export default class Calculator extends Component<CalculatorStateVariable, ComponentDataType> {
   private isMobileView = false; // 모바일 화면 확인 용도
-  private lastRenderedMobileView?: boolean;
   private debouncedResize: () => void;
 
   constructor() {
@@ -26,9 +26,10 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
       state: {
         result: "init",
         expression: "init",
-        mode: "mode-rad",
-        slide: "basic",
-        _animateSwiper: false,
+        mode: "mode-rad", // 각도 모드 상태
+        slide: "basic", // 슬라이드 상태
+        _animateSwiper: false, // 슬라이드 애니메이션 부여 상태
+        inv: false,
       },
     });
 
@@ -59,9 +60,6 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
   }
 
   render() {
-    if (this.lastRenderedMobileView === this.isMobileView) return;
-    this.lastRenderedMobileView = this.isMobileView;
-
     const { ariaLabel: mainAriaLabel, display, keypads } = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
 
     // 계산기 전체 영역 기본값 세팅
@@ -82,11 +80,13 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         groups: keypads.desktop.groups,
         mobile: this.isMobileView ? keypads.mobile : undefined,
         modeState: this.state.mode,
+        invState: this.state.inv,
         slideState: this.state.slide,
-        expression: this.state.expression,
+        expressionState: this.state.expression,
         setModeState: (newModeState: string) => this.setState({ mode: newModeState }),
         setSlideState: (newSlideState: string) => this.setState({ slide: newSlideState, _animateSwiper: true }),
         setExpressionState: (newExpressionState: string) => this.setState({ expression: newExpressionState }),
+        setInvState: (newInvState: boolean) => this.setState({ inv: newInvState }),
       },
     }).el;
 

@@ -10,10 +10,12 @@ interface CalculatorKeypadsProps {
   mobile?: CalculatorMobileKeypads;
   modeState: string;
   slideState: string;
-  expression: string;
+  expressionState: string;
+  invState: boolean;
   setModeState: (mode: string) => void;
   setSlideState: (slide: string) => void;
   setExpressionState: (expresion: string) => void;
+  setInvState: (inv: boolean) => void;
 }
 
 export default class CalculatorKeypads extends Component<ComponentDataType, CalculatorKeypadsProps> {
@@ -35,7 +37,14 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
       // 데스크탑 환경: 각 그룹마다 필드셋 생성
       this.props.groups.forEach((group) => {
         const fieldsetEl = new Fieldset({
-          props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState },
+          props: {
+            group: group,
+            modeState: this.props.modeState,
+            setModeState: this.props.setModeState,
+            invState: this.props.invState,
+            setInvState: this.props.setInvState,
+            expressionState: this.props.expressionState,
+          },
         });
         this.el.appendChild(fieldsetEl.el);
       });
@@ -43,65 +52,77 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
 
     // Viewport <= 768px 환경 계산기 키패드 컴포넌트 구성
     else {
-      console.log("mobile");
-      console.log("!");
-      // console.log("Mobile");
-      // const mobileKeypads = this.props.mobile!;
-      // const swiperEl = document.createElement("div");
-      // swiperEl.classList.add("swiper");
-      // const swiperWrapperEl = document.createElement("div");
-      // swiperWrapperEl.classList.add("swiper-wrapper");
-      // // 슬라이드 영역 요소 생성
-      // Object.keys(mobileKeypads).forEach((key) => {
-      //   if (key === "basic" || key === "engineering") {
-      //     const swiperSlide = document.createElement("div");
-      //     swiperSlide.classList.add("swiper-slide");
-      //     swiperSlide.ariaLabel = mobileKeypads[key].label;
-      //     mobileKeypads[key].groups.forEach((group) => {
-      //       const fieldsetEl = new Fieldset({
-      //         props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState },
-      //       });
-      //       swiperSlide.appendChild(fieldsetEl.el);
-      //     });
-      //     swiperWrapperEl.appendChild(swiperSlide);
-      //   }
-      // });
-      // // 슬라이드 전환 토글 버튼 생성
-      // const swiperBtn = document.createElement("div");
-      // swiperBtn.classList.add("swiper-btn");
-      // swiperBtn.role = "tablist";
-      // swiperBtn.ariaLabel = mobileKeypads.tabs.ariaLabel;
-      // Object.keys(mobileKeypads.tabs).forEach((key) => {
-      //   if (key === "basic" || key === "engineering") {
-      //     const buttonEl = document.createElement("button");
-      //     buttonEl.role = "tab";
-      //     buttonEl.dataset.value = key;
-      //     buttonEl.textContent = mobileKeypads.tabs[key];
-      //     if (this.props.slideState === key) {
-      //       buttonEl.ariaSelected = "true";
-      //       buttonEl.classList.add("active");
-      //     } else {
-      //       buttonEl.ariaSelected = "false";
-      //     }
-      //     swiperBtn.appendChild(buttonEl);
-      //   }
-      // });
-      // swiperEl.append(swiperWrapperEl, swiperBtn);
-      // this.el.appendChild(swiperEl);
-      // // 키패드의 버튼을 클릭했을 경우
-      // this.el.addEventListener("click", (event) => {
-      //   const button = event.target as HTMLElement;
-      //   if (button.tagName === "BUTTON" && button.role !== "tab") {
-      //     const { dataset } = button;
-      //     if (!dataset.value) return;
-      //     if (this.props.expression === "init") {
-      //       this.props.setExpressionState(dataset.value);
-      //     } else {
-      //       this.props.setExpressionState(this.props.expression + dataset.value);
-      //     }
-      //   }
-      // });
-      // this.initSwiper(swiperBtn, this.props.slideState, this.props.setSlideState);
+      const mobileKeypads = this.props.mobile!;
+      console.log(mobileKeypads);
+
+      const swiperEl = document.createElement("div");
+      swiperEl.classList.add("swiper");
+      const swiperWrapperEl = document.createElement("div");
+      swiperWrapperEl.classList.add("swiper-wrapper");
+
+      // 슬라이드 영역 요소 생성
+      Object.keys(mobileKeypads).forEach((key) => {
+        if (key === "basic" || key === "engineering") {
+          const swiperSlide = document.createElement("div");
+          swiperSlide.classList.add("swiper-slide");
+          swiperSlide.ariaLabel = mobileKeypads[key].label;
+          mobileKeypads[key].groups.forEach((group) => {
+            const fieldsetEl = new Fieldset({
+              props: {
+                group: group,
+                modeState: this.props.modeState,
+                setModeState: this.props.setModeState,
+                invState: this.props.invState,
+                setInvState: this.props.setInvState,
+                expressionState: this.props.expressionState,
+              },
+            });
+            swiperSlide.appendChild(fieldsetEl.el);
+          });
+          swiperWrapperEl.appendChild(swiperSlide);
+        }
+      });
+
+      // 슬라이드 전환 토글 버튼 생성
+      const swiperBtn = document.createElement("div");
+      swiperBtn.classList.add("swiper-btn");
+      swiperBtn.role = "tablist";
+      swiperBtn.ariaLabel = mobileKeypads.tabs.ariaLabel;
+      Object.keys(mobileKeypads.tabs).forEach((key) => {
+        if (key === "basic" || key === "engineering") {
+          const buttonEl = document.createElement("button");
+          buttonEl.role = "tab";
+          buttonEl.dataset.value = key;
+          buttonEl.textContent = mobileKeypads.tabs[key];
+          if (this.props.slideState === key) {
+            buttonEl.ariaSelected = "true";
+            buttonEl.classList.add("active");
+          } else {
+            buttonEl.ariaSelected = "false";
+          }
+          swiperBtn.appendChild(buttonEl);
+        }
+      });
+
+      swiperEl.append(swiperWrapperEl, swiperBtn);
+      this.el.appendChild(swiperEl);
+
+      // 키패드의 버튼을 클릭했을 경우
+      this.el.addEventListener("click", (event) => {
+        const button = event.target as HTMLElement;
+        if (button.tagName === "BUTTON" && button.role !== "tab") {
+          const { dataset } = button;
+          if (!dataset.value) return;
+          if (this.props.expression === "init") {
+            this.props.setExpressionState(dataset.value);
+          } else {
+            this.props.setExpressionState(this.props.expression + dataset.value);
+          }
+        }
+      });
+
+      // Swiper 슬라이더 초기화
+      this.initSwiper(swiperBtn, this.props.slideState, this.props.setSlideState);
     }
   }
 
