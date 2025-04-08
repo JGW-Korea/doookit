@@ -5,6 +5,8 @@ import { isKeypadButton } from "../../utils/typeCheck";
 interface FieldsetPropsType {
   [key: string]: unknown;
   group: CalculatorKeypadGroup;
+  modeState: string;
+  setModeState: (mode: string) => void;
 }
 
 export default class Fieldset extends Component<ComponentDataType, FieldsetPropsType> {
@@ -48,27 +50,21 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
         groupDivEl.append(buttonEl, spanEl);
 
+        buttonEl.ariaPressed = this.props.modeState === option.id ? "true" : "false";
+
+        // 구분선은 Mode-Rad일 때만 추가
         if (option.id === "mode-rad") {
-          buttonEl.ariaPressed = "true";
           const line = document.createElement("span");
           line.ariaHidden = "true";
           line.textContent = "|";
           groupDivEl.appendChild(line);
-        } else buttonEl.ariaPressed = "false";
+        }
       });
 
       // 각도 모드 스위치 변경 이벤트 핸들러 등록
-      groupDivEl.addEventListener("click", (e) => {
-        if (e.currentTarget && e.currentTarget instanceof HTMLDivElement) {
-          const buttons = e.currentTarget.querySelectorAll("button");
-          buttons.forEach((button) => {
-            if (button.ariaPressed === "true") {
-              button.ariaPressed = "false";
-            } else {
-              button.ariaPressed = "true";
-            }
-          });
-        }
+      groupDivEl.addEventListener("click", () => {
+        const nextMode = this.props.modeState === "mode-rad" ? "mode-deg" : "mode-rad";
+        this.props.setModeState(nextMode);
       });
 
       // console.log(groupDivEl);

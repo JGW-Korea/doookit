@@ -18,19 +18,27 @@ export default class Footer extends Component<ComponentDataType, ComponentDataTy
     // 로고 및 저작권 영역을 담을 <div> 생성
     const divEl = document.createElement("div");
 
-    const copyrightEl = document.createElement("p"); // 저작권 문구
-    copyrightEl.textContent = "\u00A9 2025 DoooKit. All righs reserved.";
-
     const layoutData = LayoutDatas[docType()];
-    divEl.append(new Logo({ props: { type: "footer", ariaLabel: layoutData.logo.link.ariaLabel } }).el, copyrightEl);
+    divEl.appendChild(new Logo({ props: { type: "footer", ariaLabel: layoutData.logo.link.ariaLabel } }).el);
 
-    // 푸터 컨테이너에 (로고 및 저작권) + (네비게이션) 추가
-    footerContainerEl.append(
-      divEl,
-      new Nav({ props: { type: "footer", ariaLabel: layoutData.footer.nav.ariaLabel, items: layoutData.footer.nav.items } }).el,
-    );
+    const copyrightEl = document.createElement("p");
+    copyrightEl.textContent = "\u00A9 2025 DoooKit. All rights reserved.";
+    copyrightEl.style.marginTop = "0.5rem";
+    copyrightEl.style.fontSize = "0.875rem";
+    copyrightEl.style.fontFamily = "system-ui,sans-serif";
 
-    // 최종 반영
+    divEl.appendChild(copyrightEl);
+
+    // 푸터 네비게이션 생성
+    const navEl = new Nav({ props: { type: "footer", ariaLabel: layoutData.footer.nav.ariaLabel, items: layoutData.footer.nav.items } }).el;
+    footerContainerEl.append(divEl, navEl);
+
+    // // 최종 반영
     this.el.appendChild(footerContainerEl);
+    this.el.style.visibility = "hidden";
+
+    setTimeout(() => {
+      this.el.style.visibility = "visible";
+    }, 100);
   }
 }
