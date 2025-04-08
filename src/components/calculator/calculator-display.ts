@@ -1,13 +1,12 @@
+import { CalculatorDisplayType } from "../../types/calculatorTranslations";
 import { Component, ComponentDataType } from "../../utils/Component";
 
-interface CalculatorDisplayProps {
+// CalculatorDisplayType 타입 상속
+interface CalculatorDisplayProps extends CalculatorDisplayType {
   [key: string]: unknown;
-  container: string;
-  back: string;
-  fakeInput: string;
 }
 
-export default class CalculatorDisplay extends Component<ComponentDataType, CalculatorDisplayProps> {
+export default class CalculatorDisplay extends Component<ComponentDataType, CalculatorDisplayType> {
   constructor(paylaod: { props: CalculatorDisplayProps }) {
     super({
       tagName: "div",
@@ -16,39 +15,46 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
   }
 
   render() {
+    // 계산 결과 영역 기본 값 설정
     this.el.classList.add("calculator-display");
     this.el.role = "region";
-    this.el.ariaLabel = this.props.container;
+    this.el.ariaLabel = this.props.regionLabel;
 
-    // 뒤로 가기 버튼 생성
-    const buttonEl = document.createElement("button");
-    buttonEl.ariaLabel = this.props.back;
+    // 이전 결과 버튼 생성
+    const backBtnEl = document.createElement("button");
+    backBtnEl.type = "button";
+    backBtnEl.ariaLabel = this.props.prevResultButtonLabel;
 
-    const arrow = new URL("../../assets/icons/arrow-left.svg", import.meta.url).href;
     const imgEl = document.createElement("img");
-    imgEl.src = arrow;
+    imgEl.src = new URL("../../assets/icons/rewind-time.svg", import.meta.url).href;
     imgEl.ariaHidden = "true";
+    imgEl.width = 22;
+    imgEl.height = 22;
 
-    buttonEl.appendChild(imgEl);
+    backBtnEl.appendChild(imgEl);
 
-    // 계산 결과 Div 요소 생성
-    const divEl = document.createElement("div");
+    // 계산 결과 영역 생성
+    const displayContainerEl = document.createElement("div");
+
+    // 계산 결과
     const outputEl = document.createElement("output");
     outputEl.id = "expression-output";
+    outputEl.role = "status";
     outputEl.ariaLive = "polite";
+    outputEl.ariaAtomic = "true";
+    outputEl.textContent = "Ans = 123";
 
-    const fakeInputDivEl = document.createElement("div");
-    fakeInputDivEl.id = "fake-input";
-    fakeInputDivEl.role = "textbox";
-    fakeInputDivEl.ariaLabel = this.props.fakeInput;
-    fakeInputDivEl.ariaDescription = "expression-output";
-    fakeInputDivEl.tabIndex = 0;
+    // 계산 입력창
+    const fakeInputEl = document.createElement("div");
+    fakeInputEl.id = "fake-input";
+    fakeInputEl.role = "textbox";
+    fakeInputEl.ariaLabel = this.props.inputLabel;
+    fakeInputEl.ariaRoleDescription = this.props.inputRoleDescription;
+    fakeInputEl.setAttribute("aria-describedby", outputEl.id);
+    fakeInputEl.tabIndex = 0;
+    fakeInputEl.textContent = "0";
 
-    const resultInlineEl = document.createElement("span");
-    fakeInputDivEl.appendChild(resultInlineEl);
-
-    divEl.append(outputEl, resultInlineEl);
-
-    this.el.append(buttonEl, divEl);
+    displayContainerEl.append(outputEl, fakeInputEl);
+    this.el.append(backBtnEl, displayContainerEl);
   }
 }

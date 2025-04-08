@@ -1,6 +1,10 @@
 import debounce from "lodash.debounce";
 
 import { Component, ComponentDataType } from "../../utils/Component";
+import { CalculatorDatas } from "../../data";
+import { docType } from "../../utils/docType";
+import CalculatorDisplay from "./calculator-display";
+import CalculatorKeypads from "./calculator-keypads";
 // import { LangType, CalculatorTranslations } from "../../types/calculatorI18nData";
 // import { isLangType } from "../../utils/typeCheck";
 // import { isLangType } from "../../utils/typeCheck";
@@ -41,22 +45,27 @@ export default class Calculator extends Component<ComponentDataType, ComponentDa
   }
 
   render() {
-    // 지원하는 언어 중 하나를 가져온다.
-    // const browserLang: string = navigator.language.split("-")[0];
-    // const lang: LangType = isLangType(browserLang) ? browserLang : "en";
-    // const translation = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies CalculatorTranslations;
-    // const currentLanguage = translation[lang];
-    // console.log(currentLanguage);
-    // const browserLang: string = navigator.language.split("-")[0];
-    // const lang: langType = isLangType(browserLang) ? browserLang : "en";
-    // const translations = { en, de, es, fr, hi, it, ja, ko, zh } as const satisfies TranslationsTypes;
-    // const currentLanguage = translations[lang];
-    // this.el.ariaLabel = currentLanguage["calculator"]["ariaLabel"];
-    // const calculatorDisplay = new CalculatorDisplay({ props: currentLanguage["calculator"]["calculator-display"] }).el;
-    // // 모바일 화면일 경우 아닐 경우에 대한 Keypads 조건부 렌더링
-    // const calculatorKeypads = this.isMobileView ? "Mobile" : "Desktop";
-    // this.el.appendChild(calculatorDisplay);
-    // const keypads = this.isMobileView ? "mobile" : "desktop";
-    // console.log(keypads);
+    const calculatorTranslationData = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
+
+    const { ariaLabel: mainAriaLabel, display, keypads } = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
+
+    // 계산기 전체 영역 기본값 세팅
+    this.el.classList.add("calculator-container");
+    if (this.isMobileView || this.el.classList.contains("mobile")) this.el.classList.toggle("mobile");
+    this.el.ariaLabel = mainAriaLabel;
+
+    console.log(calculatorTranslationData);
+
+    const calcDisplay: HTMLElement = new CalculatorDisplay({ props: display }).el;
+    const calcKeypads: HTMLElement = new CalculatorKeypads({
+      props: {
+        type: this.isMobileView,
+        ariaLabel: keypads.ariaLabel,
+        groups: keypads.desktop.groups,
+        mobile: this.isMobileView ? keypads.mobile : undefined,
+      },
+    }).el;
+
+    this.el.replaceChildren(calcDisplay, calcKeypads);
   }
 }

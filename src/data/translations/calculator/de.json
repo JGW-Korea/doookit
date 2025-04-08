@@ -1,4 +1,5 @@
 {
+  "ariaLabel": "Taschenrechner-Oberfläche",
   "display": {
     "regionLabel": "Bereich für Rechenergebnisse",
     "prevResultButtonLabel": "Vorheriges Ergebnis anzeigen",
@@ -10,12 +11,13 @@
     "desktop": {
       "groups": [
         {
+          "id": "legend-functions",
           "legend": "Taschenrechner-Funktionstasten",
           "angleMode": {
             "ariaLabel": "Winkeleinheit auswählen",
             "options": [
-              { "value": "Rad", "text": "Rad", "ariaLabel": "Bogenmaß-Modus", "shortcut": "r" },
-              { "value": "Deg", "text": "Deg", "ariaLabel": "Grad-Modus", "shortcut": "r" }
+              { "value": "Rad", "text": "Rad", "ariaLabel": "Bogenmaß-Modus", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+              { "value": "Deg", "text": "Deg", "ariaLabel": "Grad-Modus", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
             ]
           },
           "buttons": [
@@ -43,6 +45,7 @@
           ]
         },
         {
+          "id": "legend-trig-789",
           "legend": "Trigonometrie und Zahlen 7 bis 9",
           "buttons": [
             { "text": "Inv", "ariaLabel": "Umkehrfunktion", "shortcut": "i", "value": "Inv" },
@@ -55,6 +58,7 @@
           ]
         },
         {
+          "id": "legend-log-456",
           "legend": "Logarithmus und Zahlen 4 bis 6",
           "buttons": [
             { "text": "π", "ariaLabel": "Pi", "shortcut": "p", "value": "π" },
@@ -67,6 +71,7 @@
           ]
         },
         {
+          "id": "legend-root-123",
           "legend": "Wurzel und Zahlen 1 bis 3",
           "buttons": [
             { "text": "e", "ariaLabel": "Eulersche Zahl", "shortcut": "e", "value": "e" },
@@ -79,11 +84,12 @@
           ]
         },
         {
+          "id": "legend-misc-0",
           "legend": "Weitere Operationen & Zahl 0",
           "buttons": [
             { "text": "Ans", "ariaLabel": "Vorheriges Ergebnis", "shortcut": "a", "value": "Ans" },
             { "text": "EXP", "ariaLabel": "Exponentialschreibweise", "shortcut": "E", "value": "EXP" },
-            { "text": "x<sup>y</sup>", "ariaLabel": "Potenz", "shortcut": "^", "value": "x^{y}" },
+            { "text": "xy", "ariaLabel": "Potenz", "shortcut": "^", "value": "x^{y}" },
             { "text": ".", "ariaLabel": "Dezimalpunkt", "shortcut": ".", "value": "." },
             { "text": "0", "ariaLabel": "Zahl 0", "shortcut": "0", "value": "0" },
             { "text": "=", "ariaLabel": "Gleichheitszeichen", "shortcut": "=, Enter", "value": "=" },
@@ -97,6 +103,7 @@
         "label": "Grundtastatur",
         "groups": [
           {
+            "id": "group-basic-functions",
             "legend": "Grundfunktionen",
             "buttons": [
               { "text": "(", "ariaLabel": "Öffnende Klammer", "shortcut": "(", "value": "(" },
@@ -122,6 +129,7 @@
             ]
           },
           {
+            "id": "group-numbers-789-divide",
             "legend": "Zahlen 7 bis 9 & Division",
             "buttons": [
               { "text": "7", "ariaLabel": "Zahl 7", "shortcut": "7", "value": "7" },
@@ -131,6 +139,7 @@
             ]
           },
           {
+            "id": "group-numbers-456-multiply",
             "legend": "Zahlen 4 bis 6 & Multiplikation",
             "buttons": [
               { "text": "4", "ariaLabel": "Zahl 4", "shortcut": "4", "value": "4" },
@@ -140,6 +149,7 @@
             ]
           },
           {
+            "id": "group-numbers-123-minus",
             "legend": "Zahlen 1 bis 3 & Subtraktion",
             "buttons": [
               { "text": "1", "ariaLabel": "Zahl 1", "shortcut": "1", "value": "1" },
@@ -149,6 +159,7 @@
             ]
           },
           {
+            "id": "group-zero-decimal-equals-plus",
             "legend": "Komma, 0, Gleichheit, Addition",
             "buttons": [
               { "text": ".", "ariaLabel": "Dezimalpunkt", "shortcut": ".", "value": "." },
@@ -163,12 +174,13 @@
         "label": "Wissenschaftlich",
         "groups": [
           {
+            "id": "group-angle-mode",
             "legend": "Winkeleinheit & Funktionen",
             "angleMode": {
               "ariaLabel": "Winkeleinheit auswählen",
               "options": [
-                { "text": "Rad", "ariaLabel": "Bogenmaß-Modus", "shortcut": "r", "value": "Rad" },
-                { "text": "Deg", "ariaLabel": "Grad-Modus", "shortcut": "r", "value": "Deg" }
+                { "value": "Rad", "text": "Rad", "ariaLabel": "Bogenmaß-Modus", "shortcut": "r", "id": "mode-rad", "ariaLabelledby": "rad-desc" },
+                { "value": "Deg", "text": "Deg", "ariaLabel": "Grad-Modus", "shortcut": "r", "id": "mode-deg", "ariaLabelledby": "deg-desc" }
               ]
             },
             "buttons": [
@@ -177,6 +189,7 @@
             ]
           },
           {
+            "id": "group-trig-log-1",
             "legend": "Trigonometrie & natürlicher Logarithmus",
             "buttons": [
               { "text": "sin", "ariaLabel": "Sinus", "shortcut": "s", "value": "sin" },
@@ -186,6 +199,7 @@
             ]
           },
           {
+            "id": "group-trig-log-2",
             "legend": "Logarithmen & mathematische Symbole",
             "buttons": [
               { "text": "log", "ariaLabel": "Zehnerlogarithmus", "shortcut": "g", "value": "log" },
@@ -195,11 +209,12 @@
             ]
           },
           {
+            "id": "group-etc-operations",
             "legend": "Weitere Operationen & Gleichheit",
             "buttons": [
               { "text": "Ans", "ariaLabel": "Vorheriges Ergebnis", "shortcut": "a", "value": "Ans" },
               { "text": "EXP", "ariaLabel": "Exponentialschreibweise", "shortcut": "E", "value": "EXP" },
-              { "text": "x<sup>y</sup>", "ariaLabel": "Potenz", "shortcut": "^", "value": "x^{y}" },
+              { "text": "xy", "ariaLabel": "Potenz", "shortcut": "^", "value": "x^{y}" },
               { "text": "=", "ariaLabel": "Gleichheitszeichen", "shortcut": "=, Enter", "value": "=" }
             ]
           }
