@@ -11,6 +11,8 @@ interface CalculatorStateVariable {
   result: string;
   expression: string; // 표현식 상태 변수
   mode: string;
+  slide: string;
+  _animateSwiper: boolean;
 }
 
 export default class Calculator extends Component<CalculatorStateVariable, ComponentDataType> {
@@ -24,6 +26,8 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         result: "init",
         expression: "0",
         mode: "mode-rad",
+        slide: "basic",
+        _animateSwiper: false,
       },
     });
 
@@ -56,9 +60,11 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
 
     // 계산기 전체 영역 기본값 세팅
     this.el.classList.add("calculator-container");
-    if (this.isMobileView || this.el.classList.contains("mobile")) this.el.classList.toggle("mobile");
+    if (this.isMobileView) this.el.classList.add("mobile");
+    else this.el.classList.remove("mobile");
     this.el.ariaLabel = mainAriaLabel;
 
+    // 계산기 하위 컴포넌트 정의
     const calcDisplay: HTMLElement = new CalculatorDisplay({
       props: { display, resultState: this.state.result, expressionState: this.state.expression },
     }).el;
@@ -69,7 +75,9 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         groups: keypads.desktop.groups,
         mobile: this.isMobileView ? keypads.mobile : undefined,
         modeState: this.state.mode,
+        slideState: this.state.slide,
         setModeState: (newModeState: string) => this.setState({ mode: newModeState }),
+        setSlideState: (newSlideState: string) => this.setState({ slide: newSlideState, _animateSwiper: true }),
       },
     }).el;
 
