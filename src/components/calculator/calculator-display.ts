@@ -24,23 +24,28 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
     this.el.ariaLabel = this.props.display.regionLabel;
     // this.el.ariaLabel = this.props.;
 
+    const displayContainerEl = document.createElement("div");
+
     // 이전 결과 버튼 생성
     const backBtnEl = document.createElement("button");
     backBtnEl.type = "button";
     backBtnEl.ariaLabel = this.props.display.prevResultButtonLabel;
 
-    const imgEl = document.createElement("img");
-    imgEl.src = new URL("../../assets/icons/rewind-time.svg", import.meta.url).href;
-    imgEl.ariaHidden = "true";
-    imgEl.width = 22;
-    imgEl.height = 22;
+    // 이미지 SVG 요소로 변환
+    const rewindTimeSvg = new URL("../../assets/icons/rewind-time.svg", import.meta.url).href;
 
-    backBtnEl.appendChild(imgEl);
+    fetch(rewindTimeSvg)
+      .then((res) => res.text())
+      .then((svgText) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(svgText, "image/svg+xml");
+        const svgEl = doc.documentElement;
+
+        svgEl.ariaHidden = "true";
+        backBtnEl.appendChild(svgEl);
+      });
 
     // 계산 결과 영역 생성
-    const displayContainerEl = document.createElement("div");
-
-    // 계산 결과
     const outputEl = document.createElement("output");
     outputEl.id = "expression-output";
     outputEl.role = "status";
@@ -51,6 +56,9 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
     if (this.props.resultState === "init") {
       outputEl.textContent = "";
     }
+
+    displayContainerEl.append(backBtnEl, outputEl);
+    displayContainerEl.classList.add("output");
 
     // 계산 결과 -> = -> 표현식(예: 1 + 2 =)
     // 계산 결과 -> 입력 중 -> Ans = N
@@ -65,9 +73,13 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
     fakeInputEl.ariaRoleDescription = this.props.display.inputRoleDescription;
     fakeInputEl.setAttribute("aria-describedby", outputEl.id);
     fakeInputEl.tabIndex = 0;
-    fakeInputEl.textContent = this.props.expressionState;
+    fakeInputEl.textContent = this.props.expressionState === "init" ? "0" : this.props.expressionState;
 
-    displayContainerEl.append(outputEl, fakeInputEl);
-    this.el.append(backBtnEl, displayContainerEl);
+    // 인풋 박스 넘어갈 시 자동으로 오른쪽 스크롤 위치
+    requestAnimationFrame(() => {
+      fakeInputEl.scrollLeft = fakeInputEl.scrollWidth;
+    });
+
+    this.el.append(displayContainerEl, fakeInputEl);
   }
 }

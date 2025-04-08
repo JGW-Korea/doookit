@@ -43,6 +43,7 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
         buttonEl.setAttribute("aria-labelledby", option.ariaLabelledby);
         buttonEl.ariaKeyShortcuts = option.shortcut;
         buttonEl.textContent = option.text;
+        buttonEl.dataset.value = option.value;
 
         spanEl.id = option.ariaLabelledby;
         spanEl.classList.add("sr-only");
@@ -71,38 +72,42 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
       this.el.appendChild(groupDivEl);
     }
 
+    // 각 그룹 버튼에 대한 fieldset 하위 버튼 생성
     this.props.group.buttons.forEach((button) => {
       const buttonEl = document.createElement("button");
       buttonEl.type = "button";
       buttonEl.classList.add("keys", "button");
 
-      // AC, CE 이외의 모든 버튼 종류
+      // 1. 일반 버튼(text, ariaLabel, value, shorcut)
       if (isKeypadButton(button)) {
         buttonEl.ariaLabel = button.ariaLabel;
         buttonEl.ariaKeyShortcuts = button.shortcut;
-
-        if (button.text === "xy") {
-          buttonEl.textContent = "x";
-          const sup = document.createElement("sup");
-          sup.textContent = "y";
-          buttonEl.appendChild(sup);
-        } else {
-          buttonEl.textContent = button.text;
-        }
+        buttonEl.dataset.value = button.value;
+        buttonEl.textContent = button.text;
 
         if (/([0-9\.])/g.test(button.text)) buttonEl.classList.add("number");
         if (button.text === "=") buttonEl.classList.add("equals");
       }
 
-      // AC, CE
+      // 2. 상태 전환 버튼(states, clear-toggle)
       else {
-        const value = "123";
-        const state = value ? "AC" : "CE";
-        buttonEl.id = button.id;
-        buttonEl.ariaLabel = button.states[state].ariaLabel;
-        buttonEl.ariaKeyShortcuts = button.states[state].shortcut;
-        buttonEl.textContent = button.states[state].text;
+        // AC, CE 버튼
+        if (button.id === "clear-toggle") {
+          console.log("Hello");
+        }
+        // 이외 Inv을 통해 값이 변화되는 버튼
       }
+
+      // AC, CE
+      // else {
+      //   const value = "123";
+      //   const state = value ? "AC" : "CE";
+      //   buttonEl.id = button.id;
+      //   buttonEl.ariaLabel = button.states[state].ariaLabel;
+      //   buttonEl.ariaKeyShortcuts = button.states[state].shortcut;
+      //   buttonEl.textContent = button.states[state].text;
+      //   buttonEl.dataset.value = button.states[state].value;
+      // }
 
       this.el.appendChild(buttonEl);
     });

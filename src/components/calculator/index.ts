@@ -17,6 +17,7 @@ interface CalculatorStateVariable {
 
 export default class Calculator extends Component<CalculatorStateVariable, ComponentDataType> {
   private isMobileView = false; // 모바일 화면 확인 용도
+  private lastRenderedMobileView?: boolean;
   private debouncedResize: () => void;
 
   constructor() {
@@ -24,7 +25,7 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
       tagName: "section",
       state: {
         result: "init",
-        expression: "0",
+        expression: "init",
         mode: "mode-rad",
         slide: "basic",
         _animateSwiper: false,
@@ -37,8 +38,10 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
     this.debouncedResize = debounce(this.handleResize.bind(this), 200);
     window.addEventListener("resize", this.debouncedResize);
 
-    // 명시적으로 컴포넌트 렌더링
-    this.render();
+    requestAnimationFrame(() => {
+      // 명시적으로 컴포넌트 렌더링
+      this.render();
+    });
   }
 
   // 뷰포트 상태 판단
@@ -56,6 +59,9 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
   }
 
   render() {
+    if (this.lastRenderedMobileView === this.isMobileView) return;
+    this.lastRenderedMobileView = this.isMobileView;
+
     const { ariaLabel: mainAriaLabel, display, keypads } = CalculatorDatas[docType()]; // 계산기 언어 데이터 가져오기
 
     // 계산기 전체 영역 기본값 세팅
@@ -68,6 +74,7 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
     const calcDisplay: HTMLElement = new CalculatorDisplay({
       props: { display, resultState: this.state.result, expressionState: this.state.expression },
     }).el;
+
     const calcKeypads: HTMLElement = new CalculatorKeypads({
       props: {
         type: this.isMobileView,
@@ -76,8 +83,10 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         mobile: this.isMobileView ? keypads.mobile : undefined,
         modeState: this.state.mode,
         slideState: this.state.slide,
+        expression: this.state.expression,
         setModeState: (newModeState: string) => this.setState({ mode: newModeState }),
         setSlideState: (newSlideState: string) => this.setState({ slide: newSlideState, _animateSwiper: true }),
+        setExpressionState: (newExpressionState: string) => this.setState({ expression: newExpressionState }),
       },
     }).el;
 

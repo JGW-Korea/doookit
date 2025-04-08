@@ -20,7 +20,6 @@ export interface CalculatorI18nData {
 
 // 계산 결과 영역 타입 정의
 export interface CalculatorDisplayType {
-  [key: string]: unknown;
   regionLabel: string;
   prevResultButtonLabel: string;
   inputLabel: string;
@@ -59,7 +58,7 @@ export interface CalculatorKeypadGroup {
       shortcut: string;
     }[];
   };
-  buttons: (KeypadButton | ClearToggleButton)[];
+  buttons: (KeypadButton | StateButton)[];
 }
 
 export interface KeypadButton {
@@ -69,10 +68,10 @@ export interface KeypadButton {
   value: string;
 }
 
-export interface ClearToggleButton {
+export interface StateButton {
   id: string;
   states: {
-    AC: KeypadButton;
-    CE: KeypadButton;
+    default: KeypadButton;
+    inv: KeypadButton;
   };
 }
