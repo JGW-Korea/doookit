@@ -17,21 +17,22 @@
       line-height: calc(42px - (12px * 2));
       overflow: hidden;
 
+      & > span[aria-hidden="true"] {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #638ed4;
+      }
+
       & > button {
         cursor: inherit;
         text-align: center;
         flex-grow: 1;
-        margin-top: 0.065rem;
         border: none;
         background-color: inherit;
 
-        & + span {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          color: #638ed4;
-        }
+        color: #001d35;
 
         &[aria-pressed="true"] {
           font-weight: 700;
@@ -41,8 +42,6 @@
     }
 
     & > .keys {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
       margin-right: 0.25rem;
 
       user-select: none;
@@ -57,7 +56,10 @@
       color: #001d35;
 
       &.button {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
         width: 5.5rem;
+        color: #001d35;
       }
 
       transition: 0.2s;
@@ -146,7 +148,3 @@
     }
   }
 }
-
-// @media (max-width: 768px) {
-
-// }
