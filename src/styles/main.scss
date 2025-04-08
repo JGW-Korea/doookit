@@ -1,5 +1,6 @@
 @use "reset-css/sass/_reset.scss";
 @use "./utils/_variable" as *;
+@use "./utils/fonts";
 
 // 공통 컴포넌트 스타일 import
 @use "./components/header";
@@ -10,6 +11,9 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  font-family:
+    "Noto Sans", "Noto Sans KR", "Noto Sans JP", "Noto Sans SC", "Noto Sans TC", "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", "Helvetica Neue",
+    sans-serif;
 }
 
 body {
@@ -48,4 +52,9 @@ p {
   font-size: 1.25rem;
   line-height: 1.25rem;
   color: $font-color-dark-gray;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 0.65rem;
 }

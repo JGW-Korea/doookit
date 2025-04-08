@@ -1,0 +1,35 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "Área de navegación principal",
+          "items": [
+            { "text": "Colección de herramientas", "ariaLabel": "Ir a la sección de Colección de herramientas" },
+            { "text": "Acerca de", "ariaLabel": "Ir a la sección Acerca de" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "Volver a la página anterior"
+        }
+      }
+    }
+  },
+  "footer": {
+    "nav": {
+      "ariaLabel": "Área de navegación del pie de página",
+      "items": [
+        { "text": "Política de privacidad", "ariaLabel": "Ir a la página de Política de privacidad" },
+        { "text": "Términos de uso", "ariaLabel": "Ir a la página de Términos de uso" },
+        { "text": "GitHub", "ariaLabel": "Ir al repositorio de GitHub" }
+      ]
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "Ir a la página principal de DoooKit"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "type": {
+      "main": {
+        "nav": {
+          "ariaLabel": "メインナビゲーションエリア",
+          "items": [
+            { "text": "ツールコレクション", "ariaLabel": "ツールコレクションセクションへ移動" },
+            { "text": "紹介", "ariaLabel": "紹介セクションへ移動" }
+          ]
+        }
+      },
+      "sub": {
+        "backButton": {
+          "ariaLabel": "前のページに戻る"
+        }
+      }
+    }
+  },
+  "footer": {
+    "nav": {
+      "ariaLabel": "フッターナビゲーションエリア",
+      "items": [
+        { "text": "プライバシーポリシー", "ariaLabel": "プライバシーポリシーページへ移動" },
+        { "text": "利用規約", "ariaLabel": "利用規約ページへ移動" },
+        { "text": "GitHub", "ariaLabel": "GitHubリポジトリへ移動" }
+      ]
+    }
+  },
+  "logo": {
+    "link": {
+      "ariaLabel": "DoooKitのメインページへ移動"
+    }
+  }
+}
