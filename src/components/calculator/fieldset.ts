@@ -24,6 +24,7 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
     this.el.appendChild(legendEl);
 
+    // 계산기 각도 모드 선택 버튼 설정
     if (this.props.group.angleMode) {
       const groupDivEl = document.createElement("div");
       groupDivEl.role = "group";
@@ -56,6 +57,20 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
         } else buttonEl.ariaPressed = "false";
       });
 
+      // 각도 모드 스위치 변경 이벤트 핸들러 등록
+      groupDivEl.addEventListener("click", (e) => {
+        if (e.currentTarget && e.currentTarget instanceof HTMLDivElement) {
+          const buttons = e.currentTarget.querySelectorAll("button");
+          buttons.forEach((button) => {
+            if (button.ariaPressed === "true") {
+              button.ariaPressed = "false";
+            } else {
+              button.ariaPressed = "true";
+            }
+          });
+        }
+      });
+
       // console.log(groupDivEl);
       this.el.appendChild(groupDivEl);
     }
@@ -64,7 +79,6 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
       const buttonEl = document.createElement("button");
       buttonEl.type = "button";
       buttonEl.classList.add("keys", "button");
-      // buttonEl.ariaLabel = button.
 
       // AC, CE 이외의 모든 버튼 종류
       if (isKeypadButton(button)) {

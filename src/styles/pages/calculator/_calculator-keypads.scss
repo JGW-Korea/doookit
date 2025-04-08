@@ -132,7 +132,7 @@
     }
 
     & fieldset {
-      & > div[role="radiogroup"] {
+      & > div[role="group"] {
         width: calc(4.485rem * 2 + 4px);
       }
 

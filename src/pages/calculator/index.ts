@@ -14,16 +14,7 @@ if (mainEl) mainEl.appendChild(new Calculator().el);
 
 // const modBtn = document.querySelector("div[role='group']");
 // if (modBtn) {
-//   modBtn.addEventListener("click", () => {
-//     const buttons = modBtn.querySelectorAll("button");
-//     buttons.forEach((button) => {
-//       if (button.ariaPressed === "true") {
-//         button.ariaPressed = "false";
-//       } else {
-//         button.ariaPressed = "true";
-//       }
-//     });
-//   });
+
 // }
 
 // Swiper.use([Mousewheel]);
@@ -56,15 +47,5 @@ if (mainEl) mainEl.appendChild(new Calculator().el);
 // // Switch 효과 구현
 // const swiperBtn = swiper.el.querySelector(".swiper-btn");
 // if (swiperBtn) {
-//   swiperBtn.addEventListener("click", (event: Event) => {
-//     if (!(event.target instanceof HTMLElement)) return;
 
-//     const clickedValue = event.target.dataset.value;
-//     if (!clickedValue) return;
-
-//     if (clickedValue === "basic" && swiper.activeIndex === 0) swiper.slideTo(swiper.slides.length - 1);
-//     else if (clickedValue === "basic" && swiper.activeIndex === swiper.slides.length - 1) swiper.slideTo(0);
-//     else if (clickedValue === "engineering" && swiper.activeIndex === swiper.slides.length - 1) swiper.slideTo(0);
-//     else swiper.slideTo(swiper.slides.length - 1);
-//   });
 // }

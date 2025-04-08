@@ -49,6 +49,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
       const swiperWrapperEl = document.createElement("div");
       swiperWrapperEl.classList.add("swiper-wrapper");
 
+      // Swiper 슬라이드 설정
       Object.keys(this.props.mobile).forEach((key) => {
         if (key === "basic" || key === "engineering") {
           const swiperSlide = document.createElement("div");
@@ -64,6 +65,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
         }
       });
 
+      // 슬라이드 전환 버튼 설정
       const swiperBtn = document.createElement("div");
       swiperBtn.classList.add("swiper-btn");
       swiperBtn.role = "tablist";
@@ -89,6 +91,53 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
 
       swiperEl.append(swiperWrapperEl, swiperBtn);
       this.el.appendChild(swiperEl);
+      this.initSwiper(swiperBtn);
     }
+  }
+
+  // 모바일 키패드 슬라이드 설정
+  initSwiper(swiperBtn: HTMLDivElement) {
+    // 동적 ESM 사용법
+    import("swiper").then(({ default: Swiper }) => {
+      import("swiper/modules").then(({ Mousewheel }) => {
+        Swiper.use([Mousewheel]);
+
+        const swiper = new Swiper(".swiper", {
+          loop: false,
+          slidesPerView: 1,
+          direction: "horizontal",
+          allowTouchMove: true,
+          mousewheel: {
+            forceToAxis: true,
+          },
+          on: {
+            slideChange() {
+              if (!(swiperBtn instanceof HTMLElement)) return;
+
+              const buttons = swiperBtn.querySelectorAll("button");
+              buttons.forEach((btn) => {
+                const value = btn.dataset.value;
+                const isBasic = value === "basic" && swiper.activeIndex === 0;
+                const isEngineering = value === "engineering" && swiper.activeIndex === swiper.slides.length - 1;
+
+                btn.classList.toggle("active", isBasic || isEngineering);
+              });
+            },
+          },
+        });
+
+        swiperBtn.addEventListener("click", (event: Event) => {
+          if (!(event.target instanceof HTMLElement)) return;
+
+          const clickedValue = event.target.dataset.value;
+          if (!clickedValue) return;
+
+          if (clickedValue === "basic" && swiper.activeIndex === 0) swiper.slideTo(swiper.slides.length - 1);
+          else if (clickedValue === "basic" && swiper.activeIndex === swiper.slides.length - 1) swiper.slideTo(0);
+          else if (clickedValue === "engineering" && swiper.activeIndex === swiper.slides.length - 1) swiper.slideTo(0);
+          else swiper.slideTo(swiper.slides.length - 1);
+        });
+      });
+    });
   }
 }
