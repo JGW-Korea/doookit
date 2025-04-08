@@ -34,23 +34,24 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
     else {
       const arrowLeft = new URL("../../assets/icons/arrow-left.svg", import.meta.url).href;
 
-      const aEl = document.createElement("a");
-      aEl.addEventListener("click", (e: Event) => {
-        e.preventDefault();
-
+      const backBtnEl = document.createElement("button");
+      backBtnEl.addEventListener("click", () => {
         if (history.length > 1) history.back();
-        else aEl.href = "/";
+        else location.href = "/";
       });
-      aEl.classList.add("arrow");
+      backBtnEl.classList.add("arrow");
 
       const imgEl = document.createElement("img");
       imgEl.src = arrowLeft;
+      imgEl.ariaHidden = "true";
+      imgEl.width = 17;
+      imgEl.height = 13;
 
-      aEl.appendChild(imgEl);
-      aEl.ariaLabel = layoutData.header.type[isMainType].backButton.ariaLabel;
+      backBtnEl.appendChild(imgEl);
+      backBtnEl.ariaLabel = layoutData.header.type[isMainType].backButton.ariaLabel;
 
       this.el.classList.add("non-main");
-      this.el.append(aEl, LogoEl.el);
+      this.el.append(backBtnEl, LogoEl.el);
     }
   }
 }

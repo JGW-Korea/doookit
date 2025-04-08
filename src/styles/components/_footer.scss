@@ -12,34 +12,6 @@ footer {
     align-items: center;
     margin: 0 auto;
 
-    & > div {
-      & > a > span {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        font-weight: 700;
-
-        background: linear-gradient(to right, #34d399, #059669);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        & > picture {
-          height: 1.5rem;
-        }
-      }
-
-      & > p {
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        color: $font-color-gray-black-light;
-      }
-    }
-
     & > nav > ul {
       display: flex;
       gap: 1.5rem;

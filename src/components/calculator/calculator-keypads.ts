@@ -8,18 +8,17 @@ interface CalculatorKeypadsProps {
   ariaLabel: string;
   groups: CalculatorKeypadGroup[];
   mobile?: CalculatorMobileKeypads;
+  modeState: string;
+  slideState: string;
+  setModeState: (mode: string) => void;
+  setSlideState: (slide: string) => void;
 }
 
 export default class CalculatorKeypads extends Component<ComponentDataType, CalculatorKeypadsProps> {
   constructor(payload: { props: CalculatorKeypadsProps }) {
     super({
       tagName: "section",
-      props: {
-        type: payload.props.type,
-        ariaLabel: payload.props.ariaLabel,
-        groups: payload.props.groups,
-        mobile: payload.props.mobile,
-      },
+      props: payload.props,
     });
   }
 
@@ -29,35 +28,36 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
     this.el.role = "group";
     this.el.ariaLabel = this.props.ariaLabel;
 
-    // console.log(this.props.groups);
-    console.log(this.props.mobile);
-
-    // Viewport > 768px (데스크탑, 노트북, 태블릿)
+    // Viewport > 768px 환경 계산기 키패드 컴포넌트 구성
     if (!this.props.mobile) {
+      // 데스크탑 환경: 각 그룹마다 필드셋 생성
       this.props.groups.forEach((group) => {
-        const fieldsetEl = new Fieldset({ props: { group: group } });
+        const fieldsetEl = new Fieldset({
+          props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState },
+        });
         this.el.appendChild(fieldsetEl.el);
       });
     }
 
-    // Viewport <= 768px (모바일)
+    // Viewport <= 768px 환경 계산기 키패드 컴포넌트 구성
     else {
       const mobileKeypads = this.props.mobile!;
-
       const swiperEl = document.createElement("div");
       swiperEl.classList.add("swiper");
       const swiperWrapperEl = document.createElement("div");
       swiperWrapperEl.classList.add("swiper-wrapper");
 
-      // Swiper 슬라이드 설정
-      Object.keys(this.props.mobile).forEach((key) => {
+      // 슬라이드 영역 요소 생성
+      Object.keys(mobileKeypads).forEach((key) => {
         if (key === "basic" || key === "engineering") {
           const swiperSlide = document.createElement("div");
           swiperSlide.classList.add("swiper-slide");
           swiperSlide.ariaLabel = mobileKeypads[key].label;
 
           mobileKeypads[key].groups.forEach((group) => {
-            const fieldsetEl = new Fieldset({ props: { group: group } });
+            const fieldsetEl = new Fieldset({
+              props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState },
+            });
             swiperSlide.appendChild(fieldsetEl.el);
           });
 
@@ -65,7 +65,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
         }
       });
 
-      // 슬라이드 전환 버튼 설정
+      // 슬라이드 전환 토글 버튼 생성
       const swiperBtn = document.createElement("div");
       swiperBtn.classList.add("swiper-btn");
       swiperBtn.role = "tablist";
@@ -78,26 +78,24 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
           buttonEl.dataset.value = key;
           buttonEl.textContent = mobileKeypads.tabs[key];
 
-          if (key === "basic") {
+          if (this.props.slideState === key) {
             buttonEl.ariaSelected = "true";
             buttonEl.classList.add("active");
           } else {
             buttonEl.ariaSelected = "false";
           }
-
           swiperBtn.appendChild(buttonEl);
         }
       });
 
       swiperEl.append(swiperWrapperEl, swiperBtn);
       this.el.appendChild(swiperEl);
-      this.initSwiper(swiperBtn);
+      this.initSwiper(swiperBtn, this.props.slideState, this.props.setSlideState);
     }
   }
 
   // 모바일 키패드 슬라이드 설정
-  initSwiper(swiperBtn: HTMLDivElement) {
-    // 동적 ESM 사용법
+  initSwiper(swiperBtn: HTMLDivElement, slideState: string, setSlideState: (v: string) => void) {
     import("swiper").then(({ default: Swiper }) => {
       import("swiper/modules").then(({ Mousewheel }) => {
         Swiper.use([Mousewheel]);
@@ -107,35 +105,38 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
           slidesPerView: 1,
           direction: "horizontal",
           allowTouchMove: true,
-          mousewheel: {
-            forceToAxis: true,
-          },
-          on: {
-            slideChange() {
-              if (!(swiperBtn instanceof HTMLElement)) return;
-
-              const buttons = swiperBtn.querySelectorAll("button");
-              buttons.forEach((btn) => {
-                const value = btn.dataset.value;
-                const isBasic = value === "basic" && swiper.activeIndex === 0;
-                const isEngineering = value === "engineering" && swiper.activeIndex === swiper.slides.length - 1;
-
-                btn.classList.toggle("active", isBasic || isEngineering);
-              });
-            },
-          },
+          mousewheel: { forceToAxis: true },
+          initialSlide: slideState === "basic" ? 0 : 1,
         });
 
-        swiperBtn.addEventListener("click", (event: Event) => {
-          if (!(event.target instanceof HTMLElement)) return;
+        swiper.on("slideChange", () => {
+          const { activeIndex } = swiper;
+          const newSlide = activeIndex === 0 ? "basic" : "engineering";
 
-          const clickedValue = event.target.dataset.value;
-          if (!clickedValue) return;
+          // 버튼 UI만 즉시 반영
+          const buttons = swiperBtn.querySelectorAll("button");
+          buttons.forEach((btn) => {
+            const isActive = btn.dataset.value === newSlide;
+            btn.classList.toggle("active", isActive);
+            btn.ariaSelected = isActive.toString();
+          });
+        });
 
-          if (clickedValue === "basic" && swiper.activeIndex === 0) swiper.slideTo(swiper.slides.length - 1);
-          else if (clickedValue === "basic" && swiper.activeIndex === swiper.slides.length - 1) swiper.slideTo(0);
-          else if (clickedValue === "engineering" && swiper.activeIndex === swiper.slides.length - 1) swiper.slideTo(0);
-          else swiper.slideTo(swiper.slides.length - 1);
+        // 상태 변경은 전환 완료 후
+        swiper.on("slideChangeTransitionEnd", () => {
+          const { activeIndex } = swiper;
+          const newSlide = activeIndex === 0 ? "basic" : "engineering";
+
+          if (newSlide !== slideState) {
+            setSlideState(newSlide); // 이건 여전히 애니메이션 후
+          }
+        });
+
+        swiperBtn.addEventListener("click", () => {
+          const currentIndex = swiper.activeIndex;
+          const newIndex = currentIndex === 0 ? 1 : 0;
+
+          swiper.slideTo(newIndex); // 상태는 slideChange에서 처리됨
         });
       });
     });

@@ -14,16 +14,24 @@ body > header {
   background-color: $color-white;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 
+  & > a.logo {
+    display: flex;
+    align-items: center;
+  }
+
   &.non-main {
     justify-content: flex-start;
 
-    & > a.arrow {
+    & > button.arrow {
       cursor: pointer;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      background-color: inherit;
+      border: none;
     }
 
     & > a.logo {
@@ -32,25 +40,6 @@ body > header {
   }
 
   // Logo 영역
-  & > a > span {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-
-    font-size: 1.5rem;
-    font-weight: 700;
-
-    // 텍스트 그라데이션 기법
-    // 배경 영역을 텍스트만 차지하게 한다.
-    background: linear-gradient(to right, $font-color-main-left, $font-color-main-right);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    & > picture {
-      height: 2rem;
-    }
-  }
 
   // 탐색 링크(Navigation Links) 영역 스타일
   & > nav {
