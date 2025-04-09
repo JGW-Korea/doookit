@@ -12,8 +12,10 @@ interface CalculatorStateVariable {
   expression: string; // 표현식 상태 변수
   mode: string;
   slide: string;
+  lastExpression: string;
   _animateSwiper: boolean;
   inv: boolean;
+  justEvaluated: boolean;
 }
 
 export default class Calculator extends Component<CalculatorStateVariable, ComponentDataType> {
@@ -28,8 +30,10 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         expression: "init",
         mode: "mode-rad", // 각도 모드 상태
         slide: "basic", // 슬라이드 상태
+        lastExpression: "",
         _animateSwiper: false, // 슬라이드 애니메이션 부여 상태
         inv: false,
+        justEvaluated: false,
       },
     });
 
@@ -70,7 +74,12 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
 
     // 계산기 하위 컴포넌트 정의
     const calcDisplay: HTMLElement = new CalculatorDisplay({
-      props: { display, resultState: this.state.result, expressionState: this.state.expression },
+      props: {
+        display,
+        resultState: this.state.result,
+        expressionState: this.state.expression,
+        lastExpressionState: this.state.lastExpression,
+      },
     }).el;
 
     const calcKeypads: HTMLElement = new CalculatorKeypads({
@@ -83,10 +92,15 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         invState: this.state.inv,
         slideState: this.state.slide,
         expressionState: this.state.expression,
+        justEvaluatedState: this.state.justEvaluated,
+        resultState: this.state.result,
+        setLastExpressionState: (newLastExpressionState: string) => this.setState({ lastExpression: newLastExpressionState }),
+        setResultState: (newResultState: string) => this.setState({ result: newResultState }),
         setModeState: (newModeState: string) => this.setState({ mode: newModeState }),
         setSlideState: (newSlideState: string) => this.setState({ slide: newSlideState, _animateSwiper: true }),
         setExpressionState: (newExpressionState: string) => this.setState({ expression: newExpressionState }),
         setInvState: (newInvState: boolean) => this.setState({ inv: newInvState }),
+        setJustEvaluated: (newJustEvaluated: boolean) => this.setState({ justEvaluated: newJustEvaluated }),
       },
     }).el;
 

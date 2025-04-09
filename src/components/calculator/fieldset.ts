@@ -10,6 +10,7 @@ interface FieldsetPropsType {
   invState: boolean;
   setInvState: (inv: boolean) => void;
   expressionState: string;
+  justEvaluatedState: boolean;
 }
 
 export default class Fieldset extends Component<ComponentDataType, FieldsetPropsType> {
@@ -105,7 +106,7 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
         // 버튼 상태 관련 정보 가져오기
         const currentState = isClearToggleBtn
-          ? button.states[this.props.expressionState !== "init" ? "inv" : "default"]
+          ? button.states[!this.props.justEvaluatedState ? "inv" : "default"]
           : button.states[this.props.invState ? "inv" : "default"];
 
         // 상태 전환 버튼 속성 구성

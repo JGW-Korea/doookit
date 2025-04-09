@@ -7,6 +7,7 @@ interface CalculatorDisplayProps {
   display: CalculatorDisplayType;
   resultState: string;
   expressionState: string; // 표현식 값
+  lastExpressionState: string;
 }
 
 export default class CalculatorDisplay extends Component<ComponentDataType, CalculatorDisplayProps> {
@@ -52,18 +53,23 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
     outputEl.ariaLive = "polite";
     outputEl.ariaAtomic = "true";
 
-    // 계산 결과 -> init -> null
+    // 초기 상태 output -> 아무것도 안보임
     if (this.props.resultState === "init") {
       outputEl.textContent = "";
     }
 
+    // 계산 직후 output -> '수식 ='
+    else if (this.props.lastExpressionState && this.props.expressionState === this.props.resultState) {
+      outputEl.textContent = `${this.props.lastExpressionState} =`;
+    }
+
+    // 계산 직후 다시 입력 중 -> "Ans = 이전 결과"
+    else if (this.props.resultState && this.props.expressionState !== "init" && this.props.expressionState !== this.props.resultState) {
+      outputEl.textContent = `Ans = ${this.props.resultState}`;
+    }
+
     displayContainerEl.append(backBtnEl, outputEl);
     displayContainerEl.classList.add("output");
-
-    // 계산 결과 -> = -> 표현식(예: 1 + 2 =)
-    // 계산 결과 -> 입력 중 -> Ans = N
-
-    // outputEl.textContent = "Ans = 123";
 
     // 계산 입력창
     const fakeInputEl = document.createElement("div");
