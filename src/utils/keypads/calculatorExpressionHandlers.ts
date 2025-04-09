@@ -1,6 +1,6 @@
 import { CalculatorTypes } from "../../types/calculatorTypes";
 import { calculatorExpression } from "./calculatorExpression";
-import { canAddDot, isDot, isNumber, isOperator } from "./calculatorUtils";
+import { canAddDot, isDot, isFactorial, isNumber, isOperator, isPercentage } from "./calculatorUtils";
 
 // 키패드 클릭 이벤트 핸들러
 export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
@@ -21,13 +21,28 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
     // 1. 숫자 입력 시 초기화
     // 2. 연산자 입력 시 결과에 연산자 붙이기
     if (props.justEvaluatedState) {
-      const handle: boolean = handleJustEvaluatedInput(value, props.resultState, props.setExpressionState, props.setJustEvaluated);
+      const handle: boolean = handleJustEvaluatedInput(
+        value,
+        props.resultState,
+        props.setExpressionState,
+        props.setJustEvaluated,
+        props.expressionState,
+      );
       if (handle) return;
     }
 
     // AC | CE 버튼 클릭 시
     if (buttonEl.id === "clear-toggle") {
-      const next = handleClearToggle(current, value as "AC" | "CE");
+      if (value === "AC") {
+        props.setExpressionState("init");
+        props.setJustEvaluated(false);
+        props.setResultState("init");
+        props.setLastExpressionState("");
+        return;
+      }
+
+      // CE 처리는 마지막 글자를 제거한 문자를 반환 받음
+      const next = handleClearToggle(current);
       props.setExpressionState(next);
       return;
     }
@@ -86,6 +101,8 @@ export const handleInput = (value: string, expression: string): string | null =>
     }
   }
 
+  if (isPercentage(value)) return current + "%";
+  if (isFactorial(value)) return current + "!";
   if (isOperator(value)) return current + " " + value; // 연산자 입력 시 띄어쓰기 추가
   if (isStartingNegative) return "-" + value; // 음수 시작 처리
   if (isLastCharOperator) return current + " " + value; // 연산자 뒤 숫자 등 붙이기
@@ -93,11 +110,8 @@ export const handleInput = (value: string, expression: string): string | null =>
   return current + value;
 };
 
-// AC | CE 값 처리
-export const handleClearToggle = (expression: string, clearType: "AC" | "CE"): string => {
-  if (clearType === "AC") return "init"; // 전체 초기화
-
-  // CE 처리
+// CE 값 처리
+export const handleClearToggle = (expression: string): string => {
   const trimmed = expression.trimEnd();
 
   // 마지막 공백 + 연산자인 경우
@@ -115,10 +129,16 @@ export const handleJustEvaluatedInput = (
   result: string,
   setExpressionState: (exp: string) => void,
   setJustEvaluatedState: (flag: boolean) => void,
+  currentExpression: string,
 ): boolean => {
-  // 숫자 입력 시 초기화
+  // 숫자 입력 시, expression이 result와 같을 경우에만 초기화
   if (isNumber(value)) {
-    setExpressionState(value);
+    if (currentExpression === result) {
+      setExpressionState(value);
+    } else {
+      setExpressionState(currentExpression + value);
+    }
+
     setJustEvaluatedState(false);
     return true;
   }

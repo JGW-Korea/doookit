@@ -8,7 +8,11 @@ export const calculatorExpression = (expression: string): string | null => {
   }
 
   try {
-    const parsed = expression.replace(/×/g, "*").replace(/÷/g, "/"); // ×, ÷ -> math.js가 이해할 수 있는 문자로 수정
+    let parsed = expression.replace(/×/g, "*").replace(/÷/g, "/"); // ×, ÷ -> math.js가 이해할 수 있는 문자로 수정
+
+    parsed = parsed.replace(/(\d+(\.\d+)?) %/g, "($1 / 100)"); // 퍼센트 변환: "N%" -> (숫자 / 100)
+    parsed = parsed.replace(/(\d+(\.\d+)?) x!/g, "factorial($1)"); // 팩토리얼 변환: "숫자 x!" → "factorial(숫자)"
+
     const result = evaluate(parsed);
 
     // 결과 값이 NaN일 경우
