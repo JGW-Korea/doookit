@@ -1,5 +1,6 @@
 import { CalculatorKeypadGroup, CalculatorMobileKeypads } from "../../types/calculatorTranslations";
 import { Component, ComponentDataType } from "../../utils/Component";
+import { handleKeypadClick } from "../../utils/keypads/calculatorExpressionHandlers";
 import Fieldset from "./fieldset";
 
 interface CalculatorKeypadsProps {
@@ -10,8 +11,17 @@ interface CalculatorKeypadsProps {
   mobile?: CalculatorMobileKeypads;
   modeState: string;
   slideState: string;
+  expressionState: string;
+  invState: boolean;
+  resultState: string;
+  justEvaluatedState: boolean;
   setModeState: (mode: string) => void;
   setSlideState: (slide: string) => void;
+  setExpressionState: (expresion: string) => void;
+  setInvState: (inv: boolean) => void;
+  setLastExpressionState: (lastExpression: string) => void;
+  setResultState: (result: string) => void;
+  setJustEvaluated: (justEvaluated: boolean) => void;
 }
 
 export default class CalculatorKeypads extends Component<ComponentDataType, CalculatorKeypadsProps> {
@@ -29,11 +39,19 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
     this.el.ariaLabel = this.props.ariaLabel;
 
     // Viewport > 768px 환경 계산기 키패드 컴포넌트 구성
-    if (!this.props.mobile) {
+    if (!this.props.type) {
       // 데스크탑 환경: 각 그룹마다 필드셋 생성
       this.props.groups.forEach((group) => {
         const fieldsetEl = new Fieldset({
-          props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState },
+          props: {
+            group: group,
+            modeState: this.props.modeState,
+            setModeState: this.props.setModeState,
+            invState: this.props.invState,
+            setInvState: this.props.setInvState,
+            expressionState: this.props.expressionState,
+            justEvaluatedState: this.props.justEvaluatedState,
+          },
         });
         this.el.appendChild(fieldsetEl.el);
       });
@@ -42,6 +60,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
     // Viewport <= 768px 환경 계산기 키패드 컴포넌트 구성
     else {
       const mobileKeypads = this.props.mobile!;
+
       const swiperEl = document.createElement("div");
       swiperEl.classList.add("swiper");
       const swiperWrapperEl = document.createElement("div");
@@ -53,14 +72,20 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
           const swiperSlide = document.createElement("div");
           swiperSlide.classList.add("swiper-slide");
           swiperSlide.ariaLabel = mobileKeypads[key].label;
-
           mobileKeypads[key].groups.forEach((group) => {
             const fieldsetEl = new Fieldset({
-              props: { group: group, modeState: this.props.modeState, setModeState: this.props.setModeState },
+              props: {
+                group: group,
+                modeState: this.props.modeState,
+                setModeState: this.props.setModeState,
+                invState: this.props.invState,
+                setInvState: this.props.setInvState,
+                expressionState: this.props.expressionState,
+                justEvaluatedState: this.props.justEvaluatedState,
+              },
             });
             swiperSlide.appendChild(fieldsetEl.el);
           });
-
           swiperWrapperEl.appendChild(swiperSlide);
         }
       });
@@ -70,14 +95,12 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
       swiperBtn.classList.add("swiper-btn");
       swiperBtn.role = "tablist";
       swiperBtn.ariaLabel = mobileKeypads.tabs.ariaLabel;
-
       Object.keys(mobileKeypads.tabs).forEach((key) => {
         if (key === "basic" || key === "engineering") {
           const buttonEl = document.createElement("button");
           buttonEl.role = "tab";
           buttonEl.dataset.value = key;
           buttonEl.textContent = mobileKeypads.tabs[key];
-
           if (this.props.slideState === key) {
             buttonEl.ariaSelected = "true";
             buttonEl.classList.add("active");
@@ -90,8 +113,23 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
 
       swiperEl.append(swiperWrapperEl, swiperBtn);
       this.el.appendChild(swiperEl);
+
+      // Swiper 슬라이더 초기화
       this.initSwiper(swiperBtn, this.props.slideState, this.props.setSlideState);
     }
+
+    // 키패드 버튼 클릭 이벤트 핸들러 등록
+    this.el.addEventListener("click", (e) => {
+      handleKeypadClick(e, {
+        expressionState: this.props.expressionState,
+        resultState: this.props.resultState,
+        justEvaluatedState: this.props.justEvaluatedState,
+        setExpressionState: this.props.setExpressionState,
+        setResultState: this.props.setResultState,
+        setLastExpressionState: this.props.setLastExpressionState,
+        setJustEvaluated: this.props.setJustEvaluated,
+      });
+    });
   }
 
   // 모바일 키패드 슬라이드 설정

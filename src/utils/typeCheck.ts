@@ -1,4 +1,4 @@
-import { ClearToggleButton, KeypadButton } from "../types/calculatorTranslations";
+import { StateButton, KeypadButton } from "../types/calculatorTranslations";
 import { LangType } from "../types/translation";
 import { SUPPORT_LANG } from "./constant";
 
@@ -8,6 +8,6 @@ export function isLangType(lang: string): lang is LangType {
 }
 
 // 해당 객체가 KeypadButton 타입인지 확인하는 타입 가드 함수
-export function isKeypadButton(button: KeypadButton | ClearToggleButton): button is KeypadButton {
+export function isKeypadButton(button: KeypadButton | StateButton): button is KeypadButton {
   return typeof button === "object" && "text" in button && "value" in button && "ariaLabel" in button && "shortcut" in button;
 }
