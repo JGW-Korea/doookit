@@ -7,6 +7,10 @@ interface FieldsetPropsType {
   group: CalculatorKeypadGroup;
   modeState: string;
   setModeState: (mode: string) => void;
+  invState: boolean;
+  setInvState: (inv: boolean) => void;
+  expressionState: string;
+  justEvaluatedState: boolean;
 }
 
 export default class Fieldset extends Component<ComponentDataType, FieldsetPropsType> {
@@ -43,6 +47,7 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
         buttonEl.setAttribute("aria-labelledby", option.ariaLabelledby);
         buttonEl.ariaKeyShortcuts = option.shortcut;
         buttonEl.textContent = option.text;
+        buttonEl.dataset.value = option.value;
 
         spanEl.id = option.ariaLabelledby;
         spanEl.classList.add("sr-only");
@@ -71,37 +76,47 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
       this.el.appendChild(groupDivEl);
     }
 
+    // 각 그룹 버튼에 대한 fieldset 하위 버튼 생성
     this.props.group.buttons.forEach((button) => {
       const buttonEl = document.createElement("button");
       buttonEl.type = "button";
       buttonEl.classList.add("keys", "button");
 
-      // AC, CE 이외의 모든 버튼 종류
+      // 1. 일반 버튼(text, ariaLabel, value, shorcut)
       if (isKeypadButton(button)) {
         buttonEl.ariaLabel = button.ariaLabel;
         buttonEl.ariaKeyShortcuts = button.shortcut;
-
-        if (button.text === "xy") {
-          buttonEl.textContent = "x";
-          const sup = document.createElement("sup");
-          sup.textContent = "y";
-          buttonEl.appendChild(sup);
-        } else {
-          buttonEl.textContent = button.text;
-        }
+        buttonEl.dataset.value = button.value;
+        buttonEl.textContent = button.text;
 
         if (/([0-9\.])/g.test(button.text)) buttonEl.classList.add("number");
         if (button.text === "=") buttonEl.classList.add("equals");
+
+        // Inv 상태 변환 이벤트 핸들러 등록
+        if (button.text === "Inv") {
+          if (this.props.invState) buttonEl.classList.toggle("active");
+
+          buttonEl.addEventListener("click", () => {
+            this.props.setInvState(!this.props.invState);
+          });
+        }
       }
 
-      // AC, CE
+      // 2. 상태 전환 버튼(states, clear-toggle)
       else {
-        const value = "123";
-        const state = value ? "AC" : "CE";
+        const isClearToggleBtn = button.id === "clear-toggle"; // AC <-> CE 전환 버튼 체크
+
+        // 버튼 상태 관련 정보 가져오기
+        const currentState = isClearToggleBtn
+          ? button.states[!this.props.justEvaluatedState ? "inv" : "default"]
+          : button.states[this.props.invState ? "inv" : "default"];
+
+        // 상태 전환 버튼 속성 구성
         buttonEl.id = button.id;
-        buttonEl.ariaLabel = button.states[state].ariaLabel;
-        buttonEl.ariaKeyShortcuts = button.states[state].shortcut;
-        buttonEl.textContent = button.states[state].text;
+        buttonEl.textContent = currentState.text;
+        buttonEl.ariaLabel = currentState.ariaLabel;
+        buttonEl.ariaKeyShortcuts = currentState.shortcut;
+        buttonEl.dataset.value = currentState.value;
       }
 
       this.el.appendChild(buttonEl);

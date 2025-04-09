@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
+    "mathjs": "^14.4.0",
     "reset-css": "^5.0.2",
     "swiper": "^11.2.6"
   }

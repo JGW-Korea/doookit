@@ -51,6 +51,7 @@
 
       font-size: 0.75rem;
       background-color: #e5edff;
+      line-height: 1.5;
 
       cursor: pointer;
       color: #001d35;
@@ -60,6 +61,13 @@
         padding-bottom: 0.75rem;
         width: 5.5rem;
         color: #001d35;
+
+        // color: red;
+
+        &[data-value="Inv"].active {
+          font-weight: 700;
+          background-color: #dee1e3;
+        }
       }
 
       transition: 0.2s;

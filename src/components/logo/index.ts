@@ -20,12 +20,7 @@ export default class Logo extends Component<ComponentDataType, LogoProps> {
     this.el.ariaLabel = this.props.ariaLabel;
     this.el.classList.add("logo");
 
-    const logoImage = document.createElement("img");
     const svgURL = new URL("../../assets/icons/logo-text.svg", import.meta.url).href;
-    logoImage.alt = "";
-    logoImage.ariaHidden = "true";
-    logoImage.width = 135;
-    logoImage.height = 32;
 
     fetch(svgURL)
       .then((res) => res.text())
