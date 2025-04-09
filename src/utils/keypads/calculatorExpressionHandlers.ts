@@ -7,10 +7,12 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
   const target = e.target as HTMLElement;
   const buttonEl = target.closest("button");
 
+  const EXCLUDED_KEY_VALUES = ["Inv", "Deg", "Rad", "engineering", "basic"];
+
   // 버튼 태그일 경우
-  if (buttonEl && !buttonEl.role) {
+  if (buttonEl) {
     const { value } = buttonEl.dataset;
-    if (!value) return;
+    if (!value || EXCLUDED_KEY_VALUES.includes(value)) return;
 
     // 지금까지 입력된 표현식 문자열 상태
     const current: string = props.expressionState === "init" ? "" : props.expressionState;

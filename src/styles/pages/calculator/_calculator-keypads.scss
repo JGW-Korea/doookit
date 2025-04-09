@@ -61,6 +61,13 @@
         padding-bottom: 0.75rem;
         width: 5.5rem;
         color: #001d35;
+
+        // color: red;
+
+        &[data-value="Inv"].active {
+          font-weight: 700;
+          background-color: #dee1e3;
+        }
       }
 
       transition: 0.2s;

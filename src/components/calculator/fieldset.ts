@@ -94,6 +94,8 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
         // Inv 상태 변환 이벤트 핸들러 등록
         if (button.text === "Inv") {
+          if (this.props.invState) buttonEl.classList.toggle("active");
+
           buttonEl.addEventListener("click", () => {
             this.props.setInvState(!this.props.invState);
           });
