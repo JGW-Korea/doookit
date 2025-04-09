@@ -35,10 +35,10 @@ export default class Footer extends Component<ComponentDataType, ComponentDataTy
 
     // // 최종 반영
     this.el.appendChild(footerContainerEl);
-    this.el.style.visibility = "hidden";
+    // this.el.style.visibility = "hidden";
 
-    setTimeout(() => {
-      this.el.style.visibility = "visible";
-    }, 100);
+    // setTimeout(() => {
+    //   this.el.style.visibility = "visible";
+    // }, 100);
   }
 }
