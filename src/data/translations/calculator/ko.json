@@ -211,10 +211,10 @@
               "value": "6"
             },
             {
-              "text": "x",
+              "text": "×",
               "ariaLabel": "곱하기",
               "shortcut": "*",
-              "value": "x"
+              "value": "×"
             }
           ]
         },
@@ -458,10 +458,10 @@
                 "value": "6"
               },
               {
-                "text": "x",
+                "text": "×",
                 "ariaLabel": "곱하기",
                 "shortcut": "*",
-                "value": "x"
+                "value": "×"
               }
             ]
           },

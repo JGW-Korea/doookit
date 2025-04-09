@@ -91,11 +91,9 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
         if (/([0-9\.])/g.test(button.text)) buttonEl.classList.add("number");
         if (button.text === "=") buttonEl.classList.add("equals");
 
+        // Inv 상태 변환 이벤트 핸들러 등록
         if (button.text === "Inv") {
           buttonEl.addEventListener("click", () => {
-            console.log(this.props.invState);
-            console.log(!this.props.invState);
-            console.log(this.props.setInvState);
             this.props.setInvState(!this.props.invState);
           });
         }
