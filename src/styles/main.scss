@@ -56,5 +56,14 @@ p {
 
 sup {
   vertical-align: super;
-  font-size: 0.65rem;
+  font-size: 70%;
+}
+
+sup.placeholder {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px dotted #cccccc;
+  box-sizing: border-box;
+  margin-left: 2px;
 }

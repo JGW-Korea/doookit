@@ -321,7 +321,7 @@
                 "default": {
                   "text": "xy",
                   "ariaLabel": "Potencia",
-                  "value": "x^{y}",
+                  "value": "^",
                   "shortcut": "^"
                 },
                 "inv": {
@@ -728,7 +728,7 @@
                   "default": {
                     "text": "xy",
                     "ariaLabel": "Potencia",
-                    "value": "x^{y}",
+                    "value": "^",
                     "shortcut": "^"
                   },
                   "inv": {

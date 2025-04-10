@@ -113,10 +113,19 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
 
         // 상태 전환 버튼 속성 구성
         buttonEl.id = button.id;
-        buttonEl.textContent = currentState.text;
+
+        buttonEl.dataset.value = currentState.value;
         buttonEl.ariaLabel = currentState.ariaLabel;
         buttonEl.ariaKeyShortcuts = currentState.shortcut;
-        buttonEl.dataset.value = currentState.value;
+
+        if (currentState.value === "^") {
+          buttonEl.textContent = "x";
+          const supEl = document.createElement("sup");
+          supEl.textContent = "y";
+          buttonEl.appendChild(supEl);
+        } else {
+          buttonEl.textContent = currentState.text;
+        }
       }
 
       this.el.appendChild(buttonEl);

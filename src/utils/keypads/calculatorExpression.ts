@@ -52,45 +52,69 @@ export const calculatorExpression = (expression: string, mode: "mode-deg" | "mod
   }
 };
 
-// 표현식에 괄호 표시
 export const renderFakeInput = (expression: string): void => {
   const container = document.querySelector("#fake-input");
+  if (!container) return;
 
-  if (container) {
-    // 기존 요소 제거
-    while (container.firstChild) {
-      container.removeChild(container.firstChild);
-    }
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
 
-    // 표현식이 "init"이면 "0" 표시
-    const displayExpression = expression === "init" ? "0" : expression;
+  const displayExpression = (expression === "init" ? "0" : expression).replace(/pi/g, "π");
 
-    // 표현식 문자 <span> 태그로 감싸기
-    for (let i = 0; i < displayExpression.length; i++) {
-      const spanEl = document.createElement("span");
+  let currentSupEl: HTMLElement | null = null;
 
-      if (expression.slice(i, i + 2) === "pi") {
-        spanEl.textContent = "π";
-        i++;
+  for (let i = 0; i < displayExpression.length; i++) {
+    const char = displayExpression[i];
+
+    if (char === "^") {
+      const newSup = document.createElement("sup");
+      newSup.classList.add("placeholder");
+
+      if (currentSupEl) {
+        // 중첩
+        currentSupEl.appendChild(newSup);
       } else {
-        spanEl.textContent = displayExpression[i];
+        // 최상위
+        container.appendChild(newSup);
       }
 
-      container.appendChild(spanEl);
+      currentSupEl = newSup;
+      continue;
     }
 
-    // 괄호 자동 닫기 표시
-    if (expression !== "init") {
-      const openCount = (expression.match(/\(/g) || []).length;
-      const closeCount = (expression.match(/\)/g) || []).length;
-      const missing = openCount - closeCount;
+    if (/[0-9]/.test(char)) {
+      const digit = document.createElement("span");
+      digit.textContent = char;
 
-      for (let i = 0; i < missing; i++) {
-        const ghost = document.createElement("span");
-        ghost.textContent = ")";
-        ghost.classList.add("ghost");
-        container.appendChild(ghost);
+      if (currentSupEl) {
+        currentSupEl.appendChild(digit);
+        currentSupEl.classList.remove("placeholder");
+      } else {
+        container.appendChild(digit);
       }
+      continue;
+    }
+
+    // 숫자도 ^도 아닌 일반 문자 → 지수 종료
+    currentSupEl = null;
+
+    const span = document.createElement("span");
+    span.textContent = char;
+    container.appendChild(span);
+  }
+
+  // 자동 괄호 닫기
+  if (expression !== "init") {
+    const openCount = (expression.match(/\(/g) || []).length;
+    const closeCount = (expression.match(/\)/g) || []).length;
+    const missing = openCount - closeCount;
+
+    for (let i = 0; i < missing; i++) {
+      const ghost = document.createElement("span");
+      ghost.textContent = ")";
+      ghost.classList.add("ghost");
+      container.appendChild(ghost);
     }
   }
 };

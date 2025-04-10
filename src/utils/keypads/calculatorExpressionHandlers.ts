@@ -181,6 +181,17 @@ export const handleInput = (value: string, expression: string): string | null =>
     return null;
   }
 
+  if (value === "^") {
+    const validLast = /(\d|\)|pi|e|Ans)$/; // 마지막 입력이 숫자, 닫는 괄호, 상수(pi/e), Ans 일 경우에만 허용
+    const exponentCount = (current.match(/\^/g) || []).length;
+
+    if (validLast.test(current) && exponentCount < 4) {
+      return current + "^";
+    }
+
+    return null;
+  }
+
   if (value === "Ans") {
     if (current === "" || /[\+\-\×÷\(]$/.test(current)) {
       return current + "Ans";
