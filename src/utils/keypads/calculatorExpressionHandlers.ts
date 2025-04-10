@@ -1,18 +1,7 @@
+import { evaluate } from "mathjs";
 import { CalculatorTypes } from "../../types/calculatorTypes";
 import { calculatorExpression, renderFakeInput } from "./calculatorExpression";
-import {
-  canAddDot,
-  isConstant,
-  isDot,
-  isExp,
-  isFactorial,
-  isLogOrSqrt,
-  isNagativeSign,
-  isNumber,
-  isOperator,
-  isPercentage,
-  isTrigFunction,
-} from "./calculatorUtils";
+import { canAddDot, isConstant, isDot, isExp, isFactorial, isLogOrSqrt, isNumber, isOperator, isPercentage, isTrigFunction } from "./calculatorUtils";
 
 // 키패드 클릭 이벤트 핸들러
 export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
@@ -64,6 +53,20 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
       return;
     }
 
+    if (value === "random") {
+      const random = evaluate("random()").toFixed(7).toString();
+
+      const current = props.expressionState === "init" ? "" : props.expressionState;
+      const updated = current === "" ? random : `${current} × ${random}`;
+
+      props.setExpressionState(updated);
+      props.setResultState(random);
+      props.setJustEvaluated(false);
+
+      renderFakeInput(updated, random);
+      return;
+    }
+
     // 결과 출력
     if (value === "=") {
       // 자동 괄호 추가된 수식
@@ -92,118 +95,132 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
 };
 
 // 숫자, 연산자, 소수점 입력
+// 예: 함수 키 판단 (sin, cos, tan, asin, acos, atan, log, e^{x}, 10^{x} 및 필요에 따라 "(")
+const isFunctionKey = (value: string): boolean => {
+  const funcs = ["sin", "cos", "tan", "asin", "acos", "atan", "log", "e^{x}", "10^{x}"];
+  return funcs.includes(value) || value === "(";
+};
+
 export const handleInput = (value: string, expression: string): string | null => {
-  const current = expression;
+  const indexMarker = "[IDX]";
+  const isIndexEditing = expression.includes(indexMarker);
 
-  const isStartingNegative = current === "-";
-  const lastChar = current[current.length - 1];
-  const isLastCharOperator = isOperator(lastChar);
+  // ── [IDX] 편집 모드가 활성화된 경우 ──
+  // ── [IDX] 편집 모드가 활성화된 경우 ──
+  if (isIndexEditing) {
+    const sqrtPos = expression.indexOf("√");
+    if (sqrtPos === -1) return expression;
 
-  // 초기 상태 연산자 처리
-  if (current === "") {
-    if (value === "-") return "-"; // - 기호는 단독으로 허용
-    if (isOperator(value)) return "0 " + value; // 그 외 연산자 -> 0 +, 0 -, 등으로 시작
-    if (isNumber(value) || isDot(value)) return value; // 숫자, 소수점은 그대로 입력
-  }
+    const markerStart = expression.indexOf(indexMarker);
+    const prefix = expression.slice(0, markerStart);
+    const currentIndex = expression.slice(markerStart + indexMarker.length, sqrtPos);
+    const suffix = expression.slice(sqrtPos);
 
-  if (isDot(value) && !canAddDot(current)) return null; // 소수점 입력 시 중복 방지
-
-  const expPattern = /\d+E$/;
-  const expWithMinus = /\d+E-$/;
-
-  if (expPattern.test(current)) {
-    if (isNagativeSign(value) || isNumber(value)) {
-      return current + value;
+    // ✅ 숫자 또는 상수 입력 시: [IDX] 영역 안에 계속 누적
+    if (isNumber(value) || isConstant(value)) {
+      const newIndex = currentIndex + value;
+      return prefix + indexMarker + newIndex + suffix;
     }
 
-    return null;
-  }
-
-  if (expWithMinus.test(current)) {
-    if (isNumber(value)) {
-      return current + value;
+    // ✅ 연산자나 괄호 → 인덱스 입력 종료
+    if (isOperator(value) || value === "%" || value === "(" || value === ")") {
+      const finalized = prefix + currentIndex + suffix;
+      return finalized + " " + value;
     }
 
-    return null;
+    // ✅ 함수 키 삽입
+    if (isFunctionKey(value)) {
+      const newIndex = currentIndex + value + "()";
+      return prefix + newIndex + indexMarker + suffix;
+    }
+
+    // ❗ 기타 기본 입력 → index 안에 계속 누적
+    const newIndex = currentIndex + value;
+    return prefix + indexMarker + newIndex + suffix;
   }
 
-  // 연산자 연속 입력 시 마지막 연산자 교체
-  if (isOperator(value) && isLastCharOperator && !isStartingNegative) {
-    return current.slice(0, current.length - 1) + value;
+  // ── 인덱스 편집 모드가 아니라면 ──
+
+  // √( 버튼 처리: 마지막 토큰을 radicand로 사용하고, 인덱스 편집 시작 marker를 삽입합니다.
+  if (value === "√(") {
+    if (expression === "" || expression === "init") return "[IDX]√";
+
+    const tokens = expression.trim().split(" ");
+    const lastToken = tokens.pop() || "";
+    const rest = tokens.length > 0 ? tokens.join(" ") + " " : "";
+
+    return rest + "[IDX]√" + lastToken;
   }
 
-  // 0 입력 후 숫자 입력 시 불필요한 0 제거
+  // 그 외 일반 입력은 기존 방식대로 처리
+  // (숫자, 소수점, 연산자, 함수 등)
   if (isNumber(value)) {
-    const tokens = current.trim().split(" ");
+    const tokens = expression.trim().split(" ");
     const lastToken = tokens[tokens.length - 1];
-
-    if (lastToken === "0" && value === "0") {
-      return expression; // 무시
-    }
-
+    if (lastToken === "0" && value === "0") return expression;
     if (lastToken === "0" && value !== "0") {
       tokens[tokens.length - 1] = value;
       return tokens.join(" ");
     }
   }
 
-  if (isPercentage(value)) return current + "%";
-  if (isFactorial(value)) return current + "!";
-  if (isOperator(value)) return current + " " + value; // 연산자 입력 시 띄어쓰기 추가
-  if (value === "(") return current + value;
-  if (value === ")") {
-    const openCount = (current.match(/\(/g) || []).length;
-    const closeCount = (current.match(/\)/g) || []).length;
+  // 기타 기존 로직 (연산자, 괄호 등)
+  const isStartingNegative = expression === "-";
+  const lastChar = expression[expression.length - 1];
+  const isLastCharOperator = isOperator(lastChar);
 
+  if (expression === "") {
+    if (value === "-") return "-";
+    if (isOperator(value)) return "0 " + value;
+    if (isNumber(value) || isDot(value)) return value;
+  }
+
+  if (isDot(value) && !canAddDot(expression)) return null;
+  if (isPercentage(value)) return expression + "%";
+  if (isFactorial(value)) return expression + "!";
+  if (isOperator(value)) return expression + " " + value;
+  if (value === "(") return expression + value;
+  if (value === ")") {
+    const openCount = (expression.match(/\(/g) || []).length;
+    const closeCount = (expression.match(/\)/g) || []).length;
     if (closeCount >= openCount) return null;
   }
-
-  if (isLogOrSqrt(value)) return current + value + "(";
-
-  if (isTrigFunction(value)) {
-    return current + value + "(";
-  }
-
+  if (isLogOrSqrt(value)) return expression + value + "(";
+  if (isTrigFunction(value)) return expression + value + "(";
   if (isConstant(value)) {
     const constant = value === "π" ? "pi" : "e";
-    return current + constant;
+    return expression + constant;
   }
-
   if (isExp(value)) {
-    const tokens = current.trim().split(" ");
+    const tokens = expression.trim().split(" ");
     const lastToken = tokens[tokens.length - 1];
-
-    if (isNumber(lastToken)) {
-      return current + "E";
-    }
-
-    // 숫자 없이 EXP가 들어오면 무시
+    if (isNumber(lastToken)) return expression + "E";
     return null;
   }
-
+  if (value === "exp^") {
+    const expCount = (expression.match(/exp\^/g) || []).length;
+    if (expCount < 4) return expression + "exp^";
+    return expression + "e";
+  }
+  if (value === "10^") {
+    const tenPowerCount = (expression.match(/10\^/g) || []).length;
+    if (tenPowerCount < 4) return expression + "10^";
+    return expression + "10";
+  }
   if (value === "^") {
-    const validLast = /(\d|\)|pi|e|Ans)$/; // 마지막 입력이 숫자, 닫는 괄호, 상수(pi/e), Ans 일 경우에만 허용
-    const exponentCount = (current.match(/\^/g) || []).length;
-
-    if (validLast.test(current) && exponentCount < 4) {
-      return current + "^";
-    }
-
+    const validLast = /(\d|\)|pi|e|Ans)$/;
+    const exponentCount = (expression.match(/\^/g) || []).length;
+    if (validLast.test(expression) && exponentCount < 4) return expression + "^";
     return null;
   }
-
   if (value === "Ans") {
-    if (current === "" || /[\+\-\×÷\(]$/.test(current)) {
-      return current + "Ans";
-    } else {
-      return current + " × Ans";
-    }
+    if (expression === "" || /[\+\-\×÷\(]$/.test(expression)) return expression + "Ans";
+    else return expression + " × Ans";
   }
+  if (isStartingNegative) return "-" + value;
+  if (isLastCharOperator) return expression + " " + value;
 
-  if (isStartingNegative) return "-" + value; // 음수 시작 처리
-  if (isLastCharOperator) return current + " " + value; // 연산자 뒤 숫자 등 붙이기
-
-  return current + value;
+  return expression + value;
 };
 
 // CE 값 처리

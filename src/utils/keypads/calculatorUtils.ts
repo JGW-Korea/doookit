@@ -8,7 +8,7 @@ export const isFactorial = (value: string): boolean => value === "x!";
 export const isOpenBracket = (value: string): boolean => value === "(";
 export const isCloseBracket = (value: string): boolean => value === ")";
 
-export const isTrigFunction = (value: string): boolean => ["sin", "cos", "tan"].includes(value);
+export const isTrigFunction = (value: string): boolean => ["sin", "cos", "tan", "asin", "acos", "atan"].includes(value);
 export const isLogOrSqrt = (value: string): boolean => ["ln", "log", "√"].includes(value);
 
 export const isConstant = (value: string): boolean => value === "π" || value === "e";
