@@ -124,6 +124,7 @@ export default class CalculatorKeypads extends Component<ComponentDataType, Calc
         expressionState: this.props.expressionState,
         resultState: this.props.resultState,
         justEvaluatedState: this.props.justEvaluatedState,
+        modeState: this.props.modeState === "mode-rad" ? "mode-rad" : "mode-deg",
         setExpressionState: this.props.setExpressionState,
         setResultState: this.props.setResultState,
         setLastExpressionState: this.props.setLastExpressionState,

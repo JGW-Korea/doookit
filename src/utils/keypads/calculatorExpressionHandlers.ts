@@ -1,6 +1,18 @@
 import { CalculatorTypes } from "../../types/calculatorTypes";
-import { calculatorExpression } from "./calculatorExpression";
-import { canAddDot, isDot, isFactorial, isNumber, isOperator, isPercentage } from "./calculatorUtils";
+import { calculatorExpression, renderFakeInput } from "./calculatorExpression";
+import {
+  canAddDot,
+  isConstant,
+  isDot,
+  isExp,
+  isFactorial,
+  isLogOrSqrt,
+  isNagativeSign,
+  isNumber,
+  isOperator,
+  isPercentage,
+  isTrigFunction,
+} from "./calculatorUtils";
 
 // 키패드 클릭 이벤트 핸들러
 export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
@@ -28,7 +40,10 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
         props.setJustEvaluated,
         props.expressionState,
       );
-      if (handle) return;
+      if (handle) {
+        renderFakeInput(value);
+        return;
+      }
     }
 
     // AC | CE 버튼 클릭 시
@@ -38,29 +53,41 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
         props.setJustEvaluated(false);
         props.setResultState("init");
         props.setLastExpressionState("");
+        renderFakeInput("");
         return;
       }
 
       // CE 처리는 마지막 글자를 제거한 문자를 반환 받음
       const next = handleClearToggle(current);
       props.setExpressionState(next);
+      renderFakeInput(next);
       return;
     }
 
     // 결과 출력
     if (value === "=") {
-      const result = calculatorExpression(current);
+      // 자동 괄호 추가된 수식
+      const openCount = (current.match(/\(/g) || []).length;
+      const closeCount = (current.match(/\)/g) || []).length;
+      const missing = openCount - closeCount;
+      const expressionForDisplay = missing > 0 ? current + ")".repeat(missing) : current;
 
+      const result = calculatorExpression(current, props.modeState, props.resultState);
       if (result === null) return; // 미완성 표현식일 경우 계산 안함
-      props.setLastExpressionState(current);
+
+      props.setLastExpressionState(expressionForDisplay);
       props.setResultState(result);
       props.setExpressionState(result);
       props.setJustEvaluated(true);
+      renderFakeInput(result);
       return;
     }
 
     const next = handleInput(value, current);
-    if (next) props.setExpressionState(next);
+    if (next) {
+      props.setExpressionState(next);
+      renderFakeInput(next);
+    }
   }
 };
 
@@ -80,6 +107,25 @@ export const handleInput = (value: string, expression: string): string | null =>
   }
 
   if (isDot(value) && !canAddDot(current)) return null; // 소수점 입력 시 중복 방지
+
+  const expPattern = /\d+E$/;
+  const expWithMinus = /\d+E-$/;
+
+  if (expPattern.test(current)) {
+    if (isNagativeSign(value) || isNumber(value)) {
+      return current + value;
+    }
+
+    return null;
+  }
+
+  if (expWithMinus.test(current)) {
+    if (isNumber(value)) {
+      return current + value;
+    }
+
+    return null;
+  }
 
   // 연산자 연속 입력 시 마지막 연산자 교체
   if (isOperator(value) && isLastCharOperator && !isStartingNegative) {
@@ -104,6 +150,45 @@ export const handleInput = (value: string, expression: string): string | null =>
   if (isPercentage(value)) return current + "%";
   if (isFactorial(value)) return current + "!";
   if (isOperator(value)) return current + " " + value; // 연산자 입력 시 띄어쓰기 추가
+  if (value === "(") return current + value;
+  if (value === ")") {
+    const openCount = (current.match(/\(/g) || []).length;
+    const closeCount = (current.match(/\)/g) || []).length;
+
+    if (closeCount >= openCount) return null;
+  }
+
+  if (isLogOrSqrt(value)) return current + value + "(";
+
+  if (isTrigFunction(value)) {
+    return current + value + "(";
+  }
+
+  if (isConstant(value)) {
+    const constant = value === "π" ? "pi" : "e";
+    return current + constant;
+  }
+
+  if (isExp(value)) {
+    const tokens = current.trim().split(" ");
+    const lastToken = tokens[tokens.length - 1];
+
+    if (isNumber(lastToken)) {
+      return current + "E";
+    }
+
+    // 숫자 없이 EXP가 들어오면 무시
+    return null;
+  }
+
+  if (value === "Ans") {
+    if (current === "" || /[\+\-\×÷\(]$/.test(current)) {
+      return current + "Ans";
+    } else {
+      return current + " × Ans";
+    }
+  }
+
   if (isStartingNegative) return "-" + value; // 음수 시작 처리
   if (isLastCharOperator) return current + " " + value; // 연산자 뒤 숫자 등 붙이기
 
