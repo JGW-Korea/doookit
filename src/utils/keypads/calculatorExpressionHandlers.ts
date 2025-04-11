@@ -140,11 +140,9 @@ export const handleInput = (value: string, expression: string): string | null =>
     return prefix + indexMarker + newIndex + suffix;
   }
 
-  // ── 인덱스 편집 모드가 아니라면 ──
-
   // √( 버튼 처리: 마지막 토큰을 radicand로 사용하고, 인덱스 편집 시작 marker를 삽입합니다.
   if (value === "√(") {
-    if (expression === "" || expression === "init") return "[IDX]√";
+    if (expression === "" || expression === "init") return "[IDX]√0";
 
     const tokens = expression.trim().split(" ");
     const lastToken = tokens.pop() || "";
@@ -209,7 +207,10 @@ export const handleInput = (value: string, expression: string): string | null =>
 
   if (isDot(value) && !canAddDot(expression)) return null;
   if (isPercentage(value)) return expression + "%";
-  if (isFactorial(value)) return expression + "!";
+  if (isFactorial(value)) {
+    const operand = expression === "" || expression === "init" ? "0" : expression;
+    return operand + "!";
+  }
 
   // 👉 연산자 처리
   if (isOperator(value)) {
@@ -298,6 +299,8 @@ export const handleInput = (value: string, expression: string): string | null =>
     return expression + "10";
   }
   if (value === "^") {
+    if (expression === "" || expression === "init") return "0^";
+
     const validLast = /(\d|\)|pi|e|Ans)$/;
     const exponentCount = (expression.match(/\^/g) || []).length;
     if (validLast.test(expression) && exponentCount < 4) return expression + "^";
@@ -349,6 +352,15 @@ export const handleJustEvaluatedInput = (
   // 연산자 입력 시 결과에 연산자 붙이기
   if (isOperator(value)) {
     setExpressionState(result + " " + value);
+    setJustEvaluatedState(false);
+    return true;
+  }
+
+  // 여는 괄호 및 함수/상수와 같이 결과를 대체해야 하는 키들
+  const REPLACE_KEYS = new Set(["(", "sin", "cos", "tan", "asin", "acos", "atan", "log", "pi", "e", "sqrt(", "Ans", "exp("]);
+  if (REPLACE_KEYS.has(value)) {
+    // 연산 결과를 덮어쓰고 새 입력으로 시작
+    setExpressionState(value);
     setJustEvaluatedState(false);
     return true;
   }
