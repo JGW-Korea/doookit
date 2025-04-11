@@ -1,121 +1,101 @@
-const isProduction: boolean = location.hostname !== "localhost";
-const supportedLangs = ["ko", "ja", "fr", "it", "es", "de", "zh", "hi"];
+const isProduction = location.hostname !== "localhost";
+// 지원하는 총 9개 언어 (en 포함)
+const supportedLangs = ["en", "ko", "ja", "fr", "it", "es", "de", "zh", "hi"];
 const toolPaths = ["calc", "converter", "bmi", "timer", "color-picker", "px-converter"];
 
-// 브라우저 언어에서 기본 언어 코드 추출
-function getBrowserLang(): string {
+// 브라우저 언어로부터 기본 언어 코드 추출 (지원 목록에 없으면 en 사용)
+function getBrowserLang() {
   const langCode = navigator.language.split("-")[0];
   return supportedLangs.includes(langCode) ? langCode : "en";
 }
 
-// 언어 기반 도구 경로 리디렉션
-function redirectToLocalizedTool(tool: string, lang: string) {
-  const url = lang === "en" ? `/tools/${tool}` : `/${lang}/tools/${tool}`;
+function redirectTo(url: string) {
   location.replace(url);
 }
 
-// 도구명 포함한 언어 경로 리디렉션
-function redirectToLangTools(lang: string, tool: string) {
-  location.replace(`/${lang}/tools/${tool}`);
-}
-
-// 404 페이지 이동
 function redirectTo404() {
-  if (location.pathname === "/404") return; // 무한 루프 방지
-  location.replace("/404");
+  // 무한 루프 방지를 위해 현재가 이미 /404라면 처리하지 않음
+  if (location.pathname !== "/404") {
+    redirectTo("/404");
+  }
 }
 
-// ✅ 메인 실행
 if (isProduction) {
-  console.log("Hello");
-
-  const lang = getBrowserLang();
+  const browserLang = getBrowserLang();
   const path = location.pathname;
   const segments = path.split("/").filter(Boolean);
-  const [first, second, third, ...rest] = segments;
 
-  // ✅ 무조건 브라우저 언어 기준으로 덮어씌우기
-  // 1. 브라우저 언어와 맞지 않으면 리디렉션
-  if (lang !== "en" && (!first || first !== lang)) {
-    // 도구 경로가 있는 경우
-    if (toolPaths.includes(first)) {
-      redirectToLocalizedTool(first, lang);
+  // ─── 1. 메인 페이지 ("/") ─────────────────────────────────────
+  if (segments.length === 0) {
+    // 영어 사용자는 "/" 그대로, 그 외 언어라면 언어별 루트로 이동
+    if (browserLang === "en") {
+      // 아무것도 하지 않음
+    } else {
+      redirectTo(`/${browserLang}`);
     }
-
-    // /tools/calc → /{lang}/tools/calc
-    if (first === "tools" && toolPaths.includes(second)) {
-      redirectToLocalizedTool(second, lang);
-    }
-
-    // /en, /fr, /it 등 언어 루트만 있을 경우
-    if (supportedLangs.includes(first) && !second) {
-      location.replace(`/${lang}`);
-    }
-
-    // /{lang}/{tool} → /{lang}/tools/{tool}
-    if (supportedLangs.includes(first) && toolPaths.includes(second)) {
-      redirectToLangTools(lang, second);
-    }
-
-    // 나머지도 전부 강제 리디렉션
-    location.replace(`/${lang}`);
   }
+  // ─── 2. 단일 세그먼트 (예: "/calc" 또는 "/ko") ───────────────────
+  else if (segments.length === 1) {
+    const [first] = segments;
 
-  // ✅ 이제 브라우저 언어와 일치하는 상태에서 → 경로 검사
-  // ex: /ko/tools/calc/asd → 404
-  if (supportedLangs.includes(first) && second === "tools" && toolPaths.includes(third)) {
-    if (rest.length > 0) {
+    if (supportedLangs.includes(first)) {
+      // 언어 코드만 입력된 경우: 예) "/ko" 또는 "/en"
+      if (first === "en") {
+        // 영어 메인페이지는 "/"로 유지
+        redirectTo("/");
+      }
+      // 다른 언어는 그대로 유효 (예: "/ko")
+    } else if (toolPaths.includes(first)) {
+      // 예: "/calc" 등 도구 이름만 직접 입력된 경우
+      if (browserLang === "en") {
+        redirectTo(`/tools/${first}`);
+      } else {
+        redirectTo(`/${browserLang}/tools/${first}`);
+      }
+    } else {
       redirectTo404();
     }
   }
+  // ─── 3. 두 세그먼트 (예: "/tools/calc" 또는 "/ko/calc") ──────────────
+  else if (segments.length === 2) {
+    const [first, second] = segments;
 
-  // /{lang}/tools → 도구 없음 → 404
-  if (supportedLangs.includes(first) && second === "tools" && !toolPaths.includes(third)) {
-    redirectTo404();
+    // 패턴: /tools/{tool} (영어 기본 경로)
+    if (first === "tools" && toolPaths.includes(second)) {
+      if (browserLang !== "en") {
+        // 영어가 아닌 사용자는 언어별 경로로 이동
+        redirectTo(`/${browserLang}/tools/${second}`);
+      }
+      // 영어 사용자는 그대로 유지
+    }
+    // 패턴: /{lang}/{tool} (언어 코드가 포함됐지만 tools 누락)
+    else if (supportedLangs.includes(first) && toolPaths.includes(second)) {
+      if (first === "en") {
+        // 영어의 경우 올바른 경로는 /tools/{tool}
+        redirectTo(`/tools/${second}`);
+      } else {
+        redirectTo(`/${first}/tools/${second}`);
+      }
+    } else {
+      redirectTo404();
+    }
   }
-
-  // /{lang}/{invalid} → 404
-  if (supportedLangs.includes(first) && second && !toolPaths.includes(second)) {
+  // ─── 4. 세 세그먼트 (예: "/ko/tools/calc" 또는 "/en/tools/calc") ──────
+  else if (segments.length === 3) {
+    const [first, second, third] = segments;
+    // 올바른 패턴은: {lang}/tools/{tool}
+    if (!supportedLangs.includes(first) || second !== "tools" || !toolPaths.includes(third)) {
+      redirectTo404();
+    } else {
+      // 영어의 경우 올바른 경로는 "/tools/{tool}" (즉, "/en/tools/xxx"은 잘못된 경로)
+      if (first === "en") {
+        redirectTo(`/tools/${third}`);
+      }
+      // 그 외 언어는 그대로 유효
+    }
+  }
+  // ─── 5. 그 외: 유효하지 않은 경로 ──────────────────────────────────────
+  else {
     redirectTo404();
   }
 }
-
-// const isProduction: boolean = location.hostname !== "localhost";
-// const supportedLangs = ["ko", "ja", "fr", "it", "es", "de", "zh", "hi"];
-
-// // 브라우저 언어 기반 리다이렉트 실행
-// function redirect(path: string, language: string) {
-//   const langCode = language.split("-")[0];
-
-//   if (!supportedLangs.includes(langCode)) {
-//     location.replace(`${path !== "" ? `/${path}` : "/"}`);
-//     return; // 포함되지 않는 서비스 언어일 경우 함수 종료
-//   }
-
-//   const redirectUrl = `/${langCode}${path !== "" ? `/${path}` : ""}`;
-
-//   // 이미 언어 경로로 접속한 경우면 리다이렉트 안 함
-//   if (!location.pathname.startsWith(`/${langCode}`)) {
-//     location.replace(redirectUrl);
-//   }
-// }
-
-// // 실제 배포 환경에서만 실행
-// if (isProduction) {
-//   const pathVariable: string = location.pathname.split("/").at(-1) || ""; // 경로를 가져옴
-//   const broswerLanguage: string = navigator.language; // 사용자 브라우저의 언어를 가져옴
-
-//   switch (pathVariable) {
-//     case "":
-//     case "calc":
-//     case "convert":
-//     case "bmi":
-//     case "timer":
-//     case "color-picker":
-//     case "px":
-//       redirect(pathVariable, broswerLanguage);
-//       break;
-//     default:
-//       console.log("404 Page");
-//   }
-// }
