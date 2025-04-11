@@ -1,6 +1,4 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "redirects": [
     { "source": "/tools/calc/", "destination": "/tools/calc", "permanent": true },
     { "source": "/tools/converter/", "destination": "/tools/converter", "permanent": true },
