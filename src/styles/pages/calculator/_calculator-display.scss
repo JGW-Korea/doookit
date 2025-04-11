@@ -21,6 +21,11 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    & > .ghost {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
   & > div.output {
