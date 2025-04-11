@@ -4,3 +4,19 @@ main {
   padding: 1.5rem;
   padding: 1.5rem;
 }
+
+.placeholder {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px dotted #cccccc;
+  box-sizing: border-box;
+  margin-left: 2px;
+}
+
+.placeholder.index-placeholder {
+  margin-left: 0;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  margin-bottom: 12px;
+}
