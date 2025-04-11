@@ -5,6 +5,7 @@ import { CalculatorDatas } from "../../data";
 import { docType } from "../../utils/docType";
 import CalculatorDisplay from "./calculator-display";
 import CalculatorKeypads from "./calculator-keypads";
+import { renderFakeInput } from "../../utils/keypads/calculatorExpression";
 
 interface CalculatorStateVariable {
   [key: string]: unknown;
@@ -98,7 +99,10 @@ export default class Calculator extends Component<CalculatorStateVariable, Compo
         setResultState: (newResultState: string) => this.setState({ result: newResultState }),
         setModeState: (newModeState: string) => this.setState({ mode: newModeState }),
         setSlideState: (newSlideState: string) => this.setState({ slide: newSlideState, _animateSwiper: true }),
-        setExpressionState: (newExpressionState: string) => this.setState({ expression: newExpressionState }),
+        setExpressionState: (newExpressionState: string) => {
+          this.setState({ expression: newExpressionState });
+          renderFakeInput(newExpressionState);
+        },
         setInvState: (newInvState: boolean) => this.setState({ inv: newInvState }),
         setJustEvaluated: (newJustEvaluated: boolean) => this.setState({ justEvaluated: newJustEvaluated }),
       },

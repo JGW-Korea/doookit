@@ -100,7 +100,7 @@
                 "inv": {
                   "text": "sin⁻¹",
                   "ariaLabel": "反正弦",
-                  "value": "asin(",
+                  "value": "asin",
                   "shortcut": "S"
                 }
               }
@@ -117,7 +117,7 @@
                 "inv": {
                   "text": "eˣ",
                   "ariaLabel": "自然指数",
-                  "value": "exp(",
+                  "value": "exp^",
                   "shortcut": "E"
                 }
               }
@@ -170,7 +170,7 @@
                 "inv": {
                   "text": "cos⁻¹",
                   "ariaLabel": "反余弦",
-                  "value": "acos(",
+                  "value": "acos",
                   "shortcut": "C"
                 }
               }
@@ -187,7 +187,7 @@
                 "inv": {
                   "text": "10ˣ",
                   "ariaLabel": "常用指数",
-                  "value": "10^(",
+                  "value": "10^",
                   "shortcut": "G"
                 }
               }
@@ -240,7 +240,7 @@
                 "inv": {
                   "text": "tan⁻¹",
                   "ariaLabel": "反正切",
-                  "value": "atan(",
+                  "value": "atan",
                   "shortcut": "T"
                 }
               }
@@ -304,7 +304,7 @@
                 "inv": {
                   "text": "Rnd",
                   "ariaLabel": "生成随机数",
-                  "value": "Rnd()",
+                  "value": "random",
                   "shortcut": "R"
                 }
               }
@@ -321,12 +321,12 @@
                 "default": {
                   "text": "xy",
                   "ariaLabel": "乘方",
-                  "value": "x^{y}",
+                  "value": "^",
                   "shortcut": "^"
                 },
                 "inv": {
                   "text": "ʸ√x",
-                  "ariaLabel": "y次根",
+                  "ariaLabel": "x 的 n 次方根",
                   "value": "√(",
                   "shortcut": "Y"
                 }
@@ -585,7 +585,7 @@
                   "inv": {
                     "text": "sin⁻¹",
                     "ariaLabel": "反正弦",
-                    "value": "asin(",
+                    "value": "asin",
                     "shortcut": "S"
                   }
                 }
@@ -602,7 +602,7 @@
                   "inv": {
                     "text": "eˣ",
                     "ariaLabel": "自然指数",
-                    "value": "exp(",
+                    "value": "exp^",
                     "shortcut": "E"
                   }
                 }
@@ -625,7 +625,7 @@
                   "inv": {
                     "text": "cos⁻¹",
                     "ariaLabel": "反余弦",
-                    "value": "acos(",
+                    "value": "acos",
                     "shortcut": "C"
                   }
                 }
@@ -648,7 +648,7 @@
                   "inv": {
                     "text": "10ˣ",
                     "ariaLabel": "常用指数",
-                    "value": "10^(",
+                    "value": "10^",
                     "shortcut": "G"
                   }
                 }
@@ -671,7 +671,7 @@
                   "inv": {
                     "text": "tan⁻¹",
                     "ariaLabel": "反正切",
-                    "value": "atan(",
+                    "value": "atan",
                     "shortcut": "T"
                   }
                 }
@@ -711,7 +711,7 @@
                   "inv": {
                     "text": "Rnd",
                     "ariaLabel": "生成随机数",
-                    "value": "Rnd()",
+                    "value": "random",
                     "shortcut": "R"
                   }
                 }
@@ -728,12 +728,12 @@
                   "default": {
                     "text": "xy",
                     "ariaLabel": "乘方",
-                    "value": "x^{y}",
+                    "value": "^",
                     "shortcut": "^"
                   },
                   "inv": {
                     "text": "ʸ√x",
-                    "ariaLabel": "y次根",
+                    "ariaLabel": "x 的 n 次方根",
                     "value": "√(",
                     "shortcut": "Y"
                   }

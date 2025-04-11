@@ -1,5 +1,7 @@
 import { CalculatorDisplayType } from "../../types/calculatorTranslations";
 import { Component, ComponentDataType } from "../../utils/Component";
+import { renderFakeInput } from "../../utils/keypads/calculatorExpression";
+import { replaceConstants } from "../../utils/keypads/calculatorUtils";
 
 // CalculatorDisplayType 타입 상속
 interface CalculatorDisplayProps {
@@ -60,12 +62,12 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
 
     // 계산 직후 output -> '수식 ='
     else if (this.props.lastExpressionState && this.props.expressionState === this.props.resultState) {
-      outputEl.textContent = `${this.props.lastExpressionState} =`;
+      outputEl.textContent = `${replaceConstants(this.props.lastExpressionState)} =`;
     }
 
     // 계산 직후 다시 입력 중 -> "Ans = 이전 결과"
     else if (this.props.resultState && this.props.expressionState !== "init" && this.props.expressionState !== this.props.resultState) {
-      outputEl.textContent = `Ans = ${this.props.resultState}`;
+      outputEl.textContent = `Ans = ${replaceConstants(this.props.resultState)}`;
     }
 
     displayContainerEl.append(backBtnEl, outputEl);
@@ -79,10 +81,11 @@ export default class CalculatorDisplay extends Component<ComponentDataType, Calc
     fakeInputEl.ariaRoleDescription = this.props.display.inputRoleDescription;
     fakeInputEl.setAttribute("aria-describedby", outputEl.id);
     fakeInputEl.tabIndex = 0;
-    fakeInputEl.textContent = this.props.expressionState === "init" ? "0" : this.props.expressionState;
+    // fakeInputEl.textContent = this.props.expressionState === "init" ? "0" : this.props.expressionState;
 
     // 인풋 박스 넘어갈 시 자동으로 오른쪽 스크롤 위치
     requestAnimationFrame(() => {
+      renderFakeInput(this.props.expressionState);
       fakeInputEl.scrollLeft = fakeInputEl.scrollWidth;
     });
 

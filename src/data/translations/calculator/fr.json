@@ -100,7 +100,7 @@
                 "inv": {
                   "text": "sin⁻¹",
                   "ariaLabel": "Arcsinus",
-                  "value": "asin(",
+                  "value": "asin",
                   "shortcut": "S"
                 }
               }
@@ -117,7 +117,7 @@
                 "inv": {
                   "text": "eˣ",
                   "ariaLabel": "Exponentielle naturelle",
-                  "value": "exp(",
+                  "value": "exp^",
                   "shortcut": "E"
                 }
               }
@@ -170,7 +170,7 @@
                 "inv": {
                   "text": "cos⁻¹",
                   "ariaLabel": "Arccosinus",
-                  "value": "acos(",
+                  "value": "acos",
                   "shortcut": "C"
                 }
               }
@@ -187,7 +187,7 @@
                 "inv": {
                   "text": "10ˣ",
                   "ariaLabel": "Exponentielle décimale",
-                  "value": "10^(",
+                  "value": "10^",
                   "shortcut": "G"
                 }
               }
@@ -240,7 +240,7 @@
                 "inv": {
                   "text": "tan⁻¹",
                   "ariaLabel": "Arctangente",
-                  "value": "atan(",
+                  "value": "atan",
                   "shortcut": "T"
                 }
               }
@@ -304,7 +304,7 @@
                 "inv": {
                   "text": "Rnd",
                   "ariaLabel": "Générer un nombre aléatoire",
-                  "value": "Rnd()",
+                  "value": "random",
                   "shortcut": "R"
                 }
               }
@@ -321,12 +321,12 @@
                 "default": {
                   "text": "xy",
                   "ariaLabel": "Puissance",
-                  "value": "x^{y}",
+                  "value": "^",
                   "shortcut": "^"
                 },
                 "inv": {
                   "text": "ʸ√x",
-                  "ariaLabel": "Racine nième",
+                  "ariaLabel": "Racine nième de x",
                   "value": "√(",
                   "shortcut": "Y"
                 }
@@ -585,7 +585,7 @@
                   "inv": {
                     "text": "sin⁻¹",
                     "ariaLabel": "Arcsinus",
-                    "value": "asin(",
+                    "value": "asin",
                     "shortcut": "S"
                   }
                 }
@@ -602,7 +602,7 @@
                   "inv": {
                     "text": "eˣ",
                     "ariaLabel": "Exponentielle naturelle",
-                    "value": "exp(",
+                    "value": "exp^",
                     "shortcut": "E"
                   }
                 }
@@ -625,7 +625,7 @@
                   "inv": {
                     "text": "cos⁻¹",
                     "ariaLabel": "Arccosinus",
-                    "value": "acos(",
+                    "value": "acos",
                     "shortcut": "C"
                   }
                 }
@@ -648,7 +648,7 @@
                   "inv": {
                     "text": "10ˣ",
                     "ariaLabel": "Exponentielle décimale",
-                    "value": "10^(",
+                    "value": "10^",
                     "shortcut": "G"
                   }
                 }
@@ -671,7 +671,7 @@
                   "inv": {
                     "text": "tan⁻¹",
                     "ariaLabel": "Arctangente",
-                    "value": "atan(",
+                    "value": "atan",
                     "shortcut": "T"
                   }
                 }
@@ -711,7 +711,7 @@
                   "inv": {
                     "text": "Rnd",
                     "ariaLabel": "Générer un nombre aléatoire",
-                    "value": "Rnd()",
+                    "value": "random",
                     "shortcut": "R"
                   }
                 }
@@ -728,12 +728,12 @@
                   "default": {
                     "text": "xy",
                     "ariaLabel": "Puissance",
-                    "value": "x^{y}",
+                    "value": "^",
                     "shortcut": "^"
                   },
                   "inv": {
                     "text": "ʸ√x",
-                    "ariaLabel": "Racine nième",
+                    "ariaLabel": "Racine nième de x",
                     "value": "√(",
                     "shortcut": "Y"
                   }
