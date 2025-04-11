@@ -1,0 +1,11 @@
+{
+  "lang": "en",
+  "head": {
+    "title": "404 Not Found | DoooKit",
+    "description": "Sorry, the page you’re looking for doesn’t exist.",
+    "robots": "noindex, nofollow"
+  },
+  "notFound": {
+    "homeLink": "Go back to Home"
+  }
+}
