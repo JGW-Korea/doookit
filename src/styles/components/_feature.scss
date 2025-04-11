@@ -1,11 +1,7 @@
 @use "../utils/variable" as *;
 
 article.feature-card {
-  min-height: 11.25rem;
-
-  &.de {
-    min-height: 12.25rem;
-  }
+  min-height: 12.25rem;
 
   padding: 1.5rem;
   border-radius: 0.75rem;
