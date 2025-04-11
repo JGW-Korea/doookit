@@ -42,7 +42,8 @@ export const handleKeypadClick = (e: Event, props: CalculatorTypes) => {
         props.setJustEvaluated(false);
         props.setResultState("init");
         props.setLastExpressionState("");
-        renderFakeInput("");
+
+        renderFakeInput("init");
         return;
       }
 
@@ -155,13 +156,44 @@ export const handleInput = (value: string, expression: string): string | null =>
   // 그 외 일반 입력은 기존 방식대로 처리
   // (숫자, 소수점, 연산자, 함수 등)
   if (isNumber(value)) {
+    // ✅ 초기 단항 음수 처리
+    if (expression === "-") return "-" + value;
+
     const tokens = expression.trim().split(" ");
     const lastToken = tokens[tokens.length - 1];
+    const secondLastToken = tokens[tokens.length - 2];
+
+    // ✅ case 1: "5 + -" → "5 + -3"
+    if (lastToken === "-" && (secondLastToken === "+" || secondLastToken === "×" || secondLastToken === "÷")) {
+      tokens[tokens.length - 1] = "-" + value;
+      return tokens.join(" ");
+    }
+
+    // ✅ case 2: "5 - -" or "- -3" → "5 - - 3"
+    if (lastToken === "-") {
+      return expression + " " + value;
+    }
+
+    // ✅ case 3: "-34"에 계속 숫자 붙이기
+    if (/^-\d+$/.test(lastToken)) {
+      tokens[tokens.length - 1] = lastToken + value;
+      return tokens.join(" ");
+    }
+
+    // ✅ case 4: 마지막이 연산자일 경우 → 공백 후 숫자
+    if (isOperator(lastToken)) {
+      return expression + " " + value;
+    }
+
+    // ✅ case 5: 0 처리
     if (lastToken === "0" && value === "0") return expression;
     if (lastToken === "0" && value !== "0") {
       tokens[tokens.length - 1] = value;
       return tokens.join(" ");
     }
+
+    // ✅ 기본
+    return expression + value;
   }
 
   // 기타 기존 로직 (연산자, 괄호 등)
@@ -178,7 +210,65 @@ export const handleInput = (value: string, expression: string): string | null =>
   if (isDot(value) && !canAddDot(expression)) return null;
   if (isPercentage(value)) return expression + "%";
   if (isFactorial(value)) return expression + "!";
-  if (isOperator(value)) return expression + " " + value;
+
+  // 👉 연산자 처리
+  if (isOperator(value)) {
+    const tokens = expression.trim().split(" ");
+    const lastToken = tokens[tokens.length - 1];
+
+    // [A] 새로운 연산자가 '-'가 아닌 경우
+    if (value !== "-") {
+      // 만약 토큰 배열의 마지막 두 토큰이 [연산자, "-"] 형태라면,
+      // 예: ["3", "-", "12134", "*", "-"] 인 경우 → 새 연산자 입력 시 이 패턴을 제거
+      if (tokens.length >= 2) {
+        const secondLast = tokens[tokens.length - 2];
+        // "*"가 포함될 수 있도록 "*"도 체크 (여기서는 "*" 또는 "×", "÷", "+" 등)
+        if (["+", "*", "×", "÷"].includes(secondLast) && lastToken === "-") {
+          tokens.splice(tokens.length - 2, 2); // 마지막 두 토큰 제거
+          tokens.push(value); // 새 연산자 추가
+          return tokens.join(" ");
+        }
+      }
+    }
+
+    // [B] '-' 입력 처리
+    if (value === "-") {
+      // 1. 초기 상태이면 단독 "-" 입력 허용
+      if (expression === "" || expression === "init") return "-";
+      // 2. 만약 마지막 토큰이 이미 '-'이면 중복 입력 무시 (즉, 연속 '-' 입력 방지)
+      if (lastToken === "-") return expression;
+      // 3. 그 외에는 연산자 토큰으로서 '-'를 추가
+      return expression + " " + "-";
+    }
+
+    // ✅ 초기 상태 단항 음수 숫자 하나만 있는 경우 → 연산자 추가
+    if (/^-\d+(\.\d+)?$/.test(expression)) {
+      return expression + " " + value;
+    }
+
+    // ✅ 단항 음수 시작: 연산자 + - 로 구성 중
+    if (value === "-" && isOperator(lastToken)) {
+      return expression + " " + value;
+    }
+
+    // ✅ 직전이 단항 음수인 숫자인 경우 → 대체 안함
+    if (tokens.length >= 2) {
+      const last = tokens[tokens.length - 1];
+      const secondLast = tokens[tokens.length - 2];
+      if (isOperator(secondLast) && /^-\d+(\.\d+)?$/.test(last)) {
+        return expression + " " + value;
+      }
+    }
+
+    // ✅ 연산자 대체
+    if (isOperator(lastToken)) {
+      tokens[tokens.length - 1] = value;
+      return tokens.join(" ");
+    }
+
+    return expression + " " + value;
+  }
+
   if (value === "(") return expression + value;
   if (value === ")") {
     const openCount = (expression.match(/\(/g) || []).length;

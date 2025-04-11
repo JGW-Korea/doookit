@@ -106,9 +106,12 @@ export default class Fieldset extends Component<ComponentDataType, FieldsetProps
       else {
         const isClearToggleBtn = button.id === "clear-toggle"; // AC <-> CE 전환 버튼 체크
 
+        const expressionIsInit = this.props.expressionState === "init" || this.props.expressionState === "";
+        const shouldShowAC = expressionIsInit || this.props.justEvaluatedState; // 💡 둘 중 하나라도 true면 AC!
+
         // 버튼 상태 관련 정보 가져오기
         const currentState = isClearToggleBtn
-          ? button.states[!this.props.justEvaluatedState ? "inv" : "default"]
+          ? button.states[shouldShowAC ? "default" : "inv"]
           : button.states[this.props.invState ? "inv" : "default"];
 
         // 상태 전환 버튼 속성 구성
