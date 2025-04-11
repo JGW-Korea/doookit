@@ -1,0 +1,20 @@
+{
+  "name": "DoooKit",
+  "short_name": "DoooKit",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10B981",
+  "icons": [
+    {
+      "src": "/public/assets/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/public/assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

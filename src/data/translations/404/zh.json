@@ -1,0 +1,10 @@
+{
+  "lang": "zh",
+  "head": {
+    "title": "404 未找到 | DoooKit",
+    "description": "抱歉，您访问的页面不存在。"
+  },
+  "notFound": {
+    "homeLink": "返回首页"
+  }
+}

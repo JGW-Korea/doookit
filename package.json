@@ -4,7 +4,7 @@
   "description": "해당 프로젝트는 \"계산기\", \"단위 변화기\", \"BMI 계산기\", \"색상 변화기\", \"타이머 & 스톱워치\" 기능을 모아둔 도구 모음 정적 웹 페이지 프로젝트입니다.",
   "author": "JGW <jgw6372@naver.com>",
   "license": "MIT",
-  "homepage": "https://your-vercel-url.vercel.app",
+  "homepage": "https://doookit.com",
   "type": "module",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url ./ --no-cache --log-level verbose",
+    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url /",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit"
   },
@@ -22,7 +22,9 @@
     "watcher": true
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.14.2",
     "@parcel/transformer-sass": "^2.14.2",
+    "@parcel/transformer-webmanifest": "^2.14.2",
     "@types/lodash.debounce": "^4.0.9",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
