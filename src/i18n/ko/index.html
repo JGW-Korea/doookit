@@ -6,23 +6,33 @@
     <title>DoooKit</title>
 
     <meta name="google-adsense-account" content="ca-pub-4824980499128518" />
+
+    <!-- SEO -->
     <meta name="author" content="JGW-Vito" />
-    <meta name="application-name" content="DoooKit" />
     <meta
       name="description"
-      content="DoooKit은 계산기, 변환기, 타이머와 같이 일상에 유용한 도구들을 아름답게 디자인하여 더욱 쉽고 효율적으로 작업할 수 있도록 도와줍니다."
+      content="DoooKit은 계산기, 단위 변환기, 색상 변환기, 타이머 등 일상에 필요한 실용 도구들을 미니멀하고 감성적인 디자인으로 제공합니다."
     />
-    <meta name="keywords" content="DoooKit, 계산기, 단위 변환기, PX 변환기, 색상 도구, 생산성 웹 도구, 미니멀 디자인" />
+    <meta
+      name="keywords"
+      content="DoooKit, DoooKit 도구 모음, DoooKit 계산기, 두킷, 도구 모음, 온라인 계산기, 단위 변환기, PX 변환기, 색상 변환기, 타이머, BMI 계산기, 스톱워치, 미니멀 디자인, 감성 유틸리티, 웹 유틸리티, 개발자 도구, 디자이너 도구, 무료 계산기"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="application-name" content="DoooKit" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/images/favicon-180.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/public/assets/images/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/public/assets/images/favicon.png" />
+    <meta name="theme-color" content="#10B981" />
 
     <!-- Open Graph Metadata -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="DoooKit" />
     <meta
       property="og:description"
-      content="계산기, 단위 변환기, 색상 선택기 등 미니멀하고 사용하기 쉬운 도구들을 한곳에 모은 큐레이션 도구 모음입니다."
+      content="DoooKit은 계산기, 변환기, 타이머 등 다양한 실용 도구들을 미니멀한 감성으로 큐레이션한 도구 모음 서비스입니다."
     />
-
-    <!-- <meta property="og:image" content="/public/assets/images/og/og-image-ko.jpg" /> -->
+    <meta property="og:image" content="/public/assets/images/og/ko/og-image-ko.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://www.doookit.com/ko" />
@@ -32,26 +42,29 @@
     <!-- Twitter Card Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DoooKit" />
-    <meta name="twitter:description" content="DoooKit에서 PX to REM 변환기, 타이머 등 실용적인 도구들을 미니멀하고 깔끔한 디자인으로 만나보세요." />
-
-    <!-- <meta name="twitter:image" content="/public/assets/images/og/og-image-ko.jpg" /> -->
+    <meta name="twitter:description" content="DoooKit에서 계산기, 색상 변환기, 타이머 등 실용적인 웹 도구들을 감성적인 디자인으로 만나보세요." />
+    <meta name="twitter:image" content="/public/assets/images/og/ko/og-image-ko.jpg" />
     <meta name="twitter:url" content="https://www.doookit.com/ko" />
     <meta name="twitter:site" content="@jgw_vito" />
 
-    <link rel="icon" href="/public/assets/images/favicon.png" />
+    <link rel="icon" href="/public/assets/images/favicon.avif" type="image/avif" />
+    <link rel="icon" href="/public/assets/images/favicon.webp" type="image/webp" />
+    <link rel="icon" href="/public/assets/images/favicon.png" type="image/png" />
+    <link rel="manifest" href="/public/manifest.json" />
 
     <link rel="stylesheet" href="/src/styles/main.scss" />
     <link rel="stylesheet" href="/src/index.scss" />
 
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4824980499128518"
-      crossorigin="anonymous"
-    ></script>
+    <!-- <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4824980499128518"
+    crossorigin="anonymous"
+  ></script> -->
 
-    <script src="../../utils/detectLang.ts"></script>
-    <script type="module" src="../../index.ts"></script>
+    <script src="/src/utils/detectLang.ts"></script>
+    <script type="module" src="/src/index.ts"></script>
   </head>
+
   <body>
     <!-- Header -->
 
@@ -87,7 +100,8 @@
       <section id="tools" aria-labelledby="tools-heading">
         <article>
           <aside role="complementary" aria-label="광고">
-            <ins
+            Google AdSense
+            <!-- <ins
               class="adsbygoogle"
               style="display: block; text-align: center; margin: 2rem auto"
               data-ad-client="ca-pub-4824980499128518"
@@ -97,7 +111,7 @@
             ></ins>
             <script>
               (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> -->
           </aside>
 
           <div>
@@ -216,7 +230,8 @@
 
     <article aria-label="스폰서 광고" class="adsense-container bg-gray-light">
       <aside role="complementary" aria-label="광고">
-        <ins
+        Google AdSense
+        <!-- <ins
           class="adsbygoogle"
           style="display: block; text-align: center; margin: 2rem auto; height: 90px"
           data-ad-client="ca-pub-4824980499128518"
@@ -226,7 +241,7 @@
         ></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        </script> -->
       </aside>
     </article>
   </body>

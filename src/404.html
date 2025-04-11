@@ -4,7 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Page Not Found</title>
+    <title></title>
+
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="icon" href="/public/assets/images/favicon.avif" type="image/avif" />
+    <link rel="icon" href="/public/assets/images/favicon.webp" type="image/webp" />
+    <link rel="icon" href="/public/assets/images/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#10B981" />
+
+    <meta name="description" content="" />
+
     <style>
       body {
         background: #f9fafb;
@@ -36,10 +46,17 @@
         border-color: #10b981;
       }
     </style>
+
+    <script type="module" src="./utils/notFoundPage.ts"></script>
   </head>
+
   <body>
-    <h1>404</h1>
-    <p>죄송합니다. 찾을 수 없는 페이지입니다.</p>
-    <a href="/">홈으로 돌아가기</a>
+    <main aria-labelledby="error-title">
+      <section class="error-section">
+        <h1 id="error-title" tabindex="-1">404</h1>
+        <p role="alert"></p>
+        <a href="/" role="link"></a>
+      </section>
+    </main>
   </body>
 </html>

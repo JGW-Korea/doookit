@@ -1,0 +1,10 @@
+{
+  "lang": "de",
+  "head": {
+    "title": "404 Nicht gefunden | DoooKit",
+    "description": "Die Seite, die Sie suchen, wurde nicht gefunden."
+  },
+  "notFound": {
+    "homeLink": "Zurück zur Startseite"
+  }
+}
