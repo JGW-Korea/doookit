@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     { "source": "/tools/calc/", "destination": "/tools/calc", "permanent": true },
     { "source": "/tools/converter/", "destination": "/tools/converter", "permanent": true },
@@ -74,6 +76,8 @@
 
   "rewrites": [
     { "source": "/404", "destination": "/404.html" },
+    { "source": "/(.*)", "destination": "/404.html" },
+
     { "source": "/", "destination": "/index.html" },
     { "source": "/calc", "destination": "/pages/calculator/index.html" },
     { "source": "/converter", "destination": "/pages/unit-converter/index.html" },
