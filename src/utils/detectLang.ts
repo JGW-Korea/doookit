@@ -26,9 +26,7 @@ function redirectTo404() {
 }
 
 // ✅ 메인 실행
-if (isProduction) {
-  console.log("Hello");
-
+if (!isProduction) {
   const lang = getBrowserLang();
   const path = location.pathname;
   const segments = path.split("/").filter(Boolean);
