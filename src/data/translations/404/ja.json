@@ -1,0 +1,10 @@
+{
+  "lang": "ja",
+  "head": {
+    "title": "404 見つかりません | DoooKit",
+    "description": "申し訳ありません。お探しのページは見つかりませんでした。"
+  },
+  "notFound": {
+    "homeLink": "ホームに戻る"
+  }
+}

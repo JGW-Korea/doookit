@@ -1,0 +1,10 @@
+{
+  "lang": "fr",
+  "head": {
+    "title": "404 Introuvable | DoooKit",
+    "description": "Désolé, la page que vous recherchez n’existe pas."
+  },
+  "notFound": {
+    "homeLink": "Retour à l’accueil"
+  }
+}
