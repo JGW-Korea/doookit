@@ -1,7 +1,4 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-
   "rewrites": [
     { "source": "/404", "destination": "/404.html" },
 

@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url ./ --no-cache --log-level verbose",
+    "build": "parcel build './src/**/*.html' --dist-dir dist --public-url /",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit"
   },
