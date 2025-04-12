@@ -7,6 +7,15 @@
 @use "./components/adsense";
 @use "./components/footer";
 
+* {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+
+  &:focus-visible {
+    outline-color: #3b82f6;
+  }
+}
+
 // 전역 스타일 속성
 html {
   font-size: 16px;
