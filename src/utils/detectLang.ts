@@ -20,17 +20,13 @@ function redirectTo404() {
   }
 }
 
-if (!isProduction) {
+if (isProduction) {
   const browserLang = getBrowserLang();
   const path = location.pathname;
   const segments = path.split("/").filter(Boolean);
 
-  console.log(segments);
-
   // ─── 1. 메인 페이지 ("/") ─────────────────────────────────────
   if (segments.length === 0) {
-    console.log("Hello");
-
     // 영어 사용자는 "/" 그대로, 그 외 언어라면 언어별 루트로 이동
     if (browserLang === "en") {
       // 아무것도 하지 않음
