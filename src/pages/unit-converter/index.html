@@ -141,22 +141,27 @@
           <form aria-label="Length Converter Form">
             <fieldset>
               <legend>Convert from unit</legend>
-              <label for="from-value" class="sr-only">Value</label>
-              <input type="text" id="from-value" inputmode="decimal" />
 
-              <label for="from-unit" class="sr-only">From Unit</label>
-              <select name="" id="from-unit">
-                <option value="cm">cm</option>
-                <option value="in">in</option>
-                <option value="m">m</option>
-                <option value="ft">ft</option>
-                <option value="km">km</option>
-                <option value="mi">mi</option>
-              </select>
+              <div role="group" aria-labelledby="from-group-label">
+                <span id="from-group-label" class="sr-only">Enter Value and Select from unit</span>
+
+                <label for="from-value" class="sr-only">Value</label>
+                <input type="text" id="from-value" inputmode="decimal" />
+
+                <label for="from-unit" class="sr-only">From Unit</label>
+                <select name="" id="from-unit">
+                  <option value="cm">cm</option>
+                  <option value="in">in</option>
+                  <option value="m">m</option>
+                  <option value="ft">ft</option>
+                  <option value="km">km</option>
+                  <option value="mi">mi</option>
+                </select>
+              </div>
             </fieldset>
 
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <button type="button" aria-label="Swap 'Form unit' and 'To unit'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -168,18 +173,23 @@
 
             <fieldset>
               <legend>Convert to unit</legend>
-              <label for="to-value" class="sr-only">Result</label>
-              <input type="text" id="to-value" disabled />
 
-              <label for="to-unit" class="sr-only">To Unit</label>
-              <select name="" id="to-unit">
-                <option value="cm">cm</option>
-                <option value="in">in</option>
-                <option value="m">m</option>
-                <option value="ft">ft</option>
-                <option value="km">km</option>
-                <option value="mi">mi</option>
-              </select>
+              <div role="group" aria-labelledby="to-group-label">
+                <span id="to-group-label" class="sr-only">Conversion result and unit</span>
+
+                <label for="to-value" class="sr-only">Result</label>
+                <input type="text" id="to-value" disabled />
+
+                <label for="to-unit" class="sr-only">To Unit</label>
+                <select name="" id="to-unit">
+                  <option value="cm">cm</option>
+                  <option value="in">in</option>
+                  <option value="m">m</option>
+                  <option value="ft">ft</option>
+                  <option value="km">km</option>
+                  <option value="mi">mi</option>
+                </select>
+              </div>
             </fieldset>
           </form>
 
@@ -188,66 +198,6 @@
             <h2 id="conversion-result-label" class="sr-only">Conversion Result</h2>
             <output id="conversion-reult" aria-live="polite" aria-atomic="true"> 1 cm = 0.3937in </output>
           </section>
-        </section>
-      </section>
-    </main>
-
-    <main>
-      <section class="converter-container">
-        <!-- 탭 네비게이션(Tab Navigation) -->
-        <div class="tab-navigation">
-          <button class="tab-btn active">
-            <span>Length</span>
-          </button>
-
-          <button class="tab-btn">
-            <span>Weight</span>
-          </button>
-
-          <button class="tab-btn">
-            <span>Temperature</span>
-          </button>
-        </div>
-
-        <!-- 변환기 내용 -->
-        <section>
-          <!-- 변환 -->
-          <fieldset>
-            <div>
-              <h3>From</h3>
-              <div>
-                <input type="text" />
-                <select>
-                  <option value="cm">cm</option>
-                  <option value="in">in</option>
-                  <option value="m">m</option>
-                  <option value="ft">ft</option>
-                  <option value="km">km</option>
-                  <option value="mi">mi</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <h3>To</h3>
-              <div>
-                <input type="number" value="2" disabled />
-                <select>
-                  <option value="cm">cm</option>
-                  <option value="in">in</option>
-                  <option value="m">m</option>
-                  <option value="ft">ft</option>
-                  <option value="km">km</option>
-                  <option value="mi">mi</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- 변환 내용 -->
-          <div class="result">
-            <p>1 cm = 0.3937 in</p>
-          </div>
         </section>
       </section>
     </main>

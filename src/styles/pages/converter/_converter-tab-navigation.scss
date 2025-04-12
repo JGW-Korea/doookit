@@ -1,19 +1,23 @@
 nav.tab-navigation {
   display: flex;
+  padding: 1rem;
 
   & > ul {
     display: flex;
     background-color: #f4f4f5;
+    border-radius: 0.25rem;
+
+    width: 100%;
 
     & > li {
-      flex-grow: 1;
-      margin-right: 1.5rem;
-
+      width: calc(100% / 3);
+      margin-right: 0.875rem;
       &:last-child {
         margin-right: 0;
       }
 
       & > button {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -23,19 +27,13 @@ nav.tab-navigation {
 
         border: none;
         border-radius: 0.25rem;
-
-        outline: 2px solid transparent;
-        outline-offset: 2px;
+        background-color: inherit;
 
         cursor: pointer;
 
         font-weight: 500;
         font-size: 0.875rem;
         color: #717170;
-
-        &:focus-visible {
-          outline-color: #6366f1;
-        }
 
         &.active {
           background-image: linear-gradient(to right, #c084fc, #6366f1);
