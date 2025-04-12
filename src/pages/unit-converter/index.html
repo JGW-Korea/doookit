@@ -58,7 +58,7 @@
 
     <!-- script -->
     <link rel="stylesheet" href="/src/styles/main.scss" />
-    <!-- <link rel="stylesheet" href="./index.scss" /> -->
+    <link rel="stylesheet" href="./index.scss" />
 
     <!-- <script
       async
@@ -67,8 +67,195 @@
     ></script> -->
 
     <script src="/src/utils/detectLang.ts"></script>
-    <!-- <script type="module" src="./index.ts"></script> -->
+    <script type="module" src="./index.ts"></script>
   </head>
 
-  <body></body>
+  <body>
+    <!-- Header -->
+
+    <article aria-label="Sponsored Advertisement" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="Advertisement">Google AdSense</aside>
+    </article>
+
+    <main id="main-content">
+      <section class="converter-container" aria-labelledby="unit-converter-heading">
+        <h1 id="unit-converter-heading" class="sr-only">Unit Converter</h1>
+
+        <!-- 탭 네비게이션(Tab Navigation) -->
+        <nav class="tab-navigation" role="tablist" aria-label="Conversion Category Tabs">
+          <ul>
+            <li>
+              <button id="tab-length" role="tab" aria-controls="conversion-panel" aria-selected="true" tabindex="0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_43_480)">
+                    <path
+                      d="M3.66141 2.69668C4.57008 1.78801 5.02475 1.33334 5.58941 1.33334C6.15475 1.33334 6.60941 1.78801 7.51808 2.69668L13.3034 8.48201C14.2121 9.39134 14.6667 9.84534 14.6667 10.4107C14.6667 10.976 14.2121 11.43 13.3034 12.3387L12.3387 13.3033C11.4301 14.212 10.9754 14.6667 10.4107 14.6667C9.84608 14.6667 9.39075 14.212 8.48208 13.3033L2.69675 7.51801C1.78808 6.60868 1.33341 6.15334 1.33341 5.58934C1.33341 5.02534 1.78808 4.57001 2.69675 3.66134L3.66141 2.69668Z"
+                      stroke="#71717A"
+                    />
+                    <path
+                      d="M10.3573 5.64267L9.4133 6.58667M13.1853 8.47133L12.2426 9.414M7.52864 2.81467L6.58597 3.75733M8.94264 4.22867L7.52864 5.64333M11.7713 7.05733L10.3573 8.47133"
+                      stroke="#71717A"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_43_480">
+                      <rect width="16" height="16" fill="white" transform="translate(16) rotate(90)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Length
+              </button>
+            </li>
+            <li>
+              <button id="tab-weight" role="tab" aria-controls="conversion-panel" aria-selected="false" tabindex="-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3.99995 12.6667H11.9999L11.0499 6H4.94995L3.99995 12.6667ZM7.99995 4.66667C8.18884 4.66667 8.34728 4.60267 8.47528 4.47467C8.60328 4.34667 8.66706 4.18844 8.66661 4C8.66617 3.81156 8.60217 3.65333 8.47461 3.52533C8.34706 3.39733 8.18884 3.33333 7.99995 3.33333C7.81106 3.33333 7.65284 3.39733 7.52528 3.52533C7.39773 3.65333 7.33372 3.81156 7.33328 4C7.33284 4.18844 7.39684 4.34689 7.52528 4.47533C7.65373 4.60378 7.81195 4.66756 7.99995 4.66667ZM9.88328 4.66667H11.0499C11.3833 4.66667 11.6722 4.77778 11.9166 5C12.1611 5.22222 12.3111 5.49444 12.3666 5.81667L13.3166 12.4833C13.3722 12.8833 13.2695 13.2362 13.0086 13.542C12.7477 13.8478 12.4115 14.0004 11.9999 14H3.99995C3.58884 14 3.25261 13.8473 2.99128 13.542C2.72995 13.2367 2.62728 12.8838 2.68328 12.4833L3.63328 5.81667C3.68884 5.49444 3.83884 5.22222 4.08328 5C4.32773 4.77778 4.61661 4.66667 4.94995 4.66667H6.11661C6.08328 4.55556 6.0555 4.44733 6.03328 4.342C6.01106 4.23667 5.99995 4.12267 5.99995 4C5.99995 3.44444 6.19439 2.97222 6.58328 2.58333C6.97217 2.19444 7.44439 2 7.99995 2C8.5555 2 9.02773 2.19444 9.41661 2.58333C9.8055 2.97222 9.99995 3.44444 9.99995 4C9.99995 4.12222 9.98884 4.23622 9.96661 4.342C9.94439 4.44778 9.91661 4.556 9.88328 4.66667Z"
+                    fill="#71717A"
+                  />
+                </svg>
+                Weigth
+              </button>
+            </li>
+            <li>
+              <button id="tab-temperature" role="tab" aria-controls="conversion-panel" aria-selected="false" tabindex="-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.6666 11C11.6665 11.62 11.5092 12.2299 11.2094 12.7726C10.9095 13.3153 10.477 13.7731 9.95215 14.1032C9.42732 14.4333 8.82735 14.625 8.20833 14.6602C7.58931 14.6955 6.97146 14.5732 6.41255 14.3047C5.85365 14.0363 5.37193 13.6306 5.01245 13.1254C4.65297 12.6202 4.42746 12.0321 4.357 11.4161C4.28655 10.8001 4.37345 10.1763 4.60959 9.60302C4.84573 9.02973 5.22338 8.52568 5.70725 8.13799C5.88325 7.99733 5.99992 7.79066 5.99992 7.56466V3.33333C5.99992 2.8029 6.21063 2.29419 6.58571 1.91911C6.96078 1.54404 7.46949 1.33333 7.99992 1.33333C8.53035 1.33333 9.03906 1.54404 9.41413 1.91911C9.78921 2.29419 9.99992 2.8029 9.99992 3.33333V7.56533C9.99992 7.79066 10.1166 7.99733 10.2926 8.13866C10.7217 8.48187 11.0681 8.91729 11.3059 9.41263C11.5438 9.90797 11.667 10.4505 11.6666 11ZM7.99992 2.83333C8.13253 2.83333 8.2597 2.88601 8.35347 2.97977C8.44724 3.07354 8.49992 3.20072 8.49992 3.33333V8.92C8.49992 9.21133 8.69792 9.45866 8.93859 9.62266C9.23296 9.8233 9.4553 10.113 9.573 10.4492C9.6907 10.7855 9.69756 11.1506 9.59258 11.491C9.4876 11.8314 9.2763 12.1293 8.98967 12.3408C8.70304 12.5524 8.35617 12.6665 7.99992 12.6665C7.64367 12.6665 7.2968 12.5524 7.01017 12.3408C6.72354 12.1293 6.51224 11.8314 6.40726 11.491C6.30228 11.1506 6.30914 10.7855 6.42684 10.4492C6.54454 10.113 6.76688 9.8233 7.06125 9.62266C7.30125 9.45866 7.49992 9.21133 7.49992 8.92V3.33333C7.49992 3.20072 7.5526 3.07354 7.64637 2.97977C7.74013 2.88601 7.86731 2.83333 7.99992 2.83333Z"
+                    fill="#71717A"
+                  />
+                </svg>
+                Temperature
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 탭 패널(Tab Panal) -->
+        <section id="conversion-panel" role="tabpanel" aria-labelledby="conversion-title" aria-hidden="false" tabindex="0">
+          <h2 id="conversion-title" class="sr-only">Length Unit Converter</h2>
+
+          <form aria-label="Length Converter Form">
+            <fieldset>
+              <legend>Convert from unit</legend>
+              <label for="from-value" class="sr-only">Value</label>
+              <input type="text" id="from-value" inputmode="decimal" />
+
+              <label for="from-unit" class="sr-only">From Unit</label>
+              <select name="" id="from-unit">
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+                <option value="m">m</option>
+                <option value="ft">ft</option>
+                <option value="km">km</option>
+                <option value="mi">mi</option>
+              </select>
+            </fieldset>
+
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.13792 1.52869C5.2629 1.65371 5.33311 1.82324 5.33311 2.00002C5.33311 2.1768 5.2629 2.34634 5.13792 2.47135L3.60925 4.00002H13.9999C14.1767 4.00002 14.3463 4.07026 14.4713 4.19528C14.5963 4.32031 14.6666 4.48988 14.6666 4.66669C14.6666 4.8435 14.5963 5.01307 14.4713 5.13809C14.3463 5.26312 14.1767 5.33335 13.9999 5.33335H3.60925L5.13792 6.86202C5.20159 6.92352 5.25238 6.99708 5.28732 7.07842C5.32226 7.15975 5.34065 7.24723 5.34142 7.33575C5.34219 7.42427 5.32532 7.51206 5.2918 7.59399C5.25828 7.67592 5.20878 7.75036 5.14618 7.81295C5.08359 7.87555 5.00915 7.92505 4.92722 7.95857C4.84529 7.99209 4.7575 8.00896 4.66898 8.00819C4.58046 8.00742 4.49299 7.98903 4.41165 7.95409C4.33031 7.91915 4.25675 7.86836 4.19525 7.80469L1.52859 5.13802C1.4036 5.013 1.33339 4.84346 1.33339 4.66669C1.33339 4.48991 1.4036 4.32037 1.52859 4.19535L4.19525 1.52869C4.32027 1.40371 4.48981 1.3335 4.66659 1.3335C4.84336 1.3335 5.0129 1.40371 5.13792 1.52869ZM10.8619 8.19535C10.9869 8.07037 11.1565 8.00016 11.3333 8.00016C11.51 8.00016 11.6796 8.07037 11.8046 8.19535L14.4713 10.862C14.5962 10.987 14.6664 11.1566 14.6664 11.3334C14.6664 11.5101 14.5962 11.6797 14.4713 11.8047L11.8046 14.4714C11.6789 14.5928 11.5104 14.66 11.3357 14.6585C11.1609 14.657 10.9936 14.5868 10.87 14.4632C10.7464 14.3396 10.6763 14.1724 10.6748 13.9976C10.6733 13.8228 10.7405 13.6544 10.8619 13.5287L12.3906 12H1.99992C1.82311 12 1.65354 11.9298 1.52851 11.8048C1.40349 11.6797 1.33325 11.5102 1.33325 11.3334C1.33325 11.1565 1.40349 10.987 1.52851 10.8619C1.65354 10.7369 1.82311 10.6667 1.99992 10.6667H12.3906L10.8619 9.13802C10.7369 9.013 10.6667 8.84346 10.6667 8.66669C10.6667 8.48991 10.7369 8.32037 10.8619 8.19535Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+
+            <fieldset>
+              <legend>Convert to unit</legend>
+              <label for="to-value" class="sr-only">Result</label>
+              <input type="text" id="to-value" disabled />
+
+              <label for="to-unit" class="sr-only">To Unit</label>
+              <select name="" id="to-unit">
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+                <option value="m">m</option>
+                <option value="ft">ft</option>
+                <option value="km">km</option>
+                <option value="mi">mi</option>
+              </select>
+            </fieldset>
+          </form>
+
+          <!-- 변환 결과 -->
+          <section aria-labelledby="conversion-result-label">
+            <h2 id="conversion-result-label" class="sr-only">Conversion Result</h2>
+            <output id="conversion-reult" aria-live="polite" aria-atomic="true"> 1 cm = 0.3937in </output>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <main>
+      <section class="converter-container">
+        <!-- 탭 네비게이션(Tab Navigation) -->
+        <div class="tab-navigation">
+          <button class="tab-btn active">
+            <span>Length</span>
+          </button>
+
+          <button class="tab-btn">
+            <span>Weight</span>
+          </button>
+
+          <button class="tab-btn">
+            <span>Temperature</span>
+          </button>
+        </div>
+
+        <!-- 변환기 내용 -->
+        <section>
+          <!-- 변환 -->
+          <fieldset>
+            <div>
+              <h3>From</h3>
+              <div>
+                <input type="text" />
+                <select>
+                  <option value="cm">cm</option>
+                  <option value="in">in</option>
+                  <option value="m">m</option>
+                  <option value="ft">ft</option>
+                  <option value="km">km</option>
+                  <option value="mi">mi</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <h3>To</h3>
+              <div>
+                <input type="number" value="2" disabled />
+                <select>
+                  <option value="cm">cm</option>
+                  <option value="in">in</option>
+                  <option value="m">m</option>
+                  <option value="ft">ft</option>
+                  <option value="km">km</option>
+                  <option value="mi">mi</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 변환 내용 -->
+          <div class="result">
+            <p>1 cm = 0.3937 in</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <article aria-label="Sponsored Advertisement" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="Advertisement">Google AdSense</aside>
+    </article>
+
+    <!-- Footer -->
+  </body>
 </html>

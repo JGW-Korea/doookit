@@ -32,22 +32,27 @@ export default class Header extends Component<ComponentDataType, ComponentDataTy
 
     // 서브 헤더 레이아웃 타입에 대한 컴포넌트 스타일 지정
     else {
-      const arrowLeft = new URL("../../assets/icons/arrow-left.svg", import.meta.url).href;
+      const arrowLeftSvg = new URL("../../assets/icons/arrow-left.svg", import.meta.url).href;
 
+      // 뒤로가기 버튼 location.href 지정
       const backBtnEl = document.createElement("button");
       backBtnEl.addEventListener("click", () => {
-        if (history.length > 1) history.back();
-        else location.href = "/";
+        location.href = "/";
       });
       backBtnEl.classList.add("arrow");
 
-      const imgEl = document.createElement("img");
-      imgEl.src = arrowLeft;
-      imgEl.ariaHidden = "true";
-      imgEl.width = 17;
-      imgEl.height = 13;
+      // SVG 파일 변환
+      fetch(arrowLeftSvg)
+        .then((res) => res.text())
+        .then((svgText) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(svgText, "image/svg+xml");
+          const svgEl = doc.documentElement;
 
-      backBtnEl.appendChild(imgEl);
+          svgEl.ariaHidden = "true";
+          backBtnEl.appendChild(svgEl);
+        });
+
       backBtnEl.ariaLabel = layoutData.header.type[isMainType].backButton.ariaLabel;
 
       this.el.classList.add("non-main");
