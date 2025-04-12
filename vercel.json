@@ -8,67 +8,211 @@
     { "source": "/tools/px-converter/", "destination": "/tools/px-converter", "permanent": true },
 
     { "source": "/ko/", "destination": "/ko", "permanent": true },
+
+    { "source": "/ko/calc", "destination": "/ko/tools/calc", "permanent": true },
+    { "source": "/ko/calc/", "destination": "/ko/tools/calc", "permanent": true },
     { "source": "/ko/tools/calc/", "destination": "/ko/tools/calc", "permanent": true },
+
+    { "source": "/ko/converter", "destination": "/ko/tools/converter", "permanent": true },
+    { "source": "/ko/converter/", "destination": "/ko/tools/converter", "permanent": true },
     { "source": "/ko/tools/converter/", "destination": "/ko/tools/converter", "permanent": true },
+
+    { "source": "/ko/bmi", "destination": "/ko/tools/bmi", "permanent": true },
+    { "source": "/ko/bmi/", "destination": "/ko/tools/bmi", "permanent": true },
     { "source": "/ko/tools/bmi/", "destination": "/ko/tools/bmi", "permanent": true },
+
+    { "source": "/ko/timer", "destination": "/ko/tools/timer", "permanent": true },
+    { "source": "/ko/timer/", "destination": "/ko/tools/timer", "permanent": true },
     { "source": "/ko/tools/timer/", "destination": "/ko/tools/timer", "permanent": true },
+
+    { "source": "/ko/color-picker", "destination": "/ko/tools/color-picker", "permanent": true },
+    { "source": "/ko/color-picker/", "destination": "/ko/tools/color-picker", "permanent": true },
     { "source": "/ko/tools/color-picker/", "destination": "/ko/tools/color-picker", "permanent": true },
+
+    { "source": "/ko/px-converter", "destination": "/ko/tools/px-converter", "permanent": true },
+    { "source": "/ko/px-converter/", "destination": "/ko/tools/px-converter", "permanent": true },
     { "source": "/ko/tools/px-converter/", "destination": "/ko/tools/px-converter", "permanent": true },
 
     { "source": "/ja/", "destination": "/ja", "permanent": true },
+
+    { "source": "/ja/calc", "destination": "/ja/tools/calc", "permanent": true },
+    { "source": "/ja/calc/", "destination": "/ja/tools/calc", "permanent": true },
     { "source": "/ja/tools/calc/", "destination": "/ja/tools/calc", "permanent": true },
+
+    { "source": "/ja/converter", "destination": "/ja/tools/converter", "permanent": true },
+    { "source": "/ja/converter/", "destination": "/ja/tools/converter", "permanent": true },
     { "source": "/ja/tools/converter/", "destination": "/ja/tools/converter", "permanent": true },
+
+    { "source": "/ja/bmi", "destination": "/ja/tools/bmi", "permanent": true },
+    { "source": "/ja/bmi/", "destination": "/ja/tools/bmi", "permanent": true },
     { "source": "/ja/tools/bmi/", "destination": "/ja/tools/bmi", "permanent": true },
+
+    { "source": "/ja/timer", "destination": "/ja/tools/timer", "permanent": true },
+    { "source": "/ja/timer/", "destination": "/ja/tools/timer", "permanent": true },
     { "source": "/ja/tools/timer/", "destination": "/ja/tools/timer", "permanent": true },
+
+    { "source": "/ja/color-picker", "destination": "/ja/tools/color-picker", "permanent": true },
+    { "source": "/ja/color-picker/", "destination": "/ja/tools/color-picker", "permanent": true },
     { "source": "/ja/tools/color-picker/", "destination": "/ja/tools/color-picker", "permanent": true },
+
+    { "source": "/ja/px-converter", "destination": "/ja/tools/px-converter", "permanent": true },
+    { "source": "/ja/px-converter/", "destination": "/ja/tools/px-converter", "permanent": true },
     { "source": "/ja/tools/px-converter/", "destination": "/ja/tools/px-converter", "permanent": true },
 
     { "source": "/fr/", "destination": "/fr", "permanent": true },
+
+    { "source": "/fr/calc", "destination": "/fr/tools/calc", "permanent": true },
+    { "source": "/fr/calc/", "destination": "/fr/tools/calc", "permanent": true },
     { "source": "/fr/tools/calc/", "destination": "/fr/tools/calc", "permanent": true },
+
+    { "source": "/fr/converter", "destination": "/fr/tools/converter", "permanent": true },
+    { "source": "/fr/converter/", "destination": "/fr/tools/converter", "permanent": true },
     { "source": "/fr/tools/converter/", "destination": "/fr/tools/converter", "permanent": true },
+
+    { "source": "/fr/bmi", "destination": "/fr/tools/bmi", "permanent": true },
+    { "source": "/fr/bmi/", "destination": "/fr/tools/bmi", "permanent": true },
     { "source": "/fr/tools/bmi/", "destination": "/fr/tools/bmi", "permanent": true },
+
+    { "source": "/fr/timer", "destination": "/fr/tools/timer", "permanent": true },
+    { "source": "/fr/timer/", "destination": "/fr/tools/timer", "permanent": true },
     { "source": "/fr/tools/timer/", "destination": "/fr/tools/timer", "permanent": true },
+
+    { "source": "/fr/color-picker", "destination": "/fr/tools/color-picker", "permanent": true },
+    { "source": "/fr/color-picker/", "destination": "/fr/tools/color-picker", "permanent": true },
     { "source": "/fr/tools/color-picker/", "destination": "/fr/tools/color-picker", "permanent": true },
+
+    { "source": "/fr/px-converter", "destination": "/fr/tools/px-converter", "permanent": true },
+    { "source": "/fr/px-converter/", "destination": "/fr/tools/px-converter", "permanent": true },
     { "source": "/fr/tools/px-converter/", "destination": "/fr/tools/px-converter", "permanent": true },
 
     { "source": "/de/", "destination": "/de", "permanent": true },
+
+    { "source": "/de/calc", "destination": "/de/tools/calc", "permanent": true },
+    { "source": "/de/calc/", "destination": "/de/tools/calc", "permanent": true },
     { "source": "/de/tools/calc/", "destination": "/de/tools/calc", "permanent": true },
+
+    { "source": "/de/converter", "destination": "/de/tools/converter", "permanent": true },
+    { "source": "/de/converter/", "destination": "/de/tools/converter", "permanent": true },
     { "source": "/de/tools/converter/", "destination": "/de/tools/converter", "permanent": true },
+
+    { "source": "/de/bmi", "destination": "/de/tools/bmi", "permanent": true },
+    { "source": "/de/bmi/", "destination": "/de/tools/bmi", "permanent": true },
     { "source": "/de/tools/bmi/", "destination": "/de/tools/bmi", "permanent": true },
+
+    { "source": "/de/timer", "destination": "/de/tools/timer", "permanent": true },
+    { "source": "/de/timer/", "destination": "/de/tools/timer", "permanent": true },
     { "source": "/de/tools/timer/", "destination": "/de/tools/timer", "permanent": true },
+
+    { "source": "/de/color-picker", "destination": "/de/tools/color-picker", "permanent": true },
+    { "source": "/de/color-picker/", "destination": "/de/tools/color-picker", "permanent": true },
     { "source": "/de/tools/color-picker/", "destination": "/de/tools/color-picker", "permanent": true },
+
+    { "source": "/de/px-converter", "destination": "/de/tools/px-converter", "permanent": true },
+    { "source": "/de/px-converter/", "destination": "/de/tools/px-converter", "permanent": true },
     { "source": "/de/tools/px-converter/", "destination": "/de/tools/px-converter", "permanent": true },
 
     { "source": "/es/", "destination": "/es", "permanent": true },
+
+    { "source": "/es/calc", "destination": "/es/tools/calc", "permanent": true },
+    { "source": "/es/calc/", "destination": "/es/tools/calc", "permanent": true },
     { "source": "/es/tools/calc/", "destination": "/es/tools/calc", "permanent": true },
+
+    { "source": "/es/converter", "destination": "/es/tools/converter", "permanent": true },
+    { "source": "/es/converter/", "destination": "/es/tools/converter", "permanent": true },
     { "source": "/es/tools/converter/", "destination": "/es/tools/converter", "permanent": true },
+
+    { "source": "/es/bmi", "destination": "/es/tools/bmi", "permanent": true },
+    { "source": "/es/bmi/", "destination": "/es/tools/bmi", "permanent": true },
     { "source": "/es/tools/bmi/", "destination": "/es/tools/bmi", "permanent": true },
+
+    { "source": "/es/timer", "destination": "/es/tools/timer", "permanent": true },
+    { "source": "/es/timer/", "destination": "/es/tools/timer", "permanent": true },
     { "source": "/es/tools/timer/", "destination": "/es/tools/timer", "permanent": true },
+
+    { "source": "/es/color-picker", "destination": "/es/tools/color-picker", "permanent": true },
+    { "source": "/es/color-picker/", "destination": "/es/tools/color-picker", "permanent": true },
     { "source": "/es/tools/color-picker/", "destination": "/es/tools/color-picker", "permanent": true },
+
+    { "source": "/es/px-converter", "destination": "/es/tools/px-converter", "permanent": true },
+    { "source": "/es/px-converter/", "destination": "/es/tools/px-converter", "permanent": true },
     { "source": "/es/tools/px-converter/", "destination": "/es/tools/px-converter", "permanent": true },
 
     { "source": "/it/", "destination": "/it", "permanent": true },
+
+    { "source": "/it/calc", "destination": "/it/tools/calc", "permanent": true },
+    { "source": "/it/calc/", "destination": "/it/tools/calc", "permanent": true },
     { "source": "/it/tools/calc/", "destination": "/it/tools/calc", "permanent": true },
+
+    { "source": "/it/converter", "destination": "/it/tools/converter", "permanent": true },
+    { "source": "/it/converter/", "destination": "/it/tools/converter", "permanent": true },
     { "source": "/it/tools/converter/", "destination": "/it/tools/converter", "permanent": true },
+
+    { "source": "/it/bmi", "destination": "/it/tools/bmi", "permanent": true },
+    { "source": "/it/bmi/", "destination": "/it/tools/bmi", "permanent": true },
     { "source": "/it/tools/bmi/", "destination": "/it/tools/bmi", "permanent": true },
+
+    { "source": "/it/timer", "destination": "/it/tools/timer", "permanent": true },
+    { "source": "/it/timer/", "destination": "/it/tools/timer", "permanent": true },
     { "source": "/it/tools/timer/", "destination": "/it/tools/timer", "permanent": true },
+
+    { "source": "/it/color-picker", "destination": "/it/tools/color-picker", "permanent": true },
+    { "source": "/it/color-picker/", "destination": "/it/tools/color-picker", "permanent": true },
     { "source": "/it/tools/color-picker/", "destination": "/it/tools/color-picker", "permanent": true },
+
+    { "source": "/it/px-converter", "destination": "/it/tools/px-converter", "permanent": true },
+    { "source": "/it/px-converter/", "destination": "/it/tools/px-converter", "permanent": true },
     { "source": "/it/tools/px-converter/", "destination": "/it/tools/px-converter", "permanent": true },
 
     { "source": "/hi/", "destination": "/hi", "permanent": true },
+
+    { "source": "/hi/calc", "destination": "/hi/tools/calc", "permanent": true },
+    { "source": "/hi/calc/", "destination": "/hi/tools/calc", "permanent": true },
     { "source": "/hi/tools/calc/", "destination": "/hi/tools/calc", "permanent": true },
+
+    { "source": "/hi/converter", "destination": "/hi/tools/converter", "permanent": true },
+    { "source": "/hi/converter/", "destination": "/hi/tools/converter", "permanent": true },
     { "source": "/hi/tools/converter/", "destination": "/hi/tools/converter", "permanent": true },
+
+    { "source": "/hi/bmi", "destination": "/hi/tools/bmi", "permanent": true },
+    { "source": "/hi/bmi/", "destination": "/hi/tools/bmi", "permanent": true },
     { "source": "/hi/tools/bmi/", "destination": "/hi/tools/bmi", "permanent": true },
+
+    { "source": "/hi/timer", "destination": "/hi/tools/timer", "permanent": true },
+    { "source": "/hi/timer/", "destination": "/hi/tools/timer", "permanent": true },
     { "source": "/hi/tools/timer/", "destination": "/hi/tools/timer", "permanent": true },
+
+    { "source": "/hi/color-picker", "destination": "/hi/tools/color-picker", "permanent": true },
+    { "source": "/hi/color-picker/", "destination": "/hi/tools/color-picker", "permanent": true },
     { "source": "/hi/tools/color-picker/", "destination": "/hi/tools/color-picker", "permanent": true },
+
+    { "source": "/hi/px-converter", "destination": "/hi/tools/px-converter", "permanent": true },
+    { "source": "/hi/px-converter/", "destination": "/hi/tools/px-converter", "permanent": true },
     { "source": "/hi/tools/px-converter/", "destination": "/hi/tools/px-converter", "permanent": true },
 
     { "source": "/zh/", "destination": "/zh", "permanent": true },
+
+    { "source": "/zh/calc", "destination": "/zh/tools/calc", "permanent": true },
+    { "source": "/zh/calc/", "destination": "/zh/tools/calc", "permanent": true },
     { "source": "/zh/tools/calc/", "destination": "/zh/tools/calc", "permanent": true },
+
+    { "source": "/zh/converter", "destination": "/zh/tools/converter", "permanent": true },
+    { "source": "/zh/converter/", "destination": "/zh/tools/converter", "permanent": true },
     { "source": "/zh/tools/converter/", "destination": "/zh/tools/converter", "permanent": true },
+
+    { "source": "/zh/bmi", "destination": "/zh/tools/bmi", "permanent": true },
+    { "source": "/zh/bmi/", "destination": "/zh/tools/bmi", "permanent": true },
     { "source": "/zh/tools/bmi/", "destination": "/zh/tools/bmi", "permanent": true },
+
+    { "source": "/zh/timer", "destination": "/zh/tools/timer", "permanent": true },
+    { "source": "/zh/timer/", "destination": "/zh/tools/timer", "permanent": true },
     { "source": "/zh/tools/timer/", "destination": "/zh/tools/timer", "permanent": true },
+
+    { "source": "/zh/color-picker", "destination": "/zh/tools/color-picker", "permanent": true },
+    { "source": "/zh/color-picker/", "destination": "/zh/tools/color-picker", "permanent": true },
     { "source": "/zh/tools/color-picker/", "destination": "/zh/tools/color-picker", "permanent": true },
+
+    { "source": "/zh/px-converter", "destination": "/zh/tools/px-converter", "permanent": true },
+    { "source": "/zh/px-converter/", "destination": "/zh/tools/px-converter", "permanent": true },
     { "source": "/zh/tools/px-converter/", "destination": "/zh/tools/px-converter", "permanent": true }
   ],
 
