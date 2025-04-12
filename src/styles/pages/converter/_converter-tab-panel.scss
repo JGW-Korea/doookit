@@ -8,6 +8,8 @@ section#conversion-panel {
     align-items: flex-end;
 
     & > fieldset {
+      width: 100%;
+
       & > legend {
         font-weight: 500;
         margin-bottom: 0.75rem;
@@ -65,6 +67,18 @@ section#conversion-panel {
     & > output {
       color: #6b7280;
       font-size: 0.875rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  section#conversion-panel {
+    margin: 1rem;
+
+    & > form {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
   }
 }
