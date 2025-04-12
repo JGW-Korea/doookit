@@ -4,7 +4,7 @@ const supportedLangs = ["en", "ko", "ja", "fr", "it", "es", "de", "zh", "hi"];
 const toolPaths = ["calc", "converter", "bmi", "timer", "color-picker", "px-converter"];
 
 // 브라우저 언어로부터 기본 언어 코드 추출 (지원 목록에 없으면 en 사용)
-function getBrowserLang() {
+function getBrowserLang(): string {
   const langCode = navigator.language.split("-")[0];
   return supportedLangs.includes(langCode) ? langCode : "en";
 }
@@ -20,13 +20,17 @@ function redirectTo404() {
   }
 }
 
-if (isProduction) {
+if (!isProduction) {
   const browserLang = getBrowserLang();
   const path = location.pathname;
   const segments = path.split("/").filter(Boolean);
 
+  console.log(segments);
+
   // ─── 1. 메인 페이지 ("/") ─────────────────────────────────────
   if (segments.length === 0) {
+    console.log("Hello");
+
     // 영어 사용자는 "/" 그대로, 그 외 언어라면 언어별 루트로 이동
     if (browserLang === "en") {
       // 아무것도 하지 않음
@@ -38,15 +42,26 @@ if (isProduction) {
   else if (segments.length === 1) {
     const [first] = segments;
 
+    // 만약 사용자가 언어 코드(예: "/hi")로 접근한 경우:
     if (supportedLangs.includes(first)) {
-      // 언어 코드만 입력된 경우: 예) "/ko" 또는 "/en"
-      if (first === "en") {
-        // 영어 메인페이지는 "/"로 유지
-        redirectTo("/");
+      // 브라우저 언어와 일치하지 않으면 강제 리디렉션
+      if (first !== browserLang) {
+        // 브라우저 언어가 en이면 영어 루트는 "/" 입니다.
+        if (browserLang === "en") {
+          redirectTo("/");
+        } else {
+          redirectTo(`/${browserLang}`);
+        }
+      } else {
+        // 일치하는 경우에도, 영어의 경우 "/"가 올바른 루트입니다.
+        if (browserLang === "en") {
+          redirectTo("/");
+        }
+        // 일치하는 비영어 언어라면 아무것도 하지 않음 (올바른 언어 루트)
       }
-      // 다른 언어는 그대로 유효 (예: "/ko")
-    } else if (toolPaths.includes(first)) {
-      // 예: "/calc" 등 도구 이름만 직접 입력된 경우
+    }
+    // 예: 도구 이름만 입력된 경우 ("/calc" 등)
+    else if (toolPaths.includes(first)) {
       if (browserLang === "en") {
         redirectTo(`/tools/${first}`);
       } else {
