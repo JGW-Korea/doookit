@@ -63,11 +63,12 @@ export const lengthPanel = () => {
       });
 
       groupDivEl.append(groupLabelSpanEl, inputLabel, inputEl, selectLabel, selectEl);
-      fieldsetEl.appendChild(groupDivEl);
+      fieldsetEl.append(legendEl, groupDivEl);
 
       // 첫 번째 fieldset의 형제로 단위 변환 버튼이 있어야 됨
       const buttonEl = document.createElement("button");
       buttonEl.type = "button";
+      buttonEl.ariaLabel = LENGHT_DATA.swapButtonAriaLabel;
 
       const convertSvgURL = new URL("../../assets/icons/si_swap-horiz-fill.svg", import.meta.url).href;
       fetch(convertSvgURL)
@@ -118,7 +119,7 @@ export const lengthPanel = () => {
       });
 
       groupDivEl.append(groupLabelSpanEl, inputLabel, inputEl, selectLabel, selectEl);
-      fieldsetEl.appendChild(groupDivEl);
+      fieldsetEl.append(legendEl, groupDivEl);
       panelConvertForm.append(fieldsetEl);
     }
   });

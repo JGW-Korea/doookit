@@ -10,6 +10,12 @@
     "resultAriaLabel": "转换结果和单位",
     "swapButtonAriaLabel": "交换“原始单位”和“目标单位”",
     "resultSectionTitle": "转换结果",
+    "labels": {
+      "value": "数值",
+      "result": "结果",
+      "fromUnit": "原始单位",
+      "toUnit": "目标单位"
+    },
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -30,6 +36,12 @@
     "resultAriaLabel": "转换结果和单位",
     "swapButtonAriaLabel": "交换“原始重量单位”和“目标单位”",
     "resultSectionTitle": "转换结果",
+    "labels": {
+      "value": "数值",
+      "result": "结果",
+      "fromUnit": "原始重量单位",
+      "toUnit": "目标重量单位"
+    },
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -49,6 +61,12 @@
     "resultAriaLabel": "转换结果和单位",
     "swapButtonAriaLabel": "交换“原始温度单位”和“目标单位”",
     "resultSectionTitle": "转换结果",
+    "labels": {
+      "value": "温度",
+      "result": "结果",
+      "fromUnit": "原始温度单位",
+      "toUnit": "目标温度单位"
+    },
     "conversionDescriptions": {
       "c": "摄氏转华氏：°F = (°C × 9/5) + 32",
       "f": "华氏转摄氏：°C = (°F - 32) × 5/9"

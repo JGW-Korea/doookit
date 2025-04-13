@@ -10,6 +10,12 @@
     "resultAriaLabel": "Resultado de la conversión y unidad",
     "swapButtonAriaLabel": "Intercambiar 'unidad de origen' y 'unidad de destino'",
     "resultSectionTitle": "Resultado de la conversión",
+    "labels": {
+      "value": "Valor",
+      "result": "Resultado",
+      "fromUnit": "Unidad de origen",
+      "toUnit": "Unidad de destino"
+    },
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -30,6 +36,12 @@
     "resultAriaLabel": "Resultado de la conversión y unidad",
     "swapButtonAriaLabel": "Intercambiar 'unidad de peso origen' y 'unidad de destino'",
     "resultSectionTitle": "Resultado de la conversión",
+    "labels": {
+      "value": "Valor",
+      "result": "Resultado",
+      "fromUnit": "Unidad de peso de origen",
+      "toUnit": "Unidad de peso de destino"
+    },
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -49,6 +61,12 @@
     "resultAriaLabel": "Resultado de la conversión y unidad",
     "swapButtonAriaLabel": "Intercambiar 'unidad de temperatura origen' y 'unidad de destino'",
     "resultSectionTitle": "Resultado de la conversión",
+    "labels": {
+      "value": "Temperatura",
+      "result": "Resultado",
+      "fromUnit": "Unidad de temperatura de origen",
+      "toUnit": "Unidad de temperatura de destino"
+    },
     "conversionDescriptions": {
       "c": "Celsius a Fahrenheit: °F = (°C × 9/5) + 32",
       "f": "Fahrenheit a Celsius: °C = (°F - 32) × 5/9"

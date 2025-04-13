@@ -10,6 +10,12 @@
     "resultAriaLabel": "변환 결과 및 단위",
     "swapButtonAriaLabel": "'변환할 단위'와 '변환될 단위'를 서로 바꾸기",
     "resultSectionTitle": "변환 결과",
+    "labels": {
+      "value": "값",
+      "result": "결과",
+      "fromUnit": "변환할 단위",
+      "toUnit": "변환될 단위"
+    },
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -30,6 +36,12 @@
     "resultAriaLabel": "변환 결과 및 단위",
     "swapButtonAriaLabel": "'변환할 무게 단위'와 '변환될 무게 단위'를 서로 바꾸기",
     "resultSectionTitle": "변환 결과",
+    "labels": {
+      "value": "값",
+      "result": "결과",
+      "fromUnit": "변환할 무게 단위",
+      "toUnit": "변환될 무게 단위"
+    },
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -49,6 +61,12 @@
     "resultAriaLabel": "변환 결과 및 단위",
     "swapButtonAriaLabel": "'변환할 온도 단위'와 '변환될 온도 단위'를 서로 바꾸기",
     "resultSectionTitle": "변환 결과",
+    "labels": {
+      "value": "온도",
+      "result": "결과",
+      "fromUnit": "변환할 온도 단위",
+      "toUnit": "변환될 온도 단위"
+    },
     "conversionDescriptions": {
       "c": "섭씨 → 화씨: °F = (°C × 9/5) + 32",
       "f": "화씨 → 섭씨: °C = (°F - 32) × 5/9"

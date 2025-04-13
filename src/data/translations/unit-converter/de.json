@@ -10,6 +10,12 @@
     "resultAriaLabel": "Umrechnungsergebnis und Einheit",
     "swapButtonAriaLabel": "Tausche 'Von Einheit' und 'Zu Einheit'",
     "resultSectionTitle": "Umrechnungsergebnis",
+    "labels": {
+      "value": "Wert",
+      "result": "Ergebnis",
+      "fromUnit": "Ausgangseinheit",
+      "toUnit": "Zieleinheit"
+    },
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -30,6 +36,12 @@
     "resultAriaLabel": "Umrechnungsergebnis und Einheit",
     "swapButtonAriaLabel": "Tausche 'Von Gewichtseinheit' und 'Zu Gewichtseinheit'",
     "resultSectionTitle": "Umrechnungsergebnis",
+    "labels": {
+      "value": "Wert",
+      "result": "Ergebnis",
+      "fromUnit": "Ausgangsgewichtseinheit",
+      "toUnit": "Zielgewichtseinheit"
+    },
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -49,6 +61,12 @@
     "resultAriaLabel": "Umrechnungsergebnis und Einheit",
     "swapButtonAriaLabel": "Tausche 'Von Temperatureinheit' und 'Zu Temperatureinheit'",
     "resultSectionTitle": "Umrechnungsergebnis",
+    "labels": {
+      "value": "Temperaturwert",
+      "result": "Ergebnis",
+      "fromUnit": "Ausgangstemperatur",
+      "toUnit": "Zieltemperatur"
+    },
     "conversionDescriptions": {
       "c": "Celsius zu Fahrenheit: °F = (°C × 9/5) + 32",
       "f": "Fahrenheit zu Celsius: °C = (°F - 32) × 5/9"
