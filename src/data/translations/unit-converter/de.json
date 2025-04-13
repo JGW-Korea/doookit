@@ -1,0 +1,51 @@
+{
+  "length": {
+    "ariaLabel": "Längeneinheiten-Umrechner-Formular",
+    "title": "Längeneinheiten-Umrechner",
+    "legends": {
+      "from": "Umrechnen von Einheit",
+      "to": "Umrechnen in Einheit"
+    },
+    "inputAriaLabel": "Wert eingeben und Ausgangseinheit auswählen",
+    "resultAriaLabel": "Umrechnungsergebnis und Einheit",
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "Gewichtseinheiten-Umrechner-Formular",
+    "title": "Gewichtseinheiten-Umrechner",
+    "legends": {
+      "from": "Umrechnen von Gewichtseinheit",
+      "to": "Umrechnen in Gewichtseinheit"
+    },
+    "inputAriaLabel": "Wert eingeben und Ausgangseinheit auswählen",
+    "resultAriaLabel": "Umrechnungsergebnis und Einheit",
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "Temperatur-Umrechner-Formular",
+    "title": "Temperatur-Umrechner",
+    "legends": {
+      "from": "Umrechnen von Temperatureinheit",
+      "to": "Umrechnen in Temperatureinheit"
+    },
+    "inputAriaLabel": "Wert eingeben und Ausgangseinheit auswählen",
+    "resultAriaLabel": "Umrechnungsergebnis und Einheit",
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}

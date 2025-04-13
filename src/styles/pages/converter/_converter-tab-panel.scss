@@ -1,4 +1,4 @@
-section#conversion-panel {
+section#conversion-panel > div {
   margin: 0.5rem 1rem 1rem;
   border-radius: 0.25rem;
 
@@ -66,8 +66,7 @@ section#conversion-panel {
 
     color: #3f3f46;
 
-    & > output {
-      // color: #6b7280;
+    & > output#conversion-result {
       font-size: 0.875rem;
     }
   }

@@ -1,0 +1,51 @@
+{
+  "length": {
+    "ariaLabel": "長さ変換フォーム",
+    "title": "長さの単位変換",
+    "legends": {
+      "from": "変換元の単位",
+      "to": "変換先の単位"
+    },
+    "inputAriaLabel": "値を入力し、変換元の単位を選択してください",
+    "resultAriaLabel": "変換結果と単位",
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "重さ変換フォーム",
+    "title": "重さの単位変換",
+    "legends": {
+      "from": "変換元の重さの単位",
+      "to": "変換先の重さの単位"
+    },
+    "inputAriaLabel": "値を入力し、変換元の単位を選択してください",
+    "resultAriaLabel": "変換結果と単位",
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "温度変換フォーム",
+    "title": "温度変換",
+    "legends": {
+      "from": "変換元の温度単位",
+      "to": "変換先の温度単位"
+    },
+    "inputAriaLabel": "値を入力し、変換元の単位を選択してください",
+    "resultAriaLabel": "変換結果と単位",
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}

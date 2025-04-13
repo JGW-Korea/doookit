@@ -1,0 +1,51 @@
+{
+  "length": {
+    "ariaLabel": "Length Converter Form",
+    "title": "Length Unit Converter",
+    "legends": {
+      "from": "Convert from unit",
+      "to": "Convert to unit"
+    },
+    "inputAriaLabel": "Enter Value and Select from unit",
+    "resultAriaLabel": "Conversion result and unit",
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "Weight Converter Form",
+    "title": "Weight Unit Converter",
+    "legends": {
+      "from": "Convert from weight unit",
+      "to": "Convert to weight unit"
+    },
+    "inputAriaLabel": "Enter Value and Select from unit",
+    "resultAriaLabel": "Conversion result and unit",
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "Temperature Converter Form",
+    "title": "Temperature Unit Converter",
+    "legends": {
+      "from": "Convert from temperature unit",
+      "to": "Convert to temperature unit"
+    },
+    "inputAriaLabel": "Enter Value and Select from unit",
+    "resultAriaLabel": "Conversion result and unit",
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}

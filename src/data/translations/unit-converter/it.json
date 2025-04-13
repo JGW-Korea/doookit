@@ -1,0 +1,51 @@
+{
+  "length": {
+    "ariaLabel": "Modulo del convertitore di lunghezza",
+    "title": "Convertitore di unità di lunghezza",
+    "legends": {
+      "from": "Converti da unità",
+      "to": "Converti in unità"
+    },
+    "inputAriaLabel": "Inserisci un valore e seleziona l’unità di partenza",
+    "resultAriaLabel": "Risultato della conversione e unità",
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "Modulo del convertitore di peso",
+    "title": "Convertitore di unità di peso",
+    "legends": {
+      "from": "Converti da unità di peso",
+      "to": "Converti in unità di peso"
+    },
+    "inputAriaLabel": "Inserisci un valore e seleziona l’unità di partenza",
+    "resultAriaLabel": "Risultato della conversione e unità",
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "Modulo del convertitore di temperatura",
+    "title": "Convertitore di temperatura",
+    "legends": {
+      "from": "Converti da unità di temperatura",
+      "to": "Converti in unità di temperatura"
+    },
+    "inputAriaLabel": "Inserisci un valore e seleziona l’unità di partenza",
+    "resultAriaLabel": "Risultato della conversione e unità",
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}
