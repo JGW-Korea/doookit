@@ -8,6 +8,8 @@
     },
     "inputAriaLabel": "Entrez une valeur et sélectionnez l’unité d’origine",
     "resultAriaLabel": "Résultat de la conversion et unité",
+    "swapButtonAriaLabel": "Inverser l’unité d’origine et l’unité de destination",
+    "resultSectionTitle": "Résultat de la conversion",
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -26,6 +28,8 @@
     },
     "inputAriaLabel": "Entrez une valeur et sélectionnez l’unité d’origine",
     "resultAriaLabel": "Résultat de la conversion et unité",
+    "swapButtonAriaLabel": "Inverser l’unité de poids d’origine et de destination",
+    "resultSectionTitle": "Résultat de la conversion",
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -43,6 +47,12 @@
     },
     "inputAriaLabel": "Entrez une valeur et sélectionnez l’unité d’origine",
     "resultAriaLabel": "Résultat de la conversion et unité",
+    "swapButtonAriaLabel": "Inverser l’unité de température d’origine et de destination",
+    "resultSectionTitle": "Résultat de la conversion",
+    "conversionDescriptions": {
+      "c": "Celsius en Fahrenheit : °F = (°C × 9/5) + 32",
+      "f": "Fahrenheit en Celsius : °C = (°F - 32) × 5/9"
+    },
     "units": [
       { "value": "c", "label": "°C" },
       { "value": "f", "label": "°F" }

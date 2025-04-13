@@ -8,6 +8,8 @@
     },
     "inputAriaLabel": "Enter Value and Select from unit",
     "resultAriaLabel": "Conversion result and unit",
+    "swapButtonAriaLabel": "Swap 'From unit' and 'To unit'",
+    "resultSectionTitle": "Conversion Result",
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -26,6 +28,8 @@
     },
     "inputAriaLabel": "Enter Value and Select from unit",
     "resultAriaLabel": "Conversion result and unit",
+    "swapButtonAriaLabel": "Swap 'From weight unit' and 'To weight unit'",
+    "resultSectionTitle": "Conversion Result",
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -43,6 +47,12 @@
     },
     "inputAriaLabel": "Enter Value and Select from unit",
     "resultAriaLabel": "Conversion result and unit",
+    "swapButtonAriaLabel": "Swap 'From temperature unit' and 'To temperature unit'",
+    "resultSectionTitle": "Conversion Result",
+    "conversionDescriptions": {
+      "c": "Celsius to Fahrenheit: °F = (°C × 9/5) + 32",
+      "f": "Fahrenheit to Celsius: °C = (°F - 32) × 5/9"
+    },
     "units": [
       { "value": "c", "label": "°C" },
       { "value": "f", "label": "°F" }

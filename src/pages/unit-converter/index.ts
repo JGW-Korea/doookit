@@ -1,4 +1,5 @@
 import { Header, Footer } from "../../components";
+import { lengthPanel } from "../../utils/converter/converterPanel";
 
 document.body.insertAdjacentElement("afterbegin", new Header().el);
 document.body.insertAdjacentElement("beforeend", new Footer().el);
@@ -7,6 +8,8 @@ const tabList: HTMLElement | null = document.querySelector("nav[role='tablist']"
 const tabs: NodeList | null = document.querySelectorAll("button[role='tab']");
 
 let tabType;
+
+console.log(lengthPanel());
 
 // Tab List, Tabs 요소가 있을 경우에만 실행하는 타입 가드(Type Guard)
 if (tabList && tabs) {

@@ -8,6 +8,8 @@
     },
     "inputAriaLabel": "मान दर्ज करें और प्रारंभिक इकाई चुनें",
     "resultAriaLabel": "रूपांतरण परिणाम और इकाई",
+    "swapButtonAriaLabel": "'प्रारंभिक इकाई' और 'लक्ष्य इकाई' को अदल-बदल करें",
+    "resultSectionTitle": "रूपांतरण का परिणाम",
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -26,6 +28,8 @@
     },
     "inputAriaLabel": "मान दर्ज करें और प्रारंभिक इकाई चुनें",
     "resultAriaLabel": "रूपांतरण परिणाम और इकाई",
+    "swapButtonAriaLabel": "'प्रारंभिक वज़न इकाई' और 'लक्ष्य इकाई' को अदल-बदल करें",
+    "resultSectionTitle": "रूपांतरण का परिणाम",
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -43,6 +47,12 @@
     },
     "inputAriaLabel": "मान दर्ज करें और प्रारंभिक इकाई चुनें",
     "resultAriaLabel": "रूपांतरण परिणाम और इकाई",
+    "swapButtonAriaLabel": "'प्रारंभिक तापमान इकाई' और 'लक्ष्य इकाई' को अदल-बदल करें",
+    "resultSectionTitle": "रूपांतरण का परिणाम",
+    "conversionDescriptions": {
+      "c": "सेल्सियस से फारेनहाइट: °F = (°C × 9/5) + 32",
+      "f": "फारेनहाइट से सेल्सियस: °C = (°F - 32) × 5/9"
+    },
     "units": [
       { "value": "c", "label": "°C" },
       { "value": "f", "label": "°F" }

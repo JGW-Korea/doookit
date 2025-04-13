@@ -8,6 +8,8 @@
     },
     "inputAriaLabel": "値を入力し、変換元の単位を選択してください",
     "resultAriaLabel": "変換結果と単位",
+    "swapButtonAriaLabel": "変換元と変換先の単位を入れ替える",
+    "resultSectionTitle": "変換結果",
     "units": [
       { "value": "cm", "label": "cm" },
       { "value": "in", "label": "in" },
@@ -26,6 +28,8 @@
     },
     "inputAriaLabel": "値を入力し、変換元の単位を選択してください",
     "resultAriaLabel": "変換結果と単位",
+    "swapButtonAriaLabel": "変換元と変換先の重さの単位を入れ替える",
+    "resultSectionTitle": "変換結果",
     "units": [
       { "value": "g", "label": "g" },
       { "value": "kg", "label": "kg" },
@@ -43,6 +47,12 @@
     },
     "inputAriaLabel": "値を入力し、変換元の単位を選択してください",
     "resultAriaLabel": "変換結果と単位",
+    "swapButtonAriaLabel": "変換元と変換先の温度単位を入れ替える",
+    "resultSectionTitle": "変換結果",
+    "conversionDescriptions": {
+      "c": "摂氏から華氏への変換: °F = (°C × 9/5) + 32",
+      "f": "華氏から摂氏への変換: °C = (°F - 32) × 5/9"
+    },
     "units": [
       { "value": "c", "label": "°C" },
       { "value": "f", "label": "°F" }
