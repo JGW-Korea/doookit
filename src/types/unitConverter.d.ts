@@ -20,6 +20,14 @@ export interface UnitConverterType {
   };
   inputAriaLabel: string;
   resultAriaLabel: string;
+  swapButtonAriaLabel: string;
+  resultSectionTitle: string;
+
+  conversionDescriptions?: {
+    c: string;
+    f: string;
+  };
+
   units: UnitsType[];
 }
 
