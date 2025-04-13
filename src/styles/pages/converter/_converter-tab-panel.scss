@@ -59,13 +59,15 @@ section#conversion-panel {
   }
 
   & > section[aria-labelledby="conversion-result-label"] {
-    background-color: #eff6ff;
+    background-color: #e3effc;
     border-radius: 0.75rem;
     padding: 1rem;
     margin-top: 2rem;
 
+    color: #3f3f46;
+
     & > output {
-      color: #6b7280;
+      // color: #6b7280;
       font-size: 0.875rem;
     }
   }

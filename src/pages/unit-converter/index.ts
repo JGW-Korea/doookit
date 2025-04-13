@@ -6,12 +6,19 @@ document.body.insertAdjacentElement("beforeend", new Footer().el);
 const tabList: HTMLElement | null = document.querySelector("nav[role='tablist']");
 const tabs: NodeList | null = document.querySelectorAll("button[role='tab']");
 
+let tabType;
+
 // Tab List, Tabs 요소가 있을 경우에만 실행하는 타입 가드(Type Guard)
 if (tabList && tabs) {
   let testCurrentTabEl: HTMLElement;
   tabs.forEach((tabEl) => {
-    if (tabEl instanceof HTMLElement && tabEl.classList.contains("active")) testCurrentTabEl = tabEl;
+    if (tabEl instanceof HTMLElement && tabEl.classList.contains("active")) {
+      testCurrentTabEl = tabEl;
+      tabType = tabEl.dataset.value;
+    }
   });
+
+  console.log(tabType);
 
   tabs.forEach((tabEl) => {
     // 각 탭 클릭 이벤트 핸들러 등록
@@ -76,6 +83,8 @@ if (tabList && tabs) {
         newTabEl.tabIndex = 0;
         newTabEl.classList.add("active");
         newTabEl.focus();
+
+        testCurrentTabEl = newTabEl;
       }
     }
   });
