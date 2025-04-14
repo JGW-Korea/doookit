@@ -136,70 +136,7 @@
 
         <!-- 탭 패널(Tab Panal) -->
         <section id="conversion-panel" role="tabpanel" aria-labelledby="conversion-title" aria-hidden="false" tabindex="0">
-          <div>
-            <h2 id="conversion-title" class="sr-only">Length Unit Converter</h2>
-
-            <form aria-label="Length Converter Form">
-              <fieldset>
-                <legend>Convert from unit</legend>
-
-                <div role="group" aria-labelledby="from-group-label">
-                  <span id="from-group-label" class="sr-only">Enter Value and Select from unit</span>
-
-                  <label for="from-value" class="sr-only">Value</label>
-                  <input type="number" id="from-value" value="1" inputmode="decimal" />
-
-                  <label for="from-unit" class="sr-only">From Unit</label>
-                  <select id="from-unit">
-                    <option value="cm" selected>cm</option>
-                    <option value="in">in</option>
-                    <option value="m">m</option>
-                    <option value="ft">ft</option>
-                    <option value="km">km</option>
-                    <option value="mi">mi</option>
-                  </select>
-                </div>
-              </fieldset>
-
-              <button type="button" aria-label="Swap 'Form unit' and 'To unit'">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M5.13792 1.52869C5.2629 1.65371 5.33311 1.82324 5.33311 2.00002C5.33311 2.1768 5.2629 2.34634 5.13792 2.47135L3.60925 4.00002H13.9999C14.1767 4.00002 14.3463 4.07026 14.4713 4.19528C14.5963 4.32031 14.6666 4.48988 14.6666 4.66669C14.6666 4.8435 14.5963 5.01307 14.4713 5.13809C14.3463 5.26312 14.1767 5.33335 13.9999 5.33335H3.60925L5.13792 6.86202C5.20159 6.92352 5.25238 6.99708 5.28732 7.07842C5.32226 7.15975 5.34065 7.24723 5.34142 7.33575C5.34219 7.42427 5.32532 7.51206 5.2918 7.59399C5.25828 7.67592 5.20878 7.75036 5.14618 7.81295C5.08359 7.87555 5.00915 7.92505 4.92722 7.95857C4.84529 7.99209 4.7575 8.00896 4.66898 8.00819C4.58046 8.00742 4.49299 7.98903 4.41165 7.95409C4.33031 7.91915 4.25675 7.86836 4.19525 7.80469L1.52859 5.13802C1.4036 5.013 1.33339 4.84346 1.33339 4.66669C1.33339 4.48991 1.4036 4.32037 1.52859 4.19535L4.19525 1.52869C4.32027 1.40371 4.48981 1.3335 4.66659 1.3335C4.84336 1.3335 5.0129 1.40371 5.13792 1.52869ZM10.8619 8.19535C10.9869 8.07037 11.1565 8.00016 11.3333 8.00016C11.51 8.00016 11.6796 8.07037 11.8046 8.19535L14.4713 10.862C14.5962 10.987 14.6664 11.1566 14.6664 11.3334C14.6664 11.5101 14.5962 11.6797 14.4713 11.8047L11.8046 14.4714C11.6789 14.5928 11.5104 14.66 11.3357 14.6585C11.1609 14.657 10.9936 14.5868 10.87 14.4632C10.7464 14.3396 10.6763 14.1724 10.6748 13.9976C10.6733 13.8228 10.7405 13.6544 10.8619 13.5287L12.3906 12H1.99992C1.82311 12 1.65354 11.9298 1.52851 11.8048C1.40349 11.6797 1.33325 11.5102 1.33325 11.3334C1.33325 11.1565 1.40349 10.987 1.52851 10.8619C1.65354 10.7369 1.82311 10.6667 1.99992 10.6667H12.3906L10.8619 9.13802C10.7369 9.013 10.6667 8.84346 10.6667 8.66669C10.6667 8.48991 10.7369 8.32037 10.8619 8.19535Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-
-              <fieldset>
-                <legend>Convert to unit</legend>
-
-                <div role="group" aria-labelledby="to-group-label">
-                  <span id="to-group-label" class="sr-only">Conversion result and unit</span>
-
-                  <label for="to-value" class="sr-only">Result</label>
-                  <input type="number" id="to-value" disabled />
-
-                  <label for="to-unit" class="sr-only">To Unit</label>
-                  <select id="to-unit">
-                    <option value="cm">cm</option>
-                    <option value="in">in</option>
-                    <option value="m">m</option>
-                    <option value="ft">ft</option>
-                    <option value="km">km</option>
-                    <option value="mi">mi</option>
-                  </select>
-                </div>
-              </fieldset>
-            </form>
-
-            <!-- 변환 결과 -->
-            <section aria-labelledby="conversion-result-label">
-              <h2 id="conversion-result-label" class="sr-only">Conversion Result</h2>
-              <output id="conversion-result" aria-live="polite" aria-atomic="true"> 1 cm = 0.3937in </output>
-            </section>
-          </div>
+          <!-- 탭에 맞는 항목으로 JS 동적으로 조절 -->
         </section>
       </section>
     </main>

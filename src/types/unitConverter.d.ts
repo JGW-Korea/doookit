@@ -6,10 +6,10 @@ export interface UnitConverterTranslations {
 }
 
 export interface UnitConverterI18nData {
-  length: UnitConverterType;
-  weight: UnitConverterType;
-  temperature: UnitConverterType;
+  [key: UnitConverterDataTypes]: UnitConverterType;
 }
+
+export type UnitConverterDataTypes = "length" | "weight" | "temperature";
 
 export interface UnitConverterType {
   ariaLabel: string;
@@ -26,6 +26,13 @@ export interface UnitConverterType {
   conversionDescriptions?: {
     c: string;
     f: string;
+  };
+
+  labels: {
+    value: string;
+    result: string;
+    fromUnit: string;
+    toUnit: string;
   };
 
   units: UnitsType[];
