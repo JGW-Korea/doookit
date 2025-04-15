@@ -156,6 +156,9 @@ export const convertWeight = (value: number, from: string, to: string): number =
       case "g":
         result = (value * 1000).toFixed(2);
         break;
+      case "t":
+        result = (value / 1000).toFixed(6);
+        break;
       case "oz":
         result = (value * 35.27396).toFixed(4);
         break;
@@ -172,6 +175,9 @@ export const convertWeight = (value: number, from: string, to: string): number =
         break;
       case "g":
         result = (value * 453.592).toFixed(2);
+        break;
+      case "t":
+        result = (value / 2204.62).toFixed(6);
         break;
       case "oz":
         result = (value * 16).toFixed(2);
@@ -190,8 +196,31 @@ export const convertWeight = (value: number, from: string, to: string): number =
       case "g":
         result = value.toString();
         break;
+      case "t":
+        result = (value / 1_000_000).toFixed(8);
+        break;
       case "oz":
         result = (value * 0.035274).toFixed(4);
+        break;
+    }
+  }
+
+  if (from === "t") {
+    switch (to) {
+      case "kg":
+        result = (value * 1000).toFixed(4);
+        break;
+      case "lb":
+        result = (value * 2204.62).toFixed(4);
+        break;
+      case "g":
+        result = (value * 1_000_000).toFixed(2);
+        break;
+      case "t":
+        result = value.toString();
+        break;
+      case "oz":
+        result = (value * 35273.96).toFixed(4);
         break;
     }
   }
@@ -206,6 +235,9 @@ export const convertWeight = (value: number, from: string, to: string): number =
         break;
       case "g":
         result = (value * 28.3495).toFixed(2);
+        break;
+      case "t":
+        result = (value / 35273.96).toFixed(8);
         break;
       case "oz":
         result = value.toString();

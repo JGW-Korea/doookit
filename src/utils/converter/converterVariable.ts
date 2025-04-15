@@ -1,23 +1,8 @@
 import { UnitConverterDataTypes } from "../../types/unitConverter";
 import { convertLength, convertTemp, convertWeight } from "./converterUntil";
 
-export const setFromValue = (value: number) => (fromValue = value);
-
-export let fromValue = 1; // 길이 값
-export let toValue = 0; // 결과값
-
-// 현재 단위
-export let lengthFrom = "cm";
-export let lengthTo = "in";
-
-export let weightFrom = "kg";
-export let weightTo = "lb";
-
-export let tempFrom = "c";
-export let tempTo = "f";
-
 type LengthUnit = "cm" | "in" | "m" | "ft" | "km" | "mi"; // 길이 단위 타입
-type WeightUnit = "kg" | "lb" | "g" | "oz"; // 무게 단위 타입
+type WeightUnit = "kg" | "lb" | "g" | "oz" | "t"; // 무게 단위 타입
 type TempUnit = "c" | "f"; // 온도 단위 타입
 
 export default class ConvertVariable {
@@ -25,7 +10,7 @@ export default class ConvertVariable {
   private toValue = 0;
 
   private convertLength: { from: LengthUnit; to: LengthUnit } = { from: "cm", to: "in" };
-  private convertWeigth: { from: WeightUnit; to: WeightUnit } = { from: "kg", to: "lb" };
+  private convertWeigth: { from: WeightUnit; to: WeightUnit } = { from: "g", to: "kg" };
   private convertTemp: { from: TempUnit; to: TempUnit } = { from: "c", to: "f" };
 
   private currentType: UnitConverterDataTypes = "length";
@@ -76,7 +61,7 @@ export default class ConvertVariable {
   // Getter 프로퍼티
   // 단위 변환 현재 값 반환
   get getFromValue(): number {
-    return fromValue;
+    return this.fromValue;
   }
 
   get getConvertType(): UnitConverterDataTypes {
@@ -84,12 +69,12 @@ export default class ConvertVariable {
   }
 
   // 길이 단위 반환
-  get getConvertLength(): { from: string; to: string } {
+  get getConvertLength(): { from: LengthUnit; to: LengthUnit } {
     return { from: this.convertLength.from, to: this.convertLength.to };
   }
 
   // 무게 단위 반환
-  get getConvertWeight(): { from: string; to: string } {
+  get getConvertWeight(): { from: WeightUnit; to: WeightUnit } {
     return { from: this.convertWeigth.from, to: this.convertWeigth.to };
   }
 
