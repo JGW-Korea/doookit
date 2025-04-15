@@ -58,7 +58,7 @@
 
     <!-- script -->
     <link rel="stylesheet" href="/src/styles/main.scss" />
-    <!-- <link rel="stylesheet" href="./index.scss" /> -->
+    <link rel="stylesheet" href="./index.scss" />
 
     <!-- <script
       async
@@ -67,8 +67,84 @@
     ></script> -->
 
     <script src="/src/utils/detectLang.ts"></script>
-    <!-- <script type="module" src="./index.ts"></script> -->
+    <script type="module" src="./index.ts"></script>
   </head>
 
-  <body></body>
+  <body>
+    <!-- Header -->
+
+    <article aria-label="Sponsored Advertisement" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="Advertisement">Google AdSense</aside>
+    </article>
+
+    <main id="main-content">
+      <section class="converter-container" aria-labelledby="unit-converter-heading">
+        <h1 id="unit-converter-heading" class="sr-only">Unit Converter</h1>
+
+        <!-- 탭 네비게이션(Tab Navigation) -->
+        <div class="tab-navigation">
+          <nav role="tablist" aria-label="Conversion Category Tabs">
+            <button id="tab-length" class="active" role="tab" aria-controls="conversion-panel" aria-selected="true" tabindex="0" data-value="length">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                <g clip-path="url(#clip0_43_480)">
+                  <path
+                    class="stroke"
+                    d="M3.66141 2.69668C4.57008 1.78801 5.02475 1.33334 5.58941 1.33334C6.15475 1.33334 6.60941 1.78801 7.51808 2.69668L13.3034 8.48201C14.2121 9.39134 14.6667 9.84534 14.6667 10.4107C14.6667 10.976 14.2121 11.43 13.3034 12.3387L12.3387 13.3033C11.4301 14.212 10.9754 14.6667 10.4107 14.6667C9.84608 14.6667 9.39075 14.212 8.48208 13.3033L2.69675 7.51801C1.78808 6.60868 1.33341 6.15334 1.33341 5.58934C1.33341 5.02534 1.78808 4.57001 2.69675 3.66134L3.66141 2.69668Z"
+                    stroke="#71717A"
+                  />
+                  <path
+                    class="stroke"
+                    d="M10.3573 5.64267L9.4133 6.58667M13.1853 8.47133L12.2426 9.414M7.52864 2.81467L6.58597 3.75733M8.94264 4.22867L7.52864 5.64333M11.7713 7.05733L10.3573 8.47133"
+                    stroke="#71717A"
+                    stroke-linecap="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_43_480">
+                    <rect width="16" height="16" fill="white" transform="translate(16) rotate(90)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span>Length</span>
+            </button>
+
+            <button id="tab-weight" role="tab" aria-controls="conversion-panel" aria-selected="false" tabindex="-1" data-value="weight">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                <path
+                  class="fill"
+                  d="M3.99995 12.6667H11.9999L11.0499 6H4.94995L3.99995 12.6667ZM7.99995 4.66667C8.18884 4.66667 8.34728 4.60267 8.47528 4.47467C8.60328 4.34667 8.66706 4.18844 8.66661 4C8.66617 3.81156 8.60217 3.65333 8.47461 3.52533C8.34706 3.39733 8.18884 3.33333 7.99995 3.33333C7.81106 3.33333 7.65284 3.39733 7.52528 3.52533C7.39773 3.65333 7.33372 3.81156 7.33328 4C7.33284 4.18844 7.39684 4.34689 7.52528 4.47533C7.65373 4.60378 7.81195 4.66756 7.99995 4.66667ZM9.88328 4.66667H11.0499C11.3833 4.66667 11.6722 4.77778 11.9166 5C12.1611 5.22222 12.3111 5.49444 12.3666 5.81667L13.3166 12.4833C13.3722 12.8833 13.2695 13.2362 13.0086 13.542C12.7477 13.8478 12.4115 14.0004 11.9999 14H3.99995C3.58884 14 3.25261 13.8473 2.99128 13.542C2.72995 13.2367 2.62728 12.8838 2.68328 12.4833L3.63328 5.81667C3.68884 5.49444 3.83884 5.22222 4.08328 5C4.32773 4.77778 4.61661 4.66667 4.94995 4.66667H6.11661C6.08328 4.55556 6.0555 4.44733 6.03328 4.342C6.01106 4.23667 5.99995 4.12267 5.99995 4C5.99995 3.44444 6.19439 2.97222 6.58328 2.58333C6.97217 2.19444 7.44439 2 7.99995 2C8.5555 2 9.02773 2.19444 9.41661 2.58333C9.8055 2.97222 9.99995 3.44444 9.99995 4C9.99995 4.12222 9.98884 4.23622 9.96661 4.342C9.94439 4.44778 9.91661 4.556 9.88328 4.66667Z"
+                  fill="#71717A"
+                />
+              </svg>
+              <span>Weight</span>
+            </button>
+
+            <button id="tab-temperature" role="tab" aria-controls="conversion-panel" aria-selected="false" tabindex="-1" data-value="temperature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                <path
+                  class="fill"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.6666 11C11.6665 11.62 11.5092 12.2299 11.2094 12.7726C10.9095 13.3153 10.477 13.7731 9.95215 14.1032C9.42732 14.4333 8.82735 14.625 8.20833 14.6602C7.58931 14.6955 6.97146 14.5732 6.41255 14.3047C5.85365 14.0363 5.37193 13.6306 5.01245 13.1254C4.65297 12.6202 4.42746 12.0321 4.357 11.4161C4.28655 10.8001 4.37345 10.1763 4.60959 9.60302C4.84573 9.02973 5.22338 8.52568 5.70725 8.13799C5.88325 7.99733 5.99992 7.79066 5.99992 7.56466V3.33333C5.99992 2.8029 6.21063 2.29419 6.58571 1.91911C6.96078 1.54404 7.46949 1.33333 7.99992 1.33333C8.53035 1.33333 9.03906 1.54404 9.41413 1.91911C9.78921 2.29419 9.99992 2.8029 9.99992 3.33333V7.56533C9.99992 7.79066 10.1166 7.99733 10.2926 8.13866C10.7217 8.48187 11.0681 8.91729 11.3059 9.41263C11.5438 9.90797 11.667 10.4505 11.6666 11ZM7.99992 2.83333C8.13253 2.83333 8.2597 2.88601 8.35347 2.97977C8.44724 3.07354 8.49992 3.20072 8.49992 3.33333V8.92C8.49992 9.21133 8.69792 9.45866 8.93859 9.62266C9.23296 9.8233 9.4553 10.113 9.573 10.4492C9.6907 10.7855 9.69756 11.1506 9.59258 11.491C9.4876 11.8314 9.2763 12.1293 8.98967 12.3408C8.70304 12.5524 8.35617 12.6665 7.99992 12.6665C7.64367 12.6665 7.2968 12.5524 7.01017 12.3408C6.72354 12.1293 6.51224 11.8314 6.40726 11.491C6.30228 11.1506 6.30914 10.7855 6.42684 10.4492C6.54454 10.113 6.76688 9.8233 7.06125 9.62266C7.30125 9.45866 7.49992 9.21133 7.49992 8.92V3.33333C7.49992 3.20072 7.5526 3.07354 7.64637 2.97977C7.74013 2.88601 7.86731 2.83333 7.99992 2.83333Z"
+                  fill="#71717A"
+                />
+              </svg>
+              <span>Temperature</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- 탭 패널(Tab Panal) -->
+        <section id="conversion-panel" role="tabpanel" aria-labelledby="conversion-title" aria-hidden="false" tabindex="0">
+          <!-- 탭에 맞는 항목으로 JS 동적으로 조절 -->
+        </section>
+      </section>
+    </main>
+
+    <article aria-label="Sponsored Advertisement" class="adsense-container bg-gray-light">
+      <aside role="complementary" aria-label="Advertisement">Google AdSense</aside>
+    </article>
+
+    <!-- Footer -->
+  </body>
 </html>

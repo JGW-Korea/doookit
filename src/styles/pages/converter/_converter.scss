@@ -1,0 +1,19 @@
+@use "../../../styles/utils/variable" as *;
+
+// 공통 컴포넌트 스타일
+@forward "./converter-tab-navigation";
+@forward "./converter-tab-panel";
+@forward "../../components/screenReader";
+
+main > section.converter-container {
+  max-width: 36rem;
+  background-color: $color-white;
+
+  border: 1px solid $border-gray-light;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 15px -3px rgba($color: $color-black, $alpha: 0.1),
+    0 4px 6px -4px rgba($color: $color-black, $alpha: 0.1);
+}

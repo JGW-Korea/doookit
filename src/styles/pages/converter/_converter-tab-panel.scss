@@ -1,0 +1,85 @@
+section#conversion-panel > div {
+  margin: 0.5rem 1rem 1rem;
+  border-radius: 0.25rem;
+
+  & > form {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+
+    & > fieldset {
+      width: 100%;
+
+      & > legend {
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+
+      & > div[role="group"] {
+        display: flex;
+        gap: 0.5rem;
+
+        & > input,
+        & > select {
+          padding: 0.5rem 0.75rem;
+          border-radius: 0.375rem;
+          border: 1px solid #e4e4e7;
+
+          width: 100%;
+        }
+
+        & > select {
+          cursor: pointer;
+        }
+      }
+    }
+
+    & > button {
+      background-color: inherit;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      margin: 1px;
+      border: none;
+
+      cursor: pointer;
+      transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+      & > svg {
+        display: block;
+      }
+
+      &:hover {
+        background-color: #6366f1;
+
+        & > svg > path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  & > section[aria-labelledby="conversion-result-label"] {
+    background-color: #e3effc;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    color: #3f3f46;
+
+    & > output#conversion-result {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  section#conversion-panel {
+    margin: 1rem;
+
+    & > form {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}

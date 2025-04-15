@@ -1,0 +1,79 @@
+{
+  "length": {
+    "ariaLabel": "लंबाई कनवर्टर फॉर्म",
+    "title": "लंबाई इकाई कनवर्टर",
+    "legends": {
+      "from": "इकाई से रूपांतरण करें",
+      "to": "इकाई में रूपांतरण करें"
+    },
+    "inputAriaLabel": "मान दर्ज करें और प्रारंभिक इकाई चुनें",
+    "resultAriaLabel": "रूपांतरण परिणाम और इकाई",
+    "swapButtonAriaLabel": "'प्रारंभिक इकाई' और 'लक्ष्य इकाई' को अदल-बदल करें",
+    "resultSectionTitle": "रूपांतरण का परिणाम",
+    "labels": {
+      "value": "मान",
+      "result": "परिणाम",
+      "fromUnit": "प्रारंभिक इकाई",
+      "toUnit": "लक्ष्य इकाई"
+    },
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "वज़न कनवर्टर फॉर्म",
+    "title": "वज़न इकाई कनवर्टर",
+    "legends": {
+      "from": "वज़न इकाई से रूपांतरण करें",
+      "to": "वज़न इकाई में रूपांतरण करें"
+    },
+    "inputAriaLabel": "मान दर्ज करें और प्रारंभिक इकाई चुनें",
+    "resultAriaLabel": "रूपांतरण परिणाम और इकाई",
+    "swapButtonAriaLabel": "'प्रारंभिक वज़न इकाई' और 'लक्ष्य इकाई' को अदल-बदल करें",
+    "resultSectionTitle": "रूपांतरण का परिणाम",
+    "labels": {
+      "value": "मान",
+      "result": "परिणाम",
+      "fromUnit": "प्रारंभिक वज़न इकाई",
+      "toUnit": "लक्ष्य वज़न इकाई"
+    },
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "तापमान कनवर्टर फॉर्म",
+    "title": "तापमान कनवर्टर",
+    "legends": {
+      "from": "तापमान इकाई से रूपांतरण करें",
+      "to": "तापमान इकाई में रूपांतरण करें"
+    },
+    "inputAriaLabel": "मान दर्ज करें और प्रारंभिक इकाई चुनें",
+    "resultAriaLabel": "रूपांतरण परिणाम और इकाई",
+    "swapButtonAriaLabel": "'प्रारंभिक तापमान इकाई' और 'लक्ष्य इकाई' को अदल-बदल करें",
+    "resultSectionTitle": "रूपांतरण का परिणाम",
+    "labels": {
+      "value": "तापमान",
+      "result": "परिणाम",
+      "fromUnit": "प्रारंभिक तापमान इकाई",
+      "toUnit": "लक्ष्य तापमान इकाई"
+    },
+    "conversionDescriptions": {
+      "c": "सेल्सियस से फारेनहाइट: °F = (°C × 9/5) + 32",
+      "f": "फारेनहाइट से सेल्सियस: °C = (°F - 32) × 5/9"
+    },
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}
