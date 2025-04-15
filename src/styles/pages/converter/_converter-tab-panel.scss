@@ -76,7 +76,7 @@ section#conversion-panel > div {
   section#conversion-panel {
     margin: 1rem;
 
-    & > form {
+    & > div > form {
       flex-direction: column;
       align-items: center;
       gap: 1rem;
