@@ -1,0 +1,79 @@
+{
+  "length": {
+    "ariaLabel": "Formulario del conversor de longitud",
+    "title": "Conversor de unidades de longitud",
+    "legends": {
+      "from": "Convertir desde la unidad",
+      "to": "Convertir a la unidad"
+    },
+    "inputAriaLabel": "Ingrese un valor y seleccione la unidad de origen",
+    "resultAriaLabel": "Resultado de la conversión y unidad",
+    "swapButtonAriaLabel": "Intercambiar 'unidad de origen' y 'unidad de destino'",
+    "resultSectionTitle": "Resultado de la conversión",
+    "labels": {
+      "value": "Valor",
+      "result": "Resultado",
+      "fromUnit": "Unidad de origen",
+      "toUnit": "Unidad de destino"
+    },
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "Formulario del conversor de peso",
+    "title": "Conversor de unidades de peso",
+    "legends": {
+      "from": "Convertir desde unidad de peso",
+      "to": "Convertir a unidad de peso"
+    },
+    "inputAriaLabel": "Ingrese un valor y seleccione la unidad de origen",
+    "resultAriaLabel": "Resultado de la conversión y unidad",
+    "swapButtonAriaLabel": "Intercambiar 'unidad de peso origen' y 'unidad de destino'",
+    "resultSectionTitle": "Resultado de la conversión",
+    "labels": {
+      "value": "Valor",
+      "result": "Resultado",
+      "fromUnit": "Unidad de peso de origen",
+      "toUnit": "Unidad de peso de destino"
+    },
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "Formulario del conversor de temperatura",
+    "title": "Conversor de temperatura",
+    "legends": {
+      "from": "Convertir desde unidad de temperatura",
+      "to": "Convertir a unidad de temperatura"
+    },
+    "inputAriaLabel": "Ingrese un valor y seleccione la unidad de origen",
+    "resultAriaLabel": "Resultado de la conversión y unidad",
+    "swapButtonAriaLabel": "Intercambiar 'unidad de temperatura origen' y 'unidad de destino'",
+    "resultSectionTitle": "Resultado de la conversión",
+    "labels": {
+      "value": "Temperatura",
+      "result": "Resultado",
+      "fromUnit": "Unidad de temperatura de origen",
+      "toUnit": "Unidad de temperatura de destino"
+    },
+    "conversionDescriptions": {
+      "c": "Celsius a Fahrenheit: °F = (°C × 9/5) + 32",
+      "f": "Fahrenheit a Celsius: °C = (°F - 32) × 5/9"
+    },
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}

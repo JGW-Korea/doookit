@@ -1,0 +1,79 @@
+{
+  "length": {
+    "ariaLabel": "Längeneinheiten-Umrechner-Formular",
+    "title": "Längeneinheiten-Umrechner",
+    "legends": {
+      "from": "Umrechnen von Einheit",
+      "to": "Umrechnen in Einheit"
+    },
+    "inputAriaLabel": "Wert eingeben und Ausgangseinheit auswählen",
+    "resultAriaLabel": "Umrechnungsergebnis und Einheit",
+    "swapButtonAriaLabel": "Tausche 'Von Einheit' und 'Zu Einheit'",
+    "resultSectionTitle": "Umrechnungsergebnis",
+    "labels": {
+      "value": "Wert",
+      "result": "Ergebnis",
+      "fromUnit": "Ausgangseinheit",
+      "toUnit": "Zieleinheit"
+    },
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "Gewichtseinheiten-Umrechner-Formular",
+    "title": "Gewichtseinheiten-Umrechner",
+    "legends": {
+      "from": "Umrechnen von Gewichtseinheit",
+      "to": "Umrechnen in Gewichtseinheit"
+    },
+    "inputAriaLabel": "Wert eingeben und Ausgangseinheit auswählen",
+    "resultAriaLabel": "Umrechnungsergebnis und Einheit",
+    "swapButtonAriaLabel": "Tausche 'Von Gewichtseinheit' und 'Zu Gewichtseinheit'",
+    "resultSectionTitle": "Umrechnungsergebnis",
+    "labels": {
+      "value": "Wert",
+      "result": "Ergebnis",
+      "fromUnit": "Ausgangsgewichtseinheit",
+      "toUnit": "Zielgewichtseinheit"
+    },
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "Temperatur-Umrechner-Formular",
+    "title": "Temperatur-Umrechner",
+    "legends": {
+      "from": "Umrechnen von Temperatureinheit",
+      "to": "Umrechnen in Temperatureinheit"
+    },
+    "inputAriaLabel": "Wert eingeben und Ausgangseinheit auswählen",
+    "resultAriaLabel": "Umrechnungsergebnis und Einheit",
+    "swapButtonAriaLabel": "Tausche 'Von Temperatureinheit' und 'Zu Temperatureinheit'",
+    "resultSectionTitle": "Umrechnungsergebnis",
+    "labels": {
+      "value": "Temperaturwert",
+      "result": "Ergebnis",
+      "fromUnit": "Ausgangstemperatur",
+      "toUnit": "Zieltemperatur"
+    },
+    "conversionDescriptions": {
+      "c": "Celsius zu Fahrenheit: °F = (°C × 9/5) + 32",
+      "f": "Fahrenheit zu Celsius: °C = (°F - 32) × 5/9"
+    },
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}

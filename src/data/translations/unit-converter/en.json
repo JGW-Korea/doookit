@@ -1,0 +1,79 @@
+{
+  "length": {
+    "ariaLabel": "Length Converter Form",
+    "title": "Length Unit Converter",
+    "legends": {
+      "from": "Convert from unit",
+      "to": "Convert to unit"
+    },
+    "inputAriaLabel": "Enter Value and Select from unit",
+    "resultAriaLabel": "Conversion result and unit",
+    "swapButtonAriaLabel": "Swap 'From unit' and 'To unit'",
+    "resultSectionTitle": "Conversion Result",
+    "labels": {
+      "value": "Value",
+      "result": "Result",
+      "fromUnit": "From Unit",
+      "toUnit": "To Unit"
+    },
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "Weight Converter Form",
+    "title": "Weight Unit Converter",
+    "legends": {
+      "from": "Convert from weight unit",
+      "to": "Convert to weight unit"
+    },
+    "inputAriaLabel": "Enter Value and Select from unit",
+    "resultAriaLabel": "Conversion result and unit",
+    "swapButtonAriaLabel": "Swap 'From weight unit' and 'To weight unit'",
+    "resultSectionTitle": "Conversion Result",
+    "labels": {
+      "value": "Value",
+      "result": "Result",
+      "fromUnit": "From Weight Unit",
+      "toUnit": "To Weight Unit"
+    },
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "Temperature Converter Form",
+    "title": "Temperature Unit Converter",
+    "legends": {
+      "from": "Convert from temperature unit",
+      "to": "Convert to temperature unit"
+    },
+    "inputAriaLabel": "Enter Value and Select from unit",
+    "resultAriaLabel": "Conversion result and unit",
+    "swapButtonAriaLabel": "Swap 'From temperature unit' and 'To temperature unit'",
+    "resultSectionTitle": "Conversion Result",
+    "conversionDescriptions": {
+      "c": "Celsius to Fahrenheit: °F = (°C × 9/5) + 32",
+      "f": "Fahrenheit to Celsius: °C = (°F - 32) × 5/9"
+    },
+    "labels": {
+      "value": "Temperature",
+      "result": "Result",
+      "fromUnit": "From Temperature Unit",
+      "toUnit": "To Temperature Unit"
+    },
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}

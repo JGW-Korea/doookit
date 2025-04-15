@@ -1,0 +1,79 @@
+{
+  "length": {
+    "ariaLabel": "长度单位转换表单",
+    "title": "长度单位转换器",
+    "legends": {
+      "from": "从单位转换",
+      "to": "转换为单位"
+    },
+    "inputAriaLabel": "请输入数值并选择原始单位",
+    "resultAriaLabel": "转换结果和单位",
+    "swapButtonAriaLabel": "交换“原始单位”和“目标单位”",
+    "resultSectionTitle": "转换结果",
+    "labels": {
+      "value": "数值",
+      "result": "结果",
+      "fromUnit": "原始单位",
+      "toUnit": "目标单位"
+    },
+    "units": [
+      { "value": "cm", "label": "cm" },
+      { "value": "in", "label": "in" },
+      { "value": "m", "label": "m" },
+      { "value": "ft", "label": "ft" },
+      { "value": "km", "label": "km" },
+      { "value": "mi", "label": "mi" }
+    ]
+  },
+  "weight": {
+    "ariaLabel": "重量单位转换表单",
+    "title": "重量单位转换器",
+    "legends": {
+      "from": "从重量单位转换",
+      "to": "转换为重量单位"
+    },
+    "inputAriaLabel": "请输入数值并选择原始单位",
+    "resultAriaLabel": "转换结果和单位",
+    "swapButtonAriaLabel": "交换“原始重量单位”和“目标单位”",
+    "resultSectionTitle": "转换结果",
+    "labels": {
+      "value": "数值",
+      "result": "结果",
+      "fromUnit": "原始重量单位",
+      "toUnit": "目标重量单位"
+    },
+    "units": [
+      { "value": "g", "label": "g" },
+      { "value": "kg", "label": "kg" },
+      { "value": "lb", "label": "lb" },
+      { "value": "oz", "label": "oz" },
+      { "value": "t", "label": "t" }
+    ]
+  },
+  "temperature": {
+    "ariaLabel": "温度转换表单",
+    "title": "温度转换器",
+    "legends": {
+      "from": "从温度单位转换",
+      "to": "转换为温度单位"
+    },
+    "inputAriaLabel": "请输入数值并选择原始单位",
+    "resultAriaLabel": "转换结果和单位",
+    "swapButtonAriaLabel": "交换“原始温度单位”和“目标单位”",
+    "resultSectionTitle": "转换结果",
+    "labels": {
+      "value": "温度",
+      "result": "结果",
+      "fromUnit": "原始温度单位",
+      "toUnit": "目标温度单位"
+    },
+    "conversionDescriptions": {
+      "c": "摄氏转华氏：°F = (°C × 9/5) + 32",
+      "f": "华氏转摄氏：°C = (°F - 32) × 5/9"
+    },
+    "units": [
+      { "value": "c", "label": "°C" },
+      { "value": "f", "label": "°F" }
+    ]
+  }
+}
