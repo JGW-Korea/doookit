@@ -3,7 +3,6 @@
 // 공통 컴포넌트 스타일
 @forward "./converter-tab-navigation";
 @forward "./converter-tab-panel";
-@forward "../../components/screenReader";
 
 main > section.converter-container {
   max-width: 36rem;

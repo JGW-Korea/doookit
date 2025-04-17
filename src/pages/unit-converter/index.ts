@@ -4,7 +4,9 @@ import { UnitConverterDataTypes } from "../../types/unitConverter";
 import { panel } from "../../utils/converter/converterPanel";
 import ConvertVariable from "../../utils/converter/converterVariable";
 import { docType } from "../../utils/docType";
-// import { lengthPanel } from "../../utils/converter/converterPanel";
+
+document.body.insertAdjacentElement("afterbegin", new Header().el);
+document.body.insertAdjacentElement("beforeend", new Footer().el);
 
 const convert = new ConvertVariable();
 
@@ -329,9 +331,6 @@ if (conversionPanelSection) {
     swapBtnEl.addEventListener("click", () => handlerBtnSwap(fromValueSelectEl, toValueInputEl, toValueSelectEl, outputEl));
   }
 }
-
-document.body.insertAdjacentElement("afterbegin", new Header().el);
-document.body.insertAdjacentElement("beforeend", new Footer().el);
 
 const tabList: HTMLElement | null = document.querySelector("nav[role='tablist']");
 const tabs: NodeList | null = document.querySelectorAll("button[role='tab']");
