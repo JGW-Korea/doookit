@@ -1,0 +1,11 @@
+main#main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 0 1rem;
+
+  & > section {
+    max-width: 64rem;
+  }
+}

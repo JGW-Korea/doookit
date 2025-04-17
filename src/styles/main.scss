@@ -3,9 +3,10 @@
 @use "./utils/fonts";
 
 // 공통 컴포넌트 스타일 import
-@use "./components/header";
-@use "./components/adsense";
-@use "./components/footer";
+@forward "./components/header";
+@forward "./components/adsense";
+@forward "./components/footer";
+@forward "./components/hero";
 
 @forward "./components/screenReader";
 

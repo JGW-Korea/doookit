@@ -1,0 +1,60 @@
+section.hero {
+  background: linear-gradient(to right, #3b82fb, #06b6d4);
+  border-radius: 1.5rem;
+
+  margin: 0 auto;
+  display: flex;
+  padding: 2.5rem;
+  gap: 8rem;
+
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  & > header {
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+    & > h1#bmi-heading {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      color: #fff;
+    }
+    & > p#bmi-description {
+      color: #dbeafe;
+      font-size: 1rem;
+      max-width: 28rem;
+    }
+  }
+
+  & > span.hero-icon {
+    padding: 1.5rem;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  section.hero {
+    & > header {
+      & > h1#bmi-heading {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      & > p#bmi-description {
+        color: #dbeafe;
+        font-size: 1rem;
+        max-width: 28rem;
+      }
+    }
+
+    & > span.hero-icon {
+      display: none;
+    }
+  }
+}
