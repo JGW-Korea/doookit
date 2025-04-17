@@ -111,6 +111,47 @@
           </svg>
         </span>
       </section>
+
+      <section id="bmi-calculate" aria-labelledby="bmi-calculate-heading">
+        <h2 id="bmi-calculate-heading">
+          <!-- ICON -->
+          <span class="bmi-icon" aria-hidden="true" role="presentation">Calculate Your BMI</span>
+        </h2>
+
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+          <nav role="tablist" aria-label="Select measurement unit system">
+            <button
+              id="tab-metric"
+              class="active"
+              role="tab"
+              aria-controls="bmi-conversion-panel"
+              aria-selected="true"
+              tabindex="0"
+              data-value="metric"
+            >
+              Metric
+            </button>
+
+            <button
+              id="tab-imperial"
+              class="active"
+              role="tab"
+              aria-controls="bmi-conversion-panel"
+              aria-selected="false"
+              tabindex="-1"
+              data-value="imperial"
+            >
+              Imperial
+            </button>
+          </nav>
+        </div>
+
+        <!-- 탭 패널(Panel) -->
+        <section id="bmi-conversion-panel" role="tabpanel" aria-labelledby="bmi-conversion-title">
+          <!-- 탭에 맞는 항목으로 JS 동적으로 조절 -->
+        </section>
+      </section>
     </main>
 
     <article aria-label="Sponsored Advertisement" class="adsense-container bg-gray-light">
